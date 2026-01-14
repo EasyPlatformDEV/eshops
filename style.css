@@ -301,21 +301,31 @@ body {
     font-weight: bold;
 }
 
+/* Стил за бутона на магазина в дъното на картата */
 .shop-link {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px;
-    background-color: var(--bg-light);
-    border-radius: 5px;
+    background-color: #f1f3f5; /* Светло сив фон */
+    border-radius: 6px;
     text-decoration: none;
-    color: var(--text-color);
+    color: #333;
     font-weight: 500;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    transition: background-color 0.2s;
 }
+
+.shop-link:hover {
+    background-color: #e9ecef;
+}
+
 .shop-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    object-fit: contain;
 }
 
 /* Alert Box Styles */
@@ -361,4 +371,5 @@ body {
     margin-top: 5px;
     cursor: pointer;
 }
+
 
