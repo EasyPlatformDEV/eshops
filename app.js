@@ -63,13 +63,13 @@ const card = `
              </li>
         </ul>
 
-        <a href="${p.link}" target="_blank" class="shop-link" style="display:flex; align-items:center; gap:8px; padding:6px; background:#f0f2f5; border-radius:4px; text-decoration:none; color:#333; font-size:0.85rem;">
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=${p.link}" width="16" height="16">
-            ${p.shop_name}
+        <a href="${p.link}" class="shop-link" target="_blank">
+        <img src="https://www.google.com/s2/favicons?sz=64&domain=${new URL(p.link).hostname}" class="shop-icon" alt="shop">
+        ${p.shop_name}
         </a>
-    </div>
-</article>
-`;
+        </div>
+        </article>
+        `;
             container.insertAdjacentHTML('beforeend', card);
         });
 
@@ -80,4 +80,5 @@ const card = `
 };
 
 document.addEventListener('DOMContentLoaded', () => app.init());
+
 
