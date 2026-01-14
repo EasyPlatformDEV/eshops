@@ -4,8 +4,8 @@
     "title": "Apple iPhone 15 Pro, 128GB, Natural Titanium",
     "price": "1099.00 €",
     "old_price": "1199.00 €",
-    "image": "https://via.placeholder.com/150x200?text=iPhone+15",
-    "link": "https://example.com/iphone15",
+    "image": "https://picsum.photos/id/160/250/250",
+    "link": "https://istyle.bg",
     "shop_name": "iStyle.bg",
     "hasAlert": false
   },
@@ -14,8 +14,8 @@
     "title": "Samsung Galaxy S24 Ultra, 256GB, Titanium Gray",
     "price": "1249.50 €",
     "old_price": "1350.00 €",
-    "image": "https://via.placeholder.com/150x200?text=S24+Ultra",
-    "link": "https://example.com/s24ultra",
+    "image": "https://picsum.photos/id/0/250/250",
+    "link": "https://samsung.com",
     "shop_name": "Samsung Shop",
     "hasAlert": true,
     "alert_price": "1100.00 €"
