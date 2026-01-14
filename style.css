@@ -1,6 +1,6 @@
 :root {
     --primary-color: #007bff; /* Blue */
-    --secondary-color: #28a745; /* Green */
+    --secondary-color: #228B22; /* Green */
     --text-color: #333;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
@@ -371,5 +371,6 @@ body {
     margin-top: 5px;
     cursor: pointer;
 }
+
 
 
