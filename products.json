@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Apple iPhone 15 Pro, 128GB, Natural Titanium",
+    "price": "1099.00 €",
+    "old_price": "1199.00 €",
+    "image": "https://via.placeholder.com/150x200?text=iPhone+15",
+    "link": "https://example.com/iphone15"
+  },
+  {
+    "id": 2,
+    "title": "Samsung Galaxy S24 Ultra, 256GB, Titanium Gray",
+    "price": "1249.50 €",
+    "old_price": "1350.00 €",
+    "image": "https://via.placeholder.com/150x200?text=S24+Ultra",
+    "link": "https://example.com/s24ultra"
+  },
+  {
+    "id": 3,
+    "title": "Sony WH-1000XM5 Wireless Noise Canceling Headphones",
+    "price": "329.00 €",
+    "old_price": "399.00 €",
+    "image": "https://via.placeholder.com/150x200?text=Sony+XM5",
+    "link": "https://example.com/sonyxm5"
+  },
+  {
+    "id": 4,
+    "title": "MacBook Air M2, 13.6-inch, 8GB RAM, 256GB SSD",
+    "price": "999.00 €",
+    "old_price": "1149.00 €",
+    "image": "https://via.placeholder.com/150x200?text=MacBook+Air",
+    "link": "https://example.com/macbookair"
+  },
+  {
+    "id": 5,
+    "title": "Nintendo Switch OLED Model - White",
+    "price": "345.00 €",
+    "old_price": "369.00 €",
+    "image": "https://via.placeholder.com/150x200?text=Switch+OLED",
+    "link": "https://example.com/nintendo"
+  }
+]
