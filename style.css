@@ -161,9 +161,9 @@ body {
 
 .eshops-input-container input {
     width: 100%;
-    padding: 8px;
+    padding: 12px 15px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 6px;
     background: var(--bg-light);
     color: var(--text-color);
 }
@@ -371,6 +371,7 @@ body {
     margin-top: 5px;
     cursor: pointer;
 }
+
 
 
 
