@@ -275,10 +275,8 @@ const app = {
                     </div>
                     <div class="notification-body">
                         <div class="notification-message">
-                            Your price target has been reached for:<br>
-                            <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> from <strong>${alert.shop}</strong><br>
-                            The price has now been reduced to <strong>${alert.currentPrice.toFixed(2)} €</strong>!<br>
-                            This is <strong>${discount}%</strong> less than it was on ${formattedDate}
+                            Your price target has been reached for <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> from <strong>${alert.shop}</strong><br>
+                            The price has now been reduced to <strong>${alert.currentPrice.toFixed(2)} €</strong>! This is <strong>${discount}%</strong> less than it was on ${formattedDate}
                         </div>
                         <a href="#" class="notification-link">Go to product</a>
                     </div>
