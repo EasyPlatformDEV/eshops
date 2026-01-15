@@ -25,13 +25,21 @@ body {
 }
 
 /* Header */
+/* Header */
 .app-header {
+    border-bottom: 1px solid var(--border-color);
+    background: #fff;
+    width: 100%;
+    /* Ensure full width border */
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 10px 15px;
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
 }
 
 .header-left,
@@ -130,7 +138,7 @@ body {
 }
 
 .action-btn.blue {
-    background-color: var(--primary-color);
+    background-color: var(--pink-highlight);
     color: #fff;
 }
 
@@ -323,13 +331,15 @@ body {
     /* Adjust based on image container handling */
     background-color: var(--pink-highlight);
     color: #fff;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 12px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -442,7 +452,8 @@ body {
 /* Price Alert Buttons */
 .alert-set-btn {
     background-color: #f1f3f5;
-    border: 1px solid var(--border-color);
+    border: 1px solid #fbe9ac;
+    /* Unified border color */
     color: var(--pink-highlight);
     justify-content: center;
     /* Center content for button look */
@@ -472,7 +483,7 @@ body {
 .alert-active-btn {
     background-color: #fff8e1;
     /* Light yellow bg for active */
-    border: 1px solid #ffc107;
+    border: 1px solid #fbe9ac;
     color: var(--text-color);
     justify-content: center;
     width: 100%;
@@ -497,7 +508,9 @@ body {
 @media (max-width: 480px) {
     .discount-badge {
         font-size: 0.85rem;
-        padding: 4px 8px;
+        width: 35px;
+        height: 35px;
+        padding: 0;
         right: -45px;
         /* Pull closer */
         top: 0;
