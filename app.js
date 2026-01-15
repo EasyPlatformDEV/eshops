@@ -40,12 +40,11 @@ const app = {
             // Price Alert Button Logic
             let priceAlertBtn = '';
             if (p.hasAlert) {
-                // Active Alert: Filled Bell, Border color icon, Edit | Icon X
+                // Active Alert: Filled Bell, Price is Link, Icon X
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
                     <svg viewBox="0 0 24 24" width="16" height="16" style="color: #bb0175;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
-                    <span style="margin-left:5px; margin-right:5px; font-weight:normal;">${p.alert_price}</span>
-                    <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline; margin-left: auto;">Edit</span>
+                    <span style="margin-left:5px; margin-right:5px; font-weight:normal; color: #b60378; text-decoration: underline; cursor: pointer;">${p.alert_price}</span>
                     <span style="color: #999; margin: 0 5px;">|</span>
                     <span style="cursor: pointer; display: flex; align-items: center; color: #bb0175;" title="Remove">
                         <svg viewBox="0 0 24 24" width="18" height="18" style="fill: currentColor;"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
