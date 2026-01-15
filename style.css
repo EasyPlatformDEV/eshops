@@ -9,7 +9,7 @@
     --border-color: #dee2e6;
     --danger-color: #dc3545;
     /* Red for alerts */
-    --pink-highlight: #e83e8c;
+    --pink-highlight: #b60378;
 }
 
 * {
@@ -217,7 +217,7 @@ body {
 .sort-select {
     border: none;
     background: none;
-    font-weight: bold;
+    font-weight: normal;
     color: var(--pink-highlight);
     cursor: pointer;
 }
@@ -274,7 +274,26 @@ body {
 .product-price {
     font-size: 1.2rem;
     font-weight: bold;
+    color: var(--text-color);
+}
+
+.product-price.discounted {
     color: var(--pink-highlight);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Adjust based on image container handling */
+    background-color: var(--pink-highlight);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-old-price {
@@ -293,9 +312,7 @@ body {
     flex-direction: column;
 }
 
-.product-info {
-    /* Removed, logic split into cols */
-}
+/* product-info removed */
 
 .product-title {
     font-size: 0.95rem;
@@ -353,31 +370,50 @@ body {
 
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #fff;
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
+    background: none;
+    border: none;
+    color: var(--pink-highlight);
+    justify-content: flex-start;
+    /* Align left like list items if desired, or keep center? User said "style ... as from right". Right items are list items. Let's make it look like that but as a button. */
+    padding: 0;
+    height: auto;
+    /* Let it be natural height or keep fixed? If "left style as right", right is text. Let's make it look like text link */
+    width: auto;
+    margin: 0 auto 10px auto;
+    /* Center in column */
+    font-size: 0.85rem;
 }
 
 .alert-set-btn:hover {
-    background-color: var(--bg-light);
-    border-color: #ccc;
+    background: none;
+    text-decoration: underline;
 }
 
 .alert-active-btn {
-    background-color: #fff;
-    border: 1px solid #ffc107;
-    /* Yellow border */
+    background: none;
+    border: none;
     color: var(--text-color);
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 0;
 }
 
-.alert-active-btn span {
-    font-weight: bold;
-}
+/* Icon color handled inline or via class */
 
 .shop-icon {
     width: 16px;
     height: 16px;
     object-fit: contain;
+}
+
+/* Specific fix for profile arrow if missing */
+.profile-arrow-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: #000;
+    display: block;
+    /* Ensure it renders */
 }
 
 .product-actions {

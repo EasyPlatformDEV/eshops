@@ -37,20 +37,22 @@ const app = {
                 </div>` : '';
 
             // Price Alert Button Logic
+            // Price Alert Button Logic
             let priceAlertBtn = '';
             if (p.hasAlert) {
-                // Active Alert
+                // Active Alert: Yellow icon, Price, Edit text
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
                     <svg viewBox="0 0 24 24" width="24" height="24" style="color: #ffc107;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
-                    <span>Price alert: ${p.alert_price}</span>
+                    <span style="margin-left:5px; margin-right:5px; font-weight:bold;">${p.alert_price}</span>
+                    <span style="color: #e83e8c; font-weight: normal; font-size: 0.8rem; text-decoration: underline;">Edit</span>
                 </button>`;
             } else {
-                // Set Alert
+                // Set Alert: Light gray icon, look like list item
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="24" height="24" style="color: #6c757d;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
-                    Set price alert
+                    <svg viewBox="0 0 24 24" width="24" height="24" style="color: #ccc;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
+                    <span style="color: #e83e8c;">Set price alert</span>
                 </button>`;
             }
 
@@ -59,7 +61,20 @@ const app = {
                 
                 <!-- Left Column -->
                 <div class="product-left-col">
-                    <div class="product-image-container">
+                    <div class="product-image-container" style="position: relative;">
+                        ${(() => {
+                    if (p.old_price) {
+                        try {
+                            const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                            const oldPriceVal = parseFloat(p.old_price.replace(/[^\d.]/g, ''));
+                            if (oldPriceVal > priceVal) {
+                                const discount = Math.round((1 - priceVal / oldPriceVal) * 100);
+                                return `<span class="discount-badge">-${discount}%</span>`;
+                            }
+                        } catch (e) { }
+                    }
+                    return '';
+                })()}
                         <img src="${p.image}" alt="${p.title}" class="product-img">
                     </div>
                     
@@ -68,7 +83,7 @@ const app = {
                     </div>
                     
                     <div class="product-price-block">
-                        <div class="product-price">${p.price}</div>
+                        <div class="product-price ${p.old_price ? 'discounted' : ''}">${p.price}</div>
                         ${p.old_price ? `<div class="product-old-price">${p.old_price}</div>` : ''}
                     </div>
 
