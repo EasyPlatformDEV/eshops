@@ -20,11 +20,11 @@ body {
     line-height: 1.4;
 }
 
-/* --- HEADER (ФИКСИРАНЕ НА ГОРНАТА ЧАСТ) --- */
+/* --- HEADER (ПОПРАВЕН) --- */
 .app-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Центрира всичко вертикално */
     padding: 0 15px;
     height: var(--header-height);
     background-color: #fff;
@@ -37,24 +37,26 @@ body {
 .header-left, .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px; /* Разстояние между иконата и логото */
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: #333;
     text-decoration: none;
+    line-height: 1;
 }
 
-/* Стилизиране на иконите в хедъра */
-.icon-btn {
+/* Оправяне на бутоните-икони в хедъра */
+.icon-btn, .menu-btn, .search-btn {
     background: none;
     border: none;
     padding: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #444;
 }
 
@@ -66,9 +68,11 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
     border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
 }
 
-/* --- ПРОДУКТОВА КАРТА (ФИКСИРАНЕ НА СНИМКИТЕ) --- */
+/* --- ПРОДУКТОВА КАРТА --- */
 .product-card {
     display: flex;
     position: relative;
@@ -78,18 +82,26 @@ body {
     align-items: flex-start;
 }
 
-/* ОГРАНИЧАВАНЕ НА СНИМКИТЕ */
+.delete-trigger {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #ccc;
+    z-index: 10;
+    line-height: 0;
+}
+
 .product-left-col {
-    flex: 0 0 120px; /* Фиксирана ширина на лявата колона */
+    flex: 0 0 120px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 35px;
     margin-right: 15px;
 }
 
 .card-img {
-    width: 100px;         /* Твърда ширина */
-    height: 100px;        /* Твърда височина */
-    object-fit: contain;  /* Предпазва снимката от разтягане */
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
     display: block;
     margin: 0 auto 10px;
 }
@@ -99,12 +111,19 @@ body {
     font-weight: bold;
     color: #999;
     text-transform: uppercase;
+    margin-bottom: 2px;
 }
 
 .card-price {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--pink);
+}
+
+.card-price-old {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: #aaa;
 }
 
 /* Дясна колона */
@@ -115,31 +134,31 @@ body {
 }
 
 .card-title {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
     color: #333;
-    font-weight: normal;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-/* Бутон Купи */
 .buy-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background-color: var(--green);
     color: #fff;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-/* Списък с икони */
 .card-actions-list {
     list-style: none;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .card-actions-list li {
@@ -148,31 +167,20 @@ body {
     gap: 8px;
     color: var(--pink);
     font-size: 0.8rem;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-/* Изтриване */
-.delete-trigger {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #ccc;
-    z-index: 10;
-}
-
-/* Магазин долу */
 .shop-badge-link {
     display: flex;
     align-items: center;
     gap: 8px;
     background: #f1f3f5;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 10px;
+    border-radius: 8px;
     text-decoration: none;
     color: #333;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .shop-badge-icon {
