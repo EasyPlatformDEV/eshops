@@ -53,8 +53,8 @@ const app = {
                 // Set Alert: Outline Bell, Border color icon, Text pink
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #bb0175;"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2zm11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4c0-1.1.9-2 2-2s2 .9 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2zm-4-8c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h10v-7z" fill="currentColor"/></svg>
-                    <span style="color: #b60378;">Set price alert</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #336ae9;"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2zm11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4c0-1.1.9-2 2-2s2 .9 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2zm-4-8c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h10v-7z" fill="currentColor"/></svg>
+                    <span style="color: #336ae9;">Set price alert</span>
                 </button>`;
             }
 

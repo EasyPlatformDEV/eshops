@@ -10,6 +10,8 @@
     --danger-color: #dc3545;
     /* Red for alerts */
     --pink-highlight: #b60378;
+    --blue-highlight: #336ae9;
+    /* New blue for links and UI elements */
 }
 
 * {
@@ -67,7 +69,7 @@ body {
 
 .notification-icon {
     position: relative;
-    color: var(--text-color);
+    color: var(--blue-highlight);
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -279,7 +281,7 @@ body {
 }
 
 .sort-selected {
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     cursor: pointer;
     font-weight: normal;
     padding: 5px 10px;
@@ -500,6 +502,23 @@ body {
 
 /* Generic Link Hover */
 a {
+    color: var(--blue-highlight);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2451b8;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
+/* Generic Link Hover */
+a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.2s;
@@ -528,10 +547,10 @@ a:hover {
 
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #fdf8df;
-    border: 1px solid #f6ebc0;
+    background-color: #dae3fa;
+    border: 1px solid var(--blue-highlight);
     /* Unified border color */
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     justify-content: center;
     /* Center content for button look */
     display: flex;
@@ -829,7 +848,7 @@ a:hover {
 
 .notification-icon {
     flex-shrink: 0;
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     margin-top: 2px;
 }
 
@@ -851,7 +870,7 @@ a:hover {
 }
 
 .notification-link {
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     font-size: 0.85rem;
     text-decoration: none;
     display: inline-block;
@@ -859,6 +878,6 @@ a:hover {
 }
 
 .notification-link:hover {
-    color: #920260;
+    color: #2451b8;
     text-decoration: underline;
 }
