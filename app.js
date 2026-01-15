@@ -70,4 +70,26 @@ const app = {
                             View price history
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.0
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z" fill="currentColor"/></svg>
+                            Share with a friend
+                        </li>
+                    </ul>
+
+                    ${alertHtml}
+
+                    <a href="${p.link}" class="shop-badge-link" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-badge-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
+                        <span>${p.shop_name}</span>
+                    </a>
+                </div>
+            </article>
+            `;
+            container.insertAdjacentHTML('beforeend', card);
+        });
+
+        const totalCounter = document.getElementById('total-products');
+        if (totalCounter) totalCounter.innerText = products.length;
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => app.init());
