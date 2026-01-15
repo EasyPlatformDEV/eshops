@@ -38,19 +38,35 @@ const app = {
 
             const card = `
             <article class="product-card">
-                <div class="product-image-container">
-                    <img src="${p.image}" alt="${p.title}" class="product-img">
+                
+                <!-- Left Column -->
+                <div class="product-left-col">
+                    <div class="product-image-container">
+                        <img src="${p.image}" alt="${p.title}" class="product-img">
+                    </div>
+                    
+                    <div class="product-brand">
+                        ${p.brand || 'Samsung Galaxy'}
+                    </div>
+                    
+                    <div class="product-price-block">
+                        <div class="product-price">${p.price}</div>
+                        ${p.old_price ? `<div class="product-old-price">${p.old_price}</div>` : ''}
+                    </div>
+
+                    <a href="${p.link}" target="_blank" class="buy-btn">
+                        Buy now
+                    </a>
                 </div>
 
-                <div class="product-info">
+                <!-- Right Column -->
+                <div class="product-right-col">
                     <h3 class="product-title">${p.title}</h3>
                     
-                    ${alertHtml}
-
                     <ul class="product-actions">
                         <li class="${p.hasAlert ? 'text-highlight' : 'text-light'}">
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
-                            ${p.hasAlert ? 'Price alert set' : 'Set price alert'}
+                             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
+                             ${p.hasAlert ? 'Price alert set' : 'Set price alert'}
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
@@ -70,17 +86,12 @@ const app = {
                         </li>
                     </ul>
 
+                    ${alertHtml}
+
                     <a href="${p.link}" target="_blank" class="shop-link">
                         <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
                         ${p.shop_name}
                     </a>
-
-                    <div class="product-price-container">
-                        <div class="product-price">${p.price}</div>
-                        <a href="${p.link}" target="_blank" class="buy-btn">
-                            Buy now
-                        </a>
-                    </div>
                 </div>
             </article>
             `;
