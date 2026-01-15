@@ -189,14 +189,55 @@ body {
     cursor: pointer;
 }
 
+/* Custom Checkbox */
 .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
     margin-right: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.checkbox-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: var(--pink-highlight);
+}
+
+/* Checkmark indicator (hidden by default) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
 }
 
 .reset-filters-btn {
     background: none;
     border: none;
-    color: var(--primary-color);
+    color: var(--pink-highlight);
     cursor: pointer;
 }
 
@@ -256,6 +297,19 @@ body {
     margin-bottom: 10px;
     position: relative;
     overflow: visible;
+}
+
+.product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.product-image-container:hover .product-img {
+    transform: scale(1.1);
 }
 
 .product-price.discounted {
