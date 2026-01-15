@@ -1,378 +1,124 @@
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #228B22; /* Green */
+    --primary-color: #007bff;
+    --secondary-color: #2ecc71; /* Green за бутона Купи */
     --text-color: #333;
-    --text-light: #6c757d;
+    --text-light: #999;
     --bg-light: #f8f9fa;
-    --border-color: #dee2e6;
-    --danger-color: #dc3545; /* Red for alerts */
+    --border-color: #eee;
     --pink-highlight: #e83e8c;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background-color: #f4f7f6; color: var(--text-color); }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-    background-color: #fff;
-}
+/* Layout */
+.app-content { padding: 15px; max-width: 600px; margin: 0 auto; }
 
-/* Header */
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
-}
-
-.header-left, .header-right {
-    display: flex;
-    align-items: center;
-}
-
-.menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 15px;
-    color: var(--text-color);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.logo .highlight {
-    color: var(--pink-highlight);
-}
-
-.notification-icon {
-    position: relative;
-    margin-right: 15px;
-    color: var(--text-color);
-}
-
-.notification-icon .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--danger-color);
-    color: #fff;
-    font-size: 0.7rem;
-    padding: 2px 5px;
-    border-radius: 50%;
-}
-
-.user-profile {
-    position: relative;
-}
-
-.profile-img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-}
-
-.status-dot {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
-    background-color: var(--secondary-color);
-    border: 2px solid #fff;
-    border-radius: 50%;
-}
-
-/* Content */
-.app-content {
-    padding: 15px;
-    max-width: 600px; /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
-    margin: 0 auto;
-}
-
-/* Actions Bar */
-.actions-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.action-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.action-btn.blue {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-/* Search */
-.search-section {
-    margin-bottom: 15px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: var(--bg-light);
-    font-size: 1rem;
-}
-
-/* Filters */
-.filters-section {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-}
-
-.filter-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.filter-label {
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.eshops-input-container {
-    flex-grow: 1;
-}
-
-.eshops-input-container input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: var(--bg-light);
-    color: var(--text-color);
-}
-
-.alerts-row {
-    justify-content: space-between;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.checkbox-container input {
-    margin-right: 8px;
-}
-
-.reset-filters-btn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-.stats-row {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-light);
-}
-
-.stats-row strong {
-    color: var(--text-color);
-}
-
-/* Sort */
-.sort-section {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-.sort-select {
-    border: none;
-    background: none;
-    font-weight: bold;
-    color: var(--pink-highlight);
-    cursor: pointer;
-}
-
-/* Product List & Cards */
+/* Product Card */
 .product-card {
     display: flex;
-    border: 1px solid var(--border-color);
+    position: relative;
+    background: #fff;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    background: #fff;
-    position: relative;
+    border: 1px solid #ddd;
 }
 
-.product-image-container {
-    flex: 0 0 110px; /* Фиксирано място за снимката вляво */
-}
-
-.product-img {
-    width: 100px; /* Визуално в картата е по-добре да е по-малка */
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.delete-icon {
+/* Delete Icon */
+.delete-trigger {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    color: var(--text-light);
+    top: 15px;
+    left: 15px;
+    color: #ccc;
     cursor: pointer;
+    z-index: 5;
 }
 
-.product-info {
-    flex-grow: 1;
+/* Left Column (Image & Price) */
+.product-left-col {
+    flex: 0 0 130px;
+    text-align: center;
+    margin-right: 15px;
+    padding-top: 35px; /* Място за кошчето горе */
 }
 
-.product-title {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-    line-height: 1.2;
+.card-img { width: 100px; height: 100px; object-fit: contain; margin-bottom: 10px; }
+.card-brand { font-size: 0.75rem; font-weight: bold; color: var(--text-light); text-transform: uppercase; margin-bottom: 4px; }
+.card-price { font-weight: bold; font-size: 1.25rem; color: var(--pink-highlight); }
+.card-price-old { text-decoration: line-through; font-size: 0.8rem; color: #6c757d; }
+
+/* Right Column (Info) */
+.product-right-col {
+    flex: 1;
+    border-left: 1px dashed #ddd;
+    padding-left: 15px;
 }
 
+.card-title { font-size: 0.95rem; font-weight: normal; margin-bottom: 12px; line-height: 1.3; color: #333; min-height: 40px; }
+
+/* Buy Button */
 .buy-btn {
-    display: inline-flex; /* Вече не е на целия ред */
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     background-color: var(--secondary-color);
     color: #fff;
-    border: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
     font-size: 0.9rem;
-    margin-bottom: 12px;
-}
-.product-actions {
-    list-style: none;
-    padding: 0;
     margin-bottom: 15px;
 }
 
-.product-actions li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: var(--pink-highlight);
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-.product-actions li.text-light {
-    color: var(--text-light);
-}
-
-.product-price-container {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.product-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Стил за бутона на магазина в дъното на картата */
-.shop-link {
+/* Actions List */
+.card-actions-list { list-style: none; margin-bottom: 15px; }
+.card-actions-list li {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
-    background-color: #f1f3f5; /* Светло сив фон */
-    border-radius: 6px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    color: var(--pink-highlight);
     font-size: 0.85rem;
-    margin-top: 10px;
-    transition: background-color 0.2s;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
 
-.shop-link:hover {
-    background-color: #e9ecef;
-}
-
-.shop-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    object-fit: contain;
-}
-
-/* Alert Box Styles */
-.alert-box {
-    background-color: #fff0f3; /* Light pink bg */
-    border: 1px solid var(--pink-highlight);
-    border-radius: 5px;
+/* Inline Alert Box */
+.alert-box-inline {
+    background: var(--bg-light);
+    border: 1px solid #dee2e6;
     padding: 10px;
-    margin-bottom: 10px;
-    position: relative;
+    border-radius: 8px;
+    margin: 10px 0;
 }
 
-.alert-header {
+.alert-content {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    justify-content: space-between;
+    font-size: 0.85rem;
 }
-.alert-bell { color: var(--pink-highlight); }
-.alert-details { color: var(--pink-highlight); text-decoration: underline; cursor: pointer; font-weight: normal; font-size: 0.9rem;}
 
-.alert-body {
+.alert-details-link { color: var(--pink-highlight); text-decoration: underline; cursor: pointer; }
+.pink-text { color: var(--pink-highlight); }
+
+/* Shop Badge Link */
+.shop-badge-link {
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-.alert-bell-body { color: var(--pink-highlight); margin-top: 2px;}
-.alert-close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    color: var(--text-light);
-    cursor: pointer;
-}
-.alert-delete {
-    display: block;
-    color: var(--pink-highlight);
+    align-items: center;
+    gap: 10px;
+    background: #f1f3f5;
+    padding: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    margin-top: 5px;
-    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 10px;
 }
 
+.shop-badge-icon { width: 20px; height: 20px; border-radius: 3px; }
 
-
-
-
+/* Error/Empty Msg */
+.error-msg { text-align: center; color: red; padding: 20px; }
