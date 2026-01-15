@@ -324,7 +324,10 @@ body {
     background-color: var(--pink-highlight);
     color: #fff;
     font-size: 1.15rem;
-    font-weight: bold;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 6px 12px;
     border-radius: 12px;
     z-index: 10;
@@ -379,6 +382,18 @@ body {
     /* min-height: 40px; Optional: aligns rows if titles vary slightly */
 }
 
+.separator-line {
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.actions-label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
 /* Common Button Styles */
 .action-btn-common {
     display: inline-flex;
@@ -425,9 +440,8 @@ body {
 }
 
 /* Price Alert Buttons */
-/* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #fff;
+    background-color: #f1f3f5;
     border: 1px solid var(--border-color);
     color: var(--pink-highlight);
     justify-content: center;
