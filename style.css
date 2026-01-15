@@ -39,7 +39,7 @@ body {
     align-items: center;
     max-width: 600px;
     margin: 0 auto;
-    padding: 10px 15px;
+    padding: 7px 15px;
 }
 
 .header-left,
@@ -60,7 +60,7 @@ body {
 }
 
 .logo-img {
-    height: 56px;
+    height: 37px;
     width: auto;
     display: block;
 }
@@ -458,7 +458,7 @@ body {
 
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #fef8e0;
+    background-color: #fdf8df;
     border: 1px solid #f6ebc0;
     /* Unified border color */
     color: var(--pink-highlight);
