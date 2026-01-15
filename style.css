@@ -1,121 +1,138 @@
-/* --- ОСНОВНИ НАСТРОЙКИ --- */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #2ecc71; /* Зелено за Купи */
-    --text-color: #333;
-    --text-light: #999;
-    --bg-light: #f8f9fa;
-    --border-color: #eee;
-    --pink-highlight: #e83e8c;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --pink: #e83e8c;
+    --green: #2ecc71;
+    --gray-light: #f8f9fa;
+    --gray-border: #eee;
+    --text-main: #333;
+    --text-muted: #999;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fff;
-    color: var(--text-color);
-    line-height: 1.4;
-}
-
-/* --- HEADER --- */
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--border-color);
+    font-family: -apple-system, system-ui, sans-serif;
+    margin: 0;
     background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    color: var(--text-main);
 }
 
-.header-left, .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.menu-btn, .search-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-color);
-}
-
-.logo {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-/* --- PRODUCT LIST CONTAINER --- */
 #product-list {
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* --- PRODUCT CARD (ГЛАВЕН КОНТЕЙНЕР) --- */
+/* Карта на продукта */
 .product-card {
     display: flex;
     position: relative;
     padding: 15px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--gray-border);
     background: #fff;
-    align-items: flex-start;
 }
 
-/* Икона за изтриване (горе вляво на бял фон) */
+/* Икона за изтриване - на бял фон най-горе */
 .delete-trigger {
     position: absolute;
     top: 15px;
     left: 15px;
     color: #ccc;
     cursor: pointer;
-    background: #fff;
     z-index: 10;
-    line-height: 0;
 }
 
-/* Лява колона (Снимка, Бранд, Цена) */
+/* Лява колона: Снимка, Бранд, Цена */
 .product-left-col {
     flex: 0 0 130px;
     text-align: center;
+    padding-top: 35px; /* Сваляме надолу заради иконата */
     margin-right: 15px;
-    padding-top: 35px; /* Място заради иконата за изтриване */
 }
 
 .card-img {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    margin-bottom: 10px;
 }
 
 .card-brand {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
-    color: var(--text-light);
+    color: var(--text-muted);
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin: 10px 0 2px 0;
 }
 
 .card-price {
     font-weight: bold;
-    font-size: 1.25rem;
-    color: var(--pink-highlight);
+    font-size: 1.2rem;
+    color: var(--pink);
 }
 
 .card-price-old {
     text-decoration: line-through;
     font-size: 0.8rem;
-    color: #6c757d;
+    color: var(--text-muted);
 }
 
-/* Дясна колона (Инфо и Бутони) */
-.
+/* Дясна колона: Заглавие и Действия */
+.product-right-col {
+    flex: 1;
+    border-left: 1px dashed #ddd;
+    padding-left: 15px;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+/* Бутон Купи */
+.buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+/* Списък с иконки */
+.card-actions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.card-actions-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--pink);
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+/* Магазин - долу */
+.shop-badge-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gray-light);
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.shop-badge-icon {
+    width: 18px;
+    height: 18px;
+}
