@@ -136,6 +136,12 @@ body {
 .action-btn.blue {
     background-color: var(--pink-highlight);
     color: #fff;
+    transition: background-color 0.2s;
+}
+
+.action-btn.blue:hover {
+    background-color: #920260;
+    /* Darker pink for hover */
 }
 
 /* Search */
@@ -262,14 +268,58 @@ body {
     margin-bottom: 15px;
     font-size: 0.9rem;
     color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.sort-select {
-    border: none;
-    background: none;
-    font-weight: normal;
+.sort-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-selected {
     color: var(--pink-highlight);
     cursor: pointer;
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sort-selected:hover {
+    background-color: var(--bg-light);
+}
+
+.sort-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 100;
+}
+
+.sort-dropdown-wrapper.active .sort-dropdown-menu {
+    display: block;
+}
+
+.sort-dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.sort-dropdown-menu a:hover {
+    background-color: var(--bg-light);
+    text-decoration: none;
 }
 
 /* Product List & Cards */
@@ -338,6 +388,8 @@ body {
     border-radius: 50%;
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Fix vertical alignment */
+    line-height: 1;
 }
 
 .product-brand {
@@ -392,7 +444,8 @@ body {
 /* Title Bold */
 .product-title {
     font-size: 0.95rem;
-    font-weight: bold;
+    font-weight: 500;
+    /* Reduced from bold/700 */
     margin-bottom: 12px;
     line-height: 1.3;
     color: #333;
@@ -445,6 +498,23 @@ body {
     background-color: #218838;
 }
 
+/* Generic Link Hover */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
 /* Shop Link Button */
 .shop-link-btn {
     background-color: #f1f3f5;
@@ -466,6 +536,8 @@ body {
     /* Center content for button look */
     display: flex;
     align-items: center;
+    font-weight: normal;
+    /* Ensure not bold */
     padding: 0 12px;
     /* Add horizontal padding back */
     height: 38px;
@@ -499,6 +571,8 @@ body {
     padding: 0 12px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    /* Push items apart */
     border-radius: 6px;
     font-size: 0.85rem;
 }
@@ -518,9 +592,12 @@ body {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: -45px;
-        /* Pull closer */
+        right: auto;
+        left: 0;
+        /* Move to left to avoid overlap with right col */
         top: 0;
+        margin-left: -5px;
+        /* Slight offset if needed */
     }
 }
 
@@ -567,10 +644,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 150px;
     z-index: 100;
-}
-
-.user-profile:hover .profile-dropdown {
-    display: block;
 }
 
 .profile-dropdown a {
