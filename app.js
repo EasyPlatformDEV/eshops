@@ -31,7 +31,6 @@ const app = {
                 domain = p.link ? p.link.replace('https://', '').replace('http://', '').split('/')[0] : "";
             }
 
-            // Генериране на Alert секция само ако има аларма
             const alertHtml = p.hasAlert ? `
                 <div class="alert-box-inline">
                     <div class="alert-content">
@@ -71,4 +70,4 @@ const app = {
                             View price history
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1
