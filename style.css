@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #228B22;
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #228B22; /* Green */
     --text-color: #333;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
     --border-color: #dee2e6;
+    --danger-color: #dc3545; /* Red for alerts */
     --pink-highlight: #e83e8c;
-    --header-height: 60px;
 }
 
 * {
@@ -16,89 +16,115 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-color);
     background-color: #fff;
 }
 
-/* --- ОГРАНИЧАВАНЕ НА ШИРИНАТА (Desktop) --- */
-.app-header, .app-content {
-    max-width: 600px; /* Както във вчерашната версия */
-    margin: 0 auto;
-}
-
-/* --- HEADER --- */
+/* Header */
 .app-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    height: var(--header-height);
-    background: #fff;
     border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: #fff;
 }
 
 .header-left, .header-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    color: var(--text-color);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
     color: var(--text-color);
-    display: flex;
-    align-items: center;
 }
 
-.product-counter-badge {
-    background-color: var(--bg-light);
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: 1px solid var(--border-color);
+.logo .highlight {
+    color: var(--pink-highlight);
 }
 
-/* --- CONTENT --- */
+.notification-icon {
+    position: relative;
+    margin-right: 15px;
+    color: var(--text-color);
+}
+
+.notification-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.user-profile {
+    position: relative;
+}
+
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+/* Content */
 .app-content {
     padding: 15px;
+    max-width: 600px; /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
+    margin: 0 auto;
 }
 
-/* --- СИНИ БУТОНИ (Вчерашният стил) --- */
+/* Actions Bar */
 .actions-bar {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-.action-btn.blue {
+.action-btn {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: #fff;
+    gap: 5px;
+    padding: 10px;
     border: none;
-    border-radius: 6px; /* Вчерашният правоъгълен стил */
+    border-radius: 5px;
     font-weight: 500;
-    font-size: 0.9rem;
     cursor: pointer;
 }
 
-/* --- ТЪРСЕНЕ --- */
+.action-btn.blue {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Search */
 .search-section {
     margin-bottom: 15px;
 }
@@ -107,12 +133,12 @@ body {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 25px;
     background-color: var(--bg-light);
     font-size: 1rem;
 }
 
-/* --- ФИЛТРИ И ESHOPS INPUT --- */
+/* Filters */
 .filters-section {
     margin-bottom: 15px;
     font-size: 0.9rem;
@@ -121,7 +147,7 @@ body {
 .filter-row {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .filter-label {
@@ -135,3 +161,215 @@ body {
 
 .eshops-input-container input {
     width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--bg-light);
+    color: var(--text-color);
+}
+
+.alerts-row {
+    justify-content: space-between;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+}
+
+.reset-filters-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.stats-row strong {
+    color: var(--text-color);
+}
+
+/* Sort */
+.sort-section {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.sort-select {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color: var(--pink-highlight);
+    cursor: pointer;
+}
+
+/* Product List & Cards */
+.product-card {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    position: relative;
+}
+
+.product-image-container {
+    flex: 0 0 110px; /* Фиксирано място за снимката вляво */
+}
+
+.product-img {
+    width: 100px; /* Визуално в картата е по-добре да е по-малка */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.buy-btn {
+    display: inline-flex; /* Вече не е на целия ред */
+    align-items: center;
+    gap: 8px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+.product-actions {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.product-actions li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--pink-highlight);
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.product-actions li.text-light {
+    color: var(--text-light);
+}
+
+.product-price-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Стил за бутона на магазина в дъното на картата */
+.shop-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f1f3f5; /* Светло сив фон */
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.shop-link:hover {
+    background-color: #e9ecef;
+}
+
+.shop-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    object-fit: contain;
+}
+
+/* Alert Box Styles */
+.alert-box {
+    background-color: #fff0f3; /* Light pink bg */
+    border: 1px solid var(--pink-highlight);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.alert-bell { color: var(--pink-highlight); }
+.alert-details { color: var(--pink-highlight); text-decoration: underline; cursor: pointer; font-weight: normal; font-size: 0.9rem;}
+
+.alert-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+.alert-bell-body { color: var(--pink-highlight); margin-top: 2px;}
+.alert-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+.alert-delete {
+    display: block;
+    color: var(--pink-highlight);
+    text-decoration: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+
