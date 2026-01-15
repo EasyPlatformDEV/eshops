@@ -38,14 +38,17 @@ body {
 .header-right {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .menu-btn {
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 15px;
     color: var(--text-color);
+    display: flex;
+    /* Ensure icon centers */
+    align-items: center;
 }
 
 .logo {
@@ -60,8 +63,10 @@ body {
 
 .notification-icon {
     position: relative;
-    margin-right: 15px;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .notification-icon .badge {
@@ -246,16 +251,30 @@ body {
     align-items: center;
 }
 
+/* Ensure badge doesn't get cut off if it goes outside */
 .product-image-container {
     margin-bottom: 10px;
+    position: relative;
+    overflow: visible;
 }
 
-.product-img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 4px;
-    background-color: #fff;
+.product-price.discounted {
+    color: var(--pink-highlight);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 5px;
+    right: -55px;
+    /* Adjust based on image container handling */
+    background-color: var(--pink-highlight);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 12px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-brand {
@@ -277,24 +296,7 @@ body {
     color: var(--text-color);
 }
 
-.product-price.discounted {
-    color: var(--pink-highlight);
-}
-
-.discount-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    /* Adjust based on image container handling */
-    background-color: var(--pink-highlight);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 12px;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* Duplicate styles removed */
 
 .product-old-price {
     text-decoration: line-through;
@@ -375,6 +377,9 @@ body {
     color: var(--pink-highlight);
     justify-content: flex-start;
     /* Align left like list items if desired, or keep center? User said "style ... as from right". Right items are list items. Let's make it look like that but as a button. */
+    display: flex;
+    align-items: center;
+    /* Ensure vertical center */
     padding: 0;
     height: auto;
     /* Let it be natural height or keep fixed? If "left style as right", right is text. Let's make it look like text link */
@@ -382,6 +387,8 @@ body {
     margin: 0 auto 10px auto;
     /* Center in column */
     font-size: 0.85rem;
+    gap: 8px;
+    /* Match right list gap */
 }
 
 .alert-set-btn:hover {
@@ -397,6 +404,8 @@ body {
     width: 100%;
     margin-bottom: 8px;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 /* Icon color handled inline or via class */

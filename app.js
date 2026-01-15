@@ -43,16 +43,16 @@ const app = {
                 // Active Alert: Yellow icon, Price, Edit text
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
-                    <svg viewBox="0 0 24 24" width="24" height="24" style="color: #ffc107;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #ffc107;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
                     <span style="margin-left:5px; margin-right:5px; font-weight:bold;">${p.alert_price}</span>
-                    <span style="color: #e83e8c; font-weight: normal; font-size: 0.8rem; text-decoration: underline;">Edit</span>
+                    <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline;">Edit</span>
                 </button>`;
             } else {
                 // Set Alert: Light gray icon, look like list item
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="24" height="24" style="color: #ccc;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
-                    <span style="color: #e83e8c;">Set price alert</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #ccc;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
+                    <span style="color: #b60378;">Set price alert</span>
                 </button>`;
             }
 
@@ -104,8 +104,8 @@ const app = {
                             View price history
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
-                            Compare products (2)
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L1 7v2h2.5c.35 3.63 2.5 6.64 6 7.42V20h-1.5v2h8v-2h-1.5v-3.58c3.5-.78 5.65-3.79 6-7.42H22V7L12 2zm-5.5 8c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm11 0c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z" fill="currentColor"/></svg>
+                            Compare prices (4)
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z" fill="currentColor"/></svg>
@@ -117,7 +117,7 @@ const app = {
                         </li>
                     </ul>
 
-                    ${alertHtml}
+
 
                     <a href="${p.link}" target="_blank" class="action-btn-common shop-link-btn">
                         <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
