@@ -40,13 +40,14 @@ const app = {
             // Price Alert Button Logic
             let priceAlertBtn = '';
             if (p.hasAlert) {
-                // Active Alert: Yellow icon, Price, Edit text
-                // Active Alert: Filled Bell, Border color icon
+                // Active Alert: Filled Bell, Border color icon, Edit | Remove
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
                     <svg viewBox="0 0 24 24" width="16" height="16" style="color: #fbe9ac;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
                     <span style="margin-left:5px; margin-right:5px; font-weight:normal;">${p.alert_price}</span>
-                    <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline;">Edit</span>
+                    <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline; margin-left: auto;">Edit</span>
+                    <span style="color: #999; margin: 0 5px;">|</span>
+                    <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline;">Remove</span>
                 </button>`;
             } else {
                 // Set Alert: Outline Bell, Border color icon, Text pink
@@ -91,6 +92,7 @@ const app = {
                     ${priceAlertBtn}
 
                     <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg>
                         Buy now
                     </a>
                 </div>
