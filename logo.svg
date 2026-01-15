@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" height="40">
+    <defs>
+        <style>
+            .cls-1 { fill: #b60378; }
+            .cls-2 { fill: #fff; }
+            .cls-3 { fill: #1e2a44; font-family: Arial, sans-serif; font-weight: bold; font-size: 28px; }
+            .glass-rim { fill: none; stroke: #3f4b66; stroke-width: 3.5; }
+            .handle { fill: none; stroke: #b60378; stroke-width: 6; stroke-linecap: round; }
+            .e-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 24px; fill: #b60378; }
+        </style>
+    </defs>
+    <!-- Magnifying Glass -->
+    <g transform="translate(5, 5)">
+        <!-- Handle -->
+        <line class="handle" x1="10" y1="36" x2="2" y2="44" />
+        <!-- Rim -->
+        <circle class="glass-rim" cx="24" cy="20" r="16" />
+        <!-- Letter e -->
+        <text x="24" y="27" text-anchor="middle" class="e-text">e</text>
+    </g>
+    <!-- Text shops -->
+    <text x="60" y="36" class="cls-3">shops</text>
+</svg>

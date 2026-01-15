@@ -59,14 +59,10 @@ body {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.logo .highlight {
-    color: var(--pink-highlight);
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .notification-icon {
@@ -462,8 +458,8 @@ body {
 
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #f1f3f5;
-    border: 1px solid #fbe9ac;
+    background-color: #fef8e0;
+    border: 1px solid #f6ebc0;
     /* Unified border color */
     color: var(--pink-highlight);
     justify-content: center;
@@ -494,7 +490,7 @@ body {
 .alert-active-btn {
     background-color: #fff8e1;
     /* Light yellow bg for active */
-    border: 1px solid #fbe9ac;
+    border: 1px solid #f6ebc0;
     color: var(--text-color);
     justify-content: center;
     width: 100%;

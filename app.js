@@ -43,7 +43,7 @@ const app = {
                 // Active Alert: Filled Bell, Border color icon, Edit | Remove
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #fbe9ac;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #f6ebc0;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="currentColor"/></svg>
                     <span style="margin-left:5px; margin-right:5px; font-weight:normal;">${p.alert_price}</span>
                     <span style="color: #b60378; font-weight: normal; font-size: 0.8rem; text-decoration: underline; margin-left: auto;">Edit</span>
                     <span style="color: #999; margin: 0 5px;">|</span>
@@ -53,7 +53,7 @@ const app = {
                 // Set Alert: Outline Bell, Border color icon, Text pink
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #fbe9ac;"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2zm11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4c0-1.1.9-2 2-2s2 .9 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2zm-4-8c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h10v-7z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #f6ebc0;"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2zm11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4c0-1.1.9-2 2-2s2 .9 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2zm-4-8c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h10v-7z" fill="currentColor"/></svg>
                     <span style="color: #b60378;">Set price alert</span>
                 </button>`;
             }
