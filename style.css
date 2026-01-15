@@ -305,22 +305,78 @@ body {
     /* min-height: 40px; Optional: aligns rows if titles vary slightly */
 }
 
-.buy-btn {
+/* Common Button Styles */
+.action-btn-common {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
+    height: 38px;
+    /* Fixed height for all buttons */
+    padding: 0 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    /* Fill the container in left/right cols where applied */
+    box-sizing: border-box;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+    /* Spacing between stacked buttons */
+}
+
+/* Buy Now Button */
+.buy-now-btn {
     background-color: var(--secondary-color);
     color: #fff;
     border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
     font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 0.85rem;
-    width: 100%;
-    /* Full width in left col */
+}
+
+.buy-now-btn:hover {
+    background-color: #218838;
+}
+
+/* Shop Link Button */
+.shop-link-btn {
+    background-color: #f1f3f5;
+    color: #333;
+    border: 1px solid transparent;
+}
+
+.shop-link-btn:hover {
+    background-color: #e9ecef;
+}
+
+/* Price Alert Buttons */
+.alert-set-btn {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.alert-set-btn:hover {
+    background-color: var(--bg-light);
+    border-color: #ccc;
+}
+
+.alert-active-btn {
+    background-color: #fff;
+    border: 1px solid #ffc107;
+    /* Yellow border */
+    color: var(--text-color);
+}
+
+.alert-active-btn span {
+    font-weight: bold;
+}
+
+.shop-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 .product-actions {
@@ -344,90 +400,17 @@ body {
     color: var(--text-light);
 }
 
-.shop-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f1f3f5;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 0.85rem;
-    margin-top: 10px;
-}
-
-/* User Profile & Dropdown */
-.user-profile {
-    position: relative;
-    cursor: pointer;
-}
-
-.profile-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.profile-arrow-badge {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 14px;
-    height: 14px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.profile-arrow-badge svg {
-    width: 10px;
-    height: 10px;
-    fill: #000;
-}
-
-.profile-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 10px;
-    background: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 150px;
-    z-index: 100;
-}
-
-.user-profile:hover .profile-dropdown {
-    display: block;
-}
-
-.profile-dropdown a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    transition: background 0.2s;
-}
-
-.profile-dropdown a:hover {
-    background-color: var(--bg-light);
-}
-
-/* Alert Box Styles */
+/* Alert Box Styles (Right Column Details) */
 .alert-box {
     background-color: #fff0f3;
     border: 1px solid var(--pink-highlight);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    margin-top: auto;
+    /* Push to bottom if space allows, or just margin */
     position: relative;
+    font-size: 0.85rem;
 }
 
 .alert-header {
