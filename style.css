@@ -438,7 +438,7 @@ body {
     background-color: var(--secondary-color);
     color: #fff;
     border: none;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .buy-now-btn:hover {
