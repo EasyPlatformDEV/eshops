@@ -222,6 +222,7 @@ body {
 }
 
 /* Product List & Cards */
+/* Product List & Cards */
 .product-card {
     display: flex;
     border: 1px solid var(--border-color);
@@ -230,30 +231,22 @@ body {
     margin-bottom: 15px;
     background: #fff;
     position: relative;
+    align-items: flex-start;
 }
 
 .product-image-container {
     flex: 0 0 110px;
-    /* Фиксирано място за снимката вляво */
 }
 
 .product-img {
     width: 100px;
-    /* Визуално в картата е по-добре да е по-малка */
     height: 100px;
     object-fit: contain;
     border-radius: 4px;
     background-color: #fff;
-    /* White background for transparent PNGs */
 }
 
-.delete-icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: var(--text-light);
-    cursor: pointer;
-}
+/* Old delete-icon style removed */
 
 .product-info {
     flex-grow: 1;
@@ -264,23 +257,6 @@ body {
     font-weight: 500;
     margin-bottom: 10px;
     line-height: 1.2;
-}
-
-.buy-btn {
-    display: inline-flex;
-    /* Вече не е на целия ред */
-    align-items: center;
-    gap: 8px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
 }
 
 .product-actions {
@@ -303,24 +279,12 @@ body {
     color: var(--text-light);
 }
 
-.product-price-container {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.product-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Стил за бутона на магазина в дъното на картата */
 .shop-link {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px;
     background-color: #f1f3f5;
-    /* Светло сив фон */
     border-radius: 6px;
     text-decoration: none;
     color: #333;
@@ -341,10 +305,99 @@ body {
     object-fit: contain;
 }
 
+.product-price-container {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.buy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* User Profile & Dropdown */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-arrow-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-arrow-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: #000;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 100;
+}
+
+.user-profile:hover .profile-dropdown {
+    display: block;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.profile-dropdown a:hover {
+    background-color: var(--bg-light);
+}
+
 /* Alert Box Styles */
 .alert-box {
     background-color: #fff0f3;
-    /* Light pink bg */
     border: 1px solid var(--pink-highlight);
     border-radius: 5px;
     padding: 10px;
