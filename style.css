@@ -1,11 +1,14 @@
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #28a745; /* Green */
+    --primary-color: #007bff;
+    /* Blue */
+    --secondary-color: #28a745;
+    /* Green */
     --text-color: #333;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
     --border-color: #dee2e6;
-    --danger-color: #dc3545; /* Red for alerts */
+    --danger-color: #dc3545;
+    /* Red for alerts */
     --pink-highlight: #e83e8c;
 }
 
@@ -31,7 +34,8 @@ body {
     background: #fff;
 }
 
-.header-left, .header-right {
+.header-left,
+.header-right {
     display: flex;
     align-items: center;
 }
@@ -95,7 +99,8 @@ body {
 /* Content */
 .app-content {
     padding: 15px;
-    max-width: 600px; /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
+    max-width: 600px;
+    /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
     margin: 0 auto;
 }
 
@@ -228,14 +233,18 @@ body {
 }
 
 .product-image-container {
-    flex: 0 0 110px; /* Фиксирано място за снимката вляво */
+    flex: 0 0 110px;
+    /* Фиксирано място за снимката вляво */
 }
 
 .product-img {
-    width: 100px; /* Визуално в картата е по-добре да е по-малка */
+    width: 100px;
+    /* Визуално в картата е по-добре да е по-малка */
     height: 100px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 4px;
+    background-color: #fff;
+    /* White background for transparent PNGs */
 }
 
 .delete-icon {
@@ -258,7 +267,8 @@ body {
 }
 
 .buy-btn {
-    display: inline-flex; /* Вече не е на целия ред */
+    display: inline-flex;
+    /* Вече не е на целия ред */
     align-items: center;
     gap: 8px;
     background-color: var(--secondary-color);
@@ -272,6 +282,7 @@ body {
     font-size: 0.9rem;
     margin-bottom: 12px;
 }
+
 .product-actions {
     list-style: none;
     padding: 0;
@@ -287,6 +298,7 @@ body {
     margin-bottom: 5px;
     cursor: pointer;
 }
+
 .product-actions li.text-light {
     color: var(--text-light);
 }
@@ -307,7 +319,8 @@ body {
     align-items: center;
     gap: 10px;
     padding: 10px;
-    background-color: #f1f3f5; /* Светло сив фон */
+    background-color: #f1f3f5;
+    /* Светло сив фон */
     border-radius: 6px;
     text-decoration: none;
     color: #333;
@@ -330,7 +343,8 @@ body {
 
 /* Alert Box Styles */
 .alert-box {
-    background-color: #fff0f3; /* Light pink bg */
+    background-color: #fff0f3;
+    /* Light pink bg */
     border: 1px solid var(--pink-highlight);
     border-radius: 5px;
     padding: 10px;
@@ -345,8 +359,18 @@ body {
     font-weight: bold;
     margin-bottom: 5px;
 }
-.alert-bell { color: var(--pink-highlight); }
-.alert-details { color: var(--pink-highlight); text-decoration: underline; cursor: pointer; font-weight: normal; font-size: 0.9rem;}
+
+.alert-bell {
+    color: var(--pink-highlight);
+}
+
+.alert-details {
+    color: var(--pink-highlight);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
 
 .alert-body {
     display: flex;
@@ -354,7 +378,12 @@ body {
     gap: 8px;
     font-size: 0.9rem;
 }
-.alert-bell-body { color: var(--pink-highlight); margin-top: 2px;}
+
+.alert-bell-body {
+    color: var(--pink-highlight);
+    margin-top: 2px;
+}
+
 .alert-close {
     position: absolute;
     top: 5px;
@@ -364,6 +393,7 @@ body {
     color: var(--text-light);
     cursor: pointer;
 }
+
 .alert-delete {
     display: block;
     color: var(--pink-highlight);
@@ -371,5 +401,3 @@ body {
     margin-top: 5px;
     cursor: pointer;
 }
-
-
