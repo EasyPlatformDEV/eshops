@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "brand": "Samsung Galaxy",
+    "brand": "Apple",
     "title": "Apple iPhone 15 Pro, 128GB, Natural Titanium",
     "price": "1099.00 €",
     "old_price": "1199.00 €",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "brand": "Samsung Galaxy",
+    "brand": "Samsung",
     "title": "Samsung Galaxy S24 Ultra, 256GB, Titanium Gray",
     "price": "1249.50 €",
     "old_price": "1350.00 €",

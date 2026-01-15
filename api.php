@@ -6,6 +6,7 @@ header('Access-Control-Allow-Origin: *');
 $products = [
     [
         "id" => 1,
+        "brand" => "Samsung",
         "title" => "Samsung GALAXY телефон A5 256GB Navy",
         "price" => 1299.85,
         "currency" => "$",
@@ -15,6 +16,7 @@ $products = [
     ],
     [
         "id" => 2,
+        "brand" => "Samsung",
         "title" => "Samsung Galaxy S23 Ultra - Graphite",
         "price" => 1850.00,
         "currency" => "лв.",
