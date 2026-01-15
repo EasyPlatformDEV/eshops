@@ -1,6 +1,6 @@
 :root {
     --primary-color: #007bff; /* Blue */
-    --secondary-color: #228B22; /* Green */
+    --secondary-color: #28a745; /* Green */
     --text-color: #333;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
@@ -131,9 +131,9 @@ body {
 
 .search-input {
     width: 100%;
-    padding: 12px 15px;
+    padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: var(--bg-light);
     font-size: 1rem;
 }
