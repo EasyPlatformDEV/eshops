@@ -260,16 +260,21 @@ const app = {
         container.innerHTML = '';
 
         alerts.forEach(alert => {
+            // Calculate discount percentage
+            const discount = Math.round(((alert.initialPrice - alert.currentPrice) / alert.initialPrice) * 100);
+
             const item = `
                 <div class="notification-item">
                     <div class="notification-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
-                        </svg>
+                        <img src="${alert.image}" alt="${alert.title}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
                     </div>
                     <div class="notification-body">
-                        <div class="notification-message">${alert.message}</div>
-                        <div class="notification-date">${alert.date}</div>
+                        <div class="notification-message">
+                            Your price target has been reached for:<br>
+                            <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> from <strong>${alert.shop}</strong><br>
+                            The price has now been reduced to <strong>${alert.currentPrice.toFixed(2)} €</strong>!<br>
+                            This is <strong>${discount}%</strong> less than it was on ${alert.date}
+                        </div>
                         <a href="#" class="notification-link">Go to product</a>
                     </div>
                 </div>

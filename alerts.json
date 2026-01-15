@@ -1,20 +1,35 @@
 [
   {
     "id": 1,
-    "message": "Product 1 reached the target price of 15.65 € (15% discount from the initial price of 20.00 €)",
-    "date": "2026-01-14",
-    "productId": 1
+    "title": "Red designer kitchen lamp",
+    "brand": "HURGADA",
+    "shop": "ikea.bg",
+    "image": "https://images.kemitt.com/img/product/images-1669128435719.jpg?class=Product",
+    "initialPrice": 100.00,
+    "targetPrice": 94.00,
+    "currentPrice": 94.00,
+    "date": "2026-01-01"
   },
   {
     "id": 2,
-    "message": "Product 2 reached the target price of 95.50 € (10% discount from the initial price of 107.00 €)",
-    "date": "2026-01-13",
-    "productId": 2
+    "title": "Butter 250g",
+    "brand": "President",
+    "shop": "ebag.bg",
+    "image": "https://cdncloudcart.com/16398/products/images/39861/krave-maslo-president-extra-82--200-g-image_5ea2d45665a64_1280x1280.png?1587732315",
+    "initialPrice": 5.50,
+    "targetPrice": 5.00,
+    "currentPrice": 5.00,
+    "date": "2026-01-10"
   },
   {
     "id": 3,
-    "message": "Product 3 reached the target price of 1005.00 € (5% discount from the initial price of 1070.00 €)",
-    "date": "2026-01-12",
-    "productId": 3
+    "title": "Crystal Noir",
+    "brand": "Versace",
+    "shop": "parfium.bg",
+    "image": "https://parfium.bg/2890-home_default/versace-crystal-noir-parfium-za-jeni-bez-opakovka.jpg",
+    "initialPrice": 85.00,
+    "targetPrice": 80.00,
+    "currentPrice": 80.00,
+    "date": "2026-01-12"
   }
 ]

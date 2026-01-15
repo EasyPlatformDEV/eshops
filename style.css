@@ -62,7 +62,7 @@ body {
 }
 
 .logo-img {
-    height: 37px;
+    height: 55px;
     width: auto;
     display: block;
 }
@@ -84,6 +84,11 @@ body {
     font-size: 0.7rem;
     padding: 2px 5px;
     border-radius: 50%;
+}
+
+.sort-arrow {
+    color: #000;
+    margin-left: 5px;
 }
 
 .user-profile {
@@ -852,8 +857,11 @@ a:hover {
 
 .notification-icon {
     flex-shrink: 0;
-    color: var(--blue-highlight);
     margin-top: 2px;
+}
+
+.notification-icon img {
+    display: block;
 }
 
 .notification-body {
@@ -862,8 +870,8 @@ a:hover {
 
 .notification-message {
     color: var(--text-color);
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.5;
     margin-bottom: 8px;
 }
 
