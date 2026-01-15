@@ -6,8 +6,6 @@
     <title>eShops SPA PWA</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <header class="app-header">
@@ -29,15 +27,9 @@
 
     <main class="app-content">
         <section class="actions-bar">
-            <button class="action-btn">
-                <span>✨</span> Discover
-            </button>
-            <button class="action-btn">
-                <span>➕</span> Add products
-            </button>
-            <button class="action-btn">
-                <span>🔗</span> Share list
-            </button>
+            <button class="action-btn blue">✨ Discover</button>
+            <button class="action-btn blue">➕ Add products</button>
+            <button class="action-btn blue">🔗 Share list</button>
         </section>
 
         <section class="search-section">
@@ -47,37 +39,20 @@
         <section class="filters-section">
             <div class="filter-row">
                 <span class="filter-label">eShops:</span>
-                <select id="eshops-filter">
-                    <option value="all">All shops (eBag, Ozone, Remedium...)</option>
+                <select class="filter-select">
+                    <option>eBag, ozone, remedium...</option>
                 </select>
             </div>
-            
             <div class="filter-row">
-                <label class="checkbox-container">
-                    <input type="checkbox" checked>
-                    <span>Products with price alerts</span>
+                <label class="checkbox-label">
+                    <input type="checkbox" checked> Products with alerts
                 </label>
-                <button class="reset-filters-btn">Reset Filters</button>
-            </div>
-
-            <div class="stats-row">
-                <div class="stat-item">Products: <strong id="total-products-count">0</strong></div>
-                <div class="stat-item">Value: <strong id="total-value">0.00 €</strong></div>
+                <button class="reset-btn">Reset Filters</button>
             </div>
         </section>
 
-        <section class="sort-section">
-            <span>Sort by:</span>
-            <select id="sort-by" class="sort-select">
-                <option value="price_asc">Price (low to high)</option>
-                <option value="price_desc">Price (high to low)</option>
-            </select>
-        </section>
-
-        <section id="product-list">
-            </section>
+        <div id="product-list"></div>
     </main>
-
     <script src="app.js"></script>
 </body>
 </html>
