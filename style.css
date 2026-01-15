@@ -140,7 +140,8 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background-color: var(--bg-light);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* Decreased from 1rem to match eshops input */
 }
 
 /* Filters */
@@ -236,7 +237,7 @@ body {
 
 /* Left Column */
 .product-left-col {
-    flex: 0 0 140px;
+    flex: 1;
     /* Fixed width */
     padding: 15px;
     text-align: center;
