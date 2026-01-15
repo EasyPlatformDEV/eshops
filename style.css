@@ -79,7 +79,7 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: var(--danger-color);
+    background-color: var(--pink-highlight);
     color: #fff;
     font-size: 0.7rem;
     padding: 2px 5px;
@@ -225,7 +225,7 @@ body {
 }
 
 .checkbox-container input:checked~.checkmark {
-    background-color: var(--pink-highlight);
+    background-color: var(--blue-highlight);
 }
 
 /* Checkmark indicator (hidden by default) */
@@ -249,7 +249,7 @@ body {
 .reset-filters-btn {
     background: none;
     border: none;
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     cursor: pointer;
 }
 
@@ -547,9 +547,8 @@ a:hover {
 
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #dae3fa;
-    border: 1px solid var(--blue-highlight);
-    /* Unified border color */
+    background-color: #ebf1fe;
+    border: none;
     color: var(--blue-highlight);
     justify-content: center;
     /* Center content for button look */
@@ -579,9 +578,8 @@ a:hover {
 }
 
 .alert-active-btn {
-    background-color: #fff8e1;
-    /* Light yellow bg for active */
-    border: 1px solid #f6ebc0;
+    background-color: #ebf1fe;
+    border: none;
     color: var(--text-color);
     justify-content: center;
     width: 100%;
@@ -591,7 +589,6 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Push items apart */
     border-radius: 6px;
     font-size: 0.85rem;
 }
@@ -690,7 +687,7 @@ a:hover {
     align-items: center;
     gap: 8px;
     font-size: 0.85rem;
-    color: var(--pink-highlight);
+    color: var(--blue-highlight);
     margin-bottom: 8px;
     cursor: pointer;
 }

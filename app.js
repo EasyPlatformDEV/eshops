@@ -43,9 +43,11 @@ const app = {
                 // Active Alert: Filled Bell, Price is Link, Icon X
                 priceAlertBtn = `
                 <button class="action-btn-common alert-active-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #bb0175;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
-                    <span style="margin-left:5px; font-weight:normal; color: #b60378; cursor: pointer;">${p.alert_price}</span>
-                    <span style="cursor: pointer; display: flex; align-items: center; color: #bb0175;" title="Remove">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" style="color: #336ae9;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
+                        <span style="font-weight:normal; color: #336ae9; cursor: pointer;">${p.alert_price}</span>
+                    </div>
+                    <span style="cursor: pointer; display: flex; align-items: center; color: #336ae9;" title="Remove">
                         <svg viewBox="0 0 24 24" width="18" height="18" style="fill: currentColor;"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
                     </span>
                 </button>`;
@@ -190,6 +192,7 @@ const app = {
         const overlay = document.getElementById('notifications-overlay');
         const closeBtn = document.getElementById('notifications-close');
         const content = document.getElementById('notifications-content');
+        const badge = document.querySelector('.notification-icon .badge');
 
         // Fetch and render notifications
         try {
@@ -197,9 +200,17 @@ const app = {
             if (!response.ok) throw new Error("Alerts JSON not found");
             const alerts = await response.json();
             this.renderNotifications(alerts, content);
+
+            // Update badge count
+            if (badge) {
+                badge.textContent = alerts.length;
+            }
         } catch (error) {
             console.error("Error loading notifications:", error);
             content.innerHTML = '<p style="padding: 20px; color: var(--text-light);">No notifications available.</p>';
+            if (badge) {
+                badge.textContent = '0';
+            }
         }
 
         // Toggle modal
