@@ -88,7 +88,7 @@ body {
 
 .sort-arrow {
     color: #000;
-    margin-left: 5px;
+    margin-left: 2px;
 }
 
 .user-profile {
@@ -277,7 +277,7 @@ body {
     color: var(--text-light);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
 }
 
 .sort-dropdown-wrapper {
@@ -787,7 +787,13 @@ a:hover {
 
 .notifications-overlay.active {
     display: block;
-    opacity: 1;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 .notifications-modal {
@@ -800,7 +806,7 @@ a:hover {
     background: #fff;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: right 0.3s ease;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
 }
@@ -820,7 +826,7 @@ a:hover {
 .notifications-header h3 {
     margin: 0;
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--pink-highlight);
 }
 
 .notifications-close {
@@ -831,11 +837,12 @@ a:hover {
     display: flex;
     align-items: center;
     padding: 0;
-    transition: color 0.2s;
+    transition: transform 0.3s ease, color 0.2s;
 }
 
 .notifications-close:hover {
     color: var(--text-color);
+    transform: rotate(90deg);
 }
 
 .notifications-content {
@@ -872,6 +879,16 @@ a:hover {
     color: var(--text-color);
     font-size: 0.85rem;
     line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.notification-message strong {
+    font-weight: 600;
+}
+
+.notification-sent-date {
+    color: var(--text-light);
+    font-size: 0.75rem;
     margin-bottom: 8px;
 }
 

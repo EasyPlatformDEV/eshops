@@ -103,7 +103,7 @@ const app = {
                         <ul class="product-actions">
                             <li>
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
-                                View price history
+                                Price history
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L1 7v2h2.5c.35 3.63 2.5 6.64 6 7.42V20h-1.5v2h8v-2h-1.5v-3.58c3.5-.78 5.65-3.79 6-7.42H22V7L12 2zm-5.5 8c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm11 0c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z" fill="currentColor"/></svg>
@@ -111,7 +111,7 @@ const app = {
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z" fill="currentColor"/></svg>
-                                Share with a friend
+                                Share with friends
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg>
@@ -263,9 +263,14 @@ const app = {
             // Calculate discount percentage
             const discount = Math.round(((alert.initialPrice - alert.currentPrice) / alert.initialPrice) * 100);
 
+            // Format date from YYYY-MM-DD to DD.MM.YYYY
+            const dateParts = alert.date.split('-');
+            const formattedDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+
             const item = `
                 <div class="notification-item">
                     <div class="notification-icon">
+                        <div class="notification-sent-date">${formattedDate}</div>
                         <img src="${alert.image}" alt="${alert.title}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
                     </div>
                     <div class="notification-body">
@@ -273,7 +278,7 @@ const app = {
                             Your price target has been reached for:<br>
                             <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> from <strong>${alert.shop}</strong><br>
                             The price has now been reduced to <strong>${alert.currentPrice.toFixed(2)} €</strong>!<br>
-                            This is <strong>${discount}%</strong> less than it was on ${alert.date}
+                            This is <strong>${discount}%</strong> less than it was on ${formattedDate}
                         </div>
                         <a href="#" class="notification-link">Go to product</a>
                     </div>
