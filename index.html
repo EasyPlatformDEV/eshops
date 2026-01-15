@@ -38,11 +38,12 @@
 
         <section class="filters-section">
             <div class="filter-row">
-                <span class="filter-label">eShops:</span>
-                <select class="filter-select">
-                    <option>eBag, ozone, remedium...</option>
-                </select>
+                <label for="eshops-filter" class="filter-label">eShops:</label>
+                <div class="eshops-input-container">
+                    <input type="text" id="eshops-filter" value="eBag.bg, ozone.bg, remedium.bg, +3" readonly>
+                </div>
             </div>
+                        
             <div class="filter-row">
                 <label class="checkbox-label">
                     <input type="checkbox" checked> Products with alerts
@@ -56,3 +57,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+
