@@ -182,10 +182,70 @@ const app = {
                 sortWrapper.classList.remove('active');
             });
         }
+    },
+
+    initNotifications: async function () {
+        const bellIcon = document.querySelector('.notification-icon');
+        const modal = document.getElementById('notifications-modal');
+        const overlay = document.getElementById('notifications-overlay');
+        const closeBtn = document.getElementById('notifications-close');
+        const content = document.getElementById('notifications-content');
+
+        // Fetch and render notifications
+        try {
+            const response = await fetch('alerts.json');
+            if (!response.ok) throw new Error("Alerts JSON not found");
+            const alerts = await response.json();
+            this.renderNotifications(alerts, content);
+        } catch (error) {
+            console.error("Error loading notifications:", error);
+            content.innerHTML = '<p style="padding: 20px; color: var(--text-light);">No notifications available.</p>';
+        }
+
+        // Toggle modal
+        if (bellIcon) {
+            bellIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                modal.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+        }
+
+        // Close modal
+        const closeModal = () => {
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', closeModal);
+    },
+
+    renderNotifications: function (alerts, container) {
+        container.innerHTML = '';
+
+        alerts.forEach(alert => {
+            const item = `
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="notification-body">
+                        <div class="notification-message">${alert.message}</div>
+                        <div class="notification-date">${alert.date}</div>
+                        <a href="#" class="notification-link">Go to product</a>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', item);
+        });
     }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     app.init();
     app.initDropdowns();
+    app.initNotifications();
 });
