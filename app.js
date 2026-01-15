@@ -28,15 +28,6 @@ const app = {
                 domain = p.link.replace('https://', '').replace('http://', '').split('/')[0];
             }
 
-            const alertHtml = p.hasAlert ? `
-                <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 10px; border-radius: 8px; margin: 10px 0;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem;">
-                        <span><span style="color: #e83e8c;">🔔</span> Price alert: <strong>${p.alert_price}</strong></span>
-                        <span style="color: #e83e8c; text-decoration: underline; cursor: pointer;">Details</span>
-                    </div>
-                </div>` : '';
-
-            // Price Alert Button Logic
             // Price Alert Button Logic
             let priceAlertBtn = '';
             if (p.hasAlert) {
@@ -47,7 +38,7 @@ const app = {
                         <svg viewBox="0 0 24 24" width="16" height="16" style="color: #336ae9;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
                         <span style="font-weight:normal; color: #336ae9; cursor: pointer;">${p.alert_price}</span>
                     </div>
-                    <span style="cursor: pointer; display: flex; align-items: center; color: #336ae9;" title="Remove">
+                    <span class="delete-icon" style="cursor: pointer; display: flex; align-items: center; color: #336ae9;" title="Remove">
                         <svg viewBox="0 0 24 24" width="18" height="18" style="fill: currentColor;"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
                     </span>
                 </button>`;
@@ -91,43 +82,45 @@ const app = {
                         ${p.old_price ? `<div class="product-old-price">${p.old_price}</div>` : ''}
                     </div>
 
-                    ${priceAlertBtn}
+                    <div style="width: 100%; margin-top: auto;">
+                        ${priceAlertBtn}
 
-                    <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
-                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg>
-                        Buy now
-                    </a>
+                        <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg>
+                            Buy now
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Right Column -->
                 <div class="product-right-col">
-                    <h3 class="product-title">${p.title}</h3>
-                    
-                    <div class="separator-line"></div>
-                    <div class="actions-label">Actions:</div>
+                    <div>
+                        <h3 class="product-title">${p.title}</h3>
+                        
+                        <div class="separator-line"></div>
+                        <div class="actions-label">Actions:</div>
 
-                    <ul class="product-actions">
-                        <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
-                            View price history
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L1 7v2h2.5c.35 3.63 2.5 6.64 6 7.42V20h-1.5v2h8v-2h-1.5v-3.58c3.5-.78 5.65-3.79 6-7.42H22V7L12 2zm-5.5 8c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm11 0c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z" fill="currentColor"/></svg>
-                            Compare prices (4)
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z" fill="currentColor"/></svg>
-                            Share with a friend
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg>
-                            Remove product
-                        </li>
-                    </ul>
+                        <ul class="product-actions">
+                            <li>
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
+                                View price history
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L1 7v2h2.5c.35 3.63 2.5 6.64 6 7.42V20h-1.5v2h8v-2h-1.5v-3.58c3.5-.78 5.65-3.79 6-7.42H22V7L12 2zm-5.5 8c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm11 0c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z" fill="currentColor"/></svg>
+                                Compare prices (4)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z" fill="currentColor"/></svg>
+                                Share with a friend
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg>
+                                Remove product
+                            </li>
+                        </ul>
+                    </div>
 
-
-
-                    <a href="${p.link}" target="_blank" class="action-btn-common shop-link-btn">
+                    <a href="${p.link}" target="_blank" class="action-btn-common shop-link-btn" style="margin-top: auto;">
                         <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
                         ${p.shop_name}
                     </a>
@@ -139,6 +132,21 @@ const app = {
 
         const totalCounter = document.getElementById('total-products');
         if (totalCounter) totalCounter.innerText = products.length;
+
+        // Calculate total value
+        const totalValue = products.reduce((sum, p) => {
+            try {
+                const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                return sum + (isNaN(priceVal) ? 0 : priceVal);
+            } catch (e) {
+                return sum;
+            }
+        }, 0);
+
+        const totalValueEl = document.getElementById('total-value');
+        if (totalValueEl) {
+            totalValueEl.innerText = totalValue.toFixed(2) + ' €';
+        }
     },
 
     initDropdowns: function () {
@@ -158,10 +166,11 @@ const app = {
             });
         }
 
-        // Sort Dropdown Toggle
+        // Sort Dropdown Toggle with Arrow
         const sortWrapper = document.querySelector('.sort-dropdown-wrapper');
         const sortSelected = document.getElementById('sort-selected');
         const sortMenu = document.getElementById('sort-dropdown-menu');
+        const sortArrow = document.getElementById('sort-arrow');
 
         if (sortWrapper && sortSelected && sortMenu) {
             sortSelected.addEventListener('click', (e) => {
@@ -173,9 +182,24 @@ const app = {
             sortMenu.querySelectorAll('a').forEach(item => {
                 item.addEventListener('click', (e) => {
                     e.preventDefault();
-                    sortSelected.textContent = item.textContent;
+                    const value = item.getAttribute('data-value');
+                    const text = item.textContent;
+
+                    // Update text
+                    sortSelected.childNodes[0].textContent = text + ' ';
+
+                    // Update arrow direction
+                    if (sortArrow) {
+                        if (value === 'price_desc') {
+                            // Up arrow for high to low
+                            sortArrow.innerHTML = '<path d="M7 14l5-5 5 5z" fill="currentColor"/>';
+                        } else {
+                            // Down arrow for low to high
+                            sortArrow.innerHTML = '<path d="M7 10l5 5 5-5z" fill="currentColor"/>';
+                        }
+                    }
+
                     sortWrapper.classList.remove('active');
-                    // Here you could add sorting logic if needed
                 });
             });
 

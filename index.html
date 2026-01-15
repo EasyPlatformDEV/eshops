@@ -103,7 +103,12 @@
         <section class="sort-section">
             <label for="sort-by">Sort by:</label>
             <div class="sort-dropdown-wrapper">
-                <span class="sort-selected" id="sort-selected">Price (low to high)</span>
+                <span class="sort-selected" id="sort-selected">
+                    Price (low to high)
+                    <svg class="sort-arrow" id="sort-arrow" viewBox="0 0 24 24" width="16" height="16">
+                        <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                    </svg>
+                </span>
                 <div class="sort-dropdown-menu" id="sort-dropdown-menu">
                     <a href="#" data-value="price_asc">Price (low to high)</a>
                     <a href="#" data-value="price_desc">Price (high to low)</a>
