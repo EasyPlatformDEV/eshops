@@ -285,7 +285,7 @@ const app = {
                             Your price target has been reached for the <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> at <strong>${alert.shop}</strong>.<br>
                             The price has dropped to <strong>${alert.currentPrice.toFixed(2)} €</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
                         </div>
-                        <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 10px;">
+                        <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 5px;">
                             Buy now at ${alert.shop}
                         </a>
                     </div>
