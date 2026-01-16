@@ -292,6 +292,8 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
 }
 
 .sort-selected:hover {
@@ -552,7 +554,8 @@ a:hover {
 
 .shop-link-btn:hover {
     background-color: #e9ecef;
-    text-decoration: underline;
+    text-decoration: none;
+    color: #333;
 }
 
 /* Price Alert Buttons */
@@ -582,7 +585,7 @@ a:hover {
 
 .alert-set-btn:hover {
     background-color: var(--bg-light);
-    text-decoration: underline;
+    text-decoration: none;
     /* No underline for button style */
     border-color: #ccc;
 }
@@ -601,6 +604,11 @@ a:hover {
     justify-content: center;
     border-radius: 6px;
     font-size: 0.85rem;
+}
+
+.alert-active-btn:hover {
+    background-color: var(--bg-light);
+    border-color: #ccc;
 }
 
 /* Hide delete icon on mobile */
@@ -626,9 +634,9 @@ a:hover {
         height: 35px;
         padding: 0;
         right: auto;
-        left: -10px;
+        left: -15px;
         /* Move to left to avoid overlap with right col */
-        top: 0;
+        top: -5px;
         margin-left: -5px;
         /* Slight offset if needed */
     }
