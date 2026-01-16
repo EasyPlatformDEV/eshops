@@ -493,11 +493,6 @@ body {
     /* Spacing between stacked buttons */
 }
 
-.action-btn-common:last-child {
-    margin-bottom: 0;
-    /* Align bottom spacing with side borders */
-}
-
 /* Buy Now Button */
 .buy-now-btn {
     background-color: var(--secondary-color);
@@ -510,34 +505,86 @@ body {
     background-color: #218838;
 }
 
+/* Generic Link Hover */
+a {
+    color: var(--blue-highlight);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2451b8;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
+/* Generic Link Hover */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
+/* Shop Link Button */
+.shop-link-btn {
+    background-color: #f1f3f5;
+    color: #333;
+    border: 1px solid transparent;
+}
+
+.shop-link-btn:hover {
+    background-color: #e9ecef;
+}
+
 /* Price Alert Buttons */
 .alert-set-btn {
-    background-color: #fef8e0;
-    border: 1px solid #f6ebc0;
-    color: var(--pink-highlight);
+    background-color: #ebf1fe;
+    border: none;
+    color: var(--blue-highlight);
     justify-content: center;
+    /* Center content for button look */
     display: flex;
     align-items: center;
+    font-weight: normal;
+    /* Ensure not bold */
     padding: 0 12px;
+    /* Add horizontal padding back */
     height: 38px;
+    /* Fixed height like others */
     width: 100%;
+    /* Full width to match Buy Now */
     margin: 0 0 10px 0;
+    /* Align with layout */
     font-size: 0.85rem;
     gap: 8px;
     border-radius: 6px;
     transition: all 0.2s;
-    font-weight: normal;
 }
 
 .alert-set-btn:hover {
     background-color: var(--bg-light);
     text-decoration: none;
+    /* No underline for button style */
     border-color: #ccc;
 }
 
 .alert-active-btn {
-    background-color: #fff8e1;
-    border: 1px solid #f6ebc0;
+    background-color: #ebf1fe;
+    border: none;
     color: var(--text-color);
     justify-content: center;
     width: 100%;
@@ -546,9 +593,9 @@ body {
     padding: 0 12px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 6px;
     font-size: 0.85rem;
-    justify-content: space-between;
 }
 
 /* Hide delete icon on mobile */
