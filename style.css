@@ -499,6 +499,7 @@ body {
     color: #fff;
     border: none;
     font-weight: normal;
+    margin-bottom: 0;
 }
 
 .buy-now-btn:hover {
@@ -544,6 +545,7 @@ a:hover {
     background-color: #f1f3f5;
     color: #333;
     border: 1px solid transparent;
+    margin-bottom: 0;
 }
 
 .shop-link-btn:hover {
