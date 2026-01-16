@@ -88,7 +88,7 @@ body {
 
 .sort-arrow {
     color: #000;
-    margin-left: 2px;
+    margin-left: 0;
 }
 
 .user-profile {
@@ -476,7 +476,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 5px;
     height: 38px;
     /* Fixed height for all buttons */
     padding: 0 12px;
@@ -504,6 +504,8 @@ body {
 
 .buy-now-btn:hover {
     background-color: #218838;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Generic Link Hover */
@@ -550,6 +552,7 @@ a:hover {
 
 .shop-link-btn:hover {
     background-color: #e9ecef;
+    text-decoration: underline;
 }
 
 /* Price Alert Buttons */
@@ -572,14 +575,14 @@ a:hover {
     margin: 0 0 10px 0;
     /* Align with layout */
     font-size: 0.85rem;
-    gap: 8px;
+    gap: 5px;
     border-radius: 6px;
     transition: all 0.2s;
 }
 
 .alert-set-btn:hover {
     background-color: var(--bg-light);
-    text-decoration: none;
+    text-decoration: underline;
     /* No underline for button style */
     border-color: #ccc;
 }
@@ -595,7 +598,7 @@ a:hover {
     padding: 0 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 6px;
     font-size: 0.85rem;
 }
@@ -623,7 +626,7 @@ a:hover {
         height: 35px;
         padding: 0;
         right: auto;
-        left: 0;
+        left: -10px;
         /* Move to left to avoid overlap with right col */
         top: 0;
         margin-left: -5px;
@@ -699,7 +702,7 @@ a:hover {
 .product-actions li {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     font-size: 0.85rem;
     color: var(--blue-highlight);
     margin-bottom: 8px;
