@@ -8,7 +8,9 @@
     "initialPrice": 100.00,
     "targetPrice": 94.00,
     "currentPrice": 94.00,
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "dateSet": "2025-12-01",
+    "timeReached": "15:23"
   },
   {
     "id": 2,
@@ -19,7 +21,9 @@
     "initialPrice": 5.50,
     "targetPrice": 5.00,
     "currentPrice": 5.00,
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "dateSet": "2026-01-01",
+    "timeReached": "14:55"
   },
   {
     "id": 3,
@@ -30,6 +34,8 @@
     "initialPrice": 85.00,
     "targetPrice": 80.00,
     "currentPrice": 80.00,
-    "date": "2026-01-12"
+    "date": "2026-01-12",
+    "dateSet": "2026-01-05",
+    "timeReached": "08:09"
   }
 ]
