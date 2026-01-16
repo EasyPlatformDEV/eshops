@@ -217,7 +217,7 @@ const app = {
 
         // Fetch and render notifications
         try {
-            const response = await fetch('alerts.json');
+            const response = await fetch('alerts.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Alerts JSON not found");
             const alerts = await response.json();
             this.renderNotifications(alerts, content);
@@ -265,8 +265,11 @@ const app = {
             const formattedDateReached = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
 
             // Format set date
-            const dateSetParts = alert.dateSet.split('-');
-            const formattedDateSet = `${dateSetParts[2]}.${dateSetParts[1]}.${dateSetParts[0]}`;
+            let formattedDateSet = formattedDateReached; // Fallback
+            if (alert.dateSet) {
+                const dateSetParts = alert.dateSet.split('-');
+                formattedDateSet = `${dateSetParts[2]}.${dateSetParts[1]}.${dateSetParts[0]}`;
+            }
 
             const item = `
                 <div class="notification-item">
