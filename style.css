@@ -1195,8 +1195,8 @@ a:hover {
     .just-added-content {
         scrollbar-gutter: stable;
         /* Reserves space */
-        padding-left: 20px !important;
-        /* Reduced from 26px to 20px as requested */
+        padding-left: 0 !important;
+        /* Visual spacing handled by layout gap (20px) */
         padding-right: 10px;
         /* Explicit right padding */
         box-sizing: border-box;
@@ -1497,6 +1497,8 @@ a:hover {
     gap: 12px;
     align-items: center;
     flex: 1;
+    padding-left: 0;
+    /* Ensure icon aligns with content at gap edge */
 }
 
 .icon-pink {
