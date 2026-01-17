@@ -37,10 +37,14 @@
         <main class="app-content">
 
             <!-- Pink Banner -->
-            <section class="landing-banner">
-                <p>Save your <strong>favorite products</strong>, track <strong>price changes</strong>, set <strong>price
-                        alerts</strong> to buy them at the <strong>lowest price</strong>!</p>
-            </section>
+            <!-- 1. Banner with Bell Icon -->
+            <div class="landing-banner">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
+                </svg>
+                <span>Save your favorite product and we will track the price for you</span>
+            </div>
 
             <!-- Add Products Call to Action -->
             <section class="add-products-cta">
@@ -55,6 +59,8 @@
                     Add products
                 </button>
             </section>
+
+            <hr class="section-divider">
 
             <!-- 1. Shops Carousel -->
             <section class="landing-section">
@@ -75,6 +81,8 @@
                     <button class="btn-go">GO!</button>
                 </div>
             </section>
+
+            <hr class="section-divider">
 
             <!-- 2. Categories Carousel -->
             <section class="landing-section">
@@ -99,6 +107,8 @@
                     </button>
                 </div>
             </section>
+
+            <hr class="section-divider">
 
             <!-- 3. Celebrities Carousel -->
             <section class="landing-section">
@@ -284,8 +294,8 @@
                 .then(data => {
                     const list = document.getElementById('shops-list');
                     data.forEach(shop => {
-                        // Use Google Favicon Service for 64px icons
-                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=64`;
+                        // Use Google Favicon Service for 32px icons as requested
+                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=32`;
 
                         const li = document.createElement('li');
                         li.className = 'splide__slide shop-slide';
@@ -302,7 +312,7 @@
                         perPage: 4,
                         gap: '1rem',
                         pagination: false,
-                        arrows: false, // Arrows visible? User screenshot doesn't show them explicitly but carousel usually implies them. Let's hide for clean look or add if needed.
+                        arrows: true, // Arrows Enabled
                         breakpoints: {
                             600: { perPage: 2 },
                         }

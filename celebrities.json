@@ -17,19 +17,21 @@
     },
     {
         "nickname": "travel_jen",
-        "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80"{
-            "name": "Dwayne Johnson",
-            "image": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=200&q=80",
-            "isVerified": true
-        },
-        {
-            "name": "Selena Gomez",
-            "image": "https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=200&q=80",
-            "isVerified": true
-        },
-        {
-            "name": "Kylie Jenner",
-            "image": "https://images.unsplash.com/photo-1627067228308-5926c9df3c94?auto=format&fit=crop&w=200&q=80",
-            "isVerified": true
-        }
-    ]
+        "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+        "name": "Dwayne Johnson",
+        "image": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=200&q=80",
+        "isVerified": true
+    },
+    {
+        "name": "Selena Gomez",
+        "image": "https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=200&q=80",
+        "isVerified": true
+    },
+    {
+        "name": "Kylie Jenner",
+        "image": "https://images.unsplash.com/photo-1627067228308-5926c9df3c94?auto=format&fit=crop&w=200&q=80",
+        "isVerified": true
+    }
+]

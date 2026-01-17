@@ -1652,20 +1652,31 @@ a:hover {
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
-    /* Standardize radius */
-    border-top-left-radius: 0;
-    /* Not rounded on top left */
-    border-top-right-radius: 0;
-    /* Not rounded on top right */
-    margin-bottom: 20px;
-    /* Removed negative margins to sit naturally */
+    /* Rounded all corners */
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 @media (min-width: 1201px) {
     .landing-banner {
-        border-radius: 0 0 8px 8px;
-        /* Rounded bottom */
+        border-radius: 8px;
     }
+}
+
+/* Bell Icon in Banner */
+.landing-banner svg {
+    flex-shrink: 0;
+}
+
+/* Dividers */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
 }
 
 /* 2. Add Products CTA */
@@ -1674,9 +1685,9 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     background: #f8f9fa;
-    padding: 15px;
+    padding: 8px 16px;
+    /* Adjusted padding */
     border-radius: 8px;
-    /* 8px radius */
     margin-bottom: 30px;
 }
 
@@ -1695,12 +1706,10 @@ a:hover {
     gap: 8px;
     font-weight: 500;
     width: fit-content;
-    /* Force fit content */
     cursor: pointer;
     border: none;
     transition: opacity 0.2s;
     white-space: nowrap;
-    /* Prevent wrapping */
 }
 
 .action-btn.pink-filled:hover {
@@ -1728,7 +1737,6 @@ a:hover {
     display: flex;
     border: 1px solid #ccc;
     border-radius: 8px;
-    /* Match banner radius (8px) */
     overflow: hidden;
     padding: 0;
 }
@@ -1743,13 +1751,11 @@ a:hover {
 
 .btn-go {
     background: var(--pink-highlight);
-    /* Purple theme color */
     color: white;
     border: none;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    /* Circle */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1760,7 +1766,6 @@ a:hover {
 
 .btn-go:hover {
     background: #a91b93;
-    /* Darker purple */
 }
 
 /* 5. Carousels Customization */
@@ -1771,18 +1776,17 @@ a:hover {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* Stack favicon and text */
     align-items: center;
     justify-content: center;
     height: 100px;
-    /* Increased height */
     background: white;
     gap: 8px;
 }
 
 .shop-card img {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    /* 32x32 Favicons */
+    height: 32px;
     object-fit: contain;
 }
 
@@ -1796,81 +1800,31 @@ a:hover {
 
 /* Categories */
 .category-card {
-    height: 120px;
+    height: 100px;
+    /* Reduced to 100px */
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.category-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+/* Splide Arrows Hover Effect */
+.splide__arrow {
+    background: white;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.category-name {
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
+.splide__arrow:hover {
+    background: var(--pink-highlight);
+    opacity: 1;
 }
 
-.category-icon {
-    color: white;
-    background: #ffa500;
-    /* Orange dot */
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    line-height: 1;
-}
-
-/* Celebrities */
-.celeb-card {
-    display: flex;
-    justify-content: center;
-}
-
-.celeb-avatar-wrapper {
-    position: relative;
-    width: 60px;
-    height: 60px;
-}
-
-.celeb-avatar-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.celeb-badge {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    background: #007bff;
-    /* Blue tick */
-    color: white;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid white;
+.splide__arrow:hover svg {
+    fill: white;
 }
 
 /* 6. Footer */
