@@ -1484,151 +1484,152 @@ a:hover {
         color: var(--text-light);
         /* Enforce grey */
     }
+}
 
-    /* =========================================
+/* =========================================
    REFACTORED LAYOUT & OVERRIDES
    Migrated from inline styles and HTML <style>
    ================================********* */
 
-    /* Utility Classes for Icons (replacing inline styles) */
-    .header-title-row {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex: 1;
-    }
+/* Utility Classes for Icons (replacing inline styles) */
+.header-title-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1;
+}
 
-    .icon-pink {
-        color: var(--pink-highlight);
-    }
+.icon-pink {
+    color: var(--pink-highlight);
+}
 
-    .filter-section {
-        margin-bottom: 5px;
-        /* Spacing Fix */
-    }
+.filter-section {
+    margin-bottom: 5px;
+    /* Spacing Fix */
+}
 
-    /* =========================================
+/* =========================================
    DESKTOP LAYOUT (min-width: 1201px)
    placed at end for natural cascade
    ================================********* */
-    @media (min-width: 1201px) {
-        body {
-            padding-right: 0;
-        }
-
-        .main-layout {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: flex-start;
-            max-width: 1200px;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0 auto;
-            justify-content: center;
-            gap: 20px;
-            /* Standardized Gap */
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        /* Fixed Content Column */
-        .app-content {
-            width: 500px;
-            min-width: 500px;
-            max-width: 500px;
-            flex: 0 0 500px;
-            margin: 0;
-        }
-
-        /* Reset width for children of app-content */
-        .app-content>section,
-        .app-content .product-card,
-        .app-content .search-section,
-        .app-content .filter-section {
-            width: 100%;
-            max-width: none;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        /* Sidebar Fixed */
-        .just-added-sidebar {
-            position: sticky;
-            top: 70px;
-            width: 350px;
-            min-width: 350px;
-            flex-shrink: 0;
-            height: calc(100vh - 100px);
-            border: none;
-            display: flex;
-            overflow-y: hidden;
-        }
-
-        .just-added-sidebar:hover {
-            overflow-y: auto;
-        }
-
-        /* App Header Desktop Constraints */
-        .app-header {
-            position: sticky;
-            top: 0;
-            z-index: 1020;
-        }
-
-        .app-header .header-container {
-            max-width: 1200px;
-            width: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
-
-        .just-added-header {
-            background: transparent;
-        }
+@media (min-width: 1201px) {
+    body {
+        padding-right: 0;
     }
 
-    /* =========================================
+    .main-layout {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        max-width: 1200px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        justify-content: center;
+        gap: 20px;
+        /* Standardized Gap */
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Fixed Content Column */
+    .app-content {
+        width: 500px;
+        min-width: 500px;
+        max-width: 500px;
+        flex: 0 0 500px;
+        margin: 0;
+    }
+
+    /* Reset width for children of app-content */
+    .app-content>section,
+    .app-content .product-card,
+    .app-content .search-section,
+    .app-content .filter-section {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Sidebar Fixed */
+    .just-added-sidebar {
+        position: sticky;
+        top: 70px;
+        width: 350px;
+        min-width: 350px;
+        flex-shrink: 0;
+        height: calc(100vh - 100px);
+        border: none;
+        display: flex;
+        overflow-y: hidden;
+    }
+
+    .just-added-sidebar:hover {
+        overflow-y: auto;
+    }
+
+    /* App Header Desktop Constraints */
+    .app-header {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+
+    .app-header .header-container {
+        max-width: 1200px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .just-added-header {
+        background: transparent;
+    }
+}
+
+/* =========================================
    MOBILE LAYOUT (max-width: 1200px)
    ================================********* */
-    @media (max-width: 1200px) {
-        .main-layout {
-            display: block;
-            width: 100%;
-            padding: 0;
-        }
-
-        .just-added-header {
-            background: #fff;
-            border-bottom: 1px solid #dee2e6;
-            flex-shrink: 0;
-            width: 100%;
-        }
-
-        /* Off-Canvas Sidebar */
-        .just-added-sidebar {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            max-width: 90%;
-            height: 100%;
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            transition: right 0.3s ease;
-            /* Ensure transition is defined */
-        }
-
-        .just-added-sidebar.active {
-            right: 0;
-        }
-
-        .just-added-content {
-            flex: 1;
-            overflow-y: auto;
-            width: 100%;
-        }
+@media (max-width: 1200px) {
+    .main-layout {
+        display: block;
+        width: 100%;
+        padding: 0;
     }
+
+    .just-added-header {
+        background: #fff;
+        border-bottom: 1px solid #dee2e6;
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    /* Off-Canvas Sidebar */
+    .just-added-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        max-width: 90%;
+        height: 100%;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        transition: right 0.3s ease;
+        /* Ensure transition is defined */
+    }
+
+    .just-added-sidebar.active {
+        right: 0;
+    }
+
+    .just-added-content {
+        flex: 1;
+        overflow-y: auto;
+        width: 100%;
+    }
+}
