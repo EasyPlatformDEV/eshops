@@ -168,8 +168,10 @@ body {
 }
 
 /* Filters */
-.filters-section {
-    margin-bottom: 15px;
+/* Filters */
+.filter-section {
+    margin-bottom: 5px;
+    /* Reduced from 15px to bring sort closer */
     font-size: 0.9rem;
 }
 
