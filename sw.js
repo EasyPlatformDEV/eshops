@@ -1,6 +1,6 @@
 const CACHE_NAME = 'eshops-v1';
 const ASSETS = [
-    'index.html',
+    'myproducts.html',
     'style.css',
     'app.js',
     'manifest.json'

@@ -1,7 +1,7 @@
 {
   "name": "eShops PWA App",
   "short_name": "eShops",
-  "start_url": "index.html",
+  "start_url": "myproducts.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
