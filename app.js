@@ -298,6 +298,102 @@ const app = {
         if (overlay) overlay.addEventListener('click', closeModal);
     },
 
+    initJustAdded: async function () {
+        const jaBtn = document.getElementById('just-added-btn');
+        const jaLink = document.getElementById('menu-link-just-added');
+        const jaSidebar = document.getElementById('just-added-sidebar');
+        const jaOverlay = document.getElementById('just-added-overlay');
+        const jaClose = document.getElementById('just-added-close');
+        const jaContent = document.getElementById('just-added-content');
+
+        const openJa = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            // If mobile (check by class or media query, but toggling class is safe)
+            if (jaSidebar) jaSidebar.classList.add('active');
+            if (jaOverlay) jaOverlay.classList.add('active');
+
+            // If opened via menu, close menu
+            const menuModal = document.getElementById('menu-modal');
+            const menuOverlay = document.getElementById('menu-overlay');
+            if (menuModal && menuModal.classList.contains('active')) {
+                menuModal.classList.remove('active');
+                if (menuOverlay) menuOverlay.classList.remove('active');
+            }
+        };
+
+        const closeJa = () => {
+            if (jaSidebar) jaSidebar.classList.remove('active');
+            if (jaOverlay) jaOverlay.classList.remove('active');
+        };
+
+        if (jaBtn) jaBtn.addEventListener('click', openJa);
+        if (jaLink) jaLink.addEventListener('click', openJa);
+        if (jaClose) jaClose.addEventListener('click', closeJa);
+        if (jaOverlay) jaOverlay.addEventListener('click', closeJa);
+
+        // Fetch Data
+        try {
+            const response = await fetch('just_added.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("Just Added JSON not found");
+            const items = await response.json();
+            this.renderJustAdded(items, jaContent);
+        } catch (error) {
+            console.error("Error loading Just Added:", error);
+            if (jaContent) jaContent.innerHTML = '<p style="padding:15px; text-align:center; color:#999;">Failed to load items.</p>';
+        }
+    },
+
+    renderJustAdded: function (items, container) {
+        if (!container) return;
+        container.innerHTML = '';
+
+        items.forEach(item => {
+            // Time Ago Calculation
+            const addedDate = new Date(item.dateAdded);
+            const now = new Date(); // User said always use today's date to calculate
+            // Assume input dates are valid ISO strings
+
+            const diffMs = now - addedDate;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHrs = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHrs / 24);
+
+            let timeAgo = '';
+            if (diffDays > 0) timeAgo = `${diffDays}d ago`;
+            else if (diffHrs > 0) timeAgo = `${diffHrs}h ago`;
+            else if (diffMins > 0) timeAgo = `${diffMins}m ago`;
+            else timeAgo = 'Just now';
+
+            const html = `
+                <div class="ja-item">
+                    <div class="ja-header">
+                        <img src="${item.userAvatar}" alt="${item.username}" class="ja-avatar">
+                        <span class="ja-username">${item.username}</span>
+                        <span class="ja-time">${timeAgo}</span>
+                    </div>
+                    <div class="ja-body">
+                        <img src="${item.image}" alt="${item.title}" class="ja-image">
+                        <div class="ja-details">
+                            <div class="ja-title">${item.title}</div>
+                            <div class="ja-price-row">
+                                <span class="ja-price">${item.price.toFixed(2)} €</span>
+                                <span class="ja-shop">${item.shop}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ja-actions">
+                        <button class="ja-btn ja-btn-add">Add to your products</button>
+                        <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy at ${item.shop.split('.')[0]}</a>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+    },
+
     renderNotifications: function (alerts, container) {
         container.innerHTML = '';
 
@@ -346,4 +442,5 @@ document.addEventListener('DOMContentLoaded', () => {
     app.initDropdowns();
     app.initNotifications();
     app.initMenu();
+    app.initJustAdded();
 });

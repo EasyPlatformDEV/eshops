@@ -22,6 +22,17 @@
                 <img src="logo.png" alt="eShops Logo" class="logo-img">
             </div>
             <div class="header-right">
+                <button class="just-added-btn" id="just-added-btn" aria-label="Just Added">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M7 9v12h4v-7h2v7h4V9l-5-4-5 4zm9 10h-2v-4h-2v4H8v-6.5l4-3.2 4 3.2V19zM6 2h12v2H6zm0 3h12v.5H6z"
+                            fill="currentColor" style="display:none;" />
+                        <!-- Placeholder layout, actual speaker icon below -->
+                        <path
+                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
                 <div class="notification-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
                         <path
@@ -171,6 +182,16 @@
                 </span>
                 My products
             </a>
+            <a href="#" class="menu-item" id="menu-link-just-added">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Just Added
+            </a>
             <a href="#" class="menu-item" id="menu-link-notifications">
                 <span class="menu-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
@@ -221,6 +242,24 @@
             </a>
         </div>
     </div>
+
+    <!-- Just Added Sidebar (Fixed on Desktop, Modal on Mobile) -->
+    <aside id="just-added-sidebar" class="just-added-sidebar">
+        <div class="just-added-header">
+            <h3>Just Added</h3>
+            <button class="just-added-close" id="just-added-close">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+        <div class="just-added-content" id="just-added-content">
+            <!-- Content loaded via JS -->
+        </div>
+    </aside>
+    <div class="just-added-overlay" id="just-added-overlay"></div>
 
     <script src="app.js"></script>
 </body>
