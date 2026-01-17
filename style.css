@@ -820,7 +820,8 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 2000;
+    /* Increased from 999 to cover sticky header (1020) */
     opacity: 0;
     transition: opacity 0.6s ease;
 }
@@ -845,7 +846,8 @@ a:hover {
     height: 100%;
     background: #fff;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 2001;
+    /* Increased from 1000 */
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -984,7 +986,8 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 2000;
+    /* Increased from 999 */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1004,7 +1007,8 @@ a:hover {
     height: 100%;
     background: #fff;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 2001;
+    /* Increased from 1000 */
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -1131,8 +1135,8 @@ a:hover {
         /* Align top */
         max-width: 1200px;
         margin: 0 auto;
-        padding-top: 20px;
-        /* Gap from header */
+        padding-top: 10px;
+        /* Gap from header - Reduced from 20px */
         gap: 20px;
         justify-content: center;
     }
@@ -1166,8 +1170,8 @@ a:hover {
 @media (min-width: 1201px) {
     .just-added-sidebar {
         position: sticky;
-        top: 80px;
-        /* Header height + gap */
+        top: 70px;
+        /* Header height + gap (Reduced from 80px) */
         width: 320px;
         min-width: 320px;
         /* Prevent shrinking */
