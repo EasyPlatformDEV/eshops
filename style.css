@@ -979,26 +979,39 @@ a:hover {
 
 .menu-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-end;
-    /* Close button on right? Or consistent with Reddit style, maybe left? Screenshot shows items. Usually close is implied or explicit. I'll put a close button. */
-    padding: 15px;
-    /* border-bottom: 1px solid var(--border-color); */
-    /* Optional, cleaner without */
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--pink-highlight);
 }
 
 .menu-close {
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--text-light);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.menu-close:hover {
     color: var(--text-color);
-    padding: 5px;
+    transform: rotate(90deg);
 }
 
 .menu-content {
     flex: 1;
     overflow-y: auto;
-    padding-top: 10px;
+    padding-top: 0;
+    /* Removing top padding since header has padding/border now */
 }
 
 .menu-item {
