@@ -274,16 +274,17 @@ body {
 }
 
 /* Sort */
+/* Sort */
 .sort-section {
     margin-bottom: 5px;
-    /* Reduced from 15px */
+    margin-top: 35px;
+    /* Added gap above (was default/0 before) */
     font-size: 0.9rem;
     color: var(--text-light);
     display: flex;
     align-items: center;
     gap: 3px;
     justify-content: flex-start;
-    /* Ensure left align */
 }
 
 /* Ensure checkbox matches */
@@ -1171,23 +1172,18 @@ a:hover {
     .just-added-sidebar {
         position: sticky;
         top: 70px;
-        /* Header height + gap (Reduced from 80px) */
-        width: 320px;
-        min-width: 320px;
-        /* Prevent shrinking */
+        width: 350px;
+        /* Increased from 320px */
+        min-width: 350px;
         flex-shrink: 0;
-        /* Prevent shrinking */
         height: calc(100vh - 100px);
         background-color: var(--bg-light);
         border: none;
-        /* Removed border */
         display: flex;
         flex-direction: column;
         overflow-y: hidden;
-        /* Parent hidden */
         padding-bottom: 20px;
         border-radius: 8px;
-        /* Optional: rounded corners */
     }
 
     .just-added-sidebar:hover .just-added-content {
@@ -1195,10 +1191,14 @@ a:hover {
         /* Scroll ONLY content on hover */
     }
 
+    .just-added-content {
+        scrollbar-gutter: stable;
+        /* Reserves space for scrollbar to prevent shift */
+    }
+
     /* Smaller title on desktop */
     .just-added-header h3 {
         font-size: 0.95rem;
-        /* Reduced from 1.1rem */
     }
 }
 
@@ -1459,4 +1459,22 @@ a:hover {
     margin: 0;
     line-height: 1.2;
     color: var(--pink-highlight);
+}
+
+/* Username Color in Just Added */
+.ja-username {
+    font-weight: 600;
+    color: var(--pink-highlight);
+    /* Theme Purple */
+    font-size: 0.9rem;
+}
+
+/* Mobile Adjustments for Header Description */
+@media (max-width: 1200px) {
+    .header-description {
+        font-size: 0.75rem;
+        /* Smaller on mobile */
+        color: var(--text-light);
+        /* Enforce grey */
+    }
 }
