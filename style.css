@@ -1180,7 +1180,7 @@ a:hover {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--pink-highlight);
 }
 
 .just-added-close {
@@ -1314,13 +1314,13 @@ a:hover {
 }
 
 .ja-btn-add {
-    background: #f0f2f5;
-    color: var(--text-color);
+    background: #fdf2f7;
+    color: var(--pink-highlight);
     border: 1px solid transparent;
 }
 
 .ja-btn-add:hover {
-    background: #e4e6eb;
+    background: #f8e1ea;
 }
 
 .ja-btn-buy {

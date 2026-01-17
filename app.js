@@ -385,8 +385,8 @@ const app = {
                         </div>
                     </div>
                     <div class="ja-actions">
-                        <button class="ja-btn ja-btn-add">Add to your products</button>
-                        <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy at ${item.shop.split('.')[0]}</a>
+                        <button class="ja-btn ja-btn-add">Add this</button>
+                        <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy now</a>
                     </div>
                 </div>
             `;
