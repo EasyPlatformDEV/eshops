@@ -364,7 +364,8 @@ body {
 
 /* Left Column */
 .product-left-col {
-    padding: 15px;
+    padding: 10px;
+    /* Reduced from 15px to match right col */
     text-align: center;
     display: flex;
     flex-direction: column;
