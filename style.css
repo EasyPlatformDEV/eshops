@@ -384,8 +384,8 @@ body {
 .discount-badge {
     position: absolute;
     top: 5px;
-    left: -15px;
-    /* Moved to left as requested */
+    left: -55px;
+    /* Moved further left to avoid overlap */
     right: auto;
     /* Adjust based on image container handling */
     background-color: var(--pink-highlight);
