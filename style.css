@@ -1431,3 +1431,30 @@ a:hover {
 .ja-btn-buy:hover {
     background: #c8e6c9;
 }
+
+/* Header Description */
+.header-description {
+    margin: 3px 0 0 28px;
+    /* Indent to align with text start */
+    font-size: 0.8rem;
+    color: var(--text-light);
+    /* Grey color */
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Adjust header strength and sizing */
+.just-added-header h3,
+.notifications-header h3 {
+    font-size: 1rem !important;
+    /* Unified size */
+    font-weight: 500 !important;
+    /* Less bold */
+    align-items: center;
+}
+
+/* Ensure icons align nicely */
+.just-added-header h3 svg,
+.notifications-header h3 svg {
+    display: block;
+}
