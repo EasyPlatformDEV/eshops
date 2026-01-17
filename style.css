@@ -1047,8 +1047,7 @@ a:hover {
 }
 
 /* Make icons slightly muted/standard unless active/hover? */
-fill: currentColor;
-}
+
 
 /* -------------------------------------------------------------------------- */
 /*                            JUST ADDED FEATURE                              */
@@ -1059,7 +1058,8 @@ fill: currentColor;
 .just-added-btn {
     background: none;
     border: none;
-    color: var(--text-color);
+    color: var(--blue-highlight);
+    /* Blue as requested */
     padding: 8px;
     /* Match notification icon padding area */
     cursor: pointer;
@@ -1123,19 +1123,21 @@ fill: currentColor;
     .just-added-sidebar {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -400px;
         /* Hidden off-screen right */
         bottom: auto;
         height: 100%;
-        width: 100%;
-        /* Full width or partial? Modal usually full or large on mobile. Let's do partial slide-in or full. User said "modal overlay". Let's do standard right drawer style like Notifications. */
-        max-width: 100%;
+        width: 400px;
+        /* Fixed width like notifications modal */
+        max-width: 90%;
+        /* Max width 90% */
         border-left: none;
         z-index: 2000;
         /* Higher than notifications? */
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         background: #fff;
         display: flex;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .just-added-sidebar.active {
@@ -1322,12 +1324,13 @@ fill: currentColor;
 }
 
 .ja-btn-buy {
-    background: #e8f0fe;
-    color: var(--blue-highlight);
+    background: #e8f5e9;
+    color: #2e7d32;
     border: 1px solid transparent;
+    border-radius: 4px;
     /* Or specific style user might want */
 }
 
 .ja-btn-buy:hover {
-    background: #d2e3fc;
+    background: #c8e6c9;
 }
