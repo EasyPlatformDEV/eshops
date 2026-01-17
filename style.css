@@ -169,9 +169,10 @@ body {
 
 /* Filters */
 /* Filters */
+/* Filters */
 .filter-section {
-    margin-bottom: 5px;
-    /* Reduced from 15px to bring sort closer */
+    margin-bottom: 0px !important;
+    /* Ensure no gap below */
     font-size: 0.9rem;
 }
 
@@ -276,8 +277,8 @@ body {
 /* Sort */
 .sort-section {
     margin-bottom: 5px;
-    margin-top: 22px;
-    /* Reduced from 35px */
+    margin-top: 20px;
+    /* Exact 20px gap requested by user */
     font-size: 0.9rem;
     color: var(--text-light);
     display: flex;
