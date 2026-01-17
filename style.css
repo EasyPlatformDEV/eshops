@@ -1008,7 +1008,7 @@ a:hover {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: normal;
     transition: background-color 0.2s;
     gap: 15px;
 }

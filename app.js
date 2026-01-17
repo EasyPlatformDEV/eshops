@@ -231,6 +231,21 @@ const app = {
         if (menuClose) menuClose.addEventListener('click', closeMenu);
         if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
 
+        // Notifications link handler
+        const notificationsLink = document.getElementById('menu-link-notifications');
+        if (notificationsLink) {
+            notificationsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeMenu(); // Close the menu
+
+                // Open notifications modal
+                const notifModal = document.getElementById('notifications-modal');
+                const notifOverlay = document.getElementById('notifications-overlay');
+                if (notifModal) notifModal.classList.add('active');
+                if (notifOverlay) notifOverlay.classList.add('active');
+            });
+        }
+
         // Close on escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
