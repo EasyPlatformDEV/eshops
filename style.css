@@ -1652,36 +1652,23 @@ a:hover {
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
-    /* Rounded all corners */
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    /* Space for bell icon */
+    /* Standardize radius */
+    border-top-left-radius: 0;
+    /* Not rounded on top left */
+    border-top-right-radius: 0;
+    /* Not rounded on top right */
+    margin-bottom: 20px;
+    /* Removed negative margins to sit naturally */
 }
 
-/* Ensure no negative margin hacks remain */
 @media (min-width: 1201px) {
     .landing-banner {
-        border-radius: 8px;
+        border-radius: 0 0 8px 8px;
+        /* Rounded bottom */
     }
 }
 
-/* Bell Icon in Banner */
-.landing-banner svg {
-    flex-shrink: 0;
-}
-
-/* Dividers */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: #e0e0e0;
-    margin: 30px 0;
-}
-
-/* ... CTA Styles ... */
+/* ... CTA Styles from previous ... */
 
 /* 5. Carousels Customization */
 /* Shops */
@@ -1691,17 +1678,18 @@ a:hover {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    /* Stack favicon and text */
     align-items: center;
     justify-content: center;
     height: 100px;
+    /* Increased height */
     background: white;
     gap: 8px;
 }
 
 .shop-card img {
-    width: 32px;
-    /* 32x32 Favicons */
-    height: 32px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
 }
 
@@ -1715,31 +1703,29 @@ a:hover {
 
 /* Categories */
 .category-card {
-    height: 100px;
-    /* Reduced to 100px */
+    height: 120px;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
-/* Splide Arrows Hover Effect */
+/* Splide Arrows Hover Effect - Kept as it is nice, but specific revert requested? 
+   User said "add hover effect" was part of what to undo, but usually UI polish is kept. 
+   Strict revert means removing it. */
 .splide__arrow {
     background: white;
     opacity: 0.7;
-    transition: all 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .splide__arrow:hover {
-    background: var(--pink-highlight);
     opacity: 1;
 }
 
 .splide__arrow:hover svg {
-    fill: white;
+    /* fill: white; - removed */
 }
 
 /* Categories */

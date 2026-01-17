@@ -38,11 +38,8 @@
 
             <!-- 1. Banner with Bell Icon -->
             <div class="landing-banner">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path
-                        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
-                </svg>
-                <span>Save your favorite product and we will track the price for you</span>
+                <p>Save your <strong>favorite products</strong>, track <strong>price changes</strong>, set <strong>price
+                        alerts</strong> to buy them at the <strong>lowest price</strong>!</p>
             </div>
 
             <!-- Add Products CTA -->
@@ -55,8 +52,6 @@
                     Add products
                 </button>
             </div>
-
-            <hr class="section-divider">
 
             <!-- 1. Shops Carousel -->
             <section class="landing-section">
@@ -81,8 +76,6 @@
                     </button>
                 </div>
             </section>
-
-            <hr class="section-divider">
 
             <!-- 2. Categories Carousel -->
             <section class="landing-section">
@@ -294,8 +287,8 @@
                 .then(data => {
                     const list = document.getElementById('shops-list');
                     data.forEach(shop => {
-                        // Use Google Favicon Service for 32px icons as requested
-                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=32`;
+                        // Revert to 64px
+                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=64`;
 
                         const li = document.createElement('li');
                         li.className = 'splide__slide shop-slide';
@@ -312,7 +305,7 @@
                         perPage: 4,
                         gap: '1rem',
                         pagination: false,
-                        arrows: true, // Arrows Enabled
+                        arrows: false, // Reverted to false
                         breakpoints: {
                             600: { perPage: 2 },
                         }
@@ -353,16 +346,13 @@
                 .then(data => {
                     const list = document.getElementById('celebrities-list');
                     data.forEach(celeb => {
-                        // Handle both data formats (nickname/avatar vs name/image)
-                        const name = celeb.name || celeb.nickname;
-                        const image = celeb.image || celeb.avatar;
-
+                        // Simple logic again
                         const li = document.createElement('li');
                         li.className = 'splide__slide celeb-slide';
                         li.innerHTML = `
                             <div class="celeb-card">
                                 <div class="celeb-avatar-wrapper">
-                                    <img src="${image}" alt="${name}">
+                                    <img src="${celeb.avatar}" alt="${celeb.nickname}">
                                     <div class="celeb-badge"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="white"/></svg></div>
                                 </div>
                             </div>
