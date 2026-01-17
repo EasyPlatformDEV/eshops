@@ -6,138 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShops SPA PWA</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* CRITICAL CSS OVERRIDES */
-        /* Desktop Layout */
-        @media (min-width: 1201px) {
-            body {
-                padding-right: 0 !important;
-            }
-
-            .main-layout {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: flex-start !important;
-                max-width: 1200px !important;
-                width: 100% !important;
-                /* Ensure full width like header */
-                box-sizing: border-box !important;
-                /* Fix alignment shift */
-                margin: 0 auto !important;
-                justify-content: center !important;
-                gap: 20px !important;
-                /* Standardize gap to 20px */
-                padding-top: 10px;
-                /* Reduced from 20px */
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-            }
-
-            .app-content {
-                width: 500px !important;
-                min-width: 500px !important;
-                max-width: 500px !important;
-                flex: 0 0 500px !important;
-                /* Don't grow, don't shrink */
-                margin: 0 !important;
-            }
-
-            .container.app-content>section,
-            .container.app-content .product-card,
-            .container.app-content .search-section,
-            .container.app-content .filter-section {
-                width: 100% !important;
-                max-width: none !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-
-
-
-            .just-added-sidebar {
-                position: sticky !important;
-                top: 70px !important;
-                width: 350px !important;
-                /* Fixed: 350px override */
-                min-width: 350px !important;
-                flex-shrink: 0 !important;
-                height: calc(100vh - 100px) !important;
-                border: none !important;
-                display: flex !important;
-                overflow-y: hidden !important;
-            }
-
-            .just-added-sidebar:hover {
-                overflow-y: auto !important;
-            }
-
-            .app-header .header-container {
-                max-width: 1200px !important;
-                /* MATCH BODY WIDTH */
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-                margin: 0 auto !important;
-                /* CENTER IT */
-            }
-
-            .app-header {
-                position: sticky !important;
-                top: 0 !important;
-                z-index: 1020 !important;
-                /* Above everything but modals */
-            }
-
-            .just-added-header {
-                background: transparent !important;
-            }
-        }
-
-        /* Mobile Header and Layout */
-        @media (max-width: 1200px) {
-            .main-layout {
-                display: block !important;
-                width: 100% !important;
-                padding: 0 !important;
-            }
-
-            .just-added-header {
-                background: #fff !important;
-                border-bottom: 1px solid #dee2e6 !important;
-                flex-shrink: 0 !important;
-                width: 100% !important;
-            }
-
-            .just-added-sidebar {
-                position: fixed !important;
-                top: 0 !important;
-                right: -400px;
-                width: 400px !important;
-                max-width: 90% !important;
-                height: 100% !important;
-                z-index: 2000 !important;
-                /* ENSURE FLEX COLUMN */
-                display: flex !important;
-                flex-direction: column !important;
-            }
-
-            .just-added-sidebar.active {
-                right: 0 !important;
-            }
-
-            .just-added-content {
-                flex: 1 !important;
-                overflow-y: auto !important;
-                width: 100% !important;
-            }
-        }
-
-        /* Spacing Fixes */
-        .filter-section {
-            margin-bottom: 5px !important;
-        }
-    </style>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -263,8 +131,8 @@
         <!-- Just Added Sidebar (Fixed on Desktop, Modal on Mobile) -->
         <aside id="just-added-sidebar" class="just-added-sidebar">
             <div class="just-added-header">
-                <div style="display: flex; gap: 12px; align-items: center; flex: 1;">
-                    <svg viewBox="0 0 24 24" width="32" height="32" style="color: var(--pink-highlight);">
+                <div class="header-title-row">
+                    <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
                         <path
                             d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
                             fill="currentColor" />
@@ -293,8 +161,8 @@
     <div class="notifications-overlay" id="notifications-overlay"></div>
     <div class="notifications-modal" id="notifications-modal">
         <div class="notifications-header">
-            <div style="display: flex; gap: 12px; align-items: center; flex: 1;">
-                <svg viewBox="0 0 24 24" width="32" height="32" style="color: var(--pink-highlight);">
+            <div class="header-title-row">
+                <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
                     <path
                         d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
                         fill="currentColor" />
