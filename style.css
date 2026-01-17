@@ -1188,6 +1188,12 @@ a:hover {
         overflow-y: auto;
         /* Scroll ONLY content on hover */
     }
+
+    /* Smaller title on desktop */
+    .just-added-header h3 {
+        font-size: 0.95rem;
+        /* Reduced from 1.1rem */
+    }
 }
 
 
