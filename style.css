@@ -1521,7 +1521,8 @@ a:hover {
         display: flex;
         flex-wrap: nowrap;
         align-items: flex-start;
-        max-width: 1200px;
+        max-width: 890px;
+        /* 500 (content) + 350 (sidebar) + 20 (gap) + 20 (padding) */
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
@@ -1578,7 +1579,8 @@ a:hover {
     }
 
     .app-header .header-container {
-        max-width: 1200px;
+        max-width: 890px;
+        /* Match main-layout width for alignment */
         width: 100%;
         padding-left: 10px;
         padding-right: 10px;
