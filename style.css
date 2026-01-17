@@ -1143,7 +1143,7 @@ a:hover {
         justify-content: center;
     }
 
-    .container.app-content {
+    .app-content {
         max-width: none;
         /* Allow full width expansion */
         min-width: 0;
