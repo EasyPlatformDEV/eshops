@@ -1195,8 +1195,8 @@ a:hover {
     .just-added-content {
         scrollbar-gutter: stable;
         /* Reserves space */
-        padding-left: 0 !important;
-        /* Visual spacing handled by layout gap (20px) */
+        padding-left: 20px !important;
+        /* Reverted to 20px for card sizing */
         padding-right: 10px;
         /* Explicit right padding */
         box-sizing: border-box;
@@ -1523,14 +1523,14 @@ a:hover {
         display: flex;
         flex-wrap: nowrap;
         align-items: flex-start;
-        max-width: 890px;
-        /* 500 (content) + 350 (sidebar) + 20 (gap) + 20 (padding) */
+        max-width: 870px;
+        /* 500 (content) + 350 (sidebar) + 0 (gap) + 20 (padding) */
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
         justify-content: center;
-        gap: 20px;
-        /* Standardized Gap */
+        gap: 0px;
+        /* Gap removed to rely on sidebar inner padding */
         padding-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
@@ -1581,7 +1581,7 @@ a:hover {
     }
 
     .app-header .header-container {
-        max-width: 890px;
+        max-width: 870px;
         /* Match main-layout width for alignment */
         width: 100%;
         padding-left: 10px;
