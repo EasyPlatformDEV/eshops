@@ -937,3 +937,103 @@ a:hover {
     color: #2451b8;
     text-decoration: underline;
 }
+
+/* Navigation Menu Modal */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.menu-modal {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    /* Hidden off-left */
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-modal.active {
+    left: 0;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Close button on right? Or consistent with Reddit style, maybe left? Screenshot shows items. Usually close is implied or explicit. I'll put a close button. */
+    padding: 15px;
+    /* border-bottom: 1px solid var(--border-color); */
+    /* Optional, cleaner without */
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 5px;
+}
+
+.menu-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    gap: 15px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #f0f2f5;
+    /* Light gray hover like Reddit */
+    text-decoration: none;
+    color: var(--text-color);
+    /* Maintain text color */
+}
+
+/* Icon container specific styling if needed */
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--text-color);
+    /* Icon inherits text color or specific gray */
+}
+
+/* Make icons slightly muted/standard unless active/hover? */
+.menu-item .menu-icon svg {
+    fill: currentColor;
+}

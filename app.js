@@ -207,6 +207,36 @@ const app = {
         }
     },
 
+    initMenu: function () {
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuModal = document.getElementById('menu-modal');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuClose = document.getElementById('menu-close');
+
+        const toggleMenu = () => {
+            if (menuModal) menuModal.classList.toggle('active');
+            if (menuOverlay) menuOverlay.classList.toggle('active');
+        };
+
+        const closeMenu = () => {
+            if (menuModal) menuModal.classList.remove('active');
+            if (menuOverlay) menuOverlay.classList.remove('active');
+        };
+
+        if (menuBtn) menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    },
+
     initNotifications: async function () {
         const bellIcon = document.querySelector('.notification-icon');
         const modal = document.getElementById('notifications-modal');
@@ -300,4 +330,5 @@ document.addEventListener('DOMContentLoaded', () => {
     app.init();
     app.initDropdowns();
     app.initNotifications();
+    app.initMenu();
 });
