@@ -1195,8 +1195,8 @@ a:hover {
     .just-added-content {
         scrollbar-gutter: stable;
         /* Reserves space */
-        padding-left: 26px !important;
-        /* Force override: 10px + 16px gutter balance */
+        padding-left: 20px !important;
+        /* Reduced from 26px to 20px as requested */
         padding-right: 10px;
         /* Explicit right padding */
         box-sizing: border-box;
