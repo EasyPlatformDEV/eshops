@@ -1194,6 +1194,8 @@ a:hover {
     .just-added-content {
         scrollbar-gutter: stable;
         /* Reserves space for scrollbar to prevent shift */
+        padding-left: 26px;
+        /* Balance the right-side gutter (10px + ~16px scrollbar) */
     }
 
     /* Smaller title on desktop */
