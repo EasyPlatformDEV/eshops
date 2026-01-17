@@ -1088,6 +1088,10 @@ a:hover {
 
     .main-layout {
         display: flex;
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        align-items: flex-start;
+        /* Align top */
         max-width: 1200px;
         margin: 0 auto;
         padding-top: 20px;
@@ -1098,7 +1102,8 @@ a:hover {
 
     .container.app-content {
         max-width: 860px;
-        /* Remaining space roughly */
+        width: 100%;
+        /* Ensure it takes width */
         margin: 0;
         flex: 1;
     }
@@ -1126,6 +1131,10 @@ a:hover {
         top: 80px;
         /* Header height + gap */
         width: 320px;
+        min-width: 320px;
+        /* Prevent shrinking */
+        flex-shrink: 0;
+        /* Prevent shrinking */
         height: calc(100vh - 100px);
         background-color: var(--bg-light);
         border: none;
@@ -1225,6 +1234,13 @@ a:hover {
 @media (max-width: 1200px) {
     .just-added-close {
         display: block;
+    }
+
+    .just-added-header {
+        background: #fff;
+        /* Restore white on mobile */
+        border-bottom: 1px solid var(--border-color);
+        /* Restore border on mobile */
     }
 }
 
