@@ -161,7 +161,7 @@ body {
     width: 100%;
     padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: var(--bg-light);
     font-size: 0.9rem;
     /* Decreased from 1rem to match eshops input */
@@ -194,7 +194,7 @@ body {
     width: 100%;
     padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     background: var(--bg-light);
     color: var(--text-color);
 }
@@ -489,7 +489,7 @@ body {
     height: 38px;
     /* Fixed height for all buttons */
     padding: 0 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
     font-size: 0.85rem;
     cursor: pointer;
@@ -1103,8 +1103,8 @@ a:hover {
     }
 
     .container.app-content {
-        max-width: 800px;
-        /* Safer max-width to prevent overflow */
+        max-width: none;
+        /* Allow full width expansion */
         min-width: 0;
         /* Allow shrinking below content size if needed */
         margin: 0;
