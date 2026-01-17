@@ -1745,17 +1745,22 @@ a:hover {
 .action-btn.pink-filled {
     background: var(--pink-highlight);
     color: white;
-    padding: 8px 16px;
+    padding: 8px 10px;
+    /* Reduced horizontal padding */
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    /* Reduced gap */
     font-weight: 500;
     width: fit-content;
+    /* Force fit content */
     cursor: pointer;
     border: none;
     transition: opacity 0.2s;
     white-space: nowrap;
+    font-size: 0.85rem;
+    /* Slightly smaller font to help width reduction */
 }
 
 .action-btn.pink-filled:hover {
