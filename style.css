@@ -275,12 +275,26 @@ body {
 
 /* Sort */
 .sort-section {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    /* Reduced from 15px */
     font-size: 0.9rem;
     color: var(--text-light);
     display: flex;
     align-items: center;
     gap: 3px;
+    justify-content: flex-start;
+    /* Ensure left align */
+}
+
+/* Ensure checkbox matches */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    /* Match sort */
+    color: var(--text-light);
+    /* Match sort */
 }
 
 .sort-dropdown-wrapper {
@@ -1164,15 +1178,15 @@ a:hover {
         display: flex;
         flex-direction: column;
         overflow-y: hidden;
-        /* Hide scrollbar by default */
+        /* Parent hidden */
         padding-bottom: 20px;
         border-radius: 8px;
         /* Optional: rounded corners */
     }
 
-    .just-added-sidebar:hover {
+    .just-added-sidebar:hover .just-added-content {
         overflow-y: auto;
-        /* Show on hover */
+        /* Scroll ONLY content on hover */
     }
 }
 
@@ -1197,6 +1211,11 @@ a:hover {
         background: #fff;
         display: flex;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ensure content scrolls on mobile too */
+    .just-added-sidebar .just-added-content {
+        overflow-y: auto;
     }
 
     .just-added-sidebar.active {
@@ -1230,8 +1249,8 @@ a:hover {
     padding: 15px;
     background: transparent;
     /* Default transparent for Desktop */
-    position: sticky;
-    top: 0;
+    flex-shrink: 0;
+    /* Ensure header doesn't shrink */
     z-index: 10;
 }
 
@@ -1268,6 +1287,8 @@ a:hover {
 .just-added-content {
     flex: 1;
     padding: 10px;
+    overflow-y: hidden;
+    /* Default hidden scroll */
 }
 
 /* Feed Item Card */
@@ -1326,7 +1347,8 @@ a:hover {
     height: 70px;
     object-fit: contain;
     border-radius: 4px;
-    border: 1px solid #f0f0f0;
+    border: none;
+    /* User requested removal */
     flex-shrink: 0;
 }
 
@@ -1334,7 +1356,8 @@ a:hover {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    /* User requested alignment top/bottom */
 }
 
 .ja-title {

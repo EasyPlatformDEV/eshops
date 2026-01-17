@@ -385,7 +385,7 @@ const app = {
                         </div>
                     </div>
                     <div class="ja-actions">
-                        <button class="ja-btn ja-btn-add">Add this</button>
+                        <button class="ja-btn ja-btn-add">Save product</button>
                         <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy now</a>
                     </div>
                 </div>
