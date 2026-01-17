@@ -26,7 +26,7 @@
             }
 
             .container.app-content {
-                max-width: 800px !important;
+                max-width: 860px !important;
                 min-width: 0 !important;
                 margin: 0 !important;
                 flex: 1 !important;
@@ -69,6 +69,8 @@
             .just-added-header {
                 background: #fff !important;
                 border-bottom: 1px solid #dee2e6 !important;
+                flex-shrink: 0 !important;
+                width: 100% !important;
             }
 
             .just-added-sidebar {
@@ -79,10 +81,19 @@
                 max-width: 90% !important;
                 height: 100% !important;
                 z-index: 2000 !important;
+                /* ENSURE FLEX COLUMN */
+                display: flex !important;
+                flex-direction: column !important;
             }
 
             .just-added-sidebar.active {
                 right: 0 !important;
+            }
+
+            .just-added-content {
+                flex: 1 !important;
+                overflow-y: auto !important;
+                width: 100% !important;
             }
         }
 
