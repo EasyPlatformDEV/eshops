@@ -1101,9 +1101,10 @@ a:hover {
     }
 
     .container.app-content {
-        max-width: 860px;
-        width: 100%;
-        /* Ensure it takes width */
+        max-width: 800px;
+        /* Safer max-width to prevent overflow */
+        min-width: 0;
+        /* Allow shrinking below content size if needed */
         margin: 0;
         flex: 1;
     }
@@ -1207,9 +1208,7 @@ a:hover {
     align-items: center;
     padding: 15px;
     background: transparent;
-    /* Transparent to blend with gray */
-    /* border-bottom: 1px solid var(--border-color); */
-    /* Removed border */
+    /* Default transparent for Desktop */
     position: sticky;
     top: 0;
     z-index: 10;
