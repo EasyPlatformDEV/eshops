@@ -1643,6 +1643,7 @@ a:hover {
    ================================********* */
 
 /* 1. Pink Banner */
+/* 1. Pink Banner */
 .landing-banner {
     background: var(--pink-highlight);
     color: white;
@@ -1650,18 +1651,20 @@ a:hover {
     text-align: center;
     font-size: 0.95rem;
     line-height: 1.4;
-    border-radius: 0;
-    /* Full width overlap fix if needed, but container padding applies */
-    margin: -10px -10px 20px -10px;
-    /* Counteract main-layout padding */
+    border-radius: 8px;
+    /* Standardize radius */
+    border-top-left-radius: 0;
+    /* Not rounded on top left */
+    border-top-right-radius: 0;
+    /* Not rounded on top right */
+    margin-bottom: 20px;
+    /* Removed negative margins to sit naturally */
 }
 
 @media (min-width: 1201px) {
     .landing-banner {
-        margin: -10px -10px 20px -10px;
-        /* Reset negative margins inside fixed width container */
         border-radius: 0 0 8px 8px;
-        /* Rounded bottom maybe? */
+        /* Rounded bottom */
     }
 }
 
@@ -1673,6 +1676,7 @@ a:hover {
     background: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
+    /* 8px radius */
     margin-bottom: 30px;
 }
 
@@ -1684,12 +1688,23 @@ a:hover {
 .action-btn.pink-filled {
     background: var(--pink-highlight);
     color: white;
-    padding: 8px 20px;
-    border-radius: 4px;
-    display: flex;
+    padding: 8px 16px;
+    /* Match myproducts button */
+    border-radius: 8px;
+    /* Match myproducts radius */
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     font-weight: 500;
+    width: auto;
+    /* Reduce width */
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.action-btn.pink-filled:hover {
+    opacity: 0.9;
 }
 
 /* 3. Section Titles */
@@ -1712,7 +1727,8 @@ a:hover {
 .search-wrapper {
     display: flex;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 8px;
+    /* Match banner radius (8px) */
     overflow: hidden;
     padding: 0;
 }
@@ -1732,10 +1748,9 @@ a:hover {
     padding: 0 20px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 20px;
-    /* Slight mismatch with container usually requires wrapper styling hacks, but creating rounded button inside works too */
+    border-radius: 6px;
+    /* Slightly smaller internal */
     margin: 3px;
-    border-radius: 17px;
 }
 
 /* 5. Carousels Customization */
@@ -1743,18 +1758,30 @@ a:hover {
 .shop-card {
     border: 1px solid #eee;
     border-radius: 8px;
-    padding: 15px;
-    /* Increase whitespace */
+    padding: 10px;
     display: flex;
+    flex-direction: column;
+    /* Stack favicon and text */
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 100px;
+    /* Increased height */
     background: white;
+    gap: 8px;
 }
 
 .shop-card img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.shop-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.1;
 }
 
 /* Categories */
