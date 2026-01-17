@@ -274,11 +274,10 @@ body {
 }
 
 /* Sort */
-/* Sort */
 .sort-section {
     margin-bottom: 5px;
-    margin-top: 35px;
-    /* Added gap above (was default/0 before) */
+    margin-top: 22px;
+    /* Reduced from 35px */
     font-size: 0.9rem;
     color: var(--text-light);
     display: flex;
@@ -1193,9 +1192,13 @@ a:hover {
 
     .just-added-content {
         scrollbar-gutter: stable;
-        /* Reserves space for scrollbar to prevent shift */
-        padding-left: 26px;
-        /* Balance the right-side gutter (10px + ~16px scrollbar) */
+        /* Reserves space */
+        padding-left: 26px !important;
+        /* Force override: 10px + 16px gutter balance */
+        padding-right: 10px;
+        /* Explicit right padding */
+        box-sizing: border-box;
+        /* Ensure padding shrinks content */
     }
 
     /* Smaller title on desktop */
