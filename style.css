@@ -1668,7 +1668,100 @@ a:hover {
     }
 }
 
-/* ... CTA Styles from previous ... */
+/* 2. Add Products CTA */
+.add-products-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    /* 8px radius */
+    margin-bottom: 30px;
+}
+
+.cta-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.action-btn.pink-filled {
+    background: var(--pink-highlight);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    width: fit-content;
+    /* Force fit content */
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    /* Prevent wrapping */
+}
+
+.action-btn.pink-filled:hover {
+    opacity: 0.9;
+}
+
+/* 3. Section Titles */
+.section-title {
+    font-size: 0.95rem;
+    color: var(--pink-highlight);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.landing-section {
+    margin-bottom: 25px;
+}
+
+/* 4. Search Rows */
+.search-row {
+    margin-bottom: 30px;
+}
+
+.search-wrapper {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Match banner radius (8px) */
+    overflow: hidden;
+    padding: 0;
+}
+
+.search-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.btn-go {
+    background: var(--pink-highlight);
+    /* Purple theme color */
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    /* Circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 3px;
+    transition: background 0.2s;
+}
+
+.btn-go:hover {
+    background: #a91b93;
+    /* Darker purple */
+}
 
 /* 5. Carousels Customization */
 /* Shops */
@@ -1699,33 +1792,6 @@ a:hover {
     color: var(--text-color);
     text-align: center;
     line-height: 1.1;
-}
-
-/* Categories */
-.category-card {
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Splide Arrows Hover Effect - Kept as it is nice, but specific revert requested? 
-   User said "add hover effect" was part of what to undo, but usually UI polish is kept. 
-   Strict revert means removing it. */
-.splide__arrow {
-    background: white;
-    opacity: 0.7;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.splide__arrow:hover {
-    opacity: 1;
-}
-
-.splide__arrow:hover svg {
-    /* fill: white; - removed */
 }
 
 /* Categories */

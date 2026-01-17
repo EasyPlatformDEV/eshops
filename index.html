@@ -36,22 +36,25 @@
     <div class="main-layout">
         <main class="app-content">
 
-            <!-- 1. Banner with Bell Icon -->
-            <div class="landing-banner">
+            <!-- Pink Banner -->
+            <section class="landing-banner">
                 <p>Save your <strong>favorite products</strong>, track <strong>price changes</strong>, set <strong>price
                         alerts</strong> to buy them at the <strong>lowest price</strong>!</p>
-            </div>
+            </section>
 
-            <!-- Add Products CTA -->
-            <div class="add-products-cta">
-                <span class="cta-text">Don't find your product?</span>
-                <button class="action-btn pink-filled" onclick="window.location.href='#'">
+            <!-- Add Products Call to Action -->
+            <section class="add-products-cta">
+                <div class="cta-text">
+                    Found a must-have?<br>
+                    Add the link and start tracking &rarr;
+                </div>
+                <button class="action-btn pink-filled">
                     <svg viewBox="0 0 24 24" width="20" height="20">
                         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                     </svg>
                     Add products
                 </button>
-            </div>
+            </section>
 
             <!-- 1. Shops Carousel -->
             <section class="landing-section">
@@ -69,11 +72,7 @@
             <section class="search-row">
                 <div class="search-wrapper">
                     <input type="text" placeholder="Search by eshop name">
-                    <button class="btn-go" aria-label="Search">
-                        <svg viewBox="0 0 24 24" width="20" height="20">
-                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" fill="currentColor" />
-                        </svg>
-                    </button>
+                    <button class="btn-go">GO!</button>
                 </div>
             </section>
 
@@ -100,8 +99,6 @@
                     </button>
                 </div>
             </section>
-
-            <hr class="section-divider">
 
             <!-- 3. Celebrities Carousel -->
             <section class="landing-section">
@@ -287,7 +284,7 @@
                 .then(data => {
                     const list = document.getElementById('shops-list');
                     data.forEach(shop => {
-                        // Revert to 64px
+                        // Use Google Favicon Service for 64px icons
                         const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=64`;
 
                         const li = document.createElement('li');
@@ -305,7 +302,7 @@
                         perPage: 4,
                         gap: '1rem',
                         pagination: false,
-                        arrows: false, // Reverted to false
+                        arrows: false, // Arrows visible? User screenshot doesn't show them explicitly but carousel usually implies them. Let's hide for clean look or add if needed.
                         breakpoints: {
                             600: { perPage: 2 },
                         }
@@ -346,7 +343,6 @@
                 .then(data => {
                     const list = document.getElementById('celebrities-list');
                     data.forEach(celeb => {
-                        // Simple logic again
                         const li = document.createElement('li');
                         li.className = 'splide__slide celeb-slide';
                         li.innerHTML = `
