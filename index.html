@@ -201,22 +201,65 @@
             </button>
         </div>
         <div class="menu-content">
-            <a href="#" class="menu-item active"> <!-- Assuming Discover is active on Landing -->
-                <span class="menu-icon"><svg viewBox="0 0 24 24" width="24" height="24">
+            <a href="index.html" class="menu-item active">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
                         <path
                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"
                             fill="currentColor" />
-                    </svg></span>
+                    </svg>
+                </span>
                 Discover
             </a>
             <a href="myproducts.html" class="menu-item">
-                <span class="menu-icon"><svg viewBox="0 0 24 24" width="24" height="24">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
                         <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
                             fill="currentColor" />
-                    </svg></span>
+                    </svg>
+                </span>
                 My products
             </a>
-            <!-- Keep other links -->
+            <a href="#" class="menu-item" id="menu-link-just-added">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Just Added
+            </a>
+            <a href="#" class="menu-item" id="menu-link-notifications">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Notifications
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Edit profile
+            </a>
+            <a href="index.html#logout" class="menu-item">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Sign out
+            </a>
         </div>
     </div>
 
@@ -233,16 +276,15 @@
                 .then(data => {
                     const list = document.getElementById('shops-list');
                     data.forEach(shop => {
-                        // Use Clearbit for logos or placeholder if preferred
-                        // Using placehold.co for now or clearbit if domain exists
-                        const logoUrl = `https://logo.clearbit.com/${shop.domain}`;
-                        // Fallback handling would be nice but simple for now
+                        // Use Google Favicon Service for 64px icons
+                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=64`;
 
                         const li = document.createElement('li');
                         li.className = 'splide__slide shop-slide';
                         li.innerHTML = `
                             <div class="shop-card">
-                                <img src="${logoUrl}" alt="${shop.domain}" onerror="this.src='https://placehold.co/100x100?text=${shop.domain.charAt(0)}'">
+                                <img src="${faviconUrl}" alt="${shop.domain}">
+                                <span class="shop-name">${shop.domain}</span>
                             </div>
                         `;
                         list.appendChild(li);
