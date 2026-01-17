@@ -1058,16 +1058,18 @@ a:hover {
 .just-added-btn {
     background: none;
     border: none;
-    color: var(--blue-highlight);
-    /* Blue as requested */
+    color: var(--pink-highlight);
+    /* Purple as requested */
     padding: 8px;
     /* Match notification icon padding area */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: -5px;
-    /* Adjust spacing near notification bell */
+    margin-right: -15px;
+    /* Closer to notification bell */
+    margin-top: 5px;
+    /* Push down to align with bell center */
 }
 
 @media (min-width: 1201px) {
@@ -1080,43 +1082,69 @@ a:hover {
 /* Main Layout Adjustment for Desktop Fixed Sidebar */
 @media (min-width: 1201px) {
     body {
-        padding-right: 320px;
-        /* Make space for the fixed sidebar */
+        padding-right: 0;
+        /* REMOVED padding */
+    }
+
+    .main-layout {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
+        /* Gap from header */
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .container.app-content {
+        max-width: 860px;
+        /* Remaining space roughly */
+        margin: 0;
+        flex: 1;
     }
 
     .app-header .header-container {
-        /* Ensure header doesn't overlap sidebar or spans correctly */
-        max-width: calc(100% - 320px);
-        margin: 0;
+        /* Matches main layout width */
+        max-width: 1200px;
+        margin: 0 auto;
         width: 100%;
-        padding-right: 20px;
-    }
-
-    /* Adjust main content width/centering if needed */
-    .app-content {
-        max-width: 100%;
-        /* Or keep centered but shifted */
+        padding: 0 10px;
+        /* Match typical padding */
     }
 }
 
 /* Sidebar Container */
 .just-added-sidebar {
-    position: fixed;
-    top: 60px;
-    /* Below header */
-    right: 0;
-    bottom: 0;
-    width: 320px;
-    background-color: var(--bg-light);
-    /* Light gray background */
-    border-left: 1px solid var(--border-color);
+    /* Default / Mobile styles are overridden in media query below */
     z-index: 900;
-    display: flex;
-    /* Always flex on desktop */
-    flex-direction: column;
-    overflow-y: auto;
-    padding-bottom: 20px;
+    background-color: var(--bg-light);
 }
+
+@media (min-width: 1201px) {
+    .just-added-sidebar {
+        position: sticky;
+        top: 80px;
+        /* Header height + gap */
+        width: 320px;
+        height: calc(100vh - 100px);
+        background-color: var(--bg-light);
+        border: none;
+        /* Removed border */
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        /* Hide scrollbar by default */
+        padding-bottom: 20px;
+        border-radius: 8px;
+        /* Optional: rounded corners */
+    }
+
+    .just-added-sidebar:hover {
+        overflow-y: auto;
+        /* Show on hover */
+    }
+}
+
 
 /* Mobile: Modal Style (Overrides Desktop Fixed style) */
 @media (max-width: 1200px) {
@@ -1169,8 +1197,10 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: #fff;
-    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    /* Transparent to blend with gray */
+    /* border-bottom: 1px solid var(--border-color); */
+    /* Removed border */
     position: sticky;
     top: 0;
     z-index: 10;
