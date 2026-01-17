@@ -1652,106 +1652,36 @@ a:hover {
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
-    /* Standardize radius */
-    border-top-left-radius: 0;
-    /* Not rounded on top left */
-    border-top-right-radius: 0;
-    /* Not rounded on top right */
-    margin-bottom: 20px;
-    /* Removed negative margins to sit naturally */
+    /* Rounded all corners */
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Space for bell icon */
 }
 
+/* Ensure no negative margin hacks remain */
 @media (min-width: 1201px) {
     .landing-banner {
-        border-radius: 0 0 8px 8px;
-        /* Rounded bottom */
+        border-radius: 8px;
     }
 }
 
-/* 2. Add Products CTA */
-.add-products-cta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    /* 8px radius */
-    margin-bottom: 30px;
+/* Bell Icon in Banner */
+.landing-banner svg {
+    flex-shrink: 0;
 }
 
-.cta-text {
-    font-size: 0.9rem;
-    color: var(--text-color);
+/* Dividers */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
 }
 
-.action-btn.pink-filled {
-    background: var(--pink-highlight);
-    color: white;
-    padding: 8px 16px;
-    /* Match myproducts button */
-    border-radius: 8px;
-    /* Match myproducts radius */
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    width: auto;
-    /* Reduce width */
-    cursor: pointer;
-    border: none;
-    transition: opacity 0.2s;
-}
-
-.action-btn.pink-filled:hover {
-    opacity: 0.9;
-}
-
-/* 3. Section Titles */
-.section-title {
-    font-size: 0.95rem;
-    color: var(--pink-highlight);
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.landing-section {
-    margin-bottom: 25px;
-}
-
-/* 4. Search Rows */
-.search-row {
-    margin-bottom: 30px;
-}
-
-.search-wrapper {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    /* Match banner radius (8px) */
-    overflow: hidden;
-    padding: 0;
-}
-
-.search-wrapper input {
-    flex: 1;
-    border: none;
-    padding: 10px 15px;
-    outline: none;
-    font-size: 0.9rem;
-}
-
-.btn-go {
-    background: black;
-    color: white;
-    border: none;
-    padding: 0 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
-    /* Slightly smaller internal */
-    margin: 3px;
-}
+/* ... CTA Styles ... */
 
 /* 5. Carousels Customization */
 /* Shops */
@@ -1761,18 +1691,17 @@ a:hover {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* Stack favicon and text */
     align-items: center;
     justify-content: center;
     height: 100px;
-    /* Increased height */
     background: white;
     gap: 8px;
 }
 
 .shop-card img {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    /* 32x32 Favicons */
+    height: 32px;
     object-fit: contain;
 }
 
@@ -1782,6 +1711,35 @@ a:hover {
     color: var(--text-color);
     text-align: center;
     line-height: 1.1;
+}
+
+/* Categories */
+.category-card {
+    height: 100px;
+    /* Reduced to 100px */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Splide Arrows Hover Effect */
+.splide__arrow {
+    background: white;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.splide__arrow:hover {
+    background: var(--pink-highlight);
+    opacity: 1;
+}
+
+.splide__arrow:hover svg {
+    fill: white;
 }
 
 /* Categories */

@@ -47,269 +47,301 @@
                 <div class="cta-text">
                     Found a must-have?<br>
                     Add the link and start tracking &rarr;
-                </div>
-                <button class="action-btn pink-filled">
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                    </svg>
-                    Add products
-                </button>
-            </section>
+                    <main class="app-content">
 
-            <!-- 1. Shops Carousel -->
-            <section class="landing-section">
-                <h3 class="section-title">See what's being tracked at your favorite stores &darr;</h3>
-                <div class="splide" id="splide-shops">
-                    <div class="splide__track">
-                        <ul class="splide__list" id="shops-list">
-                            <!-- JS will populate -->
-                        </ul>
+                        <!-- 1. Banner with Bell Icon -->
+                        <div class="landing-banner">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path
+                                    d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
+                            </svg>
+                            <span>Save your favorite product and we will track the price for you</span>
+                        </div>
+
+                        <!-- Add Products CTA -->
+                        <div class="add-products-cta">
+                            <span class="cta-text">Don't find your product?</span>
+                            <button class="action-btn pink-filled" onclick="window.location.href='#'">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                                </svg>
+                                Add products
+                            </button>
+                        </div>
+
+                        <hr class="section-divider">
+
+                        <!-- 1. Shops Carousel -->
+                        <section class="landing-section">
+                            <h3 class="section-title">See what's being tracked at your favorite stores &darr;</h3>
+                            <div class="splide" id="splide-shops">
+                                <div class="splide__track">
+                                    <ul class="splide__list" id="shops-list">
+                                        <!-- JS will populate -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Search Bar 1 -->
+                        <section class="search-row">
+                            <div class="search-wrapper">
+                                <input type="text" placeholder="Search by eshop name">
+                                <button class="btn-go" aria-label="Search">
+                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" fill="currentColor" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 2. Categories Carousel -->
+                        <section class="landing-section">
+                            <h3 class="section-title">Discover trending products by category &darr;</h3>
+                            <div class="splide" id="splide-categories">
+                                <div class="splide__track">
+                                    <ul class="splide__list" id="categories-list">
+                                        <!-- JS will populate -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Search Bar 2 -->
+                        <section class="search-row">
+                            <div class="search-wrapper">
+                                <input type="text" placeholder="Search by shop category">
+                                <button class="btn-go" aria-label="Search">
+                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" fill="currentColor" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 3. Celebrities Carousel -->
+                        <section class="landing-section">
+                            <h3 class="section-title">Stars are tracking, peek inside their wishlists &darr;</h3>
+                            <div class="splide" id="splide-celebrities">
+                                <div class="splide__track">
+                                    <ul class="splide__list" id="celebrities-list">
+                                        <!-- JS will populate -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Search Bar 3 -->
+                        <section class="search-row">
+                            <div class="search-wrapper">
+                                <input type="text" placeholder="Search by choosing a celebrity">
+                                <button class="btn-go" aria-label="Search">
+                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" fill="currentColor" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </section>
+
+                    </main>
+
+                    <!-- Sidebar same as MyProducts -->
+                    <aside id="just-added-sidebar" class="just-added-sidebar">
+                        <div class="just-added-header">
+                            <div class="header-title-row">
+                                <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
+                                    <path
+                                        d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
+                                        fill="currentColor" />
+                                </svg>
+                                <div>
+                                    <h3>Just added</h3>
+                                    <p class="header-description">Real-time updates from the community</p>
+                                </div>
+                            </div>
+                            <button class="just-added-close" id="just-added-close">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="just-added-content" id="just-added-content">
+                            <!-- Content loaded via App.js logic if possible, or we replicate logic -->
+                        </div>
+                    </aside>
+                    <div class="just-added-overlay" id="just-added-overlay"></div>
+                </div>
+
+                <!-- Logout Confirmation Overlay -->
+                <div id="logout-overlay" class="logout-overlay">
+                    <div class="logout-card">
+                        <div class="logout-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="48" height="48">
+                                <path
+                                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3>Logged Out</h3>
+                        <p>You have been successfully logged out.</p>
+                        <button class="logout-close-btn" id="logout-close-btn">Close</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Search Bar 1 -->
-            <section class="search-row">
-                <div class="search-wrapper">
-                    <input type="text" placeholder="Search by eshop name">
-                    <button class="btn-go">GO!</button>
-                </div>
-            </section>
+                <footer class="app-footer">
+                    <div class="footer-icons">
+                        <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                                    fill="white" />
+                            </svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
+                                <path
+                                    d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                                    fill="white" />
+                            </svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
+                                <path
+                                    d="M16.6 5.82C15.13 4.8 13.9 4.3 12.1 4.54c-1.35.17-2.3 1.3-2.3 2.64v2.33h-1.9v3.08h1.9v8.9h3.76v-8.9h2.5s.23-1.5.34-3.07h-2.84V7.5c0-.82.2-1.15 1.18-1.15h1.66V5.82zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                                    fill="white" />
+                            </svg></a>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Terms & Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </footer>
 
-            <!-- 2. Categories Carousel -->
-            <section class="landing-section">
-                <h3 class="section-title">Discover trending products by category &darr;</h3>
-                <div class="splide" id="splide-categories">
-                    <div class="splide__track">
-                        <ul class="splide__list" id="categories-list">
-                            <!-- JS will populate -->
-                        </ul>
+                <!-- Navigation Menu Modal (Same as MyProducts) -->
+                <div class="menu-overlay" id="menu-overlay"></div>
+                <div class="menu-modal" id="menu-modal">
+                    <div class="menu-header">
+                        <h3>Menu</h3>
+                        <button class="menu-close" id="menu-close" aria-label="Close Menu">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                    fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="menu-content">
+                        <a href="index.html" class="menu-item active">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            Discover
+                        </a>
+                        <a href="myproducts.html" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            My products
+                        </a>
+                        <a href="#" class="menu-item" id="menu-link-just-added">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            Just Added
+                        </a>
+                        <a href="#" class="menu-item" id="menu-link-notifications">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            Notifications
+                        </a>
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            Edit profile
+                        </a>
+                        <a href="index.html#logout" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            Sign out
+                        </a>
                     </div>
                 </div>
-            </section>
 
-            <!-- Search Bar 2 -->
-            <section class="search-row">
-                <div class="search-wrapper">
-                    <input type="text" placeholder="Search by shop category">
-                    <button class="btn-go">GO!</button>
-                </div>
-            </section>
+                <!-- Splide JS -->
+                <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+                <script src="app.js"></script> <!-- Reused for header/sidebar/menu logic if compatible -->
+                <script>
+                    // Landing Page Specific Logic
+                    document.addEventListener('DOMContentLoaded', function () {
 
-            <!-- 3. Celebrities Carousel -->
-            <section class="landing-section">
-                <h3 class="section-title">Stars are tracking, peek inside their wishlists &darr;</h3>
-                <div class="splide" id="splide-celebrities">
-                    <div class="splide__track">
-                        <ul class="splide__list" id="celebrities-list">
-                            <!-- JS will populate -->
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                        // 1. Initialize Shops Carousel
+                        fetch('shops.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const list = document.getElementById('shops-list');
+                                data.forEach(shop => {
+                                    // Use Google Favicon Service for 32px icons as requested
+                                    const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=32`;
 
-            <!-- Search Bar 3 -->
-            <section class="search-row">
-                <div class="search-wrapper">
-                    <input type="text" placeholder="Search by choosing a celebrity">
-                    <button class="btn-go">GO!</button>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Sidebar same as MyProducts -->
-        <aside id="just-added-sidebar" class="just-added-sidebar">
-            <div class="just-added-header">
-                <div class="header-title-row">
-                    <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
-                        <path
-                            d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
-                            fill="currentColor" />
-                    </svg>
-                    <div>
-                        <h3>Just added</h3>
-                        <p class="header-description">Real-time updates from the community</p>
-                    </div>
-                </div>
-                <button class="just-added-close" id="just-added-close">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                            fill="currentColor" />
-                    </svg>
-                </button>
-            </div>
-            <div class="just-added-content" id="just-added-content">
-                <!-- Content loaded via App.js logic if possible, or we replicate logic -->
-            </div>
-        </aside>
-        <div class="just-added-overlay" id="just-added-overlay"></div>
-    </div>
-
-    <!-- Logout Confirmation Overlay -->
-    <div id="logout-overlay" class="logout-overlay">
-        <div class="logout-card">
-            <div class="logout-icon-wrapper">
-                <svg viewBox="0 0 24 24" width="48" height="48">
-                    <path
-                        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                        fill="currentColor" />
-                </svg>
-            </div>
-            <h3>Logged Out</h3>
-            <p>You have been successfully logged out.</p>
-            <button class="logout-close-btn" id="logout-close-btn">Close</button>
-        </div>
-    </div>
-
-    <footer class="app-footer">
-        <div class="footer-icons">
-            <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
-                    <path
-                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
-                        fill="white" />
-                </svg></a>
-            <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
-                    <path
-                        d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
-                        fill="white" />
-                </svg></a>
-            <a href="#"><svg viewBox="0 0 24 24" width="24" height="24">
-                    <path
-                        d="M16.6 5.82C15.13 4.8 13.9 4.3 12.1 4.54c-1.35.17-2.3 1.3-2.3 2.64v2.33h-1.9v3.08h1.9v8.9h3.76v-8.9h2.5s.23-1.5.34-3.07h-2.84V7.5c0-.82.2-1.15 1.18-1.15h1.66V5.82zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
-                        fill="white" />
-                </svg></a>
-        </div>
-        <div class="footer-links">
-            <a href="#">Terms & Service</a>
-            <a href="#">Privacy Policy</a>
-        </div>
-    </footer>
-
-    <!-- Navigation Menu Modal (Same as MyProducts) -->
-    <div class="menu-overlay" id="menu-overlay"></div>
-    <div class="menu-modal" id="menu-modal">
-        <div class="menu-header">
-            <h3>Menu</h3>
-            <button class="menu-close" id="menu-close" aria-label="Close Menu">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path
-                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                        fill="currentColor" />
-                </svg>
-            </button>
-        </div>
-        <div class="menu-content">
-            <a href="index.html" class="menu-item active">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                Discover
-            </a>
-            <a href="myproducts.html" class="menu-item">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                My products
-            </a>
-            <a href="#" class="menu-item" id="menu-link-just-added">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                Just Added
-            </a>
-            <a href="#" class="menu-item" id="menu-link-notifications">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                Notifications
-            </a>
-            <a href="#" class="menu-item">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                Edit profile
-            </a>
-            <a href="index.html#logout" class="menu-item">
-                <span class="menu-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                            fill="currentColor" />
-                    </svg>
-                </span>
-                Sign out
-            </a>
-        </div>
-    </div>
-
-    <!-- Splide JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="app.js"></script> <!-- Reused for header/sidebar/menu logic if compatible -->
-    <script>
-        // Landing Page Specific Logic
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // 1. Initialize Shops Carousel
-            fetch('shops.json')
-                .then(response => response.json())
-                .then(data => {
-                    const list = document.getElementById('shops-list');
-                    data.forEach(shop => {
-                        // Use Google Favicon Service for 64px icons
-                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=64`;
-
-                        const li = document.createElement('li');
-                        li.className = 'splide__slide shop-slide';
-                        li.innerHTML = `
+                                    const li = document.createElement('li');
+                                    li.className = 'splide__slide shop-slide';
+                                    li.innerHTML = `
                             <div class="shop-card">
                                 <img src="${faviconUrl}" alt="${shop.domain}">
                                 <span class="shop-name">${shop.domain}</span>
                             </div>
                         `;
-                        list.appendChild(li);
-                    });
+                                    list.appendChild(li);
+                                });
 
-                    new Splide('#splide-shops', {
-                        perPage: 4,
-                        gap: '1rem',
-                        pagination: false,
-                        arrows: false, // Arrows visible? User screenshot doesn't show them explicitly but carousel usually implies them. Let's hide for clean look or add if needed.
-                        breakpoints: {
-                            600: { perPage: 2 },
-                        }
-                    }).mount();
-                });
+                                new Splide('#splide-shops', {
+                                    perPage: 4,
+                                    gap: '1rem',
+                                    pagination: false,
+                                    arrows: true, // Arrows Enabled
+                                    breakpoints: {
+                                        600: { perPage: 2 },
+                                    }
+                                }).mount();
+                            });
 
-            // 2. Initialize Categories Carousel
-            fetch('shop_categories.json')
-                .then(response => response.json())
-                .then(data => {
-                    const list = document.getElementById('categories-list');
-                    data.forEach(cat => {
-                        const li = document.createElement('li');
-                        li.className = 'splide__slide category-slide';
-                        li.innerHTML = `
+                        // 2. Initialize Categories Carousel
+                        fetch('shop_categories.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const list = document.getElementById('categories-list');
+                                data.forEach(cat => {
+                                    const li = document.createElement('li');
+                                    li.className = 'splide__slide category-slide';
+                                    li.innerHTML = `
                             <div class="category-card" style="background-image: url('${cat.image}')">
                                 <div class="category-overlay">
                                     <span class="category-name">${cat.name}</span>
@@ -317,65 +349,69 @@
                                 </div>
                             </div>
                         `;
-                        list.appendChild(li);
-                    });
-                    new Splide('#splide-categories', {
-                        perPage: 3,
-                        gap: '10px',
-                        pagination: false,
-                        breakpoints: {
-                            600: { perPage: 2 },
-                        }
-                    }).mount();
-                });
+                                    list.appendChild(li);
+                                });
+                                new Splide('#splide-categories', {
+                                    perPage: 3,
+                                    gap: '10px',
+                                    pagination: false,
+                                    breakpoints: {
+                                        600: { perPage: 2 },
+                                    }
+                                }).mount();
+                            });
 
-            // 3. Initialize Celebrities Carousel
-            fetch('celebrities.json')
-                .then(response => response.json())
-                .then(data => {
-                    const list = document.getElementById('celebrities-list');
-                    data.forEach(celeb => {
-                        const li = document.createElement('li');
-                        li.className = 'splide__slide celeb-slide';
-                        li.innerHTML = `
+                        // 3. Initialize Celebrities Carousel
+                        fetch('celebrities.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const list = document.getElementById('celebrities-list');
+                                data.forEach(celeb => {
+                                    // Handle both data formats (nickname/avatar vs name/image)
+                                    const name = celeb.name || celeb.nickname;
+                                    const image = celeb.image || celeb.avatar;
+
+                                    const li = document.createElement('li');
+                                    li.className = 'splide__slide celeb-slide';
+                                    li.innerHTML = `
                             <div class="celeb-card">
                                 <div class="celeb-avatar-wrapper">
-                                    <img src="${celeb.avatar}" alt="${celeb.nickname}">
+                                    <img src="${image}" alt="${name}">
                                     <div class="celeb-badge"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="white"/></svg></div>
                                 </div>
                             </div>
                         `;
-                        list.appendChild(li);
-                    });
-                    new Splide('#splide-celebrities', {
-                        perPage: 5,
-                        gap: '1rem',
-                        pagination: false,
-                        breakpoints: {
-                            600: { perPage: 4 },
+                                    list.appendChild(li);
+                                });
+                                new Splide('#splide-celebrities', {
+                                    perPage: 5,
+                                    gap: '1rem',
+                                    pagination: false,
+                                    breakpoints: {
+                                        600: { perPage: 4 },
+                                    }
+                                }).mount();
+                            });
+                        // Check for Logout Hash
+                        if (window.location.hash === '#logout') {
+                            const overlay = document.getElementById('logout-overlay');
+                            if (overlay) {
+                                overlay.classList.add('active');
+
+                                // Remove hash so refresh doesn't trigger it again
+                                history.replaceState(null, null, 'index.html');
+                            }
                         }
-                    }).mount();
-                });
-            // Check for Logout Hash
-            if (window.location.hash === '#logout') {
-                const overlay = document.getElementById('logout-overlay');
-                if (overlay) {
-                    overlay.classList.add('active');
 
-                    // Remove hash so refresh doesn't trigger it again
-                    history.replaceState(null, null, 'index.html');
-                }
-            }
-
-            // Close Logout Overlay
-            const logoutClose = document.getElementById('logout-close-btn');
-            if (logoutClose) {
-                logoutClose.addEventListener('click', () => {
-                    document.getElementById('logout-overlay').classList.remove('active');
-                });
-            }
-        });
-    </script>
+                        // Close Logout Overlay
+                        const logoutClose = document.getElementById('logout-close-btn');
+                        if (logoutClose) {
+                            logoutClose.addEventListener('click', () => {
+                                document.getElementById('logout-overlay').classList.remove('active');
+                            });
+                        }
+                    });
+                </script>
 </body>
 
 </html>
