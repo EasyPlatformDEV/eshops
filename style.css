@@ -1655,7 +1655,7 @@ a:hover {
     color: var(--pink-highlight);
     /* Use theme pink */
     /* Dark purple/pink text */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.4;
     font-weight: 500;
 }
@@ -1681,7 +1681,7 @@ a:hover {
 .promo-title {
     font-size: 1.1rem;
     color: var(--pink-highlight);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.4;
     font-weight: 500;
 }
