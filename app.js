@@ -64,8 +64,7 @@ const app = {
 
         new Splide('#splide-shops', {
             perPage: 4,
-            gap: 15,
-            padding: { left: 10, right: 10 },
+            gap: '1rem',
             pagination: false,
             arrows: true,
             breakpoints: {
@@ -107,15 +106,12 @@ const app = {
         });
 
         new Splide('#splide-categories', {
-            perPage: 4,
-            gap: 15,
-            padding: { left: 20, right: 20 },
-            arrows: true,
+            perPage: 3,
+            gap: '10px',
             pagination: false,
+            arrows: true,
             breakpoints: {
-                1024: { perPage: 3 },
-                768: { perPage: 2.5 },
-                480: { perPage: 1.5 }
+                600: { perPage: 2 },
             }
         }).mount();
     },
@@ -142,13 +138,11 @@ const app = {
 
         new Splide('#splide-celebrities', {
             perPage: 5,
-            padding: { left: 10, right: 10 },
-            gap: 10,
-            arrows: true,
+            gap: '1rem',
+            arrows: true, // Kept enabled per request
             pagination: false,
             breakpoints: {
                 600: { perPage: 4 },
-                400: { perPage: 3.5 }
             }
         }).mount();
     },
