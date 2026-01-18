@@ -2202,6 +2202,39 @@ a:hover {
     background-color: #f1f3f4;
 }
 
+/* Mobile Login Button (Specific Style) */
+.mobile-login-btn {
+    background-color: var(--pink-highlight);
+    color: #fff !important;
+    /* Force white icon */
+    border-radius: 8px;
+    /* Same size as menu icon */
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    /* Reset padding to center icon */
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    margin-left: 5px;
+    /* Ensure small gap from previous icon */
+}
+
+.mobile-login-btn:hover {
+    background-color: #a91b93;
+    /* Darker purple */
+}
+
+.mobile-login-btn svg {
+    color: #fff;
+    fill: none;
+    stroke: currentColor;
+}
+
+
 @media (max-width: 600px) {
     .desktop-only {
         display: none !important;
@@ -2220,6 +2253,17 @@ a:hover {
     }
 }
 
+.menu-item.purple {
+    color: var(--pink-highlight) !important;
+    font-weight: 500;
+}
+
 .menu-item.purple .menu-icon {
-    color: var(--pink-highlight);
+    color: var(--pink-highlight) !important;
+}
+
+/* Tighter header spacing */
+.header-right {
+    gap: 8px;
+    /* Reduced from 15px */
 }
