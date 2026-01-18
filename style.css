@@ -2180,10 +2180,30 @@ a:hover {
     }
 }
 
-/* Purple Menu Item */
-.menu-item.purple {
-    color: var(--pink-highlight);
-    font-weight: 500;
+/* Header Icon Buttons */
+.header-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 36px;
+    height: 36px;
+}
+
+.header-icon-btn:hover {
+    background-color: #f1f3f4;
+}
+
+@media (max-width: 600px) {
+    .btn-sign-up {
+        display: none !important;
+    }
 }
 
 .menu-item.purple .menu-icon {

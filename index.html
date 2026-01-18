@@ -28,12 +28,25 @@
                     </picture>
                 </a>
             </div>
-            <div class="header-right">
-                <!-- Replaced Login/Sign In button if not logged in, but keeping profile for consistency with current flow -->
-                <!-- Assuming user is logged in for now based on previous flow, else this would be "Sign in" -->
-                <a href="#" class="header-btn btn-sign-up">Sign up</a>
-                <a href="#" class="header-btn btn-log-in">Log in</a>
-            </div>
+            <!-- Just Added Icon (Megaphone) -->
+            <button id="just-added-btn" class="header-icon-btn" aria-label="Just Added">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M21 11v6c0 .55-.45 1-1 1h-8v4l-5-4H2c-.55 0-1-.45-1-1v-6c0-.55.45-1 1-1h5.5l5.5-4h7c.55 0 1 .45 1 1zM7 11.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+
+            <a href="#" class="header-btn btn-sign-up">Sign up</a>
+
+            <!-- Login Icon (Door + Arrow) -->
+            <a href="#" class="header-icon-btn" aria-label="Log in">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5v10zM3 12h13" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
         </div>
     </header>
 
