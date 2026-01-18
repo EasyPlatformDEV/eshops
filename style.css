@@ -1990,8 +1990,8 @@ a:hover {
 .app-footer {
     background: #0d2331;
     margin-top: 40px;
-    padding: 60px 0;
-    /* Increase height */
+    padding: 30px 0;
+    /* Reduced by 50% as requested */
     /* Removed padding and flex properties from here */
 }
 
