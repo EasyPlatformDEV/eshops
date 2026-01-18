@@ -1935,12 +1935,12 @@ a:hover {
     flex-direction: column;
     /* Stack on mobile */
     align-items: center;
-    gap: 15px;
-    /* Reduced gap by 40% */
+    gap: 9px;
+    /* Reduced gap again by 40% */
     max-width: 600px;
     margin: 0 auto;
-    padding: 18px 15px;
-    /* Reduced padding by 40% */
+    padding: 11px 15px;
+    /* Reduced padding again by 40% */
     color: white;
 }
 
