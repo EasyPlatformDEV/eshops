@@ -1804,6 +1804,20 @@ a:hover {
     color: #333;
 }
 
+.desktop-only {
+    display: none !important;
+}
+
+@media (min-width: 768px) {
+    .desktop-only {
+        display: block !important;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+}
+
 /* Desktop Promo Banner */
 @media (min-width: 768px) {
     .promo-banner {
@@ -1822,11 +1836,19 @@ a:hover {
         /* Reduced from 30px */
     }
 
+    .promo-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-left: 20px;
+    }
+
     .promo-image {
         display: block;
-        width: 30%;
-        max-width: 180px;
-        /* Reduced from 250px */
+        width: 100%;
+        max-width: 120px;
+        /* Reduced from 180px */
         flex-shrink: 0;
     }
 
@@ -1834,8 +1856,15 @@ a:hover {
         width: 100%;
         height: auto;
         object-fit: contain;
-        /* Changed to contain */
         display: block;
+    }
+
+    .promo-subtitle.desktop-only {
+        font-size: 0.8rem;
+        /* Smaller subtitle */
+        color: #666;
+        text-align: center;
+        line-height: 1.3;
     }
 
     .promo-content {
