@@ -1727,7 +1727,8 @@ a:hover {
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 15px 0;
+    margin: 20px 0 15px 0;
+    /* 20px Top (increased by 5px), 15px Bottom */
     width: 100%;
     display: block;
 }
@@ -1802,7 +1803,7 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 15px 0;
+        margin: 20px 0 15px 0;
     }
 
     .search-row {
