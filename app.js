@@ -1,7 +1,9 @@
 const app = {
     init: function () {
         this.fetchProducts();
+        this.fetchShops();
         this.fetchCelebrities();
+        this.fetchShopCategories();
     },
 
     fetchProducts: async function () {
@@ -30,6 +32,95 @@ const app = {
         }
     },
 
+    fetchShops: async function () {
+        if (!document.getElementById('splide-shops')) return;
+        try {
+            const response = await fetch('shops.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("Shops JSON not found");
+            const items = await response.json();
+            this.renderShops(items);
+        } catch (error) {
+            console.error("Error loading shops:", error);
+        }
+    },
+
+    renderShops: function (items) {
+        const list = document.getElementById('shops-list');
+        if (!list) return;
+        list.innerHTML = '';
+
+        items.forEach(shop => {
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=32`;
+            const html = `
+                <li class="splide__slide shop-slide">
+                    <div class="shop-card">
+                        <img src="${faviconUrl}" alt="${shop.domain}">
+                        <span class="shop-name">${shop.domain}</span>
+                    </div>
+                </li>
+            `;
+            list.insertAdjacentHTML('beforeend', html);
+        });
+
+        new Splide('#splide-shops', {
+            perPage: 4,
+            gap: 15,
+            padding: { left: 10, right: 10 },
+            pagination: false,
+            arrows: true,
+            breakpoints: {
+                600: { perPage: 2 },
+            }
+        }).mount();
+    },
+
+    fetchShopCategories: async function () {
+        if (!document.getElementById('splide-categories')) return;
+        try {
+            const response = await fetch('shop_categories.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("Categories JSON not found");
+            const items = await response.json();
+            items.sort((a, b) => a.name.localeCompare(b.name));
+            this.renderShopCategories(items);
+        } catch (error) {
+            console.error("Error loading categories:", error);
+        }
+    },
+
+    renderShopCategories: function (items) {
+        const list = document.getElementById('categories-list');
+        if (!list) return;
+        list.innerHTML = '';
+
+        items.forEach(item => {
+            const html = `
+                <li class="splide__slide">
+                    <div class="category-card">
+                        <img src="${item.image}" alt="${item.name}" class="category-bg-img" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+                        <div class="category-overlay">
+                            <span class="category-name">${item.name}</span>
+                            <div class="category-icon">&rarr;</div>
+                        </div>
+                    </div>
+                </li>
+            `;
+            list.insertAdjacentHTML('beforeend', html);
+        });
+
+        new Splide('#splide-categories', {
+            perPage: 4,
+            gap: 15,
+            padding: { left: 20, right: 20 },
+            arrows: true,
+            pagination: false,
+            breakpoints: {
+                1024: { perPage: 3 },
+                768: { perPage: 2.5 },
+                480: { perPage: 1.5 }
+            }
+        }).mount();
+    },
+
     renderCelebrities: function (items) {
         const list = document.getElementById('celebrities-list');
         if (!list) return;
@@ -50,7 +141,6 @@ const app = {
             list.insertAdjacentHTML('beforeend', html);
         });
 
-        // Initialize Splide for Celebrities
         new Splide('#splide-celebrities', {
             perPage: 5,
             padding: { left: 10, right: 10 },
