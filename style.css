@@ -82,10 +82,10 @@ body {
 
 .menu-btn span {
     display: block;
-    height: 1px;
-    /* Snapped to 1px for pixel-perfect rendering */
+    height: 2px;
+    /* Thicker lines per request */
     background-color: #222;
-    border-radius: 1px;
+    border-radius: 2px;
 }
 
 .menu-btn span:nth-child(1) {
