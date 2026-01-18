@@ -1788,7 +1788,7 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-title {
-        font-size: 0.9rem;
+        font-size: 1.0rem;
         /* Mobile Override */
         font-weight: 500;
     }
