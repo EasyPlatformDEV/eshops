@@ -2058,10 +2058,6 @@ a:hover {
 
 /* Sign In Button Header */
 /* Header Buttons */
-.header-right {
-    gap: 10px;
-    /* Reduced gap for button grouping */
-}
 
 .header-btn {
     padding: 0 12px;
