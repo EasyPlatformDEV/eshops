@@ -1723,11 +1723,13 @@ a:hover {
 }
 
 /* Dividers */
+/* Dividers */
 .section-divider {
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
+    /* Reduced bottom margin to 10px */
 }
 
 /* 2. Add Products CTA */
@@ -1777,7 +1779,8 @@ a:hover {
 
 /* 3. Section Titles */
 .section-title {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
+    /* Increased size */
     color: var(--pink-highlight);
     font-weight: 600;
     margin-bottom: 15px;
