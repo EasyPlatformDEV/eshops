@@ -44,8 +44,8 @@ body {
     padding: 7px 15px;
 }
 
-.header-left,
-.header-right {
+/* .header-left removed header-right from here to avoid duplicate */
+.header-left {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -2239,20 +2239,28 @@ a:hover {
     /* Light blue hover */
 }
 
-/* Tighter header spacing override */
+/* Standardize Header Spacing (Desktop & Mobile) */
 .header-right {
-    gap: 5px;
+    gap: 10px;
+    /* User requested specific 10px gap */
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    /* Ensure they pack tightly to the right */
+    width: auto;
+    /* Prevent stretching */
 }
 
 /* Backup spacing for non-gap browsers */
 .header-right>*+* {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
-/* Reset individual margins */
-.just-added-btn {
+/* Reset individual margins to prevent extra space */
+.just-added-btn,
+.header-btn,
+.mobile-login-btn,
+.notification-icon {
     margin: 0;
 }
 
