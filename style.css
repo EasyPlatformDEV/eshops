@@ -1987,13 +1987,7 @@ a:hover {
 }
 
 /* 6. Footer */
-.app-footer {
-    background: #0d2331;
-    margin-top: 40px;
-    padding: 30px 0;
-    /* Reduced by 50% as requested */
-    /* Removed padding and flex properties from here */
-}
+/* 6. Footer - Moved to footer.css */
 
 
 /* Celebrities Carousel */
@@ -2073,68 +2067,7 @@ a:hover {
     line-height: 1.2;
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    /* Stack on mobile */
-    align-items: center;
-    gap: 9px;
-    /* Reduced gap again by 40% */
-    width: auto;
-    /* Allow full width */
-    margin: 0 30px;
-    /* 30px margin from left and right */
-    padding: 20px 15px;
-    /* Increase padding */
-    color: white;
-    border-top: 1px solid #869198;
-    border-bottom: 1px solid #869198;
-}
-
-.footer-icons {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-icons svg {
-    width: 18px;
-    height: 18px;
-    /* Reduced size by 25% */
-}
-
-.footer-made-with {
-    font-size: 0.85rem;
-    color: #ccc;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-}
-
-.footer-heart {
-    color: #dc3545;
-    /* Red heart */
-    width: 16px;
-    height: 16px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 15px;
-    font-size: 0.9rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-links a {
-    color: #869198;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: white;
-}
+/* Footer Content - Moved to footer.css */
 
 /* Sign In Button Header */
 /* Header Buttons */
@@ -2262,23 +2195,7 @@ a:hover {
     width: 100%;
 }
 
-/* Footer Desktop Override (Must be last to override base styles) */
-@media (min-width: 1201px) {
-    .footer-container {
-        max-width: none;
-        /* Allow full width */
-        margin: 0 30px;
-        /* Force 30px margins */
-        padding-left: 10px;
-        padding-right: 10px;
-        flex-direction: row;
-        /* Force Row */
-        justify-content: space-between;
-        align-items: center;
-        gap: 0;
-        /* Remove vertical gap */
-    }
-}
+/* Footer Desktop Override - Moved to footer.css */
 
 /* Header Icon Buttons */
 .header-icon-btn {
