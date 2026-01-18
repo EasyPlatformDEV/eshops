@@ -13,10 +13,10 @@
     align-items: center;
     gap: 9px;
     /* Reduced gap again by 40% */
-    width: auto;
-    /* Allow full width */
-    margin: 0 30px;
-    /* 30px margin from left and right */
+    width: calc(100% - 60px);
+    max-width: 1150px;
+    margin: 0 auto;
+    /* Centered with 30px margins via calc width */
     padding: 20px 15px;
     /* Increase padding */
     color: white;
@@ -80,10 +80,7 @@
 /* Footer Desktop Override (Must be last to override base styles) */
 @media (min-width: 1201px) {
     .footer-container {
-        max-width: none;
-        /* Allow full width */
-        margin: 0 30px;
-        /* Force 30px margins */
+        /* Inherits max-width: 1150px and margin: 0 auto */
         padding-left: 10px;
         padding-right: 10px;
         flex-direction: row;
