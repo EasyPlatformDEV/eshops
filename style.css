@@ -1194,8 +1194,8 @@ a:hover {
 .just-added-btn {
     background: none;
     border: none;
-    color: var(--pink-highlight);
-    /* Purple as requested */
+    color: var(--blue-highlight);
+    /* Blue as requested */
     padding: 8px;
     /* Match notification icon padding area */
     cursor: pointer;
@@ -2217,7 +2217,7 @@ a:hover {
 /* Mobile Login Button (Specific Style) */
 .mobile-login-btn {
     background-color: #ffffff;
-    border: 1px solid var(--blue-highlight);
+    border: 1px solid var(--pink-highlight);
     border-radius: 8px;
     width: 36px;
     height: 36px;
@@ -2230,18 +2230,18 @@ a:hover {
     margin-left: 0;
 }
 
-/* Force SVG to inherit blue color */
+/* Force SVG to inherit purple color */
 .mobile-login-btn svg {
-    color: var(--blue-highlight);
+    color: var(--pink-highlight);
     fill: none;
-    stroke: var(--blue-highlight);
+    stroke: var(--pink-highlight);
     transform: scale(1.15);
     /* Match other icons size */
 }
 
 .mobile-login-btn:hover {
-    background-color: #ebf1fe;
-    /* Light blue hover */
+    background-color: #fce4ec;
+    /* Light pink hover */
 }
 
 /* Standardize Header Spacing (Desktop & Mobile) */
