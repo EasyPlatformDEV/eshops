@@ -1754,65 +1754,108 @@ a:hover {
 
 /* 1. Pink Banner */
 /* 1. Pink Banner */
-.landing-banner {
-    background: var(--pink-highlight);
-    color: white;
-    padding: 15px 10px;
-    /* Reduced padding to 10px */
-    text-align: left;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    border-radius: 8px;
-    /* Restored full rounded corners */
+/* New Promo Banner (Replaces Landing Banner + CTA) */
+.promo-banner {
+    background-color: #f8f9fa;
+    /* Light grey background */
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    /* Mobile margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.promo-image {
+    display: none;
+    /* Hidden on mobile */
+}
+
+.promo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promo-title {
+    font-size: 1.1rem;
+    color: #880e4f;
+    /* Dark purple/pink text */
     margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.promo-actions {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    /* Reduced gap to 10px */
-}
-
-.landing-banner strong {
-    font-weight: 600;
-}
-
-@media (min-width: 1201px) {
-    .landing-banner {
-        border-radius: 8px;
-    }
-}
-
-/* Bell Icon in Banner */
-.landing-banner svg {
-    flex-shrink: 0;
-}
-
-/* Dividers */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: var(--pink-highlight);
-    margin: 20px 0 15px 0;
-    /* 20px Top (increased by 5px), 15px Bottom */
-    width: 100%;
-    display: block;
-}
-
-/* 2. Add Products CTA */
-.add-products-cta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f8f9fa;
-    padding: 8px 16px;
-    border-radius: 8px;
-    margin-bottom: 0;
-    /* Zero bottom margin. Gap handled by divider below. */
+    flex-direction: column;
     gap: 15px;
+    align-items: center;
+    width: 100%;
 }
 
-.cta-text {
-    font-size: 0.9rem;
-    color: var(--text-color);
+.promo-subtitle {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Desktop Promo Banner */
+@media (min-width: 768px) {
+    .promo-banner {
+        flex-direction: row;
+        text-align: left;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f8f9fa;
+        margin: 30px auto;
+        /* max-width: 900px; Remove max-width to let it expand naturally or match container */
+        justify-content: space-between;
+    }
+
+    .promo-image {
+        display: block;
+        width: 40%;
+        max-width: 350px;
+        flex-shrink: 0;
+    }
+
+    .promo-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .promo-content {
+        padding: 40px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* Align left on desktop */
+    }
+
+    .promo-title {
+        text-align: left;
+        font-size: 1.4rem;
+        /* Larger title on desktop */
+    }
+
+    .promo-actions {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .promo-subtitle {
+        margin-right: auto;
+        text-align: left;
+    }
 }
 
 .action-btn.pink-filled {
@@ -2229,8 +2272,9 @@ a:hover {
     background-color: #ffffff;
     border: 1px solid var(--pink-highlight);
     border-radius: 8px;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    /* Reduced by 2px as requested */
+    height: 34px;
     padding: 0;
     display: inline-flex;
     align-items: center;
