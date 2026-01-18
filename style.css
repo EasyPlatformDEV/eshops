@@ -1784,6 +1784,8 @@ a:hover {
     color: var(--pink-highlight);
     font-weight: 600;
     margin-bottom: 15px;
+    margin-top: 0;
+    /* Remove default top margin */
 }
 
 .landing-section {
@@ -1798,8 +1800,8 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 15px 0 10px 0 !important;
-        /* Tighter spacing on mobile */
+        margin: 10px 0 5px 0 !important;
+        /* Very tight spacing on mobile */
     }
 }
 
