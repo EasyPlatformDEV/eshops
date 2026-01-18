@@ -60,14 +60,20 @@
     color: #ffffff;
 }
 
-.made-with {
-    margin: 0 auto;
-    /* Center "Made with" text */
-    text-align: center;
+.footer-made-with {
+    font-size: 0.85rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
 }
 
-.made-with span {
-    color: #ff4b4b;
+.footer-heart {
+    color: #dc3545;
+    /* Red heart */
+    width: 16px;
+    height: 16px;
 }
 
 /* Footer Desktop Override (Must be last to override base styles) */
