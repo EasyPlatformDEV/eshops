@@ -114,7 +114,8 @@ body {
 
 .notification-icon {
     position: relative;
-    color: var(--blue-highlight);
+    color: var(--pink-highlight);
+    /* Changed from blue to pink */
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -129,12 +130,18 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: var(--pink-highlight);
-    color: #fff;
+    background-color: #fff;
+    /* White bg */
+    color: var(--pink-highlight);
+    /* Pink text */
     font-size: 0.7rem;
     padding: 2px 5px;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: none;
+    /* Removed border */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* Added shadow */
+    font-weight: 600;
 }
 
 .sort-arrow {
