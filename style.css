@@ -1782,7 +1782,8 @@ a:hover {
     font-size: 1.1rem;
     /* Desktop Base (matches Sidebar) */
     color: var(--pink-highlight);
-    font-weight: 600;
+    font-weight: 500;
+    /* Reduced weight to 500 per request */
     margin: 0 0 15px 0;
 }
 
