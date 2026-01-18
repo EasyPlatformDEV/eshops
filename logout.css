@@ -24,7 +24,8 @@
 .logout-content {
     background: white;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 8px;
+    /* Reduced to 8px as requested */
     text-align: center;
     position: relative;
     width: 90%;
@@ -77,8 +78,8 @@
     /* Reduced from 64px */
     margin: 0 auto 20px auto;
     /* Centered */
-    color: #666;
-    /* Grey as requested */
+    color: #ccc;
+    /* Lighter grey as requested */
 }
 
 /* Title */
