@@ -1636,6 +1636,12 @@ a:hover {
         margin: 0 auto;
     }
 
+    .footer-container {
+        max-width: 870px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     .just-added-header {
         background: transparent;
     }
