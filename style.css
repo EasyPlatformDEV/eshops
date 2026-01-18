@@ -1693,19 +1693,18 @@ a:hover {
 .landing-banner {
     background: var(--pink-highlight);
     color: white;
-    padding: 15px 12px;
-    /* Reduced horizontal padding */
+    padding: 15px 10px;
+    /* Reduced padding to 10px */
     text-align: left;
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    /* Restored full rounded corners */
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    /* Reduced gap */
+    gap: 10px;
+    /* Reduced gap to 10px */
 }
 
 .landing-banner strong {
