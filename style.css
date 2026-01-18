@@ -57,7 +57,44 @@ body {
     margin: 0 auto;
 }
 
-/* Actions Bar */
+/* Actions Bar (Mobile Only) */
+.actions-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 851px) {
+    .actions-bar {
+        display: none !important;
+    }
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.action-btn.blue {
+    background-color: var(--pink-highlight);
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.action-btn.blue:hover {
+    background-color: #920260;
+}
+
 .actions-bar {
     display: flex;
     gap: 10px;
