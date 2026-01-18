@@ -1725,12 +1725,13 @@ a:hover {
 /* Dividers */
 /* Dividers */
 /* Dividers */
+/* Dividers */
 .section-divider {
     border: 0;
     height: 1px;
     background: #e0e0e0;
     margin: 15px 0 !important;
-    /* Strict 15px top/bottom gap */
+    /* Strict 15px top/bottom gap. Bottom margin determines gap to next element. Top margin determines gap from previous element (which now has 0 bottom margin). */
 }
 
 /* 2. Add Products CTA */
@@ -1741,8 +1742,8 @@ a:hover {
     background: #f8f9fa;
     padding: 8px 16px;
     border-radius: 8px;
-    margin-bottom: 15px;
-    /* Reduced to 15px */
+    margin-bottom: 0px;
+    /* Zero bottom margin. Gap handled by divider below. */
     gap: 15px;
 }
 
@@ -1776,42 +1777,36 @@ a:hover {
 /* 3. Section Titles */
 .section-title {
     font-size: 1.1rem;
-    /* Desktop Base (matches Sidebar) */
     color: var(--pink-highlight);
     font-weight: 500;
-    /* Reduced weight to 500 per request */
     margin: 0 0 15px 0;
 }
 
 @media (max-width: 600px) {
     .section-title {
         font-size: 1.0rem;
-        /* Mobile Override */
         font-weight: 500;
     }
 }
 
 .landing-section {
     margin: 0 0 15px 0;
-    /* Reduced to 15px */
     padding: 0;
 }
 
 /* 4. Search Rows */
 .search-row {
-    margin: 15px 0;
-    /* Strict 15px top/bottom gap */
+    margin: 15px 0 0 0;
+    /* 15px Top (Gap from previous element), 0 Bottom (Gap handled by divider below) */
 }
 
 @media (max-width: 600px) {
     .section-divider {
         margin: 15px 0 !important;
-        /* Strict 15px on mobile too */
     }
 
     .search-row {
         margin-bottom: 0px;
-        /* Mobile: rely on Divider's 15px top margin for the gap */
     }
 }
 
