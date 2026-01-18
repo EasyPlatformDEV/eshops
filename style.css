@@ -1792,7 +1792,15 @@ a:hover {
 
 /* 4. Search Rows */
 .search-row {
-    margin-bottom: 30px;
+    margin: 10px 0;
+    /* Updated gap to 10px top/bottom */
+}
+
+@media (max-width: 600px) {
+    .section-divider {
+        margin: 15px 0 10px 0 !important;
+        /* Tighter spacing on mobile */
+    }
 }
 
 .search-wrapper {
