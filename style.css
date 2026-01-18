@@ -1258,6 +1258,8 @@ a:hover {
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+        height: 56px;
+        /* Fixed height as requested */
         padding: 0 10px;
         /* Match typical padding */
     }
