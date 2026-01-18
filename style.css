@@ -1804,8 +1804,8 @@ a:hover {
     background: var(--pink-highlight);
     color: white;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1922,12 +1922,12 @@ a:hover {
     flex-direction: column;
     /* Stack on mobile */
     align-items: center;
-    gap: 25px;
-    /* Increased gap */
+    gap: 15px;
+    /* Reduced gap by 40% */
     max-width: 600px;
     margin: 0 auto;
-    padding: 30px 15px;
-    /* Increased padding */
+    padding: 18px 15px;
+    /* Reduced padding by 40% */
     color: white;
 }
 
