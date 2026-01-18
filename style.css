@@ -52,45 +52,52 @@ body {
 }
 
 .menu-btn {
-    background-color: #f1f3f4;
-    /* Light grey container */
-    border: none;
+    background-color: #ffffff;
+    /* Lighter inside (White/Very light grey) */
+    border: 2px solid #e0e0e0;
+    /* Darker border for visibility */
     cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    /* Rounded square */
+    width: 36px;
+    /* Smaller size */
+    height: 36px;
+    border-radius: 8px;
+    /* Adjusted radius for smaller size */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* Left align lines */
-    padding-left: 9px;
-    /* Visual balance */
-    gap: 4px;
-    /* Space between lines */
+    padding-left: 7px;
+    /* Adjusted padding */
+    gap: 3px;
+    /* Tighter gap */
     flex-shrink: 0;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.menu-btn:hover {
+    background-color: #f8f9fa;
+    /* Slight hover effect */
+    border-color: #e2e6ea;
 }
 
 .menu-btn span {
     display: block;
-    height: 3px;
+    height: 1.5px;
+    /* Thinner lines for smaller button */
     background-color: #222;
-    /* Dark line color */
     border-radius: 2px;
 }
 
 .menu-btn span:nth-child(1) {
-    width: 22px;
+    width: 18px;
 }
 
 .menu-btn span:nth-child(2) {
-    width: 12px;
-    /* Short middle line */
+    width: 10px;
 }
 
 .menu-btn span:nth-child(3) {
-    width: 22px;
+    width: 18px;
 }
 
 .logo-img {
