@@ -1912,11 +1912,17 @@ a:hover {
 /* 6. Footer */
 .app-footer {
     background: #111;
-    padding: 20px;
     margin-top: 40px;
+    /* Removed padding and flex properties from here */
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 15px;
     color: white;
 }
 
