@@ -1754,7 +1754,7 @@ a:hover {
 
 /* 1. Pink Banner */
 /* 1. Pink Banner */
-/* New Promo Banner (Replaces Landing Banner + CTA) */
+/* New Promo Banner (Replaces Landing Banner + CTA) - Updated */
 .promo-banner {
     background-color: #f8f9fa;
     /* Light grey background */
@@ -1812,39 +1812,45 @@ a:hover {
         padding: 0;
         overflow: hidden;
         background-color: #f8f9fa;
-        margin: 30px auto;
-        /* max-width: 900px; Remove max-width to let it expand naturally or match container */
-        justify-content: space-between;
+        margin: 20px 0;
+        /* Changed from 30px auto to match standard 20px gap */
+        justify-content: center;
+        /* Changed from space-between to keep items closer */
+        gap: 30px;
+        /* Added gap between image and content */
     }
 
     .promo-image {
         display: block;
-        width: 40%;
-        max-width: 350px;
+        width: 30%;
+        max-width: 250px;
+        /* Reduced max-width (was 350px) */
         flex-shrink: 0;
     }
 
     .promo-image img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
+        /* Changed to contain */
         display: block;
     }
 
     .promo-content {
-        padding: 40px;
-        flex-grow: 1;
+        padding: 30px;
+        /* Reduced padding */
+        flex-grow: 0;
+        /* Prevent it from pushing too far */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        /* Align left on desktop */
     }
 
     .promo-title {
         text-align: left;
-        font-size: 1.4rem;
-        /* Larger title on desktop */
+        font-size: 1.25rem;
+        /* Reduced from 1.4rem */
     }
 
     .promo-actions {
