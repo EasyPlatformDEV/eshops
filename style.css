@@ -2080,8 +2080,10 @@ a:hover {
     align-items: center;
     gap: 9px;
     /* Reduced gap again by 40% */
-    max-width: 600px;
-    margin: 0 auto;
+    width: auto;
+    /* Allow full width */
+    margin: 0 30px;
+    /* 30px margin from left and right */
     padding: 20px 15px;
     /* Increase padding */
     color: white;
