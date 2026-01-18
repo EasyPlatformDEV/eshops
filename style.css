@@ -1832,10 +1832,9 @@ a:hover {
         grid-template-areas:
             "image title"
             "subtitle actions";
-        grid-template-columns: 160px 1fr;
-        /* Fixed width for stable column alignment */
+        grid-template-columns: auto 1fr;
         grid-template-rows: 120px auto;
-        column-gap: 30px;
+        column-gap: 20px;
         row-gap: 20px;
         text-align: left;
         padding: 24px;
@@ -1867,7 +1866,8 @@ a:hover {
 
     .promo-title {
         grid-area: title;
-        text-align: left;
+        text-align: center;
+        /* Balanced between image and edge */
         font-size: 1.1rem;
         color: var(--pink-highlight);
         margin-bottom: 0;
@@ -1893,6 +1893,8 @@ a:hover {
         justify-content: flex-start;
         align-items: center;
         width: auto;
+        justify-self: start;
+        /* Prevent container from stretching to full grid cell width */
     }
 
     .promo-actions .action-btn.pink-filled {
@@ -1900,6 +1902,8 @@ a:hover {
         font-size: 0.8rem;
         width: auto !important;
         min-width: 0;
+        flex: none;
+        /* Prevent button from growing inside the flex container */
     }
 }
 
