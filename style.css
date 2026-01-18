@@ -1868,7 +1868,7 @@ a:hover {
     .promo-title {
         grid-area: title;
         text-align: left;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         color: var(--pink-highlight);
         margin-bottom: 0;
         align-self: center;
@@ -1888,11 +1888,18 @@ a:hover {
 
     .promo-actions {
         grid-area: actions;
+        display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        gap: 0;
         width: auto;
+    }
+
+    .promo-actions .action-btn.pink-filled {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        width: auto !important;
+        min-width: 0;
     }
 }
 
