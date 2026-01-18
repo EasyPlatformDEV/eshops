@@ -2120,15 +2120,16 @@ a:hover {
 
 .footer-links {
     display: flex;
-    gap: 10px;
-    align-items: center;
-    white-space: nowrap;
+    gap: 15px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-links a {
-    color: #888;
+    color: #869198;
     text-decoration: none;
-    font-size: 0.8rem;
+    transition: color 0.2s;
 }
 
 .footer-links a:hover {
