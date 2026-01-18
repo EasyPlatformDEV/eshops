@@ -1780,28 +1780,29 @@ a:hover {
 /* 3. Section Titles */
 .section-title {
     font-size: 1.1rem;
-    /* Matched to Just Added sidebar */
     color: var(--pink-highlight);
     font-weight: 600;
-    margin-bottom: 15px;
-    margin-top: 0;
-    /* Remove default top margin */
+    margin: 0 0 15px 0;
+    /* Explicit margin reset: 0 top/left/right, 15px bottom */
+    line-height: 1.2;
+    /* Tighter line height for precision */
 }
 
 .landing-section {
-    margin-bottom: 25px;
+    margin: 0 0 25px 0;
+    padding: 0;
+    /* Ensure no container spacing interferes */
 }
 
 /* 4. Search Rows */
 .search-row {
     margin: 10px 0;
-    /* Updated gap to 10px top/bottom */
 }
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 10px 0 !important;
-        /* 10px gap top and bottom */
+        margin: 10px 0 10px 0 !important;
+        /* Explicit 10px top and bottom */
     }
 }
 
