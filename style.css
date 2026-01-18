@@ -957,7 +957,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--pink-highlight);
 }
 
 .notifications-header h3 {
@@ -1702,7 +1702,7 @@ a:hover {
 
     .just-added-header {
         background: #fff;
-        border-bottom: 1px solid #dee2e6;
+        border-bottom: 1px solid var(--pink-highlight);
         flex-shrink: 0;
         width: 100%;
     }
