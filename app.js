@@ -1,19 +1,67 @@
 const app = {
     init: function () {
         this.fetchProducts();
+        this.fetchCelebrities();
     },
 
     fetchProducts: async function () {
         const productList = document.getElementById('product-list');
+        if (!productList) return; // Exit if not on product page
         try {
             const response = await fetch('products.json');
             if (!response.ok) throw new Error("JSON not found");
             const products = await response.json();
             this.renderProducts(products);
         } catch (error) {
-            console.error("Грешка:", error);
-            productList.innerHTML = `<p style="padding: 20px; color: red;">Грешка при зареждане на продуктите.</p>`;
+            console.error("Error:", error);
+            productList.innerHTML = `<p style="padding: 20px; color: red;">Error loading products.</p>`;
         }
+    },
+
+    fetchCelebrities: async function () {
+        if (!document.getElementById('splide-celebrities')) return;
+        try {
+            const response = await fetch('celebrities.json');
+            if (!response.ok) throw new Error("Celebrities JSON not found");
+            const items = await response.json();
+            this.renderCelebrities(items);
+        } catch (error) {
+            console.error("Error loading celebrities:", error);
+        }
+    },
+
+    renderCelebrities: function (items) {
+        const list = document.getElementById('celebrities-list');
+        if (!list) return;
+        list.innerHTML = '';
+
+        items.forEach(c => {
+            const html = `
+                <li class="splide__slide">
+                    <div class="celebrity-card">
+                        <div class="celebrity-avatar-wrapper">
+                            <img src="${c.avatar}" alt="${c.nickname}" class="celebrity-avatar">
+                            ${c.isVerified ? '<div class="verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
+                        </div>
+                        <div class="celebrity-nickname">${c.nickname}</div>
+                    </div>
+                </li>
+            `;
+            list.insertAdjacentHTML('beforeend', html);
+        });
+
+        // Initialize Splide for Celebrities
+        new Splide('#splide-celebrities', {
+            perPage: 5,
+            padding: { left: 10, right: 10 },
+            gap: 10,
+            arrows: false,
+            pagination: false,
+            breakpoints: {
+                600: { perPage: 4 },
+                400: { perPage: 3.5 }
+            }
+        }).mount();
     },
 
     renderProducts: function (products) {
