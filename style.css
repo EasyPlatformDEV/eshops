@@ -2265,7 +2265,10 @@ a:hover {
 /* Footer Desktop Override (Must be last to override base styles) */
 @media (min-width: 1201px) {
     .footer-container {
-        max-width: 870px;
+        max-width: none;
+        /* Allow full width */
+        margin: 0 30px;
+        /* Force 30px margins */
         padding-left: 10px;
         padding-right: 10px;
         flex-direction: row;
