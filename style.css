@@ -1760,7 +1760,8 @@ a:hover {
     /* Light grey background */
     border-radius: 16px;
     padding: 24px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
+    /* Removed top margin to pull it up (20px gap likely from header/main padding) */
     /* Mobile margin */
     display: flex;
     flex-direction: column;
@@ -1782,7 +1783,8 @@ a:hover {
 
 .promo-title {
     font-size: 1.1rem;
-    color: #880e4f;
+    color: var(--pink-highlight);
+    /* Use theme pink */
     /* Dark purple/pink text */
     margin-bottom: 20px;
     line-height: 1.4;
