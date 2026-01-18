@@ -1758,7 +1758,7 @@ a:hover {
 .promo-banner {
     background-color: #f8f9fa;
     /* Light grey background */
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 24px;
     margin: 0 0 20px 0;
     /* Removed top margin to pull it up (20px gap likely from header/main padding) */
@@ -1832,9 +1832,9 @@ a:hover {
         grid-template-areas:
             "image title"
             "subtitle actions";
-        grid-template-columns: auto 1fr;
+        grid-template-columns: min-content 1fr;
         grid-template-rows: 120px auto;
-        column-gap: 20px;
+        column-gap: 12px;
         row-gap: 20px;
         text-align: left;
         padding: 24px;
@@ -1844,13 +1844,13 @@ a:hover {
         /* Total 20px from header with parent padding */
         align-items: center;
         width: 100%;
-        border-radius: 16px;
+        border-radius: 8px;
     }
 
     .promo-image {
         grid-area: image;
         display: block;
-        width: 120px;
+        width: auto;
         /* Forced width to match design scale */
         height: 120px;
         flex-shrink: 0;
@@ -1858,7 +1858,7 @@ a:hover {
     }
 
     .promo-image img {
-        width: 100%;
+        width: auto;
         height: 100%;
         object-fit: contain;
         display: block;
