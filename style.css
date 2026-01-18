@@ -1812,19 +1812,21 @@ a:hover {
         padding: 0;
         overflow: hidden;
         background-color: #f8f9fa;
-        margin: 20px 0;
-        /* Changed from 30px auto to match standard 20px gap */
-        justify-content: center;
-        /* Changed from space-between to keep items closer */
-        gap: 30px;
-        /* Added gap between image and content */
+        margin: 10px 0 20px 0;
+        /* Adjusted from 20px 0 to achieve 20px total gap with parent padding */
+        justify-content: flex-start;
+        /* Aligned to start to keep image and text closer */
+        align-items: center;
+        /* Vertically center image and content */
+        gap: 20px;
+        /* Reduced from 30px */
     }
 
     .promo-image {
         display: block;
         width: 30%;
-        max-width: 250px;
-        /* Reduced max-width (was 350px) */
+        max-width: 180px;
+        /* Reduced from 250px */
         flex-shrink: 0;
     }
 
@@ -1837,10 +1839,10 @@ a:hover {
     }
 
     .promo-content {
-        padding: 30px;
-        /* Reduced padding */
-        flex-grow: 0;
-        /* Prevent it from pushing too far */
+        padding: 20px;
+        /* Reduced from 30px */
+        flex-grow: 1;
+        /* Allow content to take remaining space */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1849,8 +1851,8 @@ a:hover {
 
     .promo-title {
         text-align: left;
-        font-size: 1.25rem;
-        /* Reduced from 1.4rem */
+        font-size: 1.1rem;
+        /* Reduced from 1.25rem */
     }
 
     .promo-actions {
