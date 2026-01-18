@@ -169,21 +169,7 @@
         <div class="just-added-overlay" id="just-added-overlay"></div>
     </div>
 
-    <!-- Logout Confirmation Overlay -->
-    <div id="logout-overlay" class="logout-overlay">
-        <div class="logout-card">
-            <div class="logout-icon-wrapper">
-                <svg viewBox="0 0 24 24" width="48" height="48">
-                    <path
-                        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                        fill="currentColor" />
-                </svg>
-            </div>
-            <h3>Logged Out</h3>
-            <p>You have been successfully logged out.</p>
-            <button class="logout-close-btn" id="logout-close-btn">Close</button>
-        </div>
-    </div>
+
 
     <footer class="app-footer">
         <div class="footer-container">
@@ -397,24 +383,7 @@
                         }
                     }).mount();
                 });
-            // Check for Logout Hash
-            if (window.location.hash === '#logout') {
-                const overlay = document.getElementById('logout-overlay');
-                if (overlay) {
-                    overlay.classList.add('active');
 
-                    // Remove hash so refresh doesn't trigger it again
-                    history.replaceState(null, null, 'index.html');
-                }
-            }
-
-            // Close Logout Overlay
-            const logoutClose = document.getElementById('logout-close-btn');
-            if (logoutClose) {
-                logoutClose.addEventListener('click', () => {
-                    document.getElementById('logout-overlay').classList.remove('active');
-                });
-            }
         });
     </script>
 </body>
