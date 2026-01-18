@@ -1779,8 +1779,8 @@ a:hover {
 
 /* 3. Section Titles */
 .section-title {
-    font-size: 1.15rem;
-    /* Increased size */
+    font-size: 1.1rem;
+    /* Matched to Just Added sidebar */
     color: var(--pink-highlight);
     font-weight: 600;
     margin-bottom: 15px;
@@ -1800,8 +1800,8 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 10px 0 5px 0 !important;
-        /* Very tight spacing on mobile */
+        margin: 10px 0 !important;
+        /* 10px gap top and bottom */
     }
 }
 
