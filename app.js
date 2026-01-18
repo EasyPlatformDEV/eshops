@@ -99,7 +99,6 @@ const app = {
                         <img src="${item.image}" alt="${item.name}" class="category-bg-img" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
                         <div class="category-overlay">
                             <span class="category-name">${item.name}</span>
-                            <div class="category-icon">&rarr;</div>
                         </div>
                     </div>
                 </li>
