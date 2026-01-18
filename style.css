@@ -1284,7 +1284,8 @@ a:hover {
 @media (min-width: 1201px) {
     .just-added-sidebar {
         position: sticky;
-        top: 70px;
+        top: 76px;
+        /* 56px header + 20px gap */
         width: 350px;
         /* Increased from 320px */
         min-width: 350px;
@@ -1674,7 +1675,8 @@ a:hover {
     /* Sidebar Fixed */
     .just-added-sidebar {
         position: sticky;
-        top: 70px;
+        top: 76px;
+        /* 56px header + 20px gap */
         width: 350px;
         min-width: 350px;
         flex-shrink: 0;
