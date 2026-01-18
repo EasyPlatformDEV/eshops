@@ -1999,6 +1999,7 @@ a:hover {
 
 
 /* Celebrities Carousel */
+/* Celebrities Carousel */
 .celebrity-card {
     display: flex;
     flex-direction: column;
@@ -2006,11 +2007,12 @@ a:hover {
     gap: 8px;
     padding: 10px;
     cursor: pointer;
+    box-sizing: border-box;
+    /* Safety */
 }
 
 .celebrity-avatar-wrapper {
     width: 68px;
-    /* Slightly larger wrapper for border */
     height: 68px;
     border-radius: 50%;
     padding: 2px;
@@ -2021,6 +2023,8 @@ a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
+    box-sizing: border-box;
+    /* Ensure padding doesn't expand width */
 }
 
 .celebrity-avatar {
@@ -2031,6 +2035,10 @@ a:hover {
     /* White gap between gradient and image */
     object-fit: cover;
     background: white;
+    box-sizing: border-box;
+    /* Keep border inside the 100% width/height */
+    display: block;
+    /* Remove inline-block gaps */
 }
 
 .verified-badge {
@@ -2047,6 +2055,9 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
+    /* Sit on top */
+    box-sizing: border-box;
 }
 
 .celebrity-nickname {
@@ -2141,6 +2152,8 @@ a:hover {
     /* Fixed height for equal size */
     box-sizing: border-box;
     white-space: nowrap;
+    line-height: normal;
+    /* Fix vertical centering */
 }
 
 .btn-log-in {

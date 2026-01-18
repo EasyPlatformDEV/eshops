@@ -21,7 +21,7 @@ const app = {
     fetchCelebrities: async function () {
         if (!document.getElementById('splide-celebrities')) return;
         try {
-            const response = await fetch('celebrities.json');
+            const response = await fetch('celebrities.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
             this.renderCelebrities(items);
