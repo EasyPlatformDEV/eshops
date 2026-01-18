@@ -2152,7 +2152,7 @@ a:hover {
     /* Fixed height for equal size */
     box-sizing: border-box;
     white-space: nowrap;
-    line-height: normal;
+    line-height: 1;
     /* Fix vertical centering */
 }
 
