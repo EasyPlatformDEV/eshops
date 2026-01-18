@@ -2204,34 +2204,36 @@ a:hover {
 
 /* Mobile Login Button (Specific Style) */
 .mobile-login-btn {
-    background-color: var(--pink-highlight);
-    color: #fff !important;
-    /* Force white icon */
+    background-color: var(--pink-highlight) !important;
+    color: #ffffff !important;
     border-radius: 8px;
-    /* Same size as menu icon */
     width: 36px;
     height: 36px;
     padding: 0;
-    /* Reset padding to center icon */
     border: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s;
     cursor: pointer;
-    margin-left: 5px;
-    /* Ensure small gap from previous icon */
+    margin-left: 0;
+    /* Reset margin */
+}
+
+/* Force SVG to inherit white color */
+.mobile-login-btn svg {
+    color: #ffffff !important;
+    fill: none;
+    stroke: #ffffff !important;
 }
 
 .mobile-login-btn:hover {
-    background-color: #a91b93;
-    /* Darker purple */
+    background-color: #a91b93 !important;
 }
 
-.mobile-login-btn svg {
-    color: #fff;
-    fill: none;
-    stroke: currentColor;
+/* Tighter header spacing override */
+.header-right {
+    gap: 5px !important;
 }
 
 
