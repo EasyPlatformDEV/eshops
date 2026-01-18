@@ -1869,8 +1869,7 @@ a:hover {
         align-self: center;
         line-height: 1.3;
         font-weight: 500;
-        padding-right: 120px;
-        /* Balanced against image width for visual centering */
+        /* Removed artificial padding to fix the huge gap on the right */
     }
 
     .promo-subtitle {
