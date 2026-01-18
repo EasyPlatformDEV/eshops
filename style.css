@@ -1693,17 +1693,25 @@ a:hover {
 .landing-banner {
     background: var(--pink-highlight);
     color: white;
-    padding: 15px;
-    text-align: center;
+    padding: 15px 20px;
+    /* Increased padding */
+    text-align: left;
+    /* Align left */
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
-    /* Rounded all corners */
-    margin-bottom: 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    /* Flex layout */
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    /* Space between icon and text */
+}
+
+.landing-banner strong {
+    font-weight: 700;
 }
 
 @media (min-width: 1201px) {
@@ -1786,6 +1794,8 @@ a:hover {
 
 .search-wrapper {
     display: flex;
+    align-items: center;
+    /* Added center alignment */
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -1811,8 +1821,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin: 3px;
+    margin: 2px 4px 2px 0;
+    /* Adjust margin for visual balance */
     transition: background 0.2s;
+    flex-shrink: 0;
+    /* Prevent shrinking */
 }
 
 .btn-go:hover {
