@@ -54,8 +54,8 @@ body {
 .menu-btn {
     background-color: #ffffff;
     /* Lighter inside (White/Very light grey) */
-    border: 2px solid #e0e0e0;
-    /* Darker border for visibility */
+    border: 1px solid #e0e0e0;
+    /* Thinner border (1px) like sign-in button */
     cursor: pointer;
     width: 36px;
     /* Smaller size */
