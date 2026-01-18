@@ -1693,10 +1693,9 @@ a:hover {
 .landing-banner {
     background: var(--pink-highlight);
     color: white;
-    padding: 15px 20px;
-    /* Increased padding */
+    padding: 15px 12px;
+    /* Reduced horizontal padding */
     text-align: left;
-    /* Align left */
     font-size: 0.95rem;
     line-height: 1.4;
     border-radius: 8px;
@@ -1704,10 +1703,9 @@ a:hover {
     border-top-right-radius: 0;
     margin-bottom: 20px;
     display: flex;
-    /* Flex layout */
     align-items: center;
-    gap: 15px;
-    /* Space between icon and text */
+    gap: 12px;
+    /* Reduced gap */
 }
 
 .landing-banner strong {
