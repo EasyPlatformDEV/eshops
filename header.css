@@ -112,3 +112,65 @@
     height: 32px;
     border-radius: 50%;
 }
+
+/* Header Navigation Actions (Desktop Only) */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    margin-left: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.nav-item:hover {
+    opacity: 0.8;
+}
+
+.nav-icon-sq {
+    width: 32px;
+    height: 32px;
+    background-color: var(--pink-highlight);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.nav-icon-sq svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-label {
+    color: var(--pink-highlight);
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+    .header-nav {
+        gap: 12px;
+    }
+
+    .nav-label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .header-nav {
+        display: none;
+        /* Hidden on mobile as requested */
+    }
+}
