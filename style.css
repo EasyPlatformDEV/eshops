@@ -1779,9 +1779,11 @@ a:hover {
 
 /* 3. Section Titles */
 .section-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    /* Slightly smaller than sidebar (1.1rem) */
     color: var(--pink-highlight);
-    font-weight: 600;
+    font-weight: 500;
+    /* Lighter than sidebar (600) */
     margin: 0 0 15px 0;
     /* Explicit margin reset */
 }
