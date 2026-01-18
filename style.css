@@ -1775,7 +1775,7 @@ a:hover {
 .section-divider {
     border: 0;
     height: 1px;
-    background: #e0e0e0;
+    background: var(--pink-highlight);
     margin: 20px 0 15px 0;
     /* 20px Top (increased by 5px), 15px Bottom */
     width: 100%;
