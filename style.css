@@ -28,121 +28,7 @@ body {
 
 /* Header */
 /* Header */
-.app-header {
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
-    width: 100%;
-    /* Ensure full width border */
-}
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 7px 15px;
-}
-
-/* .header-left removed header-right from here to avoid duplicate */
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.menu-btn {
-    background-color: #ffffff;
-    /* Lighter inside (White/Very light grey) */
-    border: 1px solid #e0e0e0;
-    /* Thinner border (1px) like sign-in button */
-    cursor: pointer;
-    width: 36px;
-    /* Smaller size */
-    height: 36px;
-    border-radius: 8px;
-    /* Adjusted radius for smaller size */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 7px;
-    /* Adjusted padding */
-    gap: 3px;
-    /* Tighter gap */
-    flex-shrink: 0;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.menu-btn:hover {
-    background-color: #f8f9fa;
-    /* Slight hover effect */
-    border-color: #e2e6ea;
-}
-
-.menu-btn span {
-    display: block;
-    height: 2px;
-    /* Thicker lines per request */
-    background-color: #222;
-    border-radius: 2px;
-}
-
-.menu-btn span:nth-child(1) {
-    width: 18px;
-}
-
-.menu-btn span:nth-child(2) {
-    width: 10px;
-}
-
-.menu-btn span:nth-child(3) {
-    width: 18px;
-}
-
-.logo-img {
-    height: 43px;
-    width: auto;
-    display: block;
-}
-
-@media (max-width: 600px) {
-    .logo-img {
-        height: 47px;
-    }
-}
-
-.notification-icon {
-    position: relative;
-    color: var(--pink-highlight);
-    /* Changed from blue to pink */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.notification-icon svg {
-    transform: scale(1.15);
-    /* Increase size slightly as requested */
-}
-
-.notification-icon .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #fff;
-    /* White bg */
-    color: var(--pink-highlight);
-    /* Pink text */
-    font-size: 0.7rem;
-    padding: 2px 5px;
-    border-radius: 50%;
-    border: none;
-    /* Removed border */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    /* Added shadow */
-    font-weight: 600;
-}
 
 .sort-arrow {
     color: #000;
@@ -150,17 +36,7 @@ body {
 }
 
 /* Moved .header-right .user-profile to bottom for specificity handling */
-.user-profile {
-    position: relative;
-    /* Margin handled in header spacing block */
-    cursor: pointer;
-}
 
-.profile-img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-}
 
 .status-dot {
     position: absolute;
@@ -1691,21 +1567,7 @@ a:hover {
     }
 
     /* App Header Desktop Constraints */
-    .app-header {
-        position: sticky;
-        top: 0;
-        z-index: 1020;
-    }
 
-    .app-header .header-container {
-        max-width: 870px;
-        /* Match main-layout width for alignment */
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
 
     .just-added-header {
         background: transparent;
