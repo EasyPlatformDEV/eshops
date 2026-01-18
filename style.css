@@ -136,10 +136,10 @@ body {
     margin-left: 0;
 }
 
-.header-right .user-profile {
+/* Moved .header-right .user-profile to bottom for specificity handling */
+.user-profile {
     position: relative;
-    margin-left: 10px;
-    /* Gap from Notification icon */
+    /* Margin handled in header spacing block */
     cursor: pointer;
 }
 
@@ -2345,6 +2345,11 @@ a:hover {
     margin-left: 10px;
 }
 
+/* Increase margin for profile (Legacy/No-Gap browsers need 20px total) */
+.header-right .user-profile {
+    margin-left: 20px;
+}
+
 /* Modern: Flex Gap (Preferred) */
 @supports (gap: 10px) {
     .header-right {
@@ -2355,6 +2360,11 @@ a:hover {
     .header-right>*+* {
         margin-left: 0;
         /* Remove margin if gap works */
+    }
+
+    /* Restore specific margin for profile (10px Gap + 10px Margin = 20px Total) */
+    .header-right .user-profile {
+        margin-left: 10px;
     }
 }
 
@@ -2384,10 +2394,4 @@ a:hover {
 
 .menu-item.purple .menu-icon {
     color: var(--pink-highlight) !important;
-}
-
-/* Tighter header spacing */
-.header-right {
-    gap: 8px;
-    /* Reduced from 15px */
 }
