@@ -136,7 +136,7 @@ body {
     margin-left: 0;
 }
 
-.user-profile {
+.header-right .user-profile {
     position: relative;
     margin-left: 10px;
     /* Gap from Notification icon */
