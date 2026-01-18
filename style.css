@@ -1636,12 +1636,6 @@ a:hover {
         margin: 0 auto;
     }
 
-    .footer-container {
-        max-width: 870px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
     .just-added-header {
         background: transparent;
     }
@@ -2028,4 +2022,13 @@ a:hover {
     font-weight: 600;
     cursor: pointer;
     width: 100%;
+}
+
+/* Footer Desktop Override (Must be last to override base styles) */
+@media (min-width: 1201px) {
+    .footer-container {
+        max-width: 870px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
