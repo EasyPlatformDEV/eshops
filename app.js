@@ -4,6 +4,57 @@ const app = {
         this.fetchShops();
         this.fetchCelebrities();
         this.fetchShopCategories();
+        this.bindLogoutEvents(); // Add logout listener
+    },
+
+    bindLogoutEvents: function () {
+        // Open Modal triggers
+        const logoutLinks = document.querySelectorAll('.menu-link-logout');
+        const logoutModal = document.getElementById('logout-modal');
+        const body = document.body;
+
+        if (logoutLinks.length > 0 && logoutModal) {
+            logoutLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Close other menus if open
+                    document.getElementById('menu-modal')?.classList.remove('active');
+                    document.getElementById('menu-overlay')?.classList.remove('active');
+
+                    // Show Logout Modal
+                    logoutModal.classList.add('active');
+                    body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+        }
+
+        // Close Logic
+        const closeBtn = document.getElementById('logout-close');
+        const loginAgainBtn = document.getElementById('logout-login-btn');
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                logoutModal.classList.remove('active');
+                body.style.overflow = '';
+            });
+        }
+
+        if (loginAgainBtn) {
+            loginAgainBtn.addEventListener('click', () => {
+                // Action: Redirect to landing page or just close and reload
+                window.location.href = 'index.html';
+            });
+        }
+
+        // Close on click outside (optional, but good UX)
+        if (logoutModal) {
+            logoutModal.addEventListener('click', (e) => {
+                if (e.target === logoutModal) {
+                    logoutModal.classList.remove('active');
+                    body.style.overflow = '';
+                }
+            });
+        }
     },
 
     fetchProducts: async function () {

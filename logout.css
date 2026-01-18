@@ -1,0 +1,119 @@
+/* Logout Modal Styles */
+.logout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent backdrop */
+    z-index: 3000;
+    /* High z-index to sit on top of everything */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logout-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.logout-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    /* Adjust based on screenshot proportions */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close Button (X in circle) */
+.logout-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: #666;
+    transition: background 0.2s;
+}
+
+.logout-close:hover {
+    background: #e0e0e0;
+}
+
+/* Main Icon */
+.logout-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    color: #000;
+    /* Black as requested */
+}
+
+/* Title */
+.logout-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Text */
+.logout-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Log In Again Button */
+.logout-btn-action {
+    background: var(--pink-highlight, #b60378);
+    /* Fallback to hex if var not available */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    /* Soft rounded corners like screenshot */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+}
+
+.logout-btn-action:hover {
+    background: #a0026a;
+    /* Slightly darker pink */
+    transform: translateY(-2px);
+}

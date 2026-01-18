@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css?v=6">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="logout.css">
 </head>
 
 <body>
@@ -54,7 +55,7 @@
                     </div>
                     <div class="profile-dropdown">
                         <a href="#">Edit profile</a>
-                        <a href="index.html#logout">Log out</a>
+                        <a href="index.html#logout" class="menu-link-logout">Log out</a>
                     </div>
                 </div>
             </div>
@@ -294,7 +295,7 @@
                 </span>
                 Edit profile
             </a>
-            <a href="#" class="menu-item">
+            <a href="#" class="menu-item menu-link-logout">
                 <span class="menu-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
                         <path
@@ -304,6 +305,33 @@
                 </span>
                 Sign out
             </a>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="logout-modal" id="logout-modal">
+        <div class="logout-content">
+            <button class="logout-close" id="logout-close">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
+            <div class="logout-icon">
+                <!-- Person and Door Icon -->
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="currentColor">
+                    <path
+                        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
+                </svg>
+            </div>
+            <h3 class="logout-title">Logout successful!</h3>
+            <p class="logout-text">Thank you for visiting! We hope to see you again soon, simply log back in.</p>
+            <button class="logout-btn-action" id="logout-login-btn">
+                Log In Again
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M16.17 13H4v-2h12.17l-3.59-3.59L14 6l6 6-6 6-1.41-1.41L16.17 13z" />
+                </svg>
+            </button>
         </div>
     </div>
 
