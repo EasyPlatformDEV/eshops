@@ -1723,15 +1723,13 @@ a:hover {
 }
 
 /* Dividers */
-/* Dividers */
-/* Dividers */
-/* Dividers */
 .section-divider {
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 15px 0 !important;
-    /* Strict 15px top/bottom gap. Bottom margin determines gap to next element. Top margin determines gap from previous element (which now has 0 bottom margin). */
+    margin: 15px 0;
+    width: 100%;
+    display: block;
 }
 
 /* 2. Add Products CTA */
@@ -1742,7 +1740,7 @@ a:hover {
     background: #f8f9fa;
     padding: 8px 16px;
     border-radius: 8px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     /* Zero bottom margin. Gap handled by divider below. */
     gap: 15px;
 }
@@ -1790,19 +1788,21 @@ a:hover {
 }
 
 .landing-section {
-    margin: 0 0 15px 0;
+    margin: 0;
+    /* Reduced to 0 to rely on margins of children or dividers */
     padding: 0;
 }
 
 /* 4. Search Rows */
 .search-row {
     margin: 15px 0 0 0;
-    /* 15px Top (Gap from previous element), 0 Bottom (Gap handled by divider below) */
+    /* 15px Top (Gap from previous element), 0 Bottom */
+    display: block;
 }
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 15px 0 !important;
+        margin: 15px 0;
     }
 
     .search-row {
