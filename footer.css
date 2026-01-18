@@ -20,9 +20,9 @@
     padding: 20px 15px;
     /* Increase padding */
     color: white;
-    border-top: 0.5px solid #869198;
-    /* Reduced thickness as requested */
-    border-bottom: 0.5px solid #869198;
+    border-top: 1px solid rgba(134, 145, 152, 0.5);
+    /* Use opacity to make it look thinner */
+    border-bottom: 1px solid rgba(134, 145, 152, 0.5);
 }
 
 .footer-icons {
