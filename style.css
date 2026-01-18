@@ -2201,7 +2201,19 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-    .btn-sign-up {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 601px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    #menu-link-just-added {
         display: none !important;
     }
 }
