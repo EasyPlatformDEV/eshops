@@ -2244,29 +2244,39 @@ a:hover {
     /* Light pink hover */
 }
 
-/* Standardize Header Spacing (Desktop & Mobile) */
-.header-right {
-    gap: 10px;
-    /* User requested specific 10px gap */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    /* Ensure they pack tightly to the right */
-    width: auto;
-    /* Prevent stretching */
-}
-
-/* Backup spacing for non-gap browsers */
-.header-right>*+* {
-    margin-left: 10px;
-}
-
-/* Reset individual margins to prevent extra space */
+/* Reset individual margins to prevent extra space (Placed first) */
 .just-added-btn,
 .header-btn,
 .mobile-login-btn,
 .notification-icon {
     margin: 0;
+}
+
+/* Standardize Header Spacing (Desktop & Mobile) */
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Pack right */
+    width: auto;
+}
+
+/* Fallback: Margin Spacing (Applied first) */
+.header-right>*+* {
+    margin-left: 10px;
+}
+
+/* Modern: Flex Gap (Preferred) */
+@supports (gap: 10px) {
+    .header-right {
+        gap: 10px;
+        /* Exact 10px gap */
+    }
+
+    .header-right>*+* {
+        margin-left: 0;
+        /* Remove margin if gap works */
+    }
 }
 
 
