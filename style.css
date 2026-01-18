@@ -1783,15 +1783,12 @@ a:hover {
     color: var(--pink-highlight);
     font-weight: 600;
     margin: 0 0 15px 0;
-    /* Explicit margin reset: 0 top/left/right, 15px bottom */
-    line-height: 1.2;
-    /* Tighter line height for precision */
+    /* Explicit margin reset */
 }
 
 .landing-section {
     margin: 0 0 25px 0;
     padding: 0;
-    /* Ensure no container spacing interferes */
 }
 
 /* 4. Search Rows */
@@ -1801,8 +1798,13 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 10px 0 10px 0 !important;
-        /* Explicit 10px top and bottom */
+        margin: 10px 0 !important;
+        /* 10px gap top and bottom */
+    }
+
+    .search-row {
+        margin-bottom: 0px;
+        /* Remove margin bottom to rely on divider top margin 10px */
     }
 }
 
