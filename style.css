@@ -1804,96 +1804,84 @@ a:hover {
     color: #333;
 }
 
-.desktop-only {
-    display: none !important;
+/* Mobile defaults for promo banner components */
+.promo-image {
+    display: none;
 }
 
-@media (min-width: 768px) {
-    .desktop-only {
-        display: block !important;
-    }
+.promo-title {
+    font-size: 1.1rem;
+    color: var(--pink-highlight);
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+}
 
-    .mobile-only {
-        display: none !important;
-    }
+.promo-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
 }
 
 /* Desktop Promo Banner */
 @media (min-width: 768px) {
     .promo-banner {
-        flex-direction: row;
+        display: grid;
+        grid-template-areas:
+            "image title"
+            "subtitle actions";
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 30px;
+        row-gap: 10px;
         text-align: left;
-        padding: 0;
+        padding: 20px;
         overflow: hidden;
         background-color: #f8f9fa;
         margin: 10px 0 20px 0;
-        /* Adjusted from 20px 0 to achieve 20px total gap with parent padding */
-        justify-content: flex-start;
-        /* Aligned to start to keep image and text closer */
         align-items: center;
-        /* Vertically center image and content */
-        gap: 20px;
-        /* Reduced from 30px */
-    }
-
-    .promo-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding-left: 20px;
+        width: 100%;
     }
 
     .promo-image {
+        grid-area: image;
         display: block;
-        width: 100%;
-        max-width: 120px;
-        /* Reduced from 180px */
+        width: 60px;
+        /* Matches screenshot scale */
+        height: 60px;
         flex-shrink: 0;
     }
 
     .promo-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: contain;
         display: block;
     }
 
-    .promo-subtitle.desktop-only {
-        font-size: 0.8rem;
-        /* Smaller subtitle */
-        color: #666;
-        text-align: center;
-        line-height: 1.3;
-    }
-
-    .promo-content {
-        padding: 20px;
-        /* Reduced from 30px */
-        flex-grow: 1;
-        /* Allow content to take remaining space */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
     .promo-title {
+        grid-area: title;
         text-align: left;
         font-size: 1.1rem;
-        /* Reduced from 1.25rem */
-    }
-
-    .promo-actions {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 20px;
+        margin-bottom: 0;
     }
 
     .promo-subtitle {
-        margin-right: auto;
+        grid-area: subtitle;
+        font-size: 0.85rem;
+        color: #333;
         text-align: left;
+    }
+
+    .promo-actions {
+        grid-area: actions;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0;
+        width: auto;
     }
 }
 
