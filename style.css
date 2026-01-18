@@ -2047,14 +2047,51 @@ a:hover {
 }
 
 /* Sign In Button Header */
-.btn-sign-in {
-    border: 1px solid #ddd;
-    padding: 5px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: var(--text-color);
+/* Header Buttons */
+.header-right {
+    gap: 10px;
+    /* Reduced gap for button grouping */
+}
+
+.header-btn {
+    padding: 0 12px;
+    /* Minimal horizontal padding */
+    border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 34px;
+    /* Fixed height for equal size */
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.btn-log-in {
+    border: 1px solid #ddd;
+    color: var(--text-color);
+    background: white;
+}
+
+.btn-log-in:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+}
+
+.btn-sign-up {
+    background: var(--pink-highlight);
+    color: white;
+    border: 1px solid var(--pink-highlight);
+}
+
+.btn-sign-up:hover {
+    background: #a91b93;
+    border-color: #a91b93;
+    opacity: 1;
 }
 
 /* Logout Overlay */
