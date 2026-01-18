@@ -2204,36 +2204,47 @@ a:hover {
 
 /* Mobile Login Button (Specific Style) */
 .mobile-login-btn {
-    background-color: var(--pink-highlight) !important;
-    color: #ffffff !important;
+    background-color: #ffffff;
+    border: 1px solid var(--blue-highlight);
     border-radius: 8px;
     width: 36px;
     height: 36px;
     padding: 0;
-    border: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s;
     cursor: pointer;
     margin-left: 0;
-    /* Reset margin */
 }
 
-/* Force SVG to inherit white color */
+/* Force SVG to inherit blue color */
 .mobile-login-btn svg {
-    color: #ffffff !important;
+    color: var(--blue-highlight);
     fill: none;
-    stroke: #ffffff !important;
+    stroke: var(--blue-highlight);
 }
 
 .mobile-login-btn:hover {
-    background-color: #a91b93 !important;
+    background-color: #ebf1fe;
+    /* Light blue hover */
 }
 
 /* Tighter header spacing override */
 .header-right {
-    gap: 5px !important;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Backup spacing for non-gap browsers */
+.header-right>*+* {
+    margin-left: 5px;
+}
+
+/* Reset individual margins */
+.just-added-btn {
+    margin: 0;
 }
 
 
