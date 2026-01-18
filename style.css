@@ -2181,7 +2181,8 @@ a:hover {
     opacity: 1;
     text-decoration: none !important;
     /* Remove underline */
-    box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2);
+    /* box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2); Removed per user request */
+
     /* Add shadow */
     color: white !important;
     /* Ensure text stays white */
