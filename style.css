@@ -101,9 +101,15 @@ body {
 }
 
 .logo-img {
-    height: 47px;
+    height: 43px;
     width: auto;
     display: block;
+}
+
+@media (max-width: 600px) {
+    .logo-img {
+        height: 47px;
+    }
 }
 
 .notification-icon {
