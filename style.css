@@ -1245,8 +1245,8 @@ a:hover {
         /* Align top */
         max-width: 1200px;
         margin: 0 auto;
-        padding-top: 10px;
-        /* Gap from header - Reduced from 20px */
+        padding-top: 0;
+        /* Removed 10px offset pushed everything down */
         gap: 20px;
         justify-content: center;
     }
@@ -1641,7 +1641,8 @@ a:hover {
         justify-content: center;
         gap: 0px;
         /* Gap removed to rely on sidebar inner padding */
-        padding-top: 10px;
+        padding-top: 0;
+        /* Removed 10px global offset */
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -1836,7 +1837,8 @@ a:hover {
         padding: 24px;
         overflow: hidden;
         background-color: #f8f9fa;
-        margin: 10px 0 30px 0;
+        margin: 20px 0 30px 0;
+        /* Exactly 20px gap from header as requested */
         align-items: center;
         width: 100%;
         border-radius: 8px;
@@ -1950,8 +1952,8 @@ a:hover {
 
 /* 4. Search Rows */
 .section-divider {
-    margin: 40px 0;
-    /* Increased from 30px to fix spacing regression */
+    margin: 15px 0;
+    /* Normalized to avoid double margins */
 }
 
 .search-row {
