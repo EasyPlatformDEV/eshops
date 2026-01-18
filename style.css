@@ -1200,7 +1200,8 @@ a:hover {
 .just-added-btn {
     background: none;
     border: none;
-    color: var(--blue-highlight);
+    color: var(--pink-highlight);
+    /* Changed from blue to pink */
     /* Blue as requested */
     padding: 8px;
     /* Match notification icon padding area */
