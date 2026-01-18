@@ -30,7 +30,8 @@
     width: 90%;
     max-width: 400px;
     /* Adjust based on screenshot proportions */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow */
     animation: slideUp 0.3s ease;
 }
 
@@ -70,9 +71,12 @@
 
 /* Main Icon */
 .logout-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 20px;
+    width: 48px;
+    /* Reduced from 64px */
+    height: 48px;
+    /* Reduced from 64px */
+    margin: 0 auto 20px auto;
+    /* Centered */
     color: #000;
     /* Black as requested */
 }
@@ -80,7 +84,8 @@
 /* Title */
 .logout-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    /* Reduced from 700 */
     margin-bottom: 10px;
     color: #000;
 }
@@ -99,11 +104,14 @@
     /* Fallback to hex if var not available */
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 12px;
-    /* Soft rounded corners like screenshot */
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 10px 27px;
+    /* Reduced by ~10% from 12px 30px */
+    border-radius: 10px;
+    /* Slightly tighter radius */
+    font-size: 0.95rem;
+    /* Slightly smaller text */
+    font-weight: 500;
+    /* Reduced from 600 */
     cursor: pointer;
     display: inline-flex;
     align-items: center;
