@@ -2080,6 +2080,8 @@ a:hover {
 .btn-log-in:hover {
     background: #f8f9fa;
     border-color: #ccc;
+    color: var(--text-color);
+    text-decoration: none !important;
 }
 
 .btn-sign-up {
