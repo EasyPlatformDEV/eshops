@@ -5,6 +5,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-container {
@@ -15,7 +16,6 @@
     max-width: 1150px;
     margin: 0 auto;
     padding: 7px 0;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .header-left {
