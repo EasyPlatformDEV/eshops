@@ -115,11 +115,15 @@ body {
 /* Chunk 1: Notification Icon Color */
 .notification-icon {
     position: relative;
-    color: var(--pink-highlight);
-    /* Changed from blue to pink */
+    color: var(--blue-highlight);
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+.notification-icon svg {
+    transform: scale(1.15);
+    /* Increase size slightly as requested */
 }
 
 /* Chunk 2: Notification Badge Style */
@@ -127,19 +131,12 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: #fff;
-    /* White background */
-    color: var(--pink-highlight);
-    /* Pink text */
+    background-color: var(--pink-highlight);
+    color: #fff;
     font-size: 0.7rem;
     padding: 2px 5px;
     border-radius: 50%;
-    border: none;
-    /* Removed border */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    /* Added shadow */
-    font-weight: 600;
-    /* Made slightly bolder for readability */
+    border: 1px solid #fff;
 }
 
 /* Chunk 3: Just Added Button Color */
