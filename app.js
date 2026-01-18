@@ -145,7 +145,7 @@ const app = {
             perPage: 5,
             padding: { left: 10, right: 10 },
             gap: 10,
-            arrows: false,
+            arrows: true,
             pagination: false,
             breakpoints: {
                 600: { perPage: 4 },
