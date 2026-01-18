@@ -308,8 +308,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="app.js"></script> <!-- Reused for header/sidebar/menu logic if compatible -->
     <script>
-        // Landing Page Specific Logic
-        // Logic moved to app.js for cleaner code, single initialization, and correct styling matched to CSS
+        // Initialize App Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            app.init();
+        });
     </script>
 </body>
 
