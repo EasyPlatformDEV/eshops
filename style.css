@@ -112,7 +112,6 @@ body {
     }
 }
 
-/* Chunk 1: Notification Icon Color */
 .notification-icon {
     position: relative;
     color: var(--blue-highlight);
@@ -126,7 +125,6 @@ body {
     /* Increase size slightly as requested */
 }
 
-/* Chunk 2: Notification Badge Style */
 .notification-icon .badge {
     position: absolute;
     top: -5px;
@@ -139,2193 +137,2185 @@ body {
     border: 1px solid #fff;
 }
 
-/* Chunk 3: Just Added Button Color */
+.sort-arrow {
+    color: #000;
+    margin-left: 0;
+}
+
+/* Moved .header-right .user-profile to bottom for specificity handling */
+.user-profile {
+    position: relative;
+    /* Margin handled in header spacing block */
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+/* Content */
+.app-content {
+    padding: 15px;
+    max-width: 600px;
+    /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
+    margin: 0 auto;
+}
+
+/* Actions Bar */
+.actions-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.action-btn.blue {
+    background-color: var(--pink-highlight);
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.action-btn.blue:hover {
+    background-color: #920260;
+    /* Darker pink for hover */
+}
+
+/* Search */
+.search-section {
+    margin-bottom: 15px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-light);
+    font-size: 0.9rem;
+    /* Decreased from 1rem to match eshops input */
+}
+
+/* Filters */
+/* Filters */
+/* Filters */
+.filter-section {
+    margin-bottom: 0px !important;
+    /* Ensure no gap below */
+    font-size: 0.9rem;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.eshops-input-container {
+    flex-grow: 1;
+}
+
+.eshops-input-container input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-light);
+    color: var(--text-color);
+}
+
+.alerts-row {
+    justify-content: space-between;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Custom Checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    margin-right: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.checkbox-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: var(--blue-highlight);
+}
+
+/* Checkmark indicator (hidden by default) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.reset-filters-btn {
+    background: none;
+    border: none;
+    color: var(--blue-highlight);
+    cursor: pointer;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.stats-row strong {
+    color: var(--text-color);
+}
+
+/* Sort */
+.sort-section {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    /* Exact 20px gap requested by user */
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: flex-start;
+}
+
+/* Ensure checkbox matches */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    /* Match sort */
+    color: var(--text-light);
+    /* Match sort */
+}
+
+.sort-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-selected {
+    color: var(--blue-highlight);
+    cursor: pointer;
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.sort-selected:hover {
+    background-color: var(--bg-light);
+}
+
+.sort-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 100;
+}
+
+.sort-dropdown-wrapper.active .sort-dropdown-menu {
+    display: block;
+}
+
+.sort-dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.sort-dropdown-menu a:hover {
+    background-color: var(--bg-light);
+    text-decoration: none;
+}
+
+/* Product List & Cards */
+.product-card {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0;
+    /* Padding handled inside cols to accommodate full-height divider */
+    margin-bottom: 15px;
+    background: #fff;
+    position: relative;
+    /* align-items removed to allow stretch for full height border */
+}
+
+/* Left Column */
+.product-left-col {
+    padding: 10px;
+    /* Reduced from 15px to match right col */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 0;
+}
+
+/* Ensure badge doesn't get cut off if it goes outside */
+.product-image-container {
+    margin-bottom: 10px;
+    position: relative;
+    overflow: visible;
+}
+
+.product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.product-image-container:hover .product-img {
+    transform: scale(1.1);
+}
+
+.product-price.discounted {
+    color: var(--pink-highlight);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 5px;
+    left: -55px;
+    /* Moved further left to avoid overlap */
+    right: auto;
+    /* Adjust based on image container handling */
+    background-color: var(--pink-highlight);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Fix vertical alignment */
+    line-height: 1;
+}
+
+.product-brand {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.product-price-block {
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Duplicate styles removed */
+
+.product-old-price {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Right Column */
+/* Right Column */
+.product-right-col {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 0;
+}
+
+.product-right-col::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    bottom: 15px;
+    border-left: 1px dashed #ddd;
+}
+
+/* product-info removed */
+
+/* Title Bold */
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    /* Reduced from bold/700 */
+    margin-bottom: 12px;
+    line-height: 1.3;
+    color: #333;
+}
+
+.separator-line {
+    border-top: 1px dashed var(--border-color);
+    /* Dashed as requested */
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.actions-label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--pink-highlight);
+    /* Updated from text-color */
+    font-weight: 500;
+}
+
+/* Common Button Styles */
+.action-btn-common {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 38px;
+    /* Fixed height for all buttons */
+    padding: 0 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    /* Fill the container in left/right cols where applied */
+    box-sizing: border-box;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+    /* Spacing between stacked buttons */
+}
+
+/* Buy Now Button */
+.buy-now-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.buy-now-btn:hover {
+    background-color: #218838;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Generic Link Hover */
+a {
+    color: var(--blue-highlight);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2451b8;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
+/* Generic Link Hover */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    /* Reset for dropdown items */
+}
+
+/* Shop Link Button */
+.shop-link-btn {
+    background-color: #f1f3f5;
+    color: #333;
+    border: 1px solid transparent;
+    margin-bottom: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shop-link-btn:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Price Alert Buttons */
+.alert-set-btn {
+    background-color: #ebf1fe;
+    border: none;
+    color: var(--blue-highlight);
+    justify-content: center;
+    /* Center content for button look */
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    /* Ensure not bold */
+    padding: 0 12px;
+    /* Add horizontal padding back */
+    height: 38px;
+    /* Fixed height like others */
+    width: 100%;
+    /* Full width to match Buy Now */
+    margin: 0 0 10px 0;
+    /* Align with layout */
+    font-size: 0.85rem;
+    gap: 5px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.alert-set-btn:hover {
+    background-color: var(--bg-light);
+    text-decoration: none;
+    /* No underline for button style */
+    border-color: #ccc;
+}
+
+.alert-active-btn {
+    background-color: #ebf1fe;
+    border: none;
+    color: var(--text-color);
+    justify-content: center;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 8px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.alert-active-btn:hover {
+    background-color: var(--bg-light);
+    border-color: #ccc;
+}
+
+/* Hide delete icon on mobile */
+@media (max-width: 480px) {
+    .alert-active-btn .delete-icon {
+        display: none;
+    }
+}
+
+/* Icon color handled inline or via class */
+
+.shop-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .discount-badge {
+        font-size: 0.85rem;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        right: auto;
+        left: -15px;
+        /* Move to left to avoid overlap with right col */
+        top: -5px;
+        margin-left: -5px;
+        /* Slight offset if needed */
+    }
+}
+
+/* Celebrities */
+.celeb-card {
+    display: flex;
+    justify-content: center;
+    /* Center in slide */
+    align-items: center;
+    height: 100%;
+    /* Ensure height */
+    padding: 5px;
+}
+
+.celeb-avatar-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    /* Use fixed dimensions */
+}
+
+.celeb-avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    /* Remove inline gap */
+}
+
+.celeb-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #007bff;
+    /* Blue tick */
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-size: 0.7rem;
+}
+
+/* User Profile & Dropdown */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-arrow-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-arrow-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: #000;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 100;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.profile-dropdown a:hover {
+    background-color: var(--bg-light);
+}
+
+.product-actions {
+    list-style: none;
+    padding: 0;
+    margin-bottom: auto;
+    /* Pushes content down if needed, or just list logic */
+}
+
+.product-actions li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: var(--blue-highlight);
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.product-actions li.text-light {
+    color: var(--text-light);
+}
+
+/* Alert Box Styles (Right Column Details) */
+.alert-box {
+    background-color: #fff0f3;
+    border: 1px solid var(--pink-highlight);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: auto;
+    /* Push to bottom if space allows, or just margin */
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.alert-bell {
+    color: var(--pink-highlight);
+}
+
+.alert-details {
+    color: var(--pink-highlight);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.alert-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.alert-bell-body {
+    color: var(--pink-highlight);
+    margin-top: 2px;
+}
+
+.alert-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.alert-delete {
+    display: block;
+    color: var(--pink-highlight);
+    text-decoration: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Notifications Modal */
+.notifications-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    /* Increased from 999 to cover sticky header (1020) */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.notifications-overlay.active {
+    display: block;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.notifications-modal {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    max-width: 90%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2001;
+    /* Increased from 1000 */
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.notifications-modal.active {
+    right: 0;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--pink-highlight);
+}
+
+.notifications-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--pink-highlight);
+}
+
+.notifications-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.notifications-close:hover {
+    color: var(--text-color);
+    transform: rotate(90deg);
+}
+
+.notifications-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.notification-item {
+    padding: 20px;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    gap: 15px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.notification-icon img {
+    display: block;
+}
+
+.notification-body {
+    flex: 1;
+}
+
+.notification-message {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.notification-message strong {
+    font-weight: 600;
+}
+
+.notification-sent-date {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.notification-date {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.notification-link {
+    color: var(--blue-highlight);
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.notification-action-btn {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-top: 5px;
+}
+
+.notification-action-btn:hover {
+    background-color: #218838;
+    text-decoration: none;
+    color: #fff;
+}
+
+.notification-link:hover {
+    color: #2451b8;
+    text-decoration: underline;
+}
+
+/* Navigation Menu Modal */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    /* Increased from 999 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.menu-modal {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    /* Hidden off-left */
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2001;
+    /* Increased from 1000 */
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-modal.active {
+    left: 0;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--pink-highlight);
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.menu-close:hover {
+    color: var(--text-color);
+    transform: rotate(90deg);
+}
+
+.menu-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 0;
+    /* Removing top padding since header has padding/border now */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: background-color 0.2s;
+    gap: 15px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #f0f2f5;
+    /* Light gray hover like Reddit */
+    text-decoration: none;
+    color: var(--text-color);
+    /* Maintain text color */
+}
+
+/* Icon container specific styling if needed */
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--text-color);
+    /* Icon inherits text color or specific gray */
+}
+
+/* Make icons slightly muted/standard unless active/hover? */
+
+
+/* -------------------------------------------------------------------------- */
+/*                            JUST ADDED FEATURE                              */
+/* -------------------------------------------------------------------------- */
+
+/* Header Speaker Icon (Mobile Only by default or always? User said fixed col on desktop) */
+/* Let's hide the header button on desktop if the sidebar is always visible. */
 .just-added-btn {
     background: none;
     border: none;
-    color: var(--pink-highlight);
-    /* Changed from blue to pink */
+    color: var(--blue-highlight);
+    /* Blue as requested */
     padding: 8px;
+    /* Match notification icon padding area */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right set to 0 in header-right reset block */
+}
 
-    .sort-arrow {
-        color: #000;
-        margin-left: 0;
+.just-added-btn svg {
+    transform: scale(1.15);
+    /* Increase size slightly */
+}
+
+@media (min-width: 1201px) {
+    .just-added-btn {
+        display: none;
+        /* Hidden on large screens where sidebar is fixed */
+    }
+}
+
+/* Main Layout Adjustment for Desktop Fixed Sidebar */
+@media (min-width: 1201px) {
+    body {
+        padding-right: 0;
+        /* REMOVED padding */
     }
 
-    /* Moved .header-right .user-profile to bottom for specificity handling */
-    .user-profile {
-        position: relative;
-        /* Margin handled in header spacing block */
-        cursor: pointer;
+    .main-layout {
+        display: flex;
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        align-items: flex-start;
+        /* Align top */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 10px;
+        /* Gap from header - Reduced from 20px */
+        gap: 20px;
+        justify-content: center;
     }
 
-    .profile-img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-    }
-
-    .status-dot {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 10px;
-        height: 10px;
-        background-color: var(--secondary-color);
-        border: 2px solid #fff;
-        border-radius: 50%;
-    }
-
-    /* Content */
     .app-content {
-        padding: 15px;
-        max-width: 600px;
-        /* Ограничаваме ширината за десктоп, за да изглежда като мобилно */
+        max-width: none;
+        /* Allow full width expansion */
+        min-width: 0;
+        /* Allow shrinking below content size if needed */
+        margin: 0;
+        flex: 1;
+    }
+
+    .app-header .header-container {
+        /* Matches main layout width */
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        height: 56px;
+        /* Fixed height as requested */
+        padding: 0 10px;
+        /* Match typical padding */
+    }
+}
+
+/* Sidebar Container */
+.just-added-sidebar {
+    /* Default / Mobile styles are overridden in media query below */
+    z-index: 900;
+    background-color: var(--bg-light);
+}
+
+@media (min-width: 1201px) {
+    .just-added-sidebar {
+        position: sticky;
+        top: 70px;
+        width: 350px;
+        /* Increased from 320px */
+        min-width: 350px;
+        flex-shrink: 0;
+        height: calc(100vh - 100px);
+        background-color: var(--bg-light);
+        border: none;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        padding-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .just-added-sidebar:hover .just-added-content {
+        overflow-y: auto;
+        /* Scroll ONLY content on hover */
+    }
+
+    .just-added-content {
+        scrollbar-gutter: stable;
+        /* Reserves space */
+        padding-left: 20px !important;
+        /* Reverted to 20px for card sizing */
+        padding-right: 10px;
+        /* Explicit right padding */
+        box-sizing: border-box;
+        /* Ensure padding shrinks content */
+    }
+
+    /* Smaller title on desktop */
+    .just-added-header h3 {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* Mobile: Modal Style (Overrides Desktop Fixed style) */
+@media (max-width: 1200px) {
+    .just-added-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        /* Hidden off-screen right */
+        bottom: auto;
+        height: 100%;
+        width: 400px;
+        /* Fixed width like notifications modal */
+        max-width: 90%;
+        /* Max width 90% */
+        border-left: none;
+        z-index: 2000;
+        /* Higher than notifications? */
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #fff;
+        display: flex;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ensure content scrolls on mobile too */
+    .just-added-sidebar .just-added-content {
+        overflow-y: auto;
+    }
+
+    .just-added-sidebar.active {
+        right: 0;
+    }
+}
+
+.just-added-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.just-added-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Header inside Sidebar */
+.just-added-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    /* Default transparent for Desktop */
+    flex-shrink: 0;
+    /* Ensure header doesn't shrink */
+    z-index: 10;
+}
+
+.just-added-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--pink-highlight);
+}
+
+.just-added-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    display: none;
+    /* Hidden on desktop by default */
+}
+
+@media (max-width: 1200px) {
+    .just-added-close {
+        display: block;
+    }
+
+    .just-added-header {
+        background: #fff;
+        /* Restore white on mobile */
+        border-bottom: 1px solid var(--border-color);
+        /* Restore border on mobile */
+    }
+}
+
+/* Feed Content */
+.just-added-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: hidden;
+    /* Default hidden scroll */
+}
+
+/* Feed Item Card */
+.ja-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.ja-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.ja-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ja-username {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.ja-time {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-left: auto;
+    /* Push to right? Or next to username? Reddit puts it next to username. User: "{USERNAME) {TIME AGO}". */
+    margin-left: 4px;
+    /* Small gap */
+}
+
+.ja-time::before {
+    content: "•";
+    margin-right: 4px;
+    color: #ccc;
+}
+
+.ja-body {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ja-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    /* Restored border */
+    flex-shrink: 0;
+    padding: 2px;
+    /* Small padding inside border */
+}
+
+.ja-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ja-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    /* Reduced from 500 */
+    color: var(--text-color);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.ja-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    /* Reduced from 0.85rem */
+}
+
+.ja-price {
+    font-weight: 600;
+    /* Slightly reduced bold */
+    color: var(--text-color);
+}
+
+.ja-shop {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    /* Smaller shop text */
+}
+
+.ja-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ja-btn {
+    flex: 1;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.ja-btn-add {
+    background: #fdf2f7;
+    color: var(--pink-highlight);
+    border: 1px solid transparent;
+}
+
+.ja-btn-add:hover {
+    background: #f8e1ea;
+}
+
+.ja-btn-buy {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.ja-btn-buy:hover {
+    background: #c8e6c9;
+}
+
+/* Header Description */
+.header-description {
+    margin: 3px 0 0 0;
+    /* Align with title start */
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Adjust header strength and sizing */
+.just-added-header h3,
+.notifications-header h3 {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--pink-highlight);
+}
+
+/* Username Color in Just Added */
+.ja-username {
+    font-weight: 600;
+    color: var(--pink-highlight);
+    /* Theme Purple */
+    font-size: 0.9rem;
+}
+
+/* Mobile Adjustments for Header Description */
+@media (max-width: 1200px) {
+    .header-description {
+        font-size: 0.75rem;
+        /* Smaller on mobile */
+        color: var(--text-light);
+        /* Enforce grey */
+    }
+}
+
+/* =========================================
+   REFACTORED LAYOUT & OVERRIDES
+   Migrated from inline styles and HTML <style>
+   ================================********* */
+
+/* Utility Classes for Icons (replacing inline styles) */
+.header-title-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1;
+    padding-left: 0;
+    /* Ensure icon aligns with content at gap edge */
+}
+
+.icon-pink {
+    color: var(--pink-highlight);
+}
+
+.filter-section {
+    margin-bottom: 5px;
+    /* Spacing Fix */
+}
+
+/* =========================================
+   DESKTOP LAYOUT (min-width: 1201px)
+   placed at end for natural cascade
+   ================================********* */
+@media (min-width: 1201px) {
+    body {
+        padding-right: 0;
+    }
+
+    .main-layout {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        max-width: 870px;
+        /* 500 (content) + 350 (sidebar) + 0 (gap) + 20 (padding) */
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        justify-content: center;
+        gap: 0px;
+        /* Gap removed to rely on sidebar inner padding */
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Fixed Content Column */
+    .app-content {
+        width: 500px;
+        min-width: 500px;
+        max-width: 500px;
+        flex: 0 0 500px;
+        margin: 0;
+    }
+
+    /* Reset width for children of app-content */
+    .app-content>section,
+    .app-content .product-card,
+    .app-content .search-section,
+    .app-content .filter-section {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Sidebar Fixed */
+    .just-added-sidebar {
+        position: sticky;
+        top: 70px;
+        width: 350px;
+        min-width: 350px;
+        flex-shrink: 0;
+        height: calc(100vh - 100px);
+        border: none;
+        display: flex;
+        overflow-y: hidden;
+    }
+
+    .just-added-sidebar:hover {
+        overflow-y: auto;
+    }
+
+    /* App Header Desktop Constraints */
+    .app-header {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+
+    .app-header .header-container {
+        max-width: 870px;
+        /* Match main-layout width for alignment */
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
         margin: 0 auto;
     }
 
-    /* Actions Bar */
-    .actions-bar {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
+    .just-added-header {
+        background: transparent;
     }
+}
 
-    .action-btn {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        padding: 10px;
-        border: none;
-        border-radius: 8px;
-        font-weight: 500;
-        cursor: pointer;
-    }
-
-    .action-btn.blue {
-        background-color: var(--pink-highlight);
-        color: #fff;
-        transition: background-color 0.2s;
-    }
-
-    .action-btn.blue:hover {
-        background-color: #920260;
-        /* Darker pink for hover */
-    }
-
-    /* Search */
-    .search-section {
-        margin-bottom: 15px;
-    }
-
-    .search-input {
+/* =========================================
+   MOBILE LAYOUT (max-width: 1200px)
+   ================================********* */
+@media (max-width: 1200px) {
+    .main-layout {
+        display: block;
         width: 100%;
-        padding: 8px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        background-color: var(--bg-light);
-        font-size: 0.9rem;
-        /* Decreased from 1rem to match eshops input */
-    }
-
-    /* Filters */
-    /* Filters */
-    /* Filters */
-    .filter-section {
-        margin-bottom: 0px !important;
-        /* Ensure no gap below */
-        font-size: 0.9rem;
-    }
-
-    .filter-row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .filter-label {
-        margin-right: 10px;
-        white-space: nowrap;
-    }
-
-    .eshops-input-container {
-        flex-grow: 1;
-    }
-
-    .eshops-input-container input {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        background: var(--bg-light);
-        color: var(--text-color);
-    }
-
-    .alerts-row {
-        justify-content: space-between;
-    }
-
-    .checkbox-container {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    /* Custom Checkbox */
-    .checkbox-container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-
-    .checkmark {
-        position: relative;
-        height: 18px;
-        width: 18px;
-        background-color: #eee;
-        margin-right: 8px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-    }
-
-    .checkbox-container:hover input~.checkmark {
-        background-color: #ccc;
-    }
-
-    .checkbox-container input:checked~.checkmark {
-        background-color: var(--blue-highlight);
-    }
-
-    /* Checkmark indicator (hidden by default) */
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-        left: 6px;
-        top: 2px;
-        width: 3px;
-        height: 8px;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-    }
-
-    .checkbox-container input:checked~.checkmark:after {
-        display: block;
-    }
-
-    .reset-filters-btn {
-        background: none;
-        border: none;
-        color: var(--blue-highlight);
-        cursor: pointer;
-    }
-
-    .stats-row {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 10px;
-        border-top: 1px solid var(--border-color);
-        color: var(--text-light);
-    }
-
-    .stats-row strong {
-        color: var(--text-color);
-    }
-
-    /* Sort */
-    .sort-section {
-        margin-bottom: 5px;
-        margin-top: 20px;
-        /* Exact 20px gap requested by user */
-        font-size: 0.9rem;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        justify-content: flex-start;
-    }
-
-    /* Ensure checkbox matches */
-    .checkbox-container {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        font-size: 0.9rem;
-        /* Match sort */
-        color: var(--text-light);
-        /* Match sort */
-    }
-
-    .sort-dropdown-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    .sort-selected {
-        color: var(--blue-highlight);
-        cursor: pointer;
-        font-weight: normal;
-        padding: 5px 10px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .sort-selected:hover {
-        background-color: var(--bg-light);
-    }
-
-    .sort-dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        margin-top: 5px;
-        background: #fff;
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        min-width: 180px;
-        z-index: 100;
-    }
-
-    .sort-dropdown-wrapper.active .sort-dropdown-menu {
-        display: block;
-    }
-
-    .sort-dropdown-menu a {
-        display: block;
-        padding: 10px 15px;
-        color: var(--text-color);
-        font-size: 0.9rem;
-        transition: background 0.2s;
-    }
-
-    .sort-dropdown-menu a:hover {
-        background-color: var(--bg-light);
-        text-decoration: none;
-    }
-
-    /* Product List & Cards */
-    .product-card {
-        display: flex;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
         padding: 0;
-        /* Padding handled inside cols to accommodate full-height divider */
-        margin-bottom: 15px;
+    }
+
+    .just-added-header {
         background: #fff;
-        position: relative;
-        /* align-items removed to allow stretch for full height border */
-    }
-
-    /* Left Column */
-    .product-left-col {
-        padding: 10px;
-        /* Reduced from 15px to match right col */
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        width: 50%;
-        min-width: 0;
-    }
-
-    /* Ensure badge doesn't get cut off if it goes outside */
-    .product-image-container {
-        margin-bottom: 10px;
-        position: relative;
-        overflow: visible;
-    }
-
-    .product-img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-        border-radius: 4px;
-        background-color: #fff;
-        transition: transform 0.3s ease;
-    }
-
-    .product-image-container:hover .product-img {
-        transform: scale(1.1);
-    }
-
-    .product-price.discounted {
-        color: var(--pink-highlight);
-    }
-
-    .discount-badge {
-        position: absolute;
-        top: 5px;
-        left: -55px;
-        /* Moved further left to avoid overlap */
-        right: auto;
-        /* Adjust based on image container handling */
-        background-color: var(--pink-highlight);
-        color: #fff;
-        font-size: 1rem;
-        font-weight: normal;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        padding: 0;
-        border-radius: 50%;
-        z-index: 10;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        /* Fix vertical alignment */
-        line-height: 1;
-    }
-
-    .product-brand {
-        font-size: 0.75rem;
-        font-weight: bold;
-        color: #999;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        line-height: 1.2;
-    }
-
-    .product-price-block {
-        margin-bottom: 10px;
-    }
-
-    .product-price {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: var(--text-color);
-    }
-
-    /* Duplicate styles removed */
-
-    .product-old-price {
-        text-decoration: line-through;
-        font-size: 0.8rem;
-        color: var(--text-light);
-    }
-
-    /* Right Column */
-    /* Right Column */
-    .product-right-col {
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        justify-content: space-between;
-        width: 50%;
-        min-width: 0;
-    }
-
-    .product-right-col::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 15px;
-        bottom: 15px;
-        border-left: 1px dashed #ddd;
-    }
-
-    /* product-info removed */
-
-    /* Title Bold */
-    .product-title {
-        font-size: 0.95rem;
-        font-weight: 500;
-        /* Reduced from bold/700 */
-        margin-bottom: 12px;
-        line-height: 1.3;
-        color: #333;
-    }
-
-    .separator-line {
-        border-top: 1px dashed var(--border-color);
-        /* Dashed as requested */
-        margin-bottom: 10px;
+        border-bottom: 1px solid var(--pink-highlight);
+        flex-shrink: 0;
         width: 100%;
     }
 
-    .actions-label {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: var(--pink-highlight);
-        /* Updated from text-color */
-        font-weight: 500;
-    }
-
-    /* Common Button Styles */
-    .action-btn-common {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        height: 38px;
-        /* Fixed height for all buttons */
-        padding: 0 12px;
-        border-radius: 8px;
-        font-weight: 500;
-        font-size: 0.85rem;
-        cursor: pointer;
-        text-decoration: none;
-        width: 100%;
-        /* Fill the container in left/right cols where applied */
-        box-sizing: border-box;
-        transition: all 0.2s;
-        margin-bottom: 8px;
-        /* Spacing between stacked buttons */
-    }
-
-    /* Buy Now Button */
-    .buy-now-btn {
-        background-color: var(--secondary-color);
-        color: #fff;
-        border: none;
-        font-weight: normal;
-        margin-bottom: 0;
-    }
-
-    .buy-now-btn:hover {
-        background-color: #218838;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    /* Generic Link Hover */
-    a {
-        color: var(--blue-highlight);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    a:hover {
-        color: #2451b8;
-        text-decoration: underline;
-    }
-
-    .profile-dropdown a {
-        text-decoration: none;
-        /* Reset for dropdown items */
-    }
-
-    /* Generic Link Hover */
-    a {
-        color: var(--primary-color);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    a:hover {
-        color: #0056b3;
-        text-decoration: underline;
-    }
-
-    .profile-dropdown a {
-        text-decoration: none;
-        /* Reset for dropdown items */
-    }
-
-    /* Shop Link Button */
-    .shop-link-btn {
-        background-color: #f1f3f5;
-        color: #333;
-        border: 1px solid transparent;
-        margin-bottom: 0;
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .shop-link-btn:hover {
-        background-color: #e9ecef;
-        text-decoration: none;
-        color: #333;
-    }
-
-    /* Price Alert Buttons */
-    .alert-set-btn {
-        background-color: #ebf1fe;
-        border: none;
-        color: var(--blue-highlight);
-        justify-content: center;
-        /* Center content for button look */
-        display: flex;
-        align-items: center;
-        font-weight: normal;
-        /* Ensure not bold */
-        padding: 0 12px;
-        /* Add horizontal padding back */
-        height: 38px;
-        /* Fixed height like others */
-        width: 100%;
-        /* Full width to match Buy Now */
-        margin: 0 0 10px 0;
-        /* Align with layout */
-        font-size: 0.85rem;
-        gap: 5px;
-        border-radius: 6px;
-        transition: all 0.2s;
-    }
-
-    .alert-set-btn:hover {
-        background-color: var(--bg-light);
-        text-decoration: none;
-        /* No underline for button style */
-        border-color: #ccc;
-    }
-
-    .alert-active-btn {
-        background-color: #ebf1fe;
-        border: none;
-        color: var(--text-color);
-        justify-content: center;
-        width: 100%;
-        height: 38px;
-        margin-bottom: 8px;
-        padding: 0 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 6px;
-        font-size: 0.85rem;
-    }
-
-    .alert-active-btn:hover {
-        background-color: var(--bg-light);
-        border-color: #ccc;
-    }
-
-    /* Hide delete icon on mobile */
-    @media (max-width: 480px) {
-        .alert-active-btn .delete-icon {
-            display: none;
-        }
-    }
-
-    /* Icon color handled inline or via class */
-
-    .shop-icon {
-        width: 16px;
-        height: 16px;
-        object-fit: contain;
-    }
-
-    /* Mobile Adjustments */
-    @media (max-width: 480px) {
-        .discount-badge {
-            font-size: 0.85rem;
-            width: 35px;
-            height: 35px;
-            padding: 0;
-            right: auto;
-            left: -15px;
-            /* Move to left to avoid overlap with right col */
-            top: -5px;
-            margin-left: -5px;
-            /* Slight offset if needed */
-        }
-    }
-
-    /* Celebrities */
-    .celeb-card {
-        display: flex;
-        justify-content: center;
-        /* Center in slide */
-        align-items: center;
-        height: 100%;
-        /* Ensure height */
-        padding: 5px;
-    }
-
-    .celeb-avatar-wrapper {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        /* Use fixed dimensions */
-    }
-
-    .celeb-avatar-wrapper img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        display: block;
-        /* Remove inline gap */
-    }
-
-    .celeb-badge {
-        position: absolute;
-        bottom: -2px;
-        right: -2px;
-        background: #007bff;
-        /* Blue tick */
-        color: white;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid white;
-        font-size: 0.7rem;
-    }
-
-    /* User Profile & Dropdown */
-    .user-profile {
-        position: relative;
-        cursor: pointer;
-    }
-
-    .profile-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    .profile-arrow-badge {
-        position: absolute;
-        bottom: -2px;
-        right: -2px;
-        width: 14px;
-        height: 14px;
-        background-color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .profile-arrow-badge svg {
-        width: 10px;
-        height: 10px;
-        fill: #000;
-    }
-
-    .profile-dropdown {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        margin-top: 10px;
-        background: #fff;
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        min-width: 150px;
-        z-index: 100;
-    }
-
-    .profile-dropdown a {
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        color: var(--text-color);
-        font-size: 0.9rem;
-        transition: background 0.2s;
-    }
-
-    .profile-dropdown a:hover {
-        background-color: var(--bg-light);
-    }
-
-    .product-actions {
-        list-style: none;
-        padding: 0;
-        margin-bottom: auto;
-        /* Pushes content down if needed, or just list logic */
-    }
-
-    .product-actions li {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 0.85rem;
-        color: var(--blue-highlight);
-        margin-bottom: 8px;
-        cursor: pointer;
-    }
-
-    .product-actions li.text-light {
-        color: var(--text-light);
-    }
-
-    /* Alert Box Styles (Right Column Details) */
-    .alert-box {
-        background-color: #fff0f3;
-        border: 1px solid var(--pink-highlight);
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: 10px;
-        margin-top: auto;
-        /* Push to bottom if space allows, or just margin */
-        position: relative;
-        font-size: 0.85rem;
-    }
-
-    .alert-header {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .alert-bell {
-        color: var(--pink-highlight);
-    }
-
-    .alert-details {
-        color: var(--pink-highlight);
-        text-decoration: underline;
-        cursor: pointer;
-        font-weight: normal;
-        font-size: 0.9rem;
-    }
-
-    .alert-body {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        font-size: 0.9rem;
-    }
-
-    .alert-bell-body {
-        color: var(--pink-highlight);
-        margin-top: 2px;
-    }
-
-    .alert-close {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        background: none;
-        border: none;
-        color: var(--text-light);
-        cursor: pointer;
-    }
-
-    .alert-delete {
-        display: block;
-        color: var(--pink-highlight);
-        text-decoration: none;
-        margin-top: 5px;
-        cursor: pointer;
-    }
-
-    /* Notifications Modal */
-    .notifications-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2000;
-        /* Increased from 999 to cover sticky header (1020) */
-        opacity: 0;
-        transition: opacity 0.6s ease;
-    }
-
-    .notifications-overlay.active {
-        display: block;
-        animation: fadeIn 0.6s ease forwards;
-    }
-
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-        }
-    }
-
-    .notifications-modal {
+    /* Off-Canvas Sidebar */
+    .just-added-sidebar {
         position: fixed;
         top: 0;
         right: -400px;
         width: 400px;
         max-width: 90%;
         height: 100%;
-        background: #fff;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-        z-index: 2001;
-        /* Increased from 1000 */
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2000;
         display: flex;
         flex-direction: column;
+        transition: right 0.3s ease;
+        /* Ensure transition is defined */
     }
 
-    .notifications-modal.active {
+    .just-added-sidebar.active {
         right: 0;
     }
 
-    .notifications-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        border-bottom: 1px solid var(--pink-highlight);
-    }
-
-    .notifications-header h3 {
-        margin: 0;
-        font-size: 1.3rem;
-        color: var(--pink-highlight);
-    }
-
-    .notifications-close {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-        padding: 0;
-        transition: transform 0.3s ease, color 0.2s;
-    }
-
-    .notifications-close:hover {
-        color: var(--text-color);
-        transform: rotate(90deg);
-    }
-
-    .notifications-content {
-        flex: 1;
-        overflow-y: auto;
-        padding: 0;
-    }
-
-    .notification-item {
-        padding: 20px;
-        border-bottom: 1px dashed var(--border-color);
-        display: flex;
-        gap: 15px;
-    }
-
-    .notification-item:last-child {
-        border-bottom: none;
-    }
-
-    .notification-icon {
-        flex-shrink: 0;
-        margin-top: 2px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .notification-icon img {
-        display: block;
-    }
-
-    .notification-body {
-        flex: 1;
-    }
-
-    .notification-message {
-        color: var(--text-color);
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-    }
-
-    .notification-message strong {
-        font-weight: 600;
-    }
-
-    .notification-sent-date {
-        color: var(--text-light);
-        font-size: 0.75rem;
-        margin-bottom: 8px;
-        text-align: center;
-    }
-
-    .notification-date {
-        color: var(--text-light);
-        font-size: 0.8rem;
-        margin-bottom: 8px;
-    }
-
-    .notification-link {
-        color: var(--blue-highlight);
-        font-size: 0.85rem;
-        text-decoration: none;
-        display: inline-block;
-        transition: color 0.2s;
-    }
-
-    .notification-action-btn {
-        display: inline-block;
-        padding: 6px 15px;
-        background-color: var(--secondary-color);
-        color: #fff;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 500;
-        transition: background-color 0.2s;
-        margin-top: 5px;
-    }
-
-    .notification-action-btn:hover {
-        background-color: #218838;
-        text-decoration: none;
-        color: #fff;
-    }
-
-    .notification-link:hover {
-        color: #2451b8;
-        text-decoration: underline;
-    }
-
-    /* Navigation Menu Modal */
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2000;
-        /* Increased from 999 */
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .menu-overlay.active {
-        display: block;
-        animation: fadeIn 0.3s ease forwards;
-    }
-
-    .menu-modal {
-        position: fixed;
-        top: 0;
-        left: -320px;
-        /* Hidden off-left */
-        width: 300px;
-        max-width: 80%;
-        height: 100%;
-        background: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-        z-index: 2001;
-        /* Increased from 1000 */
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu-modal.active {
-        left: 0;
-    }
-
-    .menu-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .menu-header h3 {
-        margin: 0;
-        font-size: 1.2rem;
-        color: var(--pink-highlight);
-    }
-
-    .menu-close {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-light);
-        padding: 0;
-        display: flex;
-        align-items: center;
-        transition: transform 0.3s ease, color 0.2s;
-    }
-
-    .menu-close:hover {
-        color: var(--text-color);
-        transform: rotate(90deg);
-    }
-
-    .menu-content {
-        flex: 1;
-        overflow-y: auto;
-        padding-top: 0;
-        /* Removing top padding since header has padding/border now */
-    }
-
-    .menu-item {
-        display: flex;
-        align-items: center;
-        padding: 12px 20px;
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: normal;
-        transition: background-color 0.2s;
-        gap: 15px;
-    }
-
-    .menu-item:hover,
-    .menu-item.active {
-        background-color: #f0f2f5;
-        /* Light gray hover like Reddit */
-        text-decoration: none;
-        color: var(--text-color);
-        /* Maintain text color */
-    }
-
-    /* Icon container specific styling if needed */
-    .menu-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        color: var(--text-color);
-        /* Icon inherits text color or specific gray */
-    }
-
-    /* Make icons slightly muted/standard unless active/hover? */
-
-
-    /* -------------------------------------------------------------------------- */
-    /*                            JUST ADDED FEATURE                              */
-    /* -------------------------------------------------------------------------- */
-
-    /* Header Speaker Icon (Mobile Only by default or always? User said fixed col on desktop) */
-    /* Let's hide the header button on desktop if the sidebar is always visible. */
-    .just-added-btn {
-        background: none;
-        border: none;
-        color: var(--blue-highlight);
-        /* Blue as requested */
-        padding: 8px;
-        /* Match notification icon padding area */
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* margin-right set to 0 in header-right reset block */
-    }
-
-    .just-added-btn svg {
-        transform: scale(1.15);
-        /* Increase size slightly */
-    }
-
-    @media (min-width: 1201px) {
-        .just-added-btn {
-            display: none;
-            /* Hidden on large screens where sidebar is fixed */
-        }
-    }
-
-    /* Main Layout Adjustment for Desktop Fixed Sidebar */
-    @media (min-width: 1201px) {
-        body {
-            padding-right: 0;
-            /* REMOVED padding */
-        }
-
-        .main-layout {
-            display: flex;
-            flex-wrap: nowrap;
-            /* Prevent wrapping */
-            align-items: flex-start;
-            /* Align top */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 10px;
-            /* Gap from header - Reduced from 20px */
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .app-content {
-            max-width: none;
-            /* Allow full width expansion */
-            min-width: 0;
-            /* Allow shrinking below content size if needed */
-            margin: 0;
-            flex: 1;
-        }
-
-        .app-header .header-container {
-            /* Matches main layout width */
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            height: 56px;
-            /* Fixed height as requested */
-            padding: 0 10px;
-            /* Match typical padding */
-        }
-    }
-
-    /* Sidebar Container */
-    .just-added-sidebar {
-        /* Default / Mobile styles are overridden in media query below */
-        z-index: 900;
-        background-color: var(--bg-light);
-    }
-
-    @media (min-width: 1201px) {
-        .just-added-sidebar {
-            position: sticky;
-            top: 70px;
-            width: 350px;
-            /* Increased from 320px */
-            min-width: 350px;
-            flex-shrink: 0;
-            height: calc(100vh - 100px);
-            background-color: var(--bg-light);
-            border: none;
-            display: flex;
-            flex-direction: column;
-            overflow-y: hidden;
-            padding-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        .just-added-sidebar:hover .just-added-content {
-            overflow-y: auto;
-            /* Scroll ONLY content on hover */
-        }
-
-        .just-added-content {
-            scrollbar-gutter: stable;
-            /* Reserves space */
-            padding-left: 20px !important;
-            /* Reverted to 20px for card sizing */
-            padding-right: 10px;
-            /* Explicit right padding */
-            box-sizing: border-box;
-            /* Ensure padding shrinks content */
-        }
-
-        /* Smaller title on desktop */
-        .just-added-header h3 {
-            font-size: 0.95rem;
-        }
-    }
-
-
-    /* Mobile: Modal Style (Overrides Desktop Fixed style) */
-    @media (max-width: 1200px) {
-        .just-added-sidebar {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            /* Hidden off-screen right */
-            bottom: auto;
-            height: 100%;
-            width: 400px;
-            /* Fixed width like notifications modal */
-            max-width: 90%;
-            /* Max width 90% */
-            border-left: none;
-            z-index: 2000;
-            /* Higher than notifications? */
-            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: #fff;
-            display: flex;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Ensure content scrolls on mobile too */
-        .just-added-sidebar .just-added-content {
-            overflow-y: auto;
-        }
-
-        .just-added-sidebar.active {
-            right: 0;
-        }
-    }
-
-    .just-added-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .just-added-overlay.active {
-        display: block;
-        animation: fadeIn 0.3s ease forwards;
-    }
-
-    /* Header inside Sidebar */
-    .just-added-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background: transparent;
-        /* Default transparent for Desktop */
-        flex-shrink: 0;
-        /* Ensure header doesn't shrink */
-        z-index: 10;
-    }
-
-    .just-added-header h3 {
-        margin: 0;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--pink-highlight);
-    }
-
-    .just-added-close {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-light);
-        display: none;
-        /* Hidden on desktop by default */
-    }
-
-    @media (max-width: 1200px) {
-        .just-added-close {
-            display: block;
-        }
-
-        .just-added-header {
-            background: #fff;
-            /* Restore white on mobile */
-            border-bottom: 1px solid var(--border-color);
-            /* Restore border on mobile */
-        }
-    }
-
-    /* Feed Content */
     .just-added-content {
         flex: 1;
-        padding: 10px;
-        overflow-y: hidden;
-        /* Default hidden scroll */
+        overflow-y: auto;
+        width: 100%;
     }
+}
 
-    /* Feed Item Card */
-    .ja-item {
-        background: #fff;
-        border-radius: 8px;
-        padding: 12px;
-        margin-bottom: 10px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        border: 1px solid var(--border-color);
-    }
-
-    .ja-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        gap: 8px;
-    }
-
-    .ja-avatar {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .ja-username {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--text-color);
-    }
-
-    .ja-time {
-        font-size: 0.75rem;
-        color: var(--text-light);
-        margin-left: auto;
-        /* Push to right? Or next to username? Reddit puts it next to username. User: "{USERNAME) {TIME AGO}". */
-        margin-left: 4px;
-        /* Small gap */
-    }
-
-    .ja-time::before {
-        content: "•";
-        margin-right: 4px;
-        color: #ccc;
-    }
-
-    .ja-body {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
-
-    .ja-image {
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
-        border-radius: 4px;
-        border: 1px solid var(--border-color);
-        /* Restored border */
-        flex-shrink: 0;
-        padding: 2px;
-        /* Small padding inside border */
-    }
-
-    .ja-details {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .ja-title {
-        font-size: 0.9rem;
-        font-weight: 400;
-        /* Reduced from 500 */
-        color: var(--text-color);
-        margin-bottom: 4px;
-        line-height: 1.3;
-    }
-
-    .ja-price-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.8rem;
-        /* Reduced from 0.85rem */
-    }
-
-    .ja-price {
-        font-weight: 600;
-        /* Slightly reduced bold */
-        color: var(--text-color);
-    }
-
-    .ja-shop {
-        color: var(--text-light);
-        font-size: 0.75rem;
-        /* Smaller shop text */
-    }
-
-    .ja-actions {
-        display: flex;
-        gap: 8px;
-    }
-
-    .ja-btn {
-        flex: 1;
-        padding: 6px 0;
-        font-size: 0.8rem;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 500;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        transition: background 0.2s;
-    }
-
-    .ja-btn-add {
-        background: #fdf2f7;
-        color: var(--pink-highlight);
-        border: 1px solid transparent;
-    }
-
-    .ja-btn-add:hover {
-        background: #f8e1ea;
-    }
-
-    .ja-btn-buy {
-        background: #e8f5e9;
-        color: #2e7d32;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-
-    .ja-btn-buy:hover {
-        background: #c8e6c9;
-    }
-
-    /* Header Description */
-    .header-description {
-        margin: 3px 0 0 0;
-        /* Align with title start */
-        font-size: 0.8rem;
-        color: var(--text-light);
-        font-weight: 400;
-        line-height: 1.2;
-    }
-
-    /* Adjust header strength and sizing */
-    .just-added-header h3,
-    .notifications-header h3 {
-        font-size: 1rem !important;
-        font-weight: 500 !important;
-        margin: 0;
-        line-height: 1.2;
-        color: var(--pink-highlight);
-    }
-
-    /* Username Color in Just Added */
-    .ja-username {
-        font-weight: 600;
-        color: var(--pink-highlight);
-        /* Theme Purple */
-        font-size: 0.9rem;
-    }
-
-    /* Mobile Adjustments for Header Description */
-    @media (max-width: 1200px) {
-        .header-description {
-            font-size: 0.75rem;
-            /* Smaller on mobile */
-            color: var(--text-light);
-            /* Enforce grey */
-        }
-    }
-
-    /* =========================================
-   REFACTORED LAYOUT & OVERRIDES
-   Migrated from inline styles and HTML <style>
-   ================================********* */
-
-    /* Utility Classes for Icons (replacing inline styles) */
-    .header-title-row {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex: 1;
-        padding-left: 0;
-        /* Ensure icon aligns with content at gap edge */
-    }
-
-    .icon-pink {
-        color: var(--pink-highlight);
-    }
-
-    .filter-section {
-        margin-bottom: 5px;
-        /* Spacing Fix */
-    }
-
-    /* =========================================
-   DESKTOP LAYOUT (min-width: 1201px)
-   placed at end for natural cascade
-   ================================********* */
-    @media (min-width: 1201px) {
-        body {
-            padding-right: 0;
-        }
-
-        .main-layout {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: flex-start;
-            max-width: 870px;
-            /* 500 (content) + 350 (sidebar) + 0 (gap) + 20 (padding) */
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0 auto;
-            justify-content: center;
-            gap: 0px;
-            /* Gap removed to rely on sidebar inner padding */
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        /* Fixed Content Column */
-        .app-content {
-            width: 500px;
-            min-width: 500px;
-            max-width: 500px;
-            flex: 0 0 500px;
-            margin: 0;
-        }
-
-        /* Reset width for children of app-content */
-        .app-content>section,
-        .app-content .product-card,
-        .app-content .search-section,
-        .app-content .filter-section {
-            width: 100%;
-            max-width: none;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        /* Sidebar Fixed */
-        .just-added-sidebar {
-            position: sticky;
-            top: 70px;
-            width: 350px;
-            min-width: 350px;
-            flex-shrink: 0;
-            height: calc(100vh - 100px);
-            border: none;
-            display: flex;
-            overflow-y: hidden;
-        }
-
-        .just-added-sidebar:hover {
-            overflow-y: auto;
-        }
-
-        /* App Header Desktop Constraints */
-        .app-header {
-            position: sticky;
-            top: 0;
-            z-index: 1020;
-        }
-
-        .app-header .header-container {
-            max-width: 870px;
-            /* Match main-layout width for alignment */
-            width: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
-
-        .just-added-header {
-            background: transparent;
-        }
-    }
-
-    /* =========================================
-   MOBILE LAYOUT (max-width: 1200px)
-   ================================********* */
-    @media (max-width: 1200px) {
-        .main-layout {
-            display: block;
-            width: 100%;
-            padding: 0;
-        }
-
-        .just-added-header {
-            background: #fff;
-            border-bottom: 1px solid var(--pink-highlight);
-            flex-shrink: 0;
-            width: 100%;
-        }
-
-        /* Off-Canvas Sidebar */
-        .just-added-sidebar {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            max-width: 90%;
-            height: 100%;
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            transition: right 0.3s ease;
-            /* Ensure transition is defined */
-        }
-
-        .just-added-sidebar.active {
-            right: 0;
-        }
-
-        .just-added-content {
-            flex: 1;
-            overflow-y: auto;
-            width: 100%;
-        }
-    }
-
-    /* =========================================
+/* =========================================
    LANDING PAGE STYLES (INDEX.HTML)
    ================================********* */
 
-    /* 1. Pink Banner */
-    /* 1. Pink Banner */
+/* 1. Pink Banner */
+/* 1. Pink Banner */
+.landing-banner {
+    background: var(--pink-highlight);
+    color: white;
+    padding: 15px 10px;
+    /* Reduced padding to 10px */
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border-radius: 8px;
+    /* Restored full rounded corners */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Reduced gap to 10px */
+}
+
+.landing-banner strong {
+    font-weight: 600;
+}
+
+@media (min-width: 1201px) {
     .landing-banner {
-        background: var(--pink-highlight);
-        color: white;
-        padding: 15px 10px;
-        /* Reduced padding to 10px */
-        text-align: left;
-        font-size: 0.95rem;
-        line-height: 1.4;
         border-radius: 8px;
-        /* Restored full rounded corners */
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        /* Reduced gap to 10px */
     }
+}
 
-    .landing-banner strong {
-        font-weight: 600;
-    }
+/* Bell Icon in Banner */
+.landing-banner svg {
+    flex-shrink: 0;
+}
 
-    @media (min-width: 1201px) {
-        .landing-banner {
-            border-radius: 8px;
-        }
-    }
+/* Dividers */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: var(--pink-highlight);
+    margin: 20px 0 15px 0;
+    /* 20px Top (increased by 5px), 15px Bottom */
+    width: 100%;
+    display: block;
+}
 
-    /* Bell Icon in Banner */
-    .landing-banner svg {
-        flex-shrink: 0;
-    }
+/* 2. Add Products CTA */
+.add-products-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    /* Zero bottom margin. Gap handled by divider below. */
+    gap: 15px;
+}
 
-    /* Dividers */
-    .section-divider {
-        border: 0;
-        height: 1px;
-        background: var(--pink-highlight);
-        margin: 20px 0 15px 0;
-        /* 20px Top (increased by 5px), 15px Bottom */
-        width: 100%;
-        display: block;
-    }
+.cta-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
 
-    /* 2. Add Products CTA */
-    .add-products-cta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #f8f9fa;
-        padding: 8px 16px;
-        border-radius: 8px;
-        margin-bottom: 0;
-        /* Zero bottom margin. Gap handled by divider below. */
-        gap: 15px;
-    }
+.action-btn.pink-filled {
+    background: var(--pink-highlight);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    width: fit-content !important;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
 
-    .cta-text {
-        font-size: 0.9rem;
-        color: var(--text-color);
-    }
+.action-btn.pink-filled:hover {
+    opacity: 0.9;
+}
 
-    .action-btn.pink-filled {
-        background: var(--pink-highlight);
-        color: white;
-        padding: 8px 10px;
-        border-radius: 8px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 500;
-        width: fit-content !important;
-        cursor: pointer;
-        border: none;
-        transition: opacity 0.2s;
-        white-space: nowrap;
-        font-size: 0.85rem;
-        flex-shrink: 0;
-    }
+/* 3. Section Titles */
+.section-title {
+    font-size: 1.1rem;
+    color: var(--pink-highlight);
+    font-weight: 500;
+    margin: 0 0 15px 0;
+}
 
-    .action-btn.pink-filled:hover {
-        opacity: 0.9;
-    }
-
-    /* 3. Section Titles */
+@media (max-width: 600px) {
     .section-title {
-        font-size: 1.1rem;
-        color: var(--pink-highlight);
+        font-size: 1.0rem;
         font-weight: 500;
-        margin: 0 0 15px 0;
+    }
+}
+
+.landing-section {
+    margin: 0;
+    /* Reduced to 0 to rely on margins of children or dividers */
+    padding: 0;
+}
+
+/* 4. Search Rows */
+.search-row {
+    margin: 15px 0 0 0;
+    /* 15px Top (Gap from previous element), 0 Bottom */
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .section-divider {
+        margin: 20px 0 15px 0;
     }
 
-    @media (max-width: 600px) {
-        .section-title {
-            font-size: 1.0rem;
-            font-weight: 500;
-        }
-    }
-
-    .landing-section {
-        margin: 0;
-        /* Reduced to 0 to rely on margins of children or dividers */
-        padding: 0;
-    }
-
-    /* 4. Search Rows */
     .search-row {
-        margin: 15px 0 0 0;
-        /* 15px Top (Gap from previous element), 0 Bottom */
-        display: block;
+        margin-bottom: 0px;
     }
+}
 
-    @media (max-width: 600px) {
-        .section-divider {
-            margin: 20px 0 15px 0;
-        }
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    /* Added center alignment */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+}
 
-        .search-row {
-            margin-bottom: 0px;
-        }
-    }
+.search-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 0.9rem;
+}
 
-    .search-wrapper {
-        display: flex;
-        align-items: center;
-        /* Added center alignment */
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-        padding: 0;
-    }
+.btn-go {
+    background: var(--pink-highlight);
+    color: white;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 2px 4px 2px 0;
+    /* Adjust margin for visual balance */
+    transition: background 0.2s;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
 
-    .search-wrapper input {
-        flex: 1;
-        border: none;
-        padding: 10px 15px;
-        outline: none;
-        font-size: 0.9rem;
-    }
+.btn-go:hover {
+    background: #a91b93;
+}
 
-    .btn-go {
-        background: var(--pink-highlight);
-        color: white;
-        border: none;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin: 2px 4px 2px 0;
-        /* Adjust margin for visual balance */
-        transition: background 0.2s;
-        flex-shrink: 0;
-        /* Prevent shrinking */
-    }
+/* 5. Carousels Customization */
+/* Shops */
+.shop-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: white;
+    gap: 8px;
+}
 
-    .btn-go:hover {
-        background: #a91b93;
-    }
+.shop-card img {
+    width: 32px;
+    /* 32x32 Favicons */
+    height: 32px;
+    object-fit: contain;
+}
 
-    /* 5. Carousels Customization */
-    /* Shops */
-    .shop-card {
-        border: 1px solid #eee;
-        border-radius: 8px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        background: white;
-        gap: 8px;
-    }
+.shop-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.1;
+}
 
-    .shop-card img {
-        width: 32px;
-        /* 32x32 Favicons */
-        height: 32px;
-        object-fit: contain;
-    }
+/* Categories */
+.category-card {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
 
-    .shop-name {
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: var(--text-color);
-        text-align: center;
-        line-height: 1.1;
-    }
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-    /* Categories */
-    .category-card {
-        height: 100px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 8px;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-    }
+.category-name {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
 
-    .category-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
+/* .category-icon removed per user request */
 
-    .category-name {
-        color: white;
-        font-weight: 600;
-        font-size: 0.9rem;
-    }
+/* Splide Arrows Hover Effect */
+.splide__arrow {
+    background: white;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    /* .category-icon removed per user request */
+.splide__arrow:hover {
+    background: var(--pink-highlight);
+    opacity: 1;
+}
 
-    /* Splide Arrows Hover Effect */
-    .splide__arrow {
-        background: white;
-        opacity: 0.7;
-        transition: all 0.2s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+.splide__arrow:hover svg {
+    fill: white;
+}
 
-    .splide__arrow:hover {
-        background: var(--pink-highlight);
-        opacity: 1;
-    }
-
-    .splide__arrow:hover svg {
-        fill: white;
-    }
-
-    /* 6. Footer */
-    /* 6. Footer - Moved to footer.css */
+/* 6. Footer */
+/* 6. Footer - Moved to footer.css */
 
 
-    /* Celebrities Carousel */
-    /* Celebrities Carousel */
-    .celebrity-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 10px;
-        cursor: pointer;
-        box-sizing: border-box;
-        /* Safety */
-    }
+/* Celebrities Carousel */
+/* Celebrities Carousel */
+.celebrity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* Safety */
+}
 
-    .celebrity-avatar-wrapper {
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        padding: 2px;
-        /* Space for the gradient border */
-        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        /* Instagram Gradient */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        box-sizing: border-box;
-        /* Ensure padding doesn't expand width */
-    }
+.celebrity-avatar-wrapper {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    padding: 2px;
+    /* Space for the gradient border */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    /* Instagram Gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    /* Ensure padding doesn't expand width */
+}
 
-    .celebrity-avatar {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 2px solid white;
-        /* White gap between gradient and image */
-        object-fit: cover;
-        background: white;
-        box-sizing: border-box;
-        /* Keep border inside the 100% width/height */
-        display: block;
-        /* Remove inline-block gaps */
-    }
+.celebrity-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+    /* White gap between gradient and image */
+    object-fit: cover;
+    background: white;
+    box-sizing: border-box;
+    /* Keep border inside the 100% width/height */
+    display: block;
+    /* Remove inline-block gaps */
+}
 
-    .verified-badge {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 18px;
-        height: 18px;
-        background-color: #3897f0;
-        /* Instagram Blue */
-        color: white;
-        border-radius: 50%;
-        border: 2px solid white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        /* Sit on top */
-        box-sizing: border-box;
-    }
+.verified-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #3897f0;
+    /* Instagram Blue */
+    color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    /* Sit on top */
+    box-sizing: border-box;
+}
 
-    .celebrity-nickname {
-        font-size: 0.8rem;
-        font-weight: 400;
-        color: var(--text-color);
-        text-align: center;
-        width: 100%;
-        max-width: 80px;
-        /* Constrain width for truncation */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* Truncate text with ... */
-        line-height: 1.2;
-    }
+.celebrity-nickname {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center;
+    width: 100%;
+    max-width: 80px;
+    /* Constrain width for truncation */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Truncate text with ... */
+    line-height: 1.2;
+}
 
-    /* Footer Content - Moved to footer.css */
+/* Footer Content - Moved to footer.css */
 
-    /* Sign In Button Header */
-    /* Header Buttons */
+/* Sign In Button Header */
+/* Header Buttons */
 
-    .header-btn {
-        padding: 0 12px;
-        /* Minimal horizontal padding */
-        border-radius: 6px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-        height: 34px;
-        /* Fixed height for equal size */
-        box-sizing: border-box;
-        white-space: nowrap;
-        line-height: 1;
-        /* Fix vertical centering */
-    }
+.header-btn {
+    padding: 0 12px;
+    /* Minimal horizontal padding */
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 34px;
+    /* Fixed height for equal size */
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1;
+    /* Fix vertical centering */
+}
 
-    .btn-log-in {
-        border: 1px solid #ddd;
-        color: var(--text-color);
-        background: white;
-    }
+.btn-log-in {
+    border: 1px solid #ddd;
+    color: var(--text-color);
+    background: white;
+}
 
-    .btn-log-in:hover {
-        background: #f8f9fa;
-        border-color: #ccc;
-        color: var(--text-color);
-        text-decoration: none !important;
-    }
+.btn-log-in:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+    color: var(--text-color);
+    text-decoration: none !important;
+}
 
-    .btn-sign-up {
-        background: var(--pink-highlight);
-        color: white;
-        border: 1px solid var(--pink-highlight);
-    }
+.btn-sign-up {
+    background: var(--pink-highlight);
+    color: white;
+    border: 1px solid var(--pink-highlight);
+}
 
-    .btn-sign-up:hover {
-        background: #a91b93;
-        border-color: #a91b93;
-        opacity: 1;
-        text-decoration: none !important;
-        /* Remove underline */
-        /* box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2); Removed per user request */
+.btn-sign-up:hover {
+    background: #a91b93;
+    border-color: #a91b93;
+    opacity: 1;
+    text-decoration: none !important;
+    /* Remove underline */
+    /* box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2); Removed per user request */
 
-        /* Add shadow */
-        color: white !important;
-        /* Ensure text stays white */
-    }
+    /* Add shadow */
+    color: white !important;
+    /* Ensure text stays white */
+}
 
-    /* Logout Overlay */
-    .logout-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 3000;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+/* Logout Overlay */
+.logout-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-    .logout-overlay.active {
-        display: flex;
-        opacity: 1;
-    }
+.logout-overlay.active {
+    display: flex;
+    opacity: 1;
+}
 
-    .logout-card {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        width: 90%;
-        max-width: 320px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transform: scale(0.9);
-        transition: transform 0.3s ease;
-    }
+.logout-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
 
-    .logout-overlay.active .logout-card {
-        transform: scale(1);
-    }
+.logout-overlay.active .logout-card {
+    transform: scale(1);
+}
 
-    .logout-icon-wrapper {
-        width: 80px;
-        height: 80px;
-        background: #f8f9fa;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto 15px auto;
-        color: var(--pink-highlight);
-    }
+.logout-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    color: var(--pink-highlight);
+}
 
-    .logout-card h3 {
-        margin: 0 0 10px 0;
-        color: var(--text-color);
-    }
+.logout-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
 
-    .logout-card p {
-        color: var(--text-light);
-        margin-bottom: 20px;
-        font-size: 0.9rem;
-    }
+.logout-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
 
-    .logout-close-btn {
-        background: black;
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-    }
+.logout-close-btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
 
-    /* Footer Desktop Override - Moved to footer.css */
+/* Footer Desktop Override - Moved to footer.css */
 
-    /* Header Icon Buttons */
-    .header-icon-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-color);
-        border-radius: 50%;
-        transition: background 0.2s;
-        width: 36px;
-        height: 36px;
-    }
+/* Header Icon Buttons */
+.header-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 36px;
+    height: 36px;
+}
 
-    .header-icon-btn:hover {
-        background-color: #f1f3f4;
-    }
+.header-icon-btn:hover {
+    background-color: #f1f3f4;
+}
 
-    /* Mobile Login Button (Specific Style) */
-    .mobile-login-btn {
-        background-color: #ffffff;
-        border: 1px solid var(--pink-highlight);
-        border-radius: 8px;
-        width: 36px;
-        height: 36px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.2s;
-        cursor: pointer;
-        margin-left: 0;
-    }
+/* Mobile Login Button (Specific Style) */
+.mobile-login-btn {
+    background-color: #ffffff;
+    border: 1px solid var(--pink-highlight);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    margin-left: 0;
+}
 
-    /* Force SVG to inherit purple color */
-    .mobile-login-btn svg {
-        color: var(--pink-highlight);
-        fill: none;
-        stroke: var(--pink-highlight);
-        transform: scale(1.15);
-        /* Match other icons size */
-    }
+/* Force SVG to inherit purple color */
+.mobile-login-btn svg {
+    color: var(--pink-highlight);
+    fill: none;
+    stroke: var(--pink-highlight);
+    transform: scale(1.15);
+    /* Match other icons size */
+}
 
-    .mobile-login-btn:hover {
-        background-color: #fce4ec;
-        /* Light pink hover */
-    }
+.mobile-login-btn:hover {
+    background-color: #fce4ec;
+    /* Light pink hover */
+}
 
-    /* Reset individual margins to prevent extra space (Placed first) */
-    .just-added-btn,
-    .header-btn,
-    .mobile-login-btn,
-    .notification-icon {
-        margin: 0;
-    }
+/* Reset individual margins to prevent extra space (Placed first) */
+.just-added-btn,
+.header-btn,
+.mobile-login-btn,
+.notification-icon {
+    margin: 0;
+}
 
-    /* Standardize Header Spacing (Desktop & Mobile) */
+/* Standardize Header Spacing (Desktop & Mobile) */
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Pack right */
+    width: auto;
+}
+
+/* Fallback: Margin Spacing (Applied first) */
+.header-right>*+* {
+    margin-left: 10px;
+}
+
+/* Increase margin for profile (Legacy/No-Gap browsers need 20px total) */
+.header-right .user-profile {
+    margin-left: 20px;
+}
+
+/* Modern: Flex Gap (Preferred) */
+@supports (gap: 10px) {
     .header-right {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        /* Pack right */
-        width: auto;
+        gap: 10px;
+        /* Exact 10px gap */
     }
 
-    /* Fallback: Margin Spacing (Applied first) */
     .header-right>*+* {
+        margin-left: 0;
+        /* Remove margin if gap works */
+    }
+
+    /* Restore specific margin for profile (10px Gap + 10px Margin = 20px Total) */
+    .header-right .user-profile {
         margin-left: 10px;
     }
+}
 
-    /* Increase margin for profile (Legacy/No-Gap browsers need 20px total) */
-    .header-right .user-profile {
-        margin-left: 20px;
+
+@media (max-width: 600px) {
+    .desktop-only {
+        display: none !important;
     }
+}
 
-    /* Modern: Flex Gap (Preferred) */
-    @supports (gap: 10px) {
-        .header-right {
-            gap: 10px;
-            /* Exact 10px gap */
-        }
-
-        .header-right>*+* {
-            margin-left: 0;
-            /* Remove margin if gap works */
-        }
-
-        /* Restore specific margin for profile (10px Gap + 10px Margin = 20px Total) */
-        .header-right .user-profile {
-            margin-left: 10px;
-        }
+@media (min-width: 601px) {
+    .mobile-only {
+        display: none !important;
     }
+}
 
-
-    @media (max-width: 600px) {
-        .desktop-only {
-            display: none !important;
-        }
+@media (min-width: 1201px) {
+    #menu-link-just-added {
+        display: none !important;
     }
+}
 
-    @media (min-width: 601px) {
-        .mobile-only {
-            display: none !important;
-        }
-    }
+.menu-item.purple {
+    color: var(--pink-highlight) !important;
+    font-weight: 500;
+}
 
-    @media (min-width: 1201px) {
-        #menu-link-just-added {
-            display: none !important;
-        }
-    }
-
-    .menu-item.purple {
-        color: var(--pink-highlight) !important;
-        font-weight: 500;
-    }
-
-    .menu-item.purple .menu-icon {
-        color: var(--pink-highlight) !important;
-    }
+.menu-item.purple .menu-icon {
+    color: var(--pink-highlight) !important;
+}
