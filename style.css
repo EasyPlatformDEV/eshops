@@ -114,6 +114,11 @@ body {
     cursor: pointer;
 }
 
+.notification-icon svg {
+    transform: scale(1.15);
+    /* Increase size slightly as requested */
+}
+
 .notification-icon .badge {
     position: absolute;
     top: -5px;
@@ -1197,10 +1202,12 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: -15px;
-    /* Closer to notification bell */
-    margin-top: 5px;
-    /* Push down to align with bell center */
+    /* margin-right set to 0 in header-right reset block */
+}
+
+.just-added-btn svg {
+    transform: scale(1.15);
+    /* Increase size slightly */
 }
 
 @media (min-width: 1201px) {
@@ -2232,6 +2239,8 @@ a:hover {
     color: var(--blue-highlight);
     fill: none;
     stroke: var(--blue-highlight);
+    transform: scale(1.15);
+    /* Match other icons size */
 }
 
 .mobile-login-btn:hover {
