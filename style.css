@@ -133,6 +133,9 @@ body {
 
 .user-profile {
     position: relative;
+    margin-left: 10px;
+    /* Gap from Notification icon */
+    cursor: pointer;
 }
 
 .profile-img {
@@ -2094,6 +2097,12 @@ a:hover {
     background: #a91b93;
     border-color: #a91b93;
     opacity: 1;
+    text-decoration: none !important;
+    /* Remove underline */
+    box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2);
+    /* Add shadow */
+    color: white !important;
+    /* Ensure text stays white */
 }
 
 /* Logout Overlay */
