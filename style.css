@@ -1872,6 +1872,7 @@ a:hover {
 @media (max-width: 600px) {
     .section-divider {
         margin: 15px 0 10px 0;
+        background-color: #eee;
     }
 
     .search-row {
