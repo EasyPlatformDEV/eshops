@@ -1,0 +1,116 @@
+/* Category Filter Carousel (Refactored) */
+#splide-categories {
+    padding: 0 5px;
+    /* Minimal padding */
+}
+
+#splide-categories .splide__slide {
+    width: auto !important;
+    /* Allow auto width for pill shape */
+    margin-right: 10px;
+}
+
+.category-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #f1f3f5;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* Pill shape */
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.category-filter-btn:hover {
+    background-color: #e9ecef;
+}
+
+.category-filter-btn.active {
+    background-color: var(--pink-highlight);
+    color: white;
+    border-color: var(--pink-highlight);
+    box-shadow: 0 2px 5px rgba(182, 3, 120, 0.3);
+}
+
+.category-filter-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    /* Inherit color (black or white) */
+}
+
+/* Category Products Carousel */
+#category-products-section {
+    min-height: 200px;
+    /* Prevent collapse while loading */
+}
+
+/* Product Card in Carousel */
+.cat-product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+    /* Fill slide height */
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.cat-product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cat-product-image-wrap {
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio (Square) */
+    position: relative;
+    background-color: #f8f9fa;
+}
+
+.cat-product-image-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Keep image fully visible */
+    padding: 10px;
+    /* Inner padding */
+}
+
+.cat-product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.cat-product-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Truncate to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-product-price {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--text-color);
+}

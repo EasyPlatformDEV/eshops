@@ -125,6 +125,30 @@ const app = {
         }).mount();
     },
 
+    // SVG Map for Categories
+    categoryIcons: {
+        "Adult": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>',
+        "Alcohol": '<svg viewBox="0 0 24 24"><path d="M7.5 7l-2-2h13l-2 2v5l-3.5 3.5V19h3v2h-8v-2h3v-3.5L4.5 12V7zm2.5 1h4v3.5l1.5-1.5V8H10v.5L11.5 10l-1.5 1.5V8z" fill="currentColor"/></svg>',
+        "Automotive": '<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>',
+        "Beauty": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="currentColor"/></svg>', // Fallback
+        "Books": '<svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="currentColor"/></svg>',
+        "Clothing": '<svg viewBox="0 0 24 24"><path d="M16.49 3.81L14 9h-4l-2.49-5.19C7.38 4.07 7.25 4.54 7.25 5c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3c0-.46-.13-.93-.26-1.19zM20.2 6.2c.45.69.8 1.48.8 2.3 0 3.31-5.37 6-12 6S-3 11.81-3 8.5c0-.82.35-1.61.8-2.3C-1.87 5.24 3.6 4.5 9 4.5s10.87.74 11.2 1.7z" fill="currentColor"/></svg>',
+        "DIY": '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>', // Generic
+        "Electronics": '<svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z" fill="currentColor"/></svg>',
+        "Footwear": '<svg viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 14H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v10z" fill="currentColor"/></svg>',
+        "Furniture": '<svg viewBox="0 0 24 24"><path d="M17 10c.1 0 .19.01.28.01L13 2H6v8c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V2h-3v8zm-9 6c-1.66 0-3 1.34-3 3v3h14v-3c0-1.66-1.34-3-3-3H8z" fill="currentColor"/></svg>',
+        "Grocery": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z" fill="currentColor"/></svg>',
+        "Home": '<svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg>',
+        "Kids": '<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/></svg>',
+        "Marketplace": '<svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="currentColor"/></svg>', // Simplified
+        "Nutrition": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z" fill="currentColor"/></svg>',
+        "Optics": '<svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/></svg>',
+        "Pets": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/></svg>',
+        "Pharmacy": '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14h-2v-4H5v-2h4V7h2v4h4v2h-4v4z" fill="currentColor"/></svg>',
+        "Second Hand": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/></svg>',
+        "Sports": '<svg viewBox="0 0 24 24"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1.2-.4-1.6 0l-1.6 1.6c-.1.1-.2.3-.2.5V11h4.6v-1.5z" fill="currentColor"/></svg>'
+    },
+
     fetchShopCategories: async function () {
         if (!document.getElementById('splide-categories')) return;
         try {
@@ -143,29 +167,118 @@ const app = {
         if (!list) return;
         list.innerHTML = '';
 
-        items.forEach(item => {
+        items.forEach((item, index) => {
+            const icon = this.categoryIcons[item.name] || this.categoryIcons["Beauty"]; // Fallback
             const html = `
                 <li class="splide__slide">
-                    <div class="category-card">
-                        <img src="${item.image}" alt="${item.name}" class="category-bg-img" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
-                        <div class="category-overlay">
-                            <span class="category-name">${item.name}</span>
-                        </div>
-                    </div>
+                    <button class="category-filter-btn ${index === 0 ? 'active' : ''}" data-category="${item.name}">
+                        ${icon}
+                        ${item.name}
+                    </button>
                 </li>
             `;
             list.insertAdjacentHTML('beforeend', html);
         });
 
+        // Init Filter Carousel
         new Splide('#splide-categories', {
-            perPage: 3,
-            gap: '10px',
+            autoWidth: true, // For pills
             pagination: false,
-            arrows: true,
-            breakpoints: {
-                600: { perPage: 2 },
-            }
+            arrows: false,
+            drag: 'free',
+            gap: '10px',
         }).mount();
+
+        // Bind Click Events
+        const buttons = document.querySelectorAll('.category-filter-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Toggle Active State
+                document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Load Products
+                const category = btn.getAttribute('data-category');
+                this.loadCategoryProducts(category);
+            });
+        });
+
+        // Load initial products (first category)
+        if (items.length > 0) {
+            this.loadCategoryProducts(items[0].name);
+        }
+    },
+
+    loadCategoryProducts: async function (category) {
+        const list = document.getElementById('category-products-list');
+        if (!list) return;
+
+        // Fetch just_added.json if not already cached (could add caching here, but fetch is fast enough for now)
+        try {
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            const allProducts = await response.json();
+
+            // 1. Filter matches
+            let matches = allProducts.filter(p => p.shop_category === category);
+
+            // 2. Fill if < 10
+            let displayProducts = [...matches];
+            if (displayProducts.length < 10) {
+                const others = allProducts.filter(p => p.shop_category !== category);
+                // Shuffle others
+                const shuffled = others.sort(() => 0.5 - Math.random());
+                const needed = 10 - displayProducts.length;
+                displayProducts = displayProducts.concat(shuffled.slice(0, needed));
+            } else {
+                displayProducts = displayProducts.slice(0, 10);
+            }
+
+            // 3. Render
+            list.innerHTML = ''; // Clear prev
+            displayProducts.forEach(p => {
+                const html = `
+                    <li class="splide__slide">
+                        <a href="${p.link}" class="cat-product-card">
+                            <div class="cat-product-image-wrap">
+                                <img src="${p.image}" alt="${p.title}">
+                            </div>
+                            <div class="cat-product-info">
+                                <h4 class="cat-product-title">${p.title}</h4>
+                                <div class="cat-product-price">${p.price.toFixed(2)} лв.</div>
+                            </div>
+                        </a>
+                    </li>
+                `;
+                list.insertAdjacentHTML('beforeend', html);
+            });
+
+            // 4. Init/Refresh Carousel
+            // Splide needs to be re-initialized or updated if element exists. 
+            // Simpler to destroy old one if we tracked it, but here we might just init.
+            // CAUTION: Initializing on same element twice causes issues. 
+            // Better to check if existing instance on this ID? 
+            // In simple implementation, we can target the ID.
+
+            if (this.productCarousel) {
+                this.productCarousel.destroy();
+            }
+
+            this.productCarousel = new Splide('#splide-category-products', {
+                perPage: 3,
+                gap: '10px',
+                pagination: false,
+                arrows: false, // As per instruction "no arrows" for filters, possibly for products user didn't specify but carousel suggests arrows usually? User requested "squared images".
+                // I will add arrows: false for consistency as swipe is primary on mobile
+                breakpoints: {
+                    600: { perPage: 2 },
+                    400: { perPage: 2 }
+                }
+            });
+            this.productCarousel.mount();
+
+        } catch (error) {
+            console.error("Error loading category products", error);
+        }
     },
 
     renderCelebrities: function (items) {

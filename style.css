@@ -2605,4 +2605,4 @@ a:hover {
         gap: 0;
         /* Remove vertical gap */
     }
-}
+}@import 'category_filters.css';
