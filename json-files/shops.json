@@ -1,118 +1,118 @@
 [
     {
-        "domain": "douglas.bg",
-        "category": "Beauty"
+        "shop": "douglas.bg",
+        "shop_category": "Beauty"
     },
     {
-        "domain": "drinklink.bg",
-        "category": "Alcohol"
+        "shop": "drinklink.bg",
+        "shop_category": "Alcohol"
     },
     {
-        "domain": "ebag.bg",
-        "category": "Grocery"
+        "shop": "ebag.bg",
+        "shop_category": "Grocery"
     },
     {
-        "domain": "fashiondays.bg",
-        "category": "Clothing"
+        "shop": "fashiondays.bg",
+        "shop_category": "Clothing"
     },
     {
-        "domain": "galen.bg",
-        "category": "Pharmacy"
+        "shop": "galen.bg",
+        "shop_category": "Pharmacy"
     },
     {
-        "domain": "hippoland.net",
-        "category": "Kids"
+        "shop": "hippoland.net",
+        "shop_category": "Kids"
     },
     {
-        "domain": "ikea.bg",
-        "category": "Furniture"
+        "shop": "ikea.bg",
+        "shop_category": "Furniture"
     },
     {
-        "domain": "jysk.bg",
-        "category": "Home"
+        "shop": "jysk.bg",
+        "shop_category": "Home"
     },
     {
-        "domain": "lillydrogerie.bg",
-        "category": "Grocery"
+        "shop": "lillydrogerie.bg",
+        "shop_category": "Grocery"
     },
     {
-        "domain": "notino.bg",
-        "category": "Beauty"
+        "shop": "notino.bg",
+        "shop_category": "Beauty"
     },
     {
-        "domain": "obuvki.bg",
-        "category": "Footwear"
+        "shop": "obuvki.bg",
+        "shop_category": "Footwear"
     },
     {
-        "domain": "onlinemashini.bg",
-        "category": "DIY"
+        "shop": "onlinemashini.bg",
+        "shop_category": "DIY"
     },
     {
-        "domain": "opticlasa.com",
-        "category": "Optics"
+        "shop": "opticlasa.com",
+        "shop_category": "Optics"
     },
     {
-        "domain": "ozone.bg",
-        "category": "Marketplace"
+        "shop": "ozone.bg",
+        "shop_category": "Marketplace"
     },
     {
-        "domain": "parfium.bg",
-        "category": "Beauty"
+        "shop": "parfium.bg",
+        "shop_category": "Beauty"
     },
     {
-        "domain": "praktiker.bg",
-        "category": "DIY"
+        "shop": "praktiker.bg",
+        "shop_category": "DIY"
     },
     {
-        "domain": "praktis.bg",
-        "category": "DIY"
+        "shop": "praktis.bg",
+        "shop_category": "DIY"
     },
     {
-        "domain": "remedium.bg",
-        "category": "Pharmacy"
+        "shop": "remedium.bg",
+        "shop_category": "Pharmacy"
     },
     {
-        "domain": "skyoptic.bg",
-        "category": "Optics"
+        "shop": "skyoptic.bg",
+        "shop_category": "Optics"
     },
     {
-        "domain": "sopharmacy.bg",
-        "category": "Pharmacy"
+        "shop": "sopharmacy.bg",
+        "shop_category": "Pharmacy"
     },
     {
-        "domain": "sportdepot.bg",
-        "category": "Sports"
+        "shop": "sportdepot.bg",
+        "shop_category": "Sports"
     },
     {
-        "domain": "technomarket.bg",
-        "category": "Electronics"
+        "shop": "technomarket.bg",
+        "shop_category": "Electronics"
     },
     {
-        "domain": "technopolis.bg",
-        "category": "Electronics"
+        "shop": "technopolis.bg",
+        "shop_category": "Electronics"
     },
     {
-        "domain": "tehnomix.bg",
-        "category": "Electronics"
+        "shop": "tehnomix.bg",
+        "shop_category": "Electronics"
     },
     {
-        "domain": "tmarketonline.bg",
-        "category": "Grocery"
+        "shop": "tmarketonline.bg",
+        "shop_category": "Grocery"
     },
     {
-        "domain": "videnov.bg",
-        "category": "Furniture"
+        "shop": "videnov.bg",
+        "shop_category": "Furniture"
     },
     {
-        "domain": "vimax.bg",
-        "category": "Electronics"
+        "shop": "vimax.bg",
+        "shop_category": "Electronics"
     },
     {
-        "domain": "zara.com",
-        "category": "Clothing"
+        "shop": "zara.com",
+        "shop_category": "Clothing"
     },
     {
-        "domain": "zora.bg",
-        "category": "Electronics"
+        "shop": "zora.bg",
+        "shop_category": "Electronics"
     }
 ]
