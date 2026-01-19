@@ -122,7 +122,8 @@
 
 /* Reduced Boldness and No Underline */
 .cat-product-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* Reduced from 0.9rem as requested */
     font-weight: 400;
     /* Regular weight */
     color: #333;
@@ -137,7 +138,9 @@
     /* Force remove underline */
 }
 
-.cat-product-card:hover .cat-product-title {
+/* Ensure no hover effects on text */
+.cat-product-card:hover .cat-product-title,
+.cat-product-title:hover {
     text-decoration: none !important;
     color: #333;
 }
@@ -151,9 +154,11 @@
     padding: 0 8px;
     height: 32px;
     /* Compact */
-    background-color: #ebf1fe;
+    background-color: #fff0f3;
+    /* Pale pink background */
     border: none;
-    color: var(--blue-highlight, #336ae9);
+    color: #d63384;
+    /* Pink text (approx var(--pink-highlight)) */
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s;
@@ -162,7 +167,8 @@
 }
 
 .cat-product-info .alert-set-btn:hover {
-    background-color: #dbe4fd;
+    background-color: #fce8ef;
+    /* Slightly darker pink on hover */
     text-decoration: none;
 }
 
