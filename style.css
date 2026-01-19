@@ -1841,7 +1841,7 @@ a:hover {
 
 /* 3. Section Titles */
 .section-title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--pink-highlight);
     font-weight: 500;
     margin: 0 0 15px 0;
