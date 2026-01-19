@@ -246,21 +246,23 @@ const app = {
             displayProducts.forEach(p => {
                 const html = `
                     <li class="splide__slide">
-                        <a href="${p.link}" class="cat-product-card">
-                            <div class="cat-product-image-wrap">
-                                <img src="${p.image}" alt="${p.title}">
-                            </div>
+                        <div class="cat-product-card">
+                            <a href="${p.link}" class="cat-product-image-link">
+                                <div class="cat-product-image-wrap">
+                                    <img src="${p.image}" alt="${p.title}">
+                                </div>
+                            </a>
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
                                 <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} лв.</div>
-                                <button class="alert-set-btn" style="margin-top: 5px; width: 100%; justify-content: center;">
+                                <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                     </svg>
                                     Save product
                                 </button>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 `;
                 list.insertAdjacentHTML('beforeend', html);
