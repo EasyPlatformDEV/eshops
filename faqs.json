@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "question": "How do I receive notifications?",
+        "answer": "Получавете известия за намалена цена по имейл и push нотификация."
+    },
+    {
+        "id": 2,
+        "question": "What shops are available for tracking?",
+        "answer": "Почти всички известни онлайн магазини в България."
+    },
+    {
+        "id": 3,
+        "question": "Do you track Amazon, Temu, Shein and Ali Express as well?",
+        "answer": "За момента не предлагаме такава услуга."
+    },
+    {
+        "id": 4,
+        "question": "What if I miss a shop, can I suggest one that does not exist?",
+        "answer": "Да, може да го направите от тук: <a href='#'>Suggest a shop</a>."
+    },
+    {
+        "id": 5,
+        "question": "Can I see what other people track?",
+        "answer": "Да, но виждате само анонимен юзернейм. Може да разпознавате само известни личности, които са дали съгласие за това."
+    },
+    {
+        "id": 6,
+        "question": "Which celebrities do you work with?",
+        "answer": "Сайтът се използва от много популярни личности в България, които споделиха своите списъци с желания."
+    },
+    {
+        "id": 7,
+        "question": "How can I send my wishlist to a friend?",
+        "answer": "Може да споделяте с приятели един или повече продукти, които вие самите наблюдавате. За тази цел ние ще формираме линк, който води към тях и е активен 7 дни."
+    },
+    {
+        "id": 8,
+        "question": "Can I compare same product in dofferent shops?",
+        "answer": "Да, можете, но само ако търговецът е позволил идентификаторър на продукта (GTIN) да се получава от нас."
+    },
+    {
+        "id": 9,
+        "question": "Can I order something from you?",
+        "answer": "Не, не можете. Ние само проследяваме цени и ви препращаме към магазина за покупка."
+    }
+]

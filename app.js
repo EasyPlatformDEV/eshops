@@ -4,6 +4,7 @@ const app = {
         this.fetchShops();
         this.fetchCelebrities();
         this.fetchShopCategories();
+        this.fetchFaqs(); // Load FAQs
         this.bindLogoutEvents(); // Add logout listener
     },
 
@@ -616,6 +617,64 @@ const app = {
             `;
             container.insertAdjacentHTML('beforeend', item);
         });
+    },
+
+    fetchFaqs: async function () {
+        const faqList = document.getElementById('faq-list');
+        if (!faqList) return;
+        try {
+            const response = await fetch('faqs.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("FAQs JSON not found");
+            const items = await response.json();
+            this.renderFaqs(items);
+        } catch (error) {
+            console.error("Error loading FAQs:", error);
+        }
+    },
+
+    renderFaqs: function (items) {
+        const list = document.getElementById('faq-list');
+        const viewAllBtn = document.getElementById('view-all-faq');
+        if (!list) return;
+        list.innerHTML = '';
+
+        items.forEach((faq, index) => {
+            const isHidden = index >= 3 ? 'hidden' : '';
+            const html = `
+                <div class="faq-item ${isHidden}">
+                    <button class="faq-question">
+                        <span>${faq.question}</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>${faq.answer}</p>
+                    </div>
+                </div>
+            `;
+            list.insertAdjacentHTML('beforeend', html);
+        });
+
+        // Add Toggle logic
+        const faqs = list.querySelectorAll('.faq-item');
+        faqs.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqs.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // "View All" Logic
+        if (items.length > 3 && viewAllBtn) {
+            viewAllBtn.style.display = 'inline-flex';
+            viewAllBtn.addEventListener('click', () => {
+                list.querySelectorAll('.faq-item.hidden').forEach(el => el.classList.remove('hidden'));
+                viewAllBtn.style.display = 'none';
+            });
+        }
     }
 };
 
