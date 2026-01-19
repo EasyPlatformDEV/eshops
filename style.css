@@ -1758,6 +1758,8 @@ a:hover {
         height: 96px;
         flex-shrink: 0;
         justify-self: start;
+        margin-left: -10px;
+        /* Shifted left as requested */
         overflow: visible;
         /* Allow zoomed image to bleed slightly if needed */
     }
