@@ -102,12 +102,12 @@ const app = {
         list.innerHTML = '';
 
         items.forEach(shop => {
-            const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.domain}&sz=32`;
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.shop}&sz=32`;
             const html = `
                 <li class="splide__slide shop-slide">
                     <div class="shop-card">
-                        <img src="${faviconUrl}" alt="${shop.domain}">
-                        <span class="shop-name">${shop.domain}</span>
+                        <img src="${faviconUrl}" alt="${shop.shop}">
+                        <span class="shop-name">${shop.shop}</span>
                     </div>
                 </li>
             `;
