@@ -62,7 +62,7 @@ const app = {
         const productList = document.getElementById('product-list');
         if (!productList) return; // Exit if not on product page
         try {
-            const response = await fetch('products.json');
+            const response = await fetch('json-files/products.json');
             if (!response.ok) throw new Error("JSON not found");
             const products = await response.json();
             this.renderProducts(products);
@@ -75,7 +75,7 @@ const app = {
     fetchCelebrities: async function () {
         if (!document.getElementById('splide-celebrities')) return;
         try {
-            const response = await fetch('celebrities.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
             this.renderCelebrities(items);
@@ -87,7 +87,7 @@ const app = {
     fetchShops: async function () {
         if (!document.getElementById('splide-shops')) return;
         try {
-            const response = await fetch('shops.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/shops.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Shops JSON not found");
             const items = await response.json();
             this.renderShops(items);
@@ -128,7 +128,7 @@ const app = {
     fetchShopCategories: async function () {
         if (!document.getElementById('splide-categories')) return;
         try {
-            const response = await fetch('shop_categories.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/shop_categories.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Categories JSON not found");
             const items = await response.json();
             items.sort((a, b) => a.name.localeCompare(b.name));
@@ -445,7 +445,7 @@ const app = {
 
         // Fetch and render notifications
         try {
-            const response = await fetch('alerts.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/alerts.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Alerts JSON not found");
             const alerts = await response.json();
             this.renderNotifications(alerts, content);
@@ -519,7 +519,7 @@ const app = {
 
         // Fetch Data
         try {
-            const response = await fetch('just_added.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Just Added JSON not found");
             const items = await response.json();
             this.renderJustAdded(items, jaContent);
@@ -578,6 +578,7 @@ const app = {
     },
 
     renderNotifications: function (alerts, container) {
+        if (!container) return;
         container.innerHTML = '';
 
         alerts.forEach(alert => {
@@ -623,7 +624,7 @@ const app = {
         const faqList = document.getElementById('faq-list');
         if (!faqList) return;
         try {
-            const response = await fetch('faqs.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/faqs.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("FAQs JSON not found");
             const items = await response.json();
             this.renderFaqs(items);

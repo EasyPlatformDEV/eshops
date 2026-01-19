@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Adult",
+        "image": "https://plus.unsplash.com/premium_photo-1700600258575-841992505f0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2V4JTIwdG95c3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "name": "Alcohol",
+        "image": "https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Automotive",
+        "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Beauty",
+        "image": "https://images.unsplash.com/photo-1616529484745-85f885b9889a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0eSUyMG1ha2UlMjB1cHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "name": "Books",
+        "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Clothing",
+        "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "DIY",
+        "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Electronics",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Footwear",
+        "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Furniture",
+        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Grocery",
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Home",
+        "image": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Kids",
+        "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Marketplace",
+        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Nutrition",
+        "image": "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Optics",
+        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Pets",
+        "image": "https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Pharmacy",
+        "image": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Second Hand",
+        "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        "name": "Sports",
+        "image": "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=400&q=80"
+    }
+]

@@ -3,7 +3,7 @@ const ASSETS = [
     'myproducts.html',
     'style.css',
     'app.js',
-    'manifest.json'
+    'json-files/manifest.json'
 ];
 
 self.addEventListener('install', (e) => {
