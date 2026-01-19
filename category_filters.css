@@ -108,20 +108,23 @@
     padding: 0;
 }
 
+
 .cat-product-info {
-    padding: 8px 10px;
-    /* Padding for title inside frame */
+    padding: 4px 10px 8px 10px;
+    /* Reduced top padding */
     text-align: center;
-    /* Center title */
-    border-top: 1px solid transparent;
-    /* Separator if needed, or clean */
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    /* Space between title and button */
 }
 
 /* Reduced Boldness and No Underline */
 .cat-product-title {
     font-size: 0.9rem;
     font-weight: 400;
-    /* Regular weight like celebrities */
+    /* Regular weight */
     color: #333;
     margin: 0;
     display: -webkit-box;
@@ -130,12 +133,37 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none !important;
+    /* Force remove underline */
 }
 
 .cat-product-card:hover .cat-product-title {
-    text-decoration: none;
-    /* No underline */
+    text-decoration: none !important;
     color: #333;
+}
+
+/* Ensure button inherits or has specific style if not loaded from main CSS correctly, 
+   but .alert-set-btn is likely in style.css. 
+   We just need to make sure generic A hover doesn't mess it up. */
+.cat-product-info .alert-set-btn {
+    font-size: 0.8rem;
+    /* Slightly smaller to fit */
+    padding: 0 8px;
+    height: 32px;
+    /* Compact */
+    background-color: #ebf1fe;
+    border: none;
+    color: var(--blue-highlight, #336ae9);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0;
+    /* Override generic margin */
+}
+
+.cat-product-info .alert-set-btn:hover {
+    background-color: #dbe4fd;
+    text-decoration: none;
 }
 
 /* Hide Price */
