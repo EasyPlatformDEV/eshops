@@ -102,6 +102,7 @@
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     /* Truncate to 1 line */
     -webkit-box-orient: vertical;
     overflow: hidden;
