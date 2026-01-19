@@ -1859,8 +1859,8 @@ a:hover {
 /* 4. Search Rows */
 .section-divider {
     height: 1px;
-    background-color: #eee;
-    margin: 40px 0 10px 0;
+    background-color: #ddd;
+    margin: 20px 0 10px 0;
 }
 
 .search-row {
@@ -1871,7 +1871,7 @@ a:hover {
 
 @media (max-width: 600px) {
     .section-divider {
-        margin: 20px 0 15px 0;
+        margin: 15px 0 10px 0;
     }
 
     .search-row {
