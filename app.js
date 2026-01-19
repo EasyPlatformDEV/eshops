@@ -522,7 +522,12 @@ const app = {
             const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Just Added JSON not found");
             const items = await response.json();
-            this.renderJustAdded(items, jaContent);
+
+            // Randomize and take 10
+            const shuffled = items.sort(() => 0.5 - Math.random());
+            const selectedItems = shuffled.slice(0, 10);
+
+            this.renderJustAdded(selectedItems, jaContent);
         } catch (error) {
             console.error("Error loading Just Added:", error);
             if (jaContent) jaContent.innerHTML = '<p style="padding:15px; text-align:center; color:#999;">Failed to load items.</p>';
