@@ -43,7 +43,7 @@
 }
 
 .faq-question:hover {
-    color: var(--pink-highlight);
+    color: #000;
 }
 
 .faq-icon {
