@@ -98,8 +98,13 @@
     padding-bottom: 15px;
 }
 
+.faq-item.active .faq-question {
+    color: var(--pink-highlight);
+}
+
 .faq-item.active .faq-icon {
     transform: rotate(180deg);
+    color: var(--pink-highlight);
 }
 
 .faq-item.active .faq-icon::after {
@@ -111,7 +116,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 25px;
+    margin-top: 15px;
+    /* Reduced from 25px */
     color: var(--blue-highlight);
     text-decoration: none;
     font-size: 0.95rem;
@@ -127,9 +133,9 @@
 }
 
 .circle-arrow {
-    width: 18px;
-    /* Smaller size */
-    height: 18px;
+    width: 16px;
+    /* Shrunk further */
+    height: 16px;
     border: 1.5px solid currentColor;
     border-radius: 50%;
     display: flex;
