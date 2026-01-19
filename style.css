@@ -1472,6 +1472,8 @@ a:hover {
 
 .ja-btn-buy:hover {
     background: #c8e6c9;
+    text-decoration: none !important;
+    color: #2e7d32 !important;
 }
 
 /* Header Description */
