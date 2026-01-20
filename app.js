@@ -1,4 +1,4 @@
-const app = {
+﻿const app = {
     init: function () {
         this.fetchProducts();
         this.fetchShops();
@@ -131,7 +131,7 @@ const app = {
         "18+": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 7h2v6h-2zm0 8h2v2h-2z" fill="currentColor"/></svg>', // Exclamation in circle
         "Alcohol": '<svg viewBox="0 0 24 24"><path d="M6 3v6c0 2.97 2.16 5.43 5 5.91V19H8v2h8v-2h-3v-4.09c2.84-.48 5-2.94 5-5.91V3H6zm10 6c0 2.21-1.79 4-4 4s-4-1.79-4-4V5h8v4z" fill="currentColor"/></svg>', // Standard Wine Glass
         "Automotive": '<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>',
-        "Beauty": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7c-1.1 0-2 .9-2 2 0-1.1-.9-2-2-2-1.1 0-2 .9-2 2 0 1.1.9 2 2 2 0 1.1.9 2-2 2 .9 0 2-.9 2-2 0 1.1.9 2 2 2 1.1 0 2-.9 2-2 0-1.1-.9-2-2-2z" style="display:none;"/><path d="M11.9 2a3.6 3.6 0 0 1 3.5 3.2 3.6 3.6 0 0 1 4.5 2.1 3.6 3.6 0 0 1 2.5 4.2 3.6 3.6 0 0 1-1.3 4.8 3.6 3.6 0 0 1-3.2 3.5 3.6 3.6 0 0 1-4.2 2.5 3.6 3.6 0 0 1-4.8-1.3 3.6 3.6 0 0 1-3.5-3.2 3.6 3.6 0 0 1-4.5-2.1 3.6 3.6 0 0 1-2.5-4.2 3.6 3.6 0 0 1 1.3-4.8 3.6 3.6 0 0 1 3.2-3.5A3.6 3.6 0 0 1 7.1 2a3.6 3.6 0 0 1 4.8 1.3z" /><circle cx="12" cy="12" r="3" /></svg>', // Bold Flower
+                "Beauty": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', // Heart
         "Books": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>', // Lucide Library
         "Clothing": '<svg viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 14H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v10z" fill="currentColor"/></svg>',
         "DIY": '<svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" fill="currentColor"/></svg>',
@@ -249,7 +249,7 @@ const app = {
                             </a>
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
-                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} лв.</div>
+                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} Р»РІ.</div>
                                 <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -450,7 +450,7 @@ const app = {
 
         const totalValueEl = document.getElementById('total-value');
         if (totalValueEl) {
-            totalValueEl.innerText = totalValue.toFixed(2) + ' €';
+            totalValueEl.innerText = totalValue.toFixed(2) + ' в‚¬';
         }
     },
 
@@ -692,7 +692,7 @@ const app = {
                         <div class="ja-details">
                             <div class="ja-title">${item.title}</div>
                             <div class="ja-price-row">
-                                <span class="ja-price">${item.price.toFixed(2)} €</span>
+                                <span class="ja-price">${item.price.toFixed(2)} в‚¬</span>
                                 <span class="ja-shop">${item.shop}</span>
                             </div>
                         </div>
@@ -743,7 +743,7 @@ const app = {
                     <div class="notification-body">
                         <div class="notification-message">
                             Your price target has been reached for the <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> at <strong>${alert.shop}</strong>.<br>
-                            The price has dropped to <strong>${alert.currentPrice.toFixed(2)} €</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
+                            The price has dropped to <strong>${alert.currentPrice.toFixed(2)} в‚¬</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
                         </div>
                         <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 5px;">
                             Buy now at ${alert.shop}
@@ -821,3 +821,4 @@ document.addEventListener('DOMContentLoaded', () => {
     app.initMenu();
     app.initJustAdded();
 });
+
