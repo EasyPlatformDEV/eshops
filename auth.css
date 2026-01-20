@@ -43,14 +43,15 @@ body {
     margin-bottom: 20px;
 }
 
-display: flex;
-align-items: center;
-border-bottom: 1px solid #eee;
-margin-bottom: 20px;
-position: relative;
-height: 50px;
-justify-content: center;
-padding: 0;
+.auth-header-nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    position: relative;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
 }
 
 .back-arrow {
