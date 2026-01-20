@@ -94,6 +94,16 @@
         overflow-y: auto;
         width: 100%;
         padding: 20px;
+        /* Mobile Grid Layout */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-content: start;
+    }
+
+    .celebrities-content .celeb-card-sidebar {
+        width: 100%;
+        /* Fluid width for grid */
     }
 
     .celebrities-close {
