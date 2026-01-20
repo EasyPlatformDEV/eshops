@@ -1593,8 +1593,8 @@ a:hover {
         max-width: 470px;
         flex: 0 0 470px;
         margin: 0;
-        padding-top: 0;
-        /* Neutralized for precise header gap alignment */
+        padding: 0;
+        /* Reset all padding to avoid visual double-gap (15px flex + 15px padding = 30px) */
     }
 
     /* Reset width for children of app-content */
