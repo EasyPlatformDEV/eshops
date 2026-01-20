@@ -53,6 +53,20 @@
     margin-bottom: 10px;
 }
 
+.celebrities-header h3 {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--pink-highlight);
+}
+
+.celebrities-header .icon-pink {
+    color: var(--pink-highlight);
+    width: 32px;
+    height: 32px;
+}
+
 /* Inner Content Container */
 .celebrities-content {
     padding: 10px 10px 10px 20px;

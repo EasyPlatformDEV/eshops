@@ -361,7 +361,7 @@
                         </svg>
                         Follow
                     </button>
-                    <a href="#" class="celeb-btn-view">View Products</a>
+                    <a href="#" class="celeb-btn-view">View products (${Math.floor(Math.random() * (20 - 3 + 1)) + 3})</a>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
