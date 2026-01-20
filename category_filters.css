@@ -53,6 +53,7 @@
 /* Product Card in Carousel */
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
+/* Product Card in Carousel - Clean Style like Just Added Sidebar */
 .cat-product-card {
     display: flex;
     flex-direction: column;
@@ -63,8 +64,6 @@
     background: transparent;
     /* No bg */
     height: 100%;
-    text-decoration: none;
-    color: inherit;
     transition: none;
     /* No jump */
 }
@@ -80,10 +79,15 @@
     border-color: #ccc;
 }
 
+.cat-product-image-link {
+    display: block;
+    width: 100%;
+}
+
 .cat-product-image-wrap {
     width: 100%;
-    padding-top: 100%;
-    /* Keep 1:1 ratio for container */
+    padding-top: 90%;
+    /* Reduced from 100% to save height (~20px) */
     position: relative;
     background-color: transparent;
     /* Clean */
@@ -101,33 +105,32 @@
     transform: translate(-50%, -50%);
     /* Center */
     width: 70%;
-    /* Reduced size - Does not fill whole card */
+    /* Reduced size */
     height: 70%;
     object-fit: contain;
     /* Ensure full image visible */
     padding: 0;
 }
 
-
 .cat-product-info {
-    padding: 4px 10px 8px 10px;
-    /* Reduced top padding */
+    padding: 0 10px 8px 10px;
+    /* Removed top padding to move title up */
     text-align: center;
     border-top: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     /* Space between title and button */
+    flex: 1;
 }
 
 /* Reduced Boldness and No Underline */
 .cat-product-title {
     font-size: 0.85rem;
-    /* Reduced from 0.9rem as requested */
     font-weight: 400;
     /* Regular weight */
     color: #333;
-    margin: 0;
+    margin: 4px 0 0 0;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -136,6 +139,7 @@
     text-overflow: ellipsis;
     text-decoration: none !important;
     /* Force remove underline */
+    cursor: default;
 }
 
 /* Ensure no hover effects on text */
@@ -145,31 +149,44 @@
     color: #333;
 }
 
-/* Ensure button inherits or has specific style if not loaded from main CSS correctly, 
-   but .alert-set-btn is likely in style.css. 
-   We just need to make sure generic A hover doesn't mess it up. */
+/* Save Product Button - Matching Just Added Sidebar (.ja-btn) */
 .cat-product-info .alert-set-btn {
     font-size: 0.8rem;
-    /* Slightly smaller to fit */
-    padding: 0 8px;
-    height: 32px;
-    /* Compact */
-    background-color: #fff0f3;
-    /* Pale pink background */
-    border: none;
-    color: #d63384;
-    /* Pink text (approx var(--pink-highlight)) */
-    border-radius: 6px;
+    padding: 6px 0;
+    /* Vertical padding like sidebar */
+    width: 100%;
+    background-color: #fdf2f7;
+    /* Sidebar Bg (Pale Pink) */
+    border: 1px solid transparent;
+    color: var(--pink-highlight, #d63384);
+    border-radius: 8px;
+    /* Sidebar Radius */
     cursor: pointer;
+    font-weight: 500;
     transition: background 0.2s;
-    margin: 0;
-    /* Override generic margin */
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .cat-product-info .alert-set-btn:hover {
-    background-color: #fce8ef;
-    /* Slightly darker pink on hover */
-    text-decoration: none;
+    background-color: #f8e1ea;
+    /* Sidebar Hover */
+    text-decoration: none !important;
+}
+
+/* Icon Hover Effect: Fill with color */
+.cat-product-info .alert-set-btn svg {
+    transition: fill 0.2s;
+    fill: none;
+    /* Default empty */
+}
+
+.cat-product-info .alert-set-btn:hover svg {
+    fill: currentColor;
+    /* Fill on hover */
 }
 
 /* Hide Price */
