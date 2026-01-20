@@ -127,23 +127,23 @@ const app = {
 
     // SVG Map for Categories
     categoryIcons: {
-        "18+": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>',
+        "18+": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 15h1.5V9H8v6zm5.5 0h1.5v-2.5h1V11h-1V9h-1.5v2h-1V9h-1.5v6z" fill="currentColor"/></svg>', // Simple 18 in circle representation or path based
         "Alcohol": '<svg viewBox="0 0 24 24"><path d="M7.5 7l-2-2h13l-2 2v5l-3.5 3.5V19h3v2h-8v-2h3v-3.5L4.5 12V7zm2.5 1h4v3.5l1.5-1.5V8H10v.5L11.5 10l-1.5 1.5V8z" fill="currentColor"/></svg>',
         "Automotive": '<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>',
-        "Beauty": '<svg viewBox="0 0 24 24"><path d="M12 3c-2.76 0-5 2.24-5 5 0 2.28 1.54 4.2 3.71 4.8L10 21h4l-.71-8.2C15.46 12.2 17 10.28 17 8c0-2.76-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="currentColor"/></svg>', // New lipstick/bottle icon
+        "Beauty": '<svg viewBox="0 0 24 24"><path d="M13 3c-3.1 0-5.8 2.3-6.1 5.4l-.8 7.6H4v2h16v-2h-2.1l-.8-7.6C16.8 5.3 14.1 3 13 3zm-2.9 13l.6-6.4c.1-1.3 1.2-2.3 2.5-2.3s2.4 1 2.5 2.3l.6 6.4h-6.2z" fill="currentColor"/></svg>', // Cosmetic bottle
         "Books": '<svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="currentColor"/></svg>',
 
 
         "Clothing": '<svg viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 14H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v10z" fill="currentColor"/></svg>',
         "DIY": '<svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" fill="currentColor"/></svg>',
         "Electronics": '<svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" fill="currentColor"/></svg>',
-        "Footwear": '<svg viewBox="0 0 24 24"><path d="M17.15 15.22l-1.97-6.06c-.66-2.03-2.58-3.41-4.72-3.41H5L3 13.91V19c0 1.1.9 2 2 2h10.96l4.2-2.1c1.37-.69 2.13-2.2 1.76-3.68H17.15zM8.33 16.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="currentColor"/></svg>',
+        "Footwear": '<svg viewBox="0 0 24 24"><path d="M18 15h-2c0-1.66-1.34-3-3-3H6.8c-.7 0-1.37.28-1.87.78L3 14.71v2.79c0 1.1.9 2 2 2h10.96l4.2-2.1c.9-.45 1.48-1.36 1.44-2.36-.03-.83-.69-1.54-1.52-1.54h-.08zM5 13l1.5-4.5h11L19 13H5z" fill="currentColor"/></svg>', // Distinct shoe shape
         "Furniture": '<svg viewBox="0 0 24 24"><path d="M20 10V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L4 19h1v-1h14v1h1l.67-2H22v-5c0-1.1-.9-2-2-2zm-9 0H6V7h5v3zm7 0h-5V7h5v3z" fill="currentColor"/></svg>',
         "Grocery": '<svg viewBox="0 0 24 24"><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.02.17.06.25l3.65 10.65C4.94 21.6 5.61 22 6.34 22h11.32c.73 0 1.4-.4 1.63-1.1l3.65-10.65c.04-.08.06-.16.06-.25 0-.55-.45-1-1-1zm-9 0H8.84L12 4.26 15.16 9h-4.16z" fill="currentColor"/></svg>',
         "Home": '<svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg>',
         "Kids": '<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/></svg>',
         "Marketplace": '<svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="currentColor"/></svg>',
-        "Nutrition": '<svg viewBox="0 0 24 24"><path d="M6 18c-2.2 0-4-1.8-4-4s1.8-4 4-4h6v8H6zm6-8h6c2.2 0 4 1.8 4 4s-1.8 4-4 4h-6v-8z" fill="currentColor"/></svg>',
+        "Nutrition": '<svg viewBox="0 0 24 24"><path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="none"/></svg>', // Pill shape
         "Optics": '<svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/></svg>',
         "Pets": '<svg viewBox="0 0 24 24"><path d="M21.5 13.5c-1.1 0-2-.9-2-2V9.41c0-1.1-.9-2-2-2h-3.92C12.3 5.4 10.22 4 8 4 4.13 4 1 7.13 1 11c0 2.21 1.09 4.2 2.8 5.49L3 20h2l.71-.71c1.3.46 2.7.71 4.29.71 3.87 0 7-3.13 7-7 0-.47-.05-.93-.13-1.37.89-.96 2.16-1.63 3.63-1.63h1v3.5c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1H21.5z" fill="currentColor"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/><path d="M11.5 11c0-1.5-3.5-1.5-3.5 0s1.5 1.5 3.5 1.5"/>',
 
@@ -151,8 +151,8 @@ const app = {
 
         // Trying generic paw
 
-        "Pharmacy": '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14h-2v-4H5v-2h4V7h2v4h4v2h-4v4z" fill="currentColor"/></svg>',
-        "Second Hand": '<svg viewBox="0 0 24 24"><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1H16c0-2.21-1.79-4-4-4S8 5.79 8 8h1.9c0-1.16.94-2.1 2.1-2.1zM5.5 21h13c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H5.5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2zM7 9h10v10H7V9z" fill="currentColor"/></svg>',
+        "Pharmacy": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11h-3v3h-2v-3H8v-2h3V8h2v3h3v2z" fill="currentColor"/></svg>',
+        "Second Hand": '<svg viewBox="0 0 24 24"><path d="M12 5.5c-1.8 0-3.3 1.2-3.8 2.8h-4c-1.1 0-2 .9-2 2v2h19.6v-2c0-1.1-.9-2-2-2h-4c-.5-1.6-2-2.8-3.8-2.8zm0 1.5c.8 0 1.5.7 1.5 1.5h-3c0-.8.7-1.5 1.5-1.5zM2 14v6c0 1.1.9 2 2 2h2v-6h12v6h2c1.1 0 2-.9 2-2v-6H2z" fill="currentColor" transform="scale(0.9) translate(2,2)"/></svg>', // Thicker hanger
         "Sports": '<svg viewBox="0 0 24 24"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1.2-.4-1.6 0l-1.6 1.6c-.1.1-.2.3-.2.5V11h4.6v-1.5z" fill="currentColor"/></svg>'
     },
 

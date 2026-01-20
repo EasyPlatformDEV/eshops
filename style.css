@@ -2053,12 +2053,12 @@ a:hover {
     position: relative;
     box-sizing: border-box;
     /* Ensure padding doesn't expand width */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: filter 0.2s ease;
 }
 
 .celebrity-card:hover .celebrity-avatar-wrapper {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* No zoom, just highlight brightness of the gradient */
+    filter: brightness(1.2);
 }
 
 .celebrity-avatar {
