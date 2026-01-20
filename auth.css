@@ -325,8 +325,10 @@ body {
         /* Remove rounded corners */
         padding: 20px;
         /* Adjust padding */
-        min-height: 100vh;
-        /* Full height */
+        min-height: auto;
+        /* Allow natural height */
+        padding-bottom: 20px;
+        /* Ensure consistent bottom padding */
     }
 
     .auth-header-nav {
