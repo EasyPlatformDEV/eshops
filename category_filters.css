@@ -105,17 +105,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     /* Center */
-    width: 60%;
-    /* Compact image */
-    height: 60%;
+    width: 70%;
+    /* Increased from 60% per request */
+    height: 70%;
     object-fit: contain;
     /* Ensure full image visible */
     padding: 0;
 }
 
 .cat-product-info {
-    padding: 0;
-    /* Remove padding, use component margins for full control */
+    padding: 0 10px 10px 10px;
+    /* Restore Padding to container for robust spacing */
     text-align: center;
     border-top: none;
 
@@ -136,8 +136,11 @@
     color: #333;
 
     /* Margins for spacing */
-    margin: 5px 10px;
-    /* Top/Bottom 5px, L/R 10px */
+    margin: -20px 0 10px 0;
+    /* Pull title up 20px into image container space */
+    position: relative;
+    z-index: 1;
+    /* Ensure title stays on top of image container */
 
     line-height: 1.2;
     display: -webkit-box;
@@ -157,17 +160,17 @@
     color: #333;
 }
 
-/* Save Product Button - Flex Item with Margins */
+/* Save Product Button - Flex Item with Container Padding */
 .cat-product-info .alert-set-btn {
     position: relative;
     bottom: auto;
     left: auto;
     right: auto;
-    width: auto;
-    /* Let flex/margins handle width */
+    width: 100%;
+    /* Fill container (which has padding) */
 
-    /* Robust Margins: 10px from Left, Right, Bottom */
-    margin: 0 10px 10px 10px;
+    margin: 0;
+    /* Remove element margins, let container handle it */
 
     height: 32px;
     /* Standard comfortable height (30px was a bit tight) */
