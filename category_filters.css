@@ -91,8 +91,8 @@
 
 .cat-product-image-wrap {
     width: 100%;
-    padding-top: 80%;
-    /* Reduced from 90% to further shrink height (~20px) */
+    /* Reduced from 90% to further shrink height and create space for title */
+    padding-top: 75%;
     position: relative;
     background-color: transparent;
     /* Clean */
@@ -110,7 +110,7 @@
     transform: translate(-50%, -50%);
     /* Center */
     width: 60%;
-    /* Reduced from 70% */
+    /* Compact image */
     height: 60%;
     object-fit: contain;
     /* Ensure full image visible */
@@ -119,14 +119,12 @@
 
 .cat-product-info {
     padding: 0 10px 0 10px;
-    /* Removed bottom padding, space handled by card padding */
+    /* Removed bottom padding */
     text-align: center;
     border-top: none;
     display: flex;
     flex-direction: column;
     gap: 0;
-    /* Manual gap if needed, but Title has margin-top */
-    /* flex: 1; Not strictly needed with absolute button, but keeps structure */
 }
 
 /* Reduced Boldness and No Underline */
@@ -135,8 +133,10 @@
     font-weight: 400;
     /* Regular weight */
     color: #333;
-    margin: 2px 0 0 0;
-    /* Minimal margin, almost touching image */
+    margin: 4px 0 0 0;
+    /* Add back small top margin for air from image */
+    line-height: 1.2;
+    /* Tight line height */
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -144,7 +144,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-decoration: none !important;
-    /* Force remove underline */
     cursor: default;
 }
 
@@ -155,19 +154,22 @@
     color: #333;
 }
 
-/* Save Product Button - Fixed 10px from bottom */
+/* Save Product Button - Fixed and Compact */
 .cat-product-info .alert-set-btn {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    right: 10px;
-    /* Anchor to right */
-    width: auto;
-    /* Let layout determine width */
+    width: calc(100% - 20px);
+    /* Explicit width calculation */
+    right: auto;
+    /* Remove right anchor */
 
+    height: 32px;
+    /* Fixed Height to prevent growing */
     font-size: 0.8rem;
-    padding: 6px 0;
-    /* Vertical padding like sidebar */
+    padding: 0;
+    /* Remove vertical padding, rely on flex centering */
+
     background-color: #fdf2f7;
     /* Sidebar Bg (Pale Pink) */
     border: 1px solid transparent;
@@ -186,7 +188,7 @@
     z-index: 2;
     /* Ensure clickable */
     box-sizing: border-box;
-    /* Ensure padding doesn't expand width */
+    /* Strict sizing */
 }
 
 .cat-product-info .alert-set-btn:hover {
