@@ -41,6 +41,20 @@
 /* Mobile: Hide by default unless we implement a modal later. 
    User didn't ask for mobile view, so hiding to preserve layout.
 */
+/* Close Button (Hidden by default on Desktop) */
+.celebrities-close {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0;
+}
+
+.celebrities-close:hover {
+    color: var(--text-color);
+}
+
 /* Mobile: Modal Style (Hidden by default) */
 @media (max-width: 1200px) {
     .celebrities-sidebar {
@@ -87,19 +101,7 @@
     }
 }
 
-/* Close Button (Hidden on Desktop) */
-.celebrities-close {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-light);
-    padding: 0;
-}
 
-.celebrities-close:hover {
-    color: var(--text-color);
-}
 
 /* Overlay */
 .celebrities-overlay {
