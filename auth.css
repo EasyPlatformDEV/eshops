@@ -35,8 +35,10 @@ body {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
+    padding-bottom: 10px;
+    /* Reduced from 15px */
+    margin-bottom: 30px;
+    /* Increased spacing to title/form */
     position: relative;
     /* To help positioning if needed */
 }
@@ -46,15 +48,26 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: center;
+    /* Center icon */
+    width: 32px;
+    /* Fixed width */
+    height: 32px;
+    /* Fixed height */
+    background-color: #f0f0f0;
+    /* Gray circle */
     border-radius: 50%;
+    /* Circle shape */
     transition: background-color 0.2s;
     margin-right: 15px;
 }
 
 .back-arrow:hover {
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
+    /* Darker on hover */
 }
+
+
 
 .header-logo-container {
     flex-grow: 1;
@@ -71,10 +84,13 @@ body {
 }
 
 .auth-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    /* Match logout title */
+    font-weight: 600;
+    /* Match logout title */
+    color: #000;
+    /* Match logout title */
+    margin: 0 0 25px 0;
 }
 
 .social-btns {
@@ -156,7 +172,14 @@ body {
     font-size: 14px;
     box-sizing: border-box;
     box-sizing: border-box;
+    box-sizing: border-box;
     /* Crucial for padding */
+}
+
+::placeholder {
+    color: #bbb;
+    /* Light gray placeholder */
+    opacity: 1;
 }
 
 .password-wrapper {
