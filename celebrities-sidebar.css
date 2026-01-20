@@ -71,6 +71,8 @@
         transition: right 0.3s ease;
         padding-bottom: 0;
         /* Reset padding handled by inner content */
+        border-radius: 0;
+        /* Remove border-radius for overlay */
     }
 
     .celebrities-sidebar.active {
