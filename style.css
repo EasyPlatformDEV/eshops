@@ -1565,17 +1565,17 @@ a:hover {
         align-items: flex-start;
         /* Width Calculation:
            Left Sidebar: 160px
-           Gap: 20px (assumed matching right)
+           Gap: 20px
            Content: 500px
-           Gap: 20px (assumed matching right via justify-content/padding?)
+           Gap: 20px
            Right Sidebar: 350px
-           Total: 160 + 20 + 500 + 350 = 1030px + gaps?
-           Actually user said "Same distance as sidebar", right sidebar usually has gap.
-           Right Sidebar media query says padding-right: 0. 
-           Let's aim for a centralized 3-column block.
+           Total Content: 1050px
+           Padding: 20px
+           Total Needed: 1070px
+           Setting to 1080px for safety.
         */
-        max-width: 1050px;
-        /* 160 + 500 + 350 = 1010 + 20 gap + 20 gap = 1050 */
+        max-width: 1080px;
+        /* 160 + 500 + 350 = 1010 + 20 gap + 20 gap = 1050 + 20 padding = 1070 */
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
