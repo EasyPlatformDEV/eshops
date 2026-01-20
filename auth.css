@@ -7,7 +7,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     padding-top: 40px;
     /* Add top spacing */
@@ -332,6 +332,8 @@ body {
     .back-arrow {
         background-color: #f0f0f0 !important;
         /* Force gray circle on mobile */
+        left: 0 !important;
+        /* Ensure left position */
     }
 
     .auth-header-nav {
