@@ -28,12 +28,13 @@
         position: sticky;
         top: 76px;
         /* Match right sidebar top */
-        overflow-y: scroll;
-        /* Always show scrollbar track to prevent jump */
+        overflow-y: hidden;
+        /* Hidden by default like Right Sidebar */
     }
 
     .celebrities-sidebar:hover {
-        /* overflow-y: auto; Removed to keep scrollbar stable */
+        overflow-y: auto;
+        /* Scroll on hover like Right Sidebar */
     }
 }
 
@@ -48,15 +49,13 @@
 
 /* Inner Content Container */
 .celebrities-content {
-    padding: 10px 0 10px 10px;
-    /* 10px Top/Bottom, 0 Right, 10px Left */
-    /* Fixed 10px left padding keeps card stable */
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     /* Space between cards */
-    align-items: flex-start;
-    /* Align left to prevent scroll shift */
+    align-items: center;
+    /* Center cards again */
 }
 
 /* Celebrity Card */
