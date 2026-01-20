@@ -2,9 +2,9 @@
 .celebrities-sidebar {
     background-color: var(--bg-light);
     border-radius: 8px;
-    /* Update to 200px */
-    width: 200px;
-    min-width: 200px;
+    /* Update to 210px */
+    width: 210px;
+    min-width: 210px;
     flex-shrink: 0;
     height: calc(100vh - 100px);
     /* Match Just Added Sidebar height logic */
