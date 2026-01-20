@@ -52,6 +52,7 @@ body {
     height: 50px;
     justify-content: center;
     padding: 0;
+    border-bottom: 1px solid #eee;
 }
 
 .back-arrow {
@@ -61,7 +62,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     /* Centered vertically */
-    color: #333;
+    /* Centered vertically */
+    color: #336ae9;
     text-decoration: none;
     display: flex;
     align-items: center;
