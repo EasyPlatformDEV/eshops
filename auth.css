@@ -43,17 +43,14 @@ body {
     margin-bottom: 20px;
 }
 
-.auth-header-nav {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    position: relative;
-    height: 40px;
-    justify-content: center;
-    /* Center logo container by default */
+display: flex;
+align-items: center;
+border-bottom: 1px solid #eee;
+margin-bottom: 20px;
+position: relative;
+height: 50px;
+justify-content: center;
+padding: 0;
 }
 
 .back-arrow {
@@ -78,7 +75,7 @@ body {
     border-radius: 50%;
     /* Circle shape */
     transition: background-color 0.2s;
-    margin-right: 15px;
+    margin: 0;
     flex-shrink: 0;
     /* Prevent shrinking */
 }
