@@ -135,7 +135,8 @@
     font-weight: 400;
     /* Regular weight */
     color: #333;
-    margin: 4px 0 0 0;
+    margin: 2px 0 0 0;
+    /* Minimal margin, almost touching image */
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
