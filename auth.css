@@ -174,10 +174,10 @@ body {
     padding: 0;
     color: #777;
     display: flex;
-    /* For alignment */
 }
 
-color: #333;
+.password-toggle:hover {
+    color: #333;
 }
 
 .form-actions-row {
@@ -195,9 +195,10 @@ color: #333;
     font-size: 14px;
 }
 
-border-color: #336ae9;
-/* Focus color */
-outline: none;
+.form-input:focus {
+    border-color: #336ae9;
+    /* Focus color */
+    outline: none;
 }
 
 .submit-btn {
