@@ -15,7 +15,7 @@
 
     <div class="auth-container">
         <div class="auth-header-nav">
-            <a href="index.html" class="back-arrow" aria-label="Go back">
+            <a href="javascript:history.back()" class="back-arrow" aria-label="Go back">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -90,6 +90,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const passwordInput = document.getElementById('password');
             const toggleBtn = document.querySelector('.password-toggle');
+
+            passwordInput.addEventListener('input', () => {
+                if (passwordInput.value.length > 0) {
+                    toggleBtn.classList.add('active');
+                } else {
+                    toggleBtn.classList.remove('active');
+                }
+            });
 
             toggleBtn.addEventListener('click', (e) => {
                 e.preventDefault(); // Prevent form submission

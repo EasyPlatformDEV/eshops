@@ -35,11 +35,14 @@ body {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    /* Reduced from 15px */
-    margin-bottom: 30px;
-    /* Increased spacing to title/form */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    /* Further reduced */
+    margin-bottom: 20px;
+    /* Adjusted spacing */
     position: relative;
+    height: 40px;
+    /* Explicit height constraint for header nav */
     /* To help positioning if needed */
 }
 
@@ -195,12 +198,19 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    color: #777;
+    color: #bbb;
+    /* Default light gray */
     display: flex;
+    transition: color 0.2s;
 }
 
 .password-toggle:hover {
+    color: #999;
+}
+
+.password-toggle.active {
     color: #333;
+    /* Darker when active (typing) */
 }
 
 .form-actions-row {
@@ -273,4 +283,36 @@ body {
 .checkbox-label {
     font-size: 14px;
     color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+    body {
+        background-color: #fff;
+        /* White background for page */
+        align-items: flex-start;
+        /* Align to top */
+    }
+
+    .auth-container {
+        max-width: 100%;
+        width: 100%;
+        box-shadow: none;
+        /* Remove shadow */
+        border-radius: 0;
+        /* Remove rounded corners */
+        padding: 20px;
+        /* Adjust padding */
+        min-height: 100vh;
+        /* Full height */
+    }
+
+    .back-arrow {
+        background-color: #f0f0f0 !important;
+        /* Force gray circle on mobile */
+    }
+
+    .auth-header-nav {
+        margin-bottom: 20px;
+    }
 }
