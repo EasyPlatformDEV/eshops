@@ -92,7 +92,8 @@
 .cat-product-image-wrap {
     width: 100%;
     /* Reduced from 90% to further shrink height and create space for title */
-    padding-top: 75%;
+    /* Reduced to 70% to further shrink height */
+    padding-top: 70%;
     position: relative;
     background-color: transparent;
     /* Clean */
@@ -133,10 +134,11 @@
     font-weight: 400;
     /* Regular weight */
     color: #333;
-    margin: 4px 0 0 0;
-    /* Add back small top margin for air from image */
+
+    /* Negative margin to pull title up closer to the small image inside the container */
+    margin: -15px 0 0 0;
+
     line-height: 1.2;
-    /* Tight line height */
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -145,6 +147,9 @@
     text-overflow: ellipsis;
     text-decoration: none !important;
     cursor: default;
+    z-index: 1;
+    /* Ensure on top of image wrap if overlap */
+    position: relative;
 }
 
 /* Ensure no hover effects on text */
@@ -159,16 +164,15 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    width: calc(100% - 20px);
-    /* Explicit width calculation */
-    right: auto;
-    /* Remove right anchor */
+    right: 10px;
+    /* Anchored both sides to prevent spill */
+    width: auto;
+    /* Auto width */
 
-    height: 32px;
-    /* Fixed Height to prevent growing */
+    height: 30px;
+    /* Reduced fixed height */
     font-size: 0.8rem;
     padding: 0;
-    /* Remove vertical padding, rely on flex centering */
 
     background-color: #fdf2f7;
     /* Sidebar Bg (Pale Pink) */
@@ -188,7 +192,9 @@
     z-index: 2;
     /* Ensure clickable */
     box-sizing: border-box;
-    /* Strict sizing */
+
+    /* Ensure no text-decoration on button text specifically */
+    text-decoration: none !important;
 }
 
 .cat-product-info .alert-set-btn:hover {
