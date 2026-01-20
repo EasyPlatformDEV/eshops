@@ -1564,23 +1564,21 @@ a:hover {
         flex-wrap: nowrap;
         align-items: flex-start;
         /* Width Calculation:
-           Left Sidebar: 160px
-           Gap: 20px
-           Content: 500px
-           Gap: 20px
-           Right Sidebar: 350px
-           Total Content: 1050px
-           Padding: 20px
-           Total Needed: 1070px
-           Setting to 1080px for safety.
+           Left Sidebar: 180px
+           Gap: 15px
+           Content: 470px
+           Gap: 15px
+           Right Sidebar: 360px
+           Total Content: 1040px
+           Padding: 20px (10 left + 10 right)
+           Total Needed: 1060px
         */
-        max-width: 1080px;
-        /* 160 + 500 + 350 = 1010 + 20 gap + 20 gap = 1050 + 20 padding = 1070 */
+        max-width: 1060px;
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
         /* Gap removed to rely on sidebar inner padding */
         padding-top: 0;
         /* Removed 10px global offset */
@@ -1590,10 +1588,10 @@ a:hover {
 
     /* Fixed Content Column */
     .app-content {
-        width: 500px;
-        min-width: 500px;
-        max-width: 500px;
-        flex: 0 0 500px;
+        width: 470px;
+        min-width: 470px;
+        max-width: 470px;
+        flex: 0 0 470px;
         margin: 0;
         padding-top: 0;
         /* Neutralized for precise header gap alignment */
@@ -1615,8 +1613,8 @@ a:hover {
         position: sticky;
         top: 76px;
         /* 56px header + 20px gap */
-        width: 350px;
-        min-width: 350px;
+        width: 360px;
+        min-width: 360px;
         flex-shrink: 0;
         height: calc(100vh - 100px);
         border: none;

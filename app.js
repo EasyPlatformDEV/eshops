@@ -250,7 +250,7 @@
                             </a>
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
-                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} Р»РІ.</div>
+                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
                                 <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -494,7 +494,7 @@
 
         const totalValueEl = document.getElementById('total-value');
         if (totalValueEl) {
-            totalValueEl.innerText = totalValue.toFixed(2) + ' в‚¬';
+            totalValueEl.innerHTML = totalValue.toFixed(2) + ' &euro;';
         }
     },
 
@@ -736,7 +736,7 @@
                         <div class="ja-details">
                             <div class="ja-title">${item.title}</div>
                             <div class="ja-price-row">
-                                <span class="ja-price">${item.price.toFixed(2)} в‚¬</span>
+                                <span class="ja-price">${item.price.toFixed(2)} &euro;</span>
                                 <span class="ja-shop">${item.shop}</span>
                             </div>
                         </div>
@@ -787,7 +787,7 @@
                     <div class="notification-body">
                         <div class="notification-message">
                             Your price target has been reached for the <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> at <strong>${alert.shop}</strong>.<br>
-                            The price has dropped to <strong>${alert.currentPrice.toFixed(2)} в‚¬</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
+                            The price has dropped to <strong>${alert.currentPrice.toFixed(2)} &euro;</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
                         </div>
                         <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 5px;">
                             Buy now at ${alert.shop}
