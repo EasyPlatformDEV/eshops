@@ -52,9 +52,6 @@
 
 /* Product Card in Carousel */
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
-/* Product Card in Carousel - Clean Style like Just Added Sidebar */
-/* Product Card in Carousel - Clean Style like Just Added Sidebar */
-/* Product Card in Carousel - Clean Style like Just Added Sidebar */
 .cat-product-card {
     display: flex;
     flex-direction: column;
@@ -67,10 +64,7 @@
     height: 100%;
     transition: none;
     /* No jump */
-    position: relative;
-    /* Context for absolute button */
-    padding-bottom: 50px;
-    /* Reserve space for fixed button (Button height ~34px + 10px + gap) */
+    /* Padding removed, handled by internal spacing */
 }
 
 .cat-product-card:hover {
@@ -87,13 +81,14 @@
 .cat-product-image-link {
     display: block;
     width: 100%;
+    flex-shrink: 0;
+    /* Keep image size stable */
 }
 
 .cat-product-image-wrap {
     width: 100%;
-    /* Reduced from 90% to further shrink height and create space for title */
-    /* Reduced to 70% to further shrink height */
-    padding-top: 70%;
+    /* Restored to 90% to bring back the rectangular shape (not too square/short) */
+    padding-top: 90%;
     position: relative;
     background-color: transparent;
     /* Clean */
@@ -106,7 +101,7 @@
 /* Image scaling inside */
 .cat-product-image-wrap img {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Center */
@@ -119,13 +114,18 @@
 }
 
 .cat-product-info {
-    padding: 0 10px 0 10px;
-    /* Removed bottom padding */
+    padding: 0;
+    /* Remove padding, use component margins for full control */
     text-align: center;
     border-top: none;
+
+    /* FLEXBOX MAGIC for Spacing */
     display: flex;
     flex-direction: column;
-    gap: 0;
+    flex: 1;
+    /* Take remaining height */
+    justify-content: space-between;
+    /* Push Title top, Button bottom */
 }
 
 /* Reduced Boldness and No Underline */
@@ -135,8 +135,9 @@
     /* Regular weight */
     color: #333;
 
-    /* Negative margin to pull title up closer to the small image inside the container */
-    margin: -15px 0 0 0;
+    /* Margins for spacing */
+    margin: 5px 10px;
+    /* Top/Bottom 5px, L/R 10px */
 
     line-height: 1.2;
     display: -webkit-box;
@@ -147,9 +148,6 @@
     text-overflow: ellipsis;
     text-decoration: none !important;
     cursor: default;
-    z-index: 1;
-    /* Ensure on top of image wrap if overlap */
-    position: relative;
 }
 
 /* Ensure no hover effects on text */
@@ -159,18 +157,20 @@
     color: #333;
 }
 
-/* Save Product Button - Fixed and Compact */
+/* Save Product Button - Flex Item with Margins */
 .cat-product-info .alert-set-btn {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    /* Anchored both sides to prevent spill */
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
     width: auto;
-    /* Auto width */
+    /* Let flex/margins handle width */
 
-    height: 30px;
-    /* Reduced fixed height */
+    /* Robust Margins: 10px from Left, Right, Bottom */
+    margin: 0 10px 10px 10px;
+
+    height: 32px;
+    /* Standard comfortable height (30px was a bit tight) */
     font-size: 0.8rem;
     padding: 0;
 
@@ -183,17 +183,11 @@
     cursor: pointer;
     font-weight: 500;
     transition: background 0.2s;
-    margin: 0;
-    /* Reset margins */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    z-index: 2;
-    /* Ensure clickable */
     box-sizing: border-box;
-
-    /* Ensure no text-decoration on button text specifically */
     text-decoration: none !important;
 }
 
