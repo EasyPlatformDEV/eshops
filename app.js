@@ -115,6 +115,7 @@ const app = {
         });
 
         new Splide('#splide-shops', {
+            type: 'loop', // Infinite loop
             perPage: 4,
             gap: '1rem',
             pagination: false,
@@ -132,16 +133,9 @@ const app = {
         "Automotive": '<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>',
         "Beauty": '<svg viewBox="0 0 24 24"><path d="M11.38 2L9.29 5.46l1.64.91L13.06 6h1.22l2.36-4H11.38zM6 8v13c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V8H6zm6.5 9h-1v-5h1v5z" fill="currentColor"/></svg>', // Perfume Bottle
         "Books": '<svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="currentColor"/></svg>',
-
-
         "Clothing": '<svg viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 14H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v10z" fill="currentColor"/></svg>',
         "DIY": '<svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" fill="currentColor"/></svg>',
         "Electronics": '<svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" fill="currentColor"/></svg>',
-        "Footwear": '<svg viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 14H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v10z" fill="currentColor"/></svg>', // Fallback to original before replacing with Sneaker
-        "Footwear": '<svg viewBox="0 0 24 24"><path d="M3.55 18.54l1.27 1.27 1.27-1.27 1.27 1.27 1.27-1.27 1.27 1.27 1.27-1.27 1.27 1.27 1.27-1.27 1.27 1.27 1.27-1.27 1.27 1.27c.39.39 1.02.39 1.41 0l2.12-2.12c.39-.39.39-1.02 0-1.41l-2.12-2.12-1.41 1.41-1.27-1.27v-3.54c0-1.66-1.34-3-3-3H6.8c-.7 0-1.37.28-1.87.78L2.14 13.91 3.55 15.32l1.27-1.27 1.27 1.27-1.27 1.27-1.27 1.95zM5 13l1.5-4.5h11L19 13H5z" fill="currentColor"/></svg>', // Sneaker Tread 
-        // Actual Sneaker Profile
-        "Footwear": '<svg viewBox="0 0 24 24"><path d="M2.38 14.93C3.63 17.38 6.64 19 10 19h10v-3.5c0-1.93-1.57-3.5-3.5-3.5H12c-.5 0-1.5-.5-1.5-2 0-.8.2-1.5.5-2 .5-.83 1-1.5 2-2 1.63-.82 2.5-2.2 2.5-3.5 0-1.38-1.12-2.5-2.5-2.5H8C5.24 0 3 2.24 3 5c0 .7.13 1.37.35 2H2v7.5c0 .17.02.34.05.5.11.64.22 1.27.33 1.93zM5 5h8c.28 0 .5.22.5.5s-.22.5-.5.5H5c-.28 0-.5-.22-.5-.5S4.72 5 5 5z" fill="currentColor"/></svg>', // Sneaker-ish
-        "Footwear": '<svg viewBox="0 0 24 24"><path d="M12.6,12.6c0.8,0.8,0.8,2.1,0,2.8l-2.8,2.8c-0.8,0.8-2.1,0.8-2.8,0l0,0c-0.8-0.8-0.8-2.1,0-2.8l2.8-2.8 C10.5,11.8,11.8,11.8,12.6,12.6z M18,3H6C4.3,3,3,4.3,3,6v12c0,1.7,1.3,3,3,3h12c1.7,0,3-1.3,3-3V6C21,4.3,19.7,3,18,3z M16.2,16.2 l-1.4,1.4c-1.6,1.6-4.1,1.6-5.7,0l-1.4-1.4c-1.6-1.6-1.6-4.1,0-5.7l1.4-1.4c1.6-1.6,4.1-1.6,5.7,0l1.4,1.4 C17.8,12.1,17.8,14.6,16.2,16.2z" fill="currentColor"/></svg>', // Generic Shoe
         "Footwear": '<svg viewBox="0 0 24 24"><path d="M17 10c.8 0 1.5.3 2 .8V8l-2.1-6.1c-.2-.6-.9-1-1.6-1H7C6 1 5 1.8 5 2.8V17l2 4 4 1 6-2 1-3c.6-1.1 1-2.2 1-3.5 0-1.9-1.6-3.5-3.5-3.5H17zM7 3h8l1.4 4H7V3zm10 13c0 .6-.4 1-1 1s-1-.4-1-1 .4-1 1-1 1 .4 1 1z" fill="currentColor"/></svg>', // Sneaker High Top
         "Furniture": '<svg viewBox="0 0 24 24"><path d="M20 10V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L4 19h1v-1h14v1h1l.67-2H22v-5c0-1.1-.9-2-2-2zm-9 0H6V7h5v3zm7 0h-5V7h5v3z" fill="currentColor"/></svg>',
         "Grocery": '<svg viewBox="0 0 24 24"><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.02.17.06.25l3.65 10.65C4.94 21.6 5.61 22 6.34 22h11.32c.73 0 1.4-.4 1.63-1.1l3.65-10.65c.04-.08.06-.16.06-.25 0-.55-.45-1-1-1zm-9 0H8.84L12 4.26 15.16 9h-4.16z" fill="currentColor"/></svg>',
@@ -151,14 +145,7 @@ const app = {
         "Nutrition": '<svg viewBox="0 0 24 24"><path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="none"/></svg>', // Pill shape
         "Optics": '<svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/></svg>',
         "Pets": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/><circle cx="9" cy="8" r="1.5" fill="white"/><circle cx="15" cy="8" r="1.5" fill="white"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="white"/></svg>', // Simple Dog Face in Circle
-
-        // Let's use a standard Paw Print usually.
-
-        // Trying generic paw
-
         "Pharmacy": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11h-3v3h-2v-3H8v-2h3V8h2v3h3v2z" fill="currentColor"/></svg>',
-        "Second Hand": '<svg viewBox="0 0 24 24"><path d="M16.5 11c-.55 0-1 .45-1 1v4H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h2.5c1.38 0 2.5 1.12 2.5 2.5V12h1.5V10.5C12.5 7.46 10.04 5 7 5 3.69 5 1 7.69 1 11s2.69 6 6 6h10.5c.55 0 1-.45 1-1s-.45-1-1-1H16v-3c0-.55-.45-1-1-1zM21 7h-6v2h6V7zm-2 12v-2h-3v2h3z" fill="currentColor"/><path d="M23 17v-5c0-2.21-1.79-4-4-4h-7V7h7c2.76 0 5 2.24 5 5v5h-1zM10 13H5v5h5v-5z" fill="currentColor"/></svg>', // Attempt at Iron, using Generic Iron Shape or better path if available. Trying standard iron.
-        // Actually iron icon usually looks like a triangle with handle
         "Second Hand": '<svg viewBox="0 0 24 24"><path d="M21 6c-1.66 0-3 1.34-3 3v4c0 .55-.45 1-1 1s-1-.45-1-1V9c0-2.76 2.24-5 5-5h1v2h-1zM16 16H3c-.55 0-1 .45-1 1s.45 1 1 1h13c.55 0 1-.45 1-1s-.45-1-1-1z M17 13H6c-1.66 0-3-1.34-3-3s1.34-3 3-3h11c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1z" fill="currentColor"/></svg>', // Iron Shape (Handle + Base)
         "Sports": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 2.3c.96.22 2.63 1.39 3.56 2.54l-3.32 1.83-2.1.26c-.72-1.89-1.28-3.66.86-4.63h1zM5.56 5.56c1.37.78 1.93 2.05 2.19 3.99L5.27 12 3.09 9.32c.38-1.56 1.22-2.93 2.47-3.76zm-1.26 9.12l4.47 1.26L12 18.27l-3.23 2.49c-2.45-.75-4.4-2.59-5.21-5.2zM12 20.7c2.61-.43 4.2-2.14 4.88-4.59L13 14.5l-3 3.66 2 2.54zm5.44-5.14l-3.79-1.56 1.48-4.42 2.78 1.19c.78 1.38.75 3.22-.47 4.79zm.8-6.24l-3.37-1.46L15.9 4.3c1.76.99 2.57 2.65 1.9 5.02z" fill="currentColor"/></svg>', // Soccer Ball
     },
@@ -325,6 +312,7 @@ const app = {
         });
 
         new Splide('#splide-celebrities', {
+            type: 'loop', // Infinite loop
             perPage: 5,
             gap: '1rem',
             arrows: true, // Kept enabled per request
