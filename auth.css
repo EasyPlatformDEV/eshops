@@ -9,6 +9,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding-top: 40px;
+    /* Add top spacing */
+    box-sizing: border-box;
+    /* Include padding in height */
+}
+
+/* Mobile Responsive adjustment for body padding */
+@media (max-width: 480px) {
+    body {
+        padding-top: 0;
+        /* No extra padding on mobile */
+    }
 }
 
 .auth-container {
@@ -37,16 +49,20 @@ body {
     border-bottom: 1px solid #eee;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
-    /* Further reduced */
     margin-bottom: 20px;
-    /* Adjusted spacing */
     position: relative;
     height: 40px;
-    /* Explicit height constraint for header nav */
-    /* To help positioning if needed */
+    justify-content: center;
+    /* Center logo container by default */
 }
 
 .back-arrow {
+    position: absolute;
+    /* Take out of flow to keep logo centered */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
     color: #333;
     text-decoration: none;
     display: flex;
@@ -73,11 +89,10 @@ body {
 
 
 .header-logo-container {
-    flex-grow: 1;
+    /* flex-grow: 1; Removed flex-grow since we use justify-content: center on parent */
     display: flex;
     justify-content: center;
-    margin-left: -40px;
-    /* Offset the back arrow to keep logo roughly centered relative to container width */
+    /* margin-left: -40px; Removed manual offset */
 }
 
 .auth-logo-header {
@@ -267,6 +282,15 @@ body {
 
 .auth-link:hover {
     text-decoration: underline;
+}
+
+.submit-btn:hover {
+    background-color: #2554c7;
+}
+
+/* Ensure back arrow hover works */
+.back-arrow:hover {
+    background-color: #e0e0e0 !important;
 }
 
 .checkbox-group {
