@@ -57,7 +57,12 @@ body {
 }
 
 .back-arrow {
-    /* Removed absolute positioning */
+    position: absolute;
+    left: 0;
+    /* Position absolutely to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centered vertically */
     color: #333;
     text-decoration: none;
     display: flex;
