@@ -159,8 +159,10 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    width: calc(100% - 20px);
-    /* Full width minus margins */
+    right: 10px;
+    /* Anchor to right */
+    width: auto;
+    /* Let layout determine width */
 
     font-size: 0.8rem;
     padding: 6px 0;
@@ -182,6 +184,8 @@
     gap: 5px;
     z-index: 2;
     /* Ensure clickable */
+    box-sizing: border-box;
+    /* Ensure padding doesn't expand width */
 }
 
 .cat-product-info .alert-set-btn:hover {
