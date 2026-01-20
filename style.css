@@ -1457,10 +1457,22 @@ a:hover {
     background: #fdf2f7;
     color: var(--pink-highlight);
     border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.ja-btn-add svg {
+    transition: fill 0.2s;
 }
 
 .ja-btn-add:hover {
     background: #f8e1ea;
+}
+
+.ja-btn-add:hover svg {
+    fill: currentColor;
 }
 
 .ja-btn-buy {
@@ -2336,7 +2348,9 @@ a:hover {
 
 .menu-item.purple .menu-icon {
     color: var(--pink-highlight) !important;
-}/* Header Styles */
+}
+
+/* Header Styles */
 .app-header {
     background: #fff;
     width: 100%;
@@ -2512,7 +2526,8 @@ a:hover {
         display: none;
         /* Hidden on mobile as requested */
     }
-}  
+}
+
 /* Footer Styles */
 .app-footer {
     background: #0d2331;
@@ -2605,4 +2620,6 @@ a:hover {
         gap: 0;
         /* Remove vertical gap */
     }
-}@import 'category_filters.css';
+}
+
+@import 'category_filters.css';

@@ -702,7 +702,12 @@ const app = {
                         </div>
                     </div>
                     <div class="ja-actions">
-                        <button class="ja-btn ja-btn-add">Save product</button>
+                        <button class="ja-btn ja-btn-add">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Save product
+                        </button>
                         <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy now</a>
                     </div>
                 </div>

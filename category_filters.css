@@ -54,6 +54,7 @@
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
 /* Product Card in Carousel - Clean Style like Just Added Sidebar */
+/* Product Card in Carousel - Clean Style like Just Added Sidebar */
 .cat-product-card {
     display: flex;
     flex-direction: column;
@@ -66,6 +67,10 @@
     height: 100%;
     transition: none;
     /* No jump */
+    position: relative;
+    /* Context for absolute button */
+    padding-bottom: 50px;
+    /* Reserve space for fixed button (Button height ~34px + 10px + gap) */
 }
 
 .cat-product-card:hover {
@@ -113,15 +118,15 @@
 }
 
 .cat-product-info {
-    padding: 0 10px 8px 10px;
-    /* Removed top padding to move title up */
+    padding: 0 10px 0 10px;
+    /* Removed bottom padding, space handled by card padding */
     text-align: center;
     border-top: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    /* Space between title and button */
-    flex: 1;
+    gap: 0;
+    /* Manual gap if needed, but Title has margin-top */
+    /* flex: 1; Not strictly needed with absolute button, but keeps structure */
 }
 
 /* Reduced Boldness and No Underline */
@@ -149,12 +154,17 @@
     color: #333;
 }
 
-/* Save Product Button - Matching Just Added Sidebar (.ja-btn) */
+/* Save Product Button - Fixed 10px from bottom */
 .cat-product-info .alert-set-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    /* Full width minus margins */
+
     font-size: 0.8rem;
     padding: 6px 0;
     /* Vertical padding like sidebar */
-    width: 100%;
     background-color: #fdf2f7;
     /* Sidebar Bg (Pale Pink) */
     border: 1px solid transparent;
@@ -164,11 +174,14 @@
     cursor: pointer;
     font-weight: 500;
     transition: background 0.2s;
-    margin-top: auto;
+    margin: 0;
+    /* Reset margins */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    z-index: 2;
+    /* Ensure clickable */
 }
 
 .cat-product-info .alert-set-btn:hover {
