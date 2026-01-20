@@ -1967,6 +1967,13 @@ a:hover {
     line-height: 1.1;
 }
 
+.shop-card:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #f9f9f9;
+    /* Optional: Slight bg change for better "clickability" feel, consistent with common patterns */
+}
+
 /* Categories */
 .category-card {
     height: 100px;
@@ -2046,6 +2053,12 @@ a:hover {
     position: relative;
     box-sizing: border-box;
     /* Ensure padding doesn't expand width */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.celebrity-card:hover .celebrity-avatar-wrapper {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .celebrity-avatar {
