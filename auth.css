@@ -57,286 +57,283 @@ body {
 }
 
 .back-arrow {
-    position: absolute;
-    /* Take out of flow to keep logo centered */
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Center icon */
-    width: 32px;
-    /* Fixed width */
-    height: 32px;
-    /* Fixed height */
-    background-color: #f0f0f0;
-    /* Gray circle */
-    border-radius: 50%;
-    /* Circle shape */
-    transition: background-color 0.2s;
-    margin-right: 15px;
-}
-
-.back-arrow:hover {
-    background-color: #e0e0e0;
-    /* Darker on hover */
-}
-
-
-
-.header-logo-container {
-    /* flex-grow: 1; Removed flex-grow since we use justify-content: center on parent */
-    display: flex;
-    justify-content: center;
-    /* margin-left: -40px; Removed manual offset */
-}
-
-.auth-logo-header {
-    max-height: 40px;
-    /* Smaller logo for header style */
-    width: auto;
-}
-
-.auth-title {
-    font-size: 1.5rem;
-    /* Match logout title */
-    font-weight: 600;
-    /* Match logout title */
-    color: #000;
-    /* Match logout title */
-    margin: 0 0 25px 0;
-}
-
-.social-btns {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.social-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.2s;
-}
-
-.social-btn:hover {
-    background-color: #f5f5f5;
-}
-
-.divider {
-    position: relative;
-    text-align: center;
-    margin: 20px 0;
-}
-
-.divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #e0e0e0;
-    z-index: 0;
-}
-
-.divider span {
-    background-color: #fff;
-    padding: 0 10px;
-    color: #777;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
-    text-transform: uppercase;
-}
-
-.auth-form {
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-}
-
-.form-input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    box-sizing: border-box;
-    box-sizing: border-box;
-    box-sizing: border-box;
-    /* Crucial for padding */
-}
-
-::placeholder {
-    color: #bbb;
-    /* Light gray placeholder */
-    opacity: 1;
-}
-
-.password-wrapper {
-    position: relative;
-}
-
-.password-toggle {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    color: #bbb;
-    /* Default light gray */
-    display: flex;
-    transition: color 0.2s;
-}
-
-.password-toggle:hover {
-    color: #999;
-}
-
-.password-toggle.active {
-    color: #333;
-    /* Darker when active (typing) */
-}
-
-.form-actions-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.form-actions-row .checkbox-group {
-    margin-bottom: 0;
-}
-
-.font-sm {
-    font-size: 14px;
-}
-
-.form-input:focus {
-    border-color: #336ae9;
-    /* Focus color */
-    outline: none;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #336ae9;
-    /* Primary Blue from main site */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s;
-}
-
-.submit-btn:hover {
-    background-color: #2554c7;
-}
-
-.auth-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-}
-
-.auth-link {
-    color: #336ae9;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.auth-link:hover {
-    text-decoration: underline;
-}
-
-.submit-btn:hover {
-    background-color: #2554c7;
-}
-
-/* Ensure back arrow hover works */
-.back-arrow:hover {
-    background-color: #e0e0e0 !important;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.checkbox-group input {
-    margin: 0;
-}
-
-.checkbox-label {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 480px) {
-    body {
-        background-color: #fff;
-        /* White background for page */
-        align-items: flex-start;
-        /* Align to top */
-    }
-
-    .auth-container {
-        max-width: 100%;
-        width: 100%;
-        box-shadow: none;
-        /* Remove shadow */
-        border-radius: 0;
-        /* Remove rounded corners */
-        padding: 20px;
-        /* Adjust padding */
-        min-height: 100vh;
-        /* Full height */
-    }
-
     .back-arrow {
-        background-color: #f0f0f0 !important;
-        /* Force gray circle on mobile */
+        /* Removed absolute positioning */
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Center icon */
+        width: 32px;
+        /* Fixed width */
+        height: 32px;
+        /* Fixed height */
+        background-color: #f0f0f0;
+        /* Gray circle */
+        border-radius: 50%;
+        /* Circle shape */
+        transition: background-color 0.2s;
+        margin-right: 15px;
+        flex-shrink: 0;
+        /* Prevent shrinking */
     }
 
-    .auth-header-nav {
+    .back-arrow:hover {
+        background-color: #e0e0e0;
+        /* Darker on hover */
+    }
+
+
+
+    .header-logo-container {
+        display: flex;
+        align-items: center;
+        /* No specialized centering logic needed as parent centers the whole group */
+    }
+
+    .auth-logo-header {
+        max-height: 40px;
+        /* Smaller logo for header style */
+        width: auto;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+        /* Match logout title */
+        font-weight: 600;
+        /* Match logout title */
+        color: #000;
+        /* Match logout title */
+        margin: 0 0 25px 0;
+    }
+
+    .social-btns {
+        display: flex;
+        gap: 10px;
         margin-bottom: 20px;
     }
-}
+
+    .social-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.2s;
+    }
+
+    .social-btn:hover {
+        background-color: #f5f5f5;
+    }
+
+    .divider {
+        position: relative;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .divider::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #e0e0e0;
+        z-index: 0;
+    }
+
+    .divider span {
+        background-color: #fff;
+        padding: 0 10px;
+        color: #777;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+    }
+
+    .auth-form {
+        text-align: left;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        /* Crucial for padding */
+    }
+
+    ::placeholder {
+        color: #bbb;
+        /* Light gray placeholder */
+        opacity: 1;
+    }
+
+    .password-wrapper {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        color: #bbb;
+        /* Default light gray */
+        display: flex;
+        transition: color 0.2s;
+    }
+
+    .password-toggle:hover {
+        color: #999;
+    }
+
+    .password-toggle.active {
+        color: #333;
+        /* Darker when active (typing) */
+    }
+
+    .form-actions-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .form-actions-row .checkbox-group {
+        margin-bottom: 0;
+    }
+
+    .font-sm {
+        font-size: 14px;
+    }
+
+    .form-input:focus {
+        border-color: #336ae9;
+        /* Focus color */
+        outline: none;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #336ae9;
+        /* Primary Blue from main site */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .submit-btn:hover {
+        background-color: #2554c7;
+    }
+
+    .auth-footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .auth-link {
+        color: #336ae9;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .auth-link:hover {
+        text-decoration: underline;
+    }
+
+    .submit-btn:hover {
+        background-color: #2554c7;
+    }
+
+    /* Ensure back arrow hover works */
+    .back-arrow:hover {
+        background-color: #e0e0e0 !important;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .checkbox-group input {
+        margin: 0;
+    }
+
+    .checkbox-label {
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 480px) {
+        body {
+            background-color: #fff;
+            /* White background for page */
+            align-items: flex-start;
+            /* Align to top */
+        }
+
+        .auth-container {
+            max-width: 100%;
+            width: 100%;
+            box-shadow: none;
+            /* Remove shadow */
+            border-radius: 0;
+            /* Remove rounded corners */
+            padding: 20px;
+            /* Adjust padding */
+            min-height: 100vh;
+            /* Full height */
+        }
+
+        .back-arrow {
+            background-color: #f0f0f0 !important;
+            /* Force gray circle on mobile */
+        }
+
+        .auth-header-nav {
+            margin-bottom: 20px;
+        }
+    }
