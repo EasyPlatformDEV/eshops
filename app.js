@@ -6,6 +6,7 @@
         this.fetchCelebritiesSidebar();
         this.fetchShopCategories();
         this.fetchFaqs(); // Load FAQs
+        this.initCelebritiesMobileEvents(); // star watch mobile overlay
         this.bindLogoutEvents(); // Add logout listener
     },
 
@@ -323,6 +324,39 @@
                 600: { perPage: 4 },
             }
         }).mount();
+    },
+
+    initCelebritiesMobileEvents: function () {
+        const starWatchLink = document.getElementById('menu-link-star-watch');
+        const sidebar = document.getElementById('celebrities-sidebar');
+        const overlay = document.getElementById('celebrities-overlay');
+        const closeBtn = document.getElementById('celebrities-close');
+
+        const openSidebar = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            if (sidebar) sidebar.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+
+            // Close Menu if open
+            const menuModal = document.getElementById('menu-modal');
+            const menuOverlay = document.getElementById('menu-overlay');
+            if (menuModal && menuModal.classList.contains('active')) {
+                menuModal.classList.remove('active');
+                if (menuOverlay) menuOverlay.classList.remove('active');
+            }
+        };
+
+        const closeSidebar = () => {
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        };
+
+        if (starWatchLink) starWatchLink.addEventListener('click', openSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
     },
 
     fetchCelebritiesSidebar: async function () {
