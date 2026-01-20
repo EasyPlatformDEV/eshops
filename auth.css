@@ -31,6 +31,45 @@ body {
     margin-bottom: 20px;
 }
 
+.auth-header-nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    /* To help positioning if needed */
+}
+
+.back-arrow {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    margin-right: 15px;
+}
+
+.back-arrow:hover {
+    background-color: #f0f0f0;
+}
+
+.header-logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: -40px;
+    /* Offset the back arrow to keep logo roughly centered relative to container width */
+}
+
+.auth-logo-header {
+    max-height: 40px;
+    /* Smaller logo for header style */
+    width: auto;
+}
+
 .auth-title {
     font-size: 24px;
     font-weight: 700;
@@ -116,13 +155,49 @@ body {
     border-radius: 4px;
     font-size: 14px;
     box-sizing: border-box;
+    box-sizing: border-box;
     /* Crucial for padding */
 }
 
-.form-input:focus {
-    border-color: #336ae9;
-    /* Focus color */
-    outline: none;
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #777;
+    display: flex;
+    /* For alignment */
+}
+
+color: #333;
+}
+
+.form-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-actions-row .checkbox-group {
+    margin-bottom: 0;
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+border-color: #336ae9;
+/* Focus color */
+outline: none;
 }
 
 .submit-btn {
