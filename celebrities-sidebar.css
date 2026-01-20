@@ -2,9 +2,9 @@
 .celebrities-sidebar {
     background-color: var(--bg-light);
     border-radius: 8px;
-    /* Update to 190px */
-    width: 190px;
-    min-width: 190px;
+    /* Update to 200px */
+    width: 200px;
+    min-width: 200px;
     flex-shrink: 0;
     height: calc(100vh - 100px);
     /* Match Just Added Sidebar height logic */
@@ -55,12 +55,13 @@
 
 /* Inner Content Container */
 .celebrities-content {
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
+    /* Fixed Left Padding to prevent scroll shift */
     display: flex;
     flex-direction: column;
     gap: 15px;
     /* Space between cards */
-    align-items: center;
+    /* align-items: center; REMOVED to prevent centering shift */
     /* Center cards again */
 }
 

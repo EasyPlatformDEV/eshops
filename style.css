@@ -1564,16 +1564,16 @@ a:hover {
         flex-wrap: nowrap;
         align-items: flex-start;
         /* Width Calculation:
-           Left Sidebar: 190px
+           Left Sidebar: 200px
            Gap: 15px
            Content: 470px
            Gap: 15px
            Right Sidebar: 360px
-           Total Content: 1050px
+           Total Content: 1060px
            Padding: 20px (10 left + 10 right)
-           Total Needed: 1070px
+           Total Needed: 1080px
         */
-        max-width: 1070px;
+        max-width: 1080px;
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
