@@ -50,9 +50,10 @@
 /* Header */
 .celebrities-header {
     background: transparent;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-left: 20px;
-    /* Match content padding */
+    padding-top: 10px;
+    /* Match content padding, pushed down */
 }
 
 .celebrities-header h3 {
