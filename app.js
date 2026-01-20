@@ -127,7 +127,7 @@ const app = {
 
     // SVG Map for Categories
     categoryIcons: {
-        "Adult": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>',
+        "18+": '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>',
         "Alcohol": '<svg viewBox="0 0 24 24"><path d="M7.5 7l-2-2h13l-2 2v5l-3.5 3.5V19h3v2h-8v-2h3v-3.5L4.5 12V7zm2.5 1h4v3.5l1.5-1.5V8H10v.5L11.5 10l-1.5 1.5V8z" fill="currentColor"/></svg>',
         "Automotive": '<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>',
         "Beauty": '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="currentColor"></path><path d="M12 5c-1.1 0-2 .9-2 2v8h4V7c0-1.1-.9-2-2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg>', // New lipstick/bottle icon
@@ -162,7 +162,7 @@ const app = {
             const response = await fetch('json-files/shop_categories.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Categories JSON not found");
             const items = await response.json();
-            items.sort((a, b) => a.name.localeCompare(b.name));
+            // items.sort((a, b) => a.name.localeCompare(b.name));
             this.renderShopCategories(items);
         } catch (error) {
             console.error("Error loading categories:", error);
