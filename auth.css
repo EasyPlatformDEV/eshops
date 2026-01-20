@@ -1,0 +1,177 @@
+/* content of auth.css */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif;
+    /* Matching main site font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow like Vecteezy */
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.auth-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.social-btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.social-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+.divider span {
+    background-color: #fff;
+    padding: 0 10px;
+    color: #777;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* Crucial for padding */
+}
+
+.form-input:focus {
+    border-color: #336ae9;
+    /* Focus color */
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #336ae9;
+    /* Primary Blue from main site */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #2554c7;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-link {
+    color: #336ae9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin: 0;
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #333;
+}
