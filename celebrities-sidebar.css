@@ -49,69 +49,16 @@
     cursor: pointer;
     color: var(--text-light);
     padding: 0;
+    transition: transform 0.3s ease, color 0.2s;
 }
 
 .celebrities-close:hover {
     color: var(--text-color);
+    transform: rotate(90deg);
 }
 
 /* Mobile: Modal Style (Hidden by default) */
-@media (max-width: 1200px) {
-    .celebrities-sidebar {
-        position: fixed;
-        top: 0;
-        right: -400px;
-        width: 400px;
-        max-width: 90%;
-        height: 100%;
-        z-index: 2000;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        transition: right 0.3s ease;
-        padding-bottom: 0;
-        /* Reset padding handled by inner content */
-        border-radius: 0;
-        /* Remove border-radius for overlay */
-    }
-
-    .celebrities-sidebar.active {
-        right: 0;
-    }
-
-    /* Show close button on mobile, flex header */
-    .celebrities-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 15px 15px 20px;
-        border-bottom: 1px solid var(--pink-highlight);
-        flex-shrink: 0;
-        margin-bottom: 0;
-        background: white;
-    }
-
-    .celebrities-content {
-        flex: 1;
-        overflow-y: auto;
-        width: 100%;
-        padding: 20px;
-        /* Mobile Grid Layout */
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        align-content: start;
-    }
-
-    .celebrities-content .celeb-card-sidebar {
-        width: 100%;
-        /* Fluid width for grid */
-    }
-
-    .celebrities-close {
-        display: flex;
-    }
-}
+/* Moved to bottom */
 
 
 
@@ -328,4 +275,62 @@
     background-color: #e9ecef;
     text-decoration: none;
     color: var(--text-color);
+}
+
+/* Mobile: Modal Style (Hidden by default) - Moved to bottom for cascade */
+@media (max-width: 1200px) {
+    .celebrities-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        max-width: 90%;
+        height: 100%;
+        z-index: 2000;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        transition: right 0.3s ease;
+        padding-bottom: 0;
+        /* Reset padding handled by inner content */
+        border-radius: 0;
+        /* Remove border-radius for overlay */
+    }
+
+    .celebrities-sidebar.active {
+        right: 0;
+    }
+
+    /* Show close button on mobile, flex header */
+    .celebrities-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 15px 15px 20px;
+        border-bottom: 1px solid var(--pink-highlight);
+        flex-shrink: 0;
+        margin-bottom: 0;
+        background: white;
+    }
+
+    .celebrities-content {
+        flex: 1;
+        overflow-y: auto;
+        width: 100%;
+        padding: 20px;
+        /* Mobile Grid Layout */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-content: start;
+    }
+
+    .celebrities-content .celeb-card-sidebar {
+        width: 100%;
+        /* Fluid width for grid */
+    }
+
+    .celebrities-close {
+        display: flex;
+    }
 }

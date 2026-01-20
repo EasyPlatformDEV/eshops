@@ -1313,6 +1313,13 @@ a:hover {
     color: var(--text-light);
     display: none;
     /* Hidden on desktop by default */
+    padding: 0;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.just-added-close:hover {
+    color: var(--text-color);
+    transform: rotate(90deg);
 }
 
 @media (max-width: 1200px) {
