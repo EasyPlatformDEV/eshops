@@ -91,8 +91,8 @@
 
 .cat-product-image-wrap {
     width: 100%;
-    padding-top: 90%;
-    /* Reduced from 100% to save height (~20px) */
+    padding-top: 80%;
+    /* Reduced from 90% to further shrink height (~20px) */
     position: relative;
     background-color: transparent;
     /* Clean */
@@ -109,9 +109,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     /* Center */
-    width: 70%;
-    /* Reduced size */
-    height: 70%;
+    width: 60%;
+    /* Reduced from 70% */
+    height: 60%;
     object-fit: contain;
     /* Ensure full image visible */
     padding: 0;
