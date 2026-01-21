@@ -2740,12 +2740,12 @@ a:hover {
 }
 
 .celeb-avatar {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
-    /* Force minimum width */
-    min-height: 70px;
-    /* Force minimum height */
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
+    min-height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
