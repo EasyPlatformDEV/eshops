@@ -2158,6 +2158,7 @@ a:hover {
     text-overflow: ellipsis;
     /* Truncate text with ... */
     line-height: 1.2;
+    margin-top: 10px;
 }
 
 /* Footer Content - Moved to footer.css */
