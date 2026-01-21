@@ -327,12 +327,13 @@
 
         new Splide('#splide-celebrities', {
             type: 'loop', // Infinite loop
-            perPage: 5,
-            gap: '1rem',
+            perPage: 4,
+            gap: '10px',
             arrows: true, // Kept enabled per request
             pagination: false,
             breakpoints: {
-                600: { perPage: 4 },
+                1000: { perPage: 3 },
+                600: { perPage: 2 },
             }
         }).mount();
     },
