@@ -386,13 +386,11 @@
                         <img src="${c.avatar}" alt="${c.nickname}" class="celeb-avatar-sidebar">
                         ${c.isVerified ? '<div class="celeb-verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
                     </div>
-                    <div class="celeb-info">
-                        <div class="celeb-nickname-sidebar">@${c.nickname}</div>
-                        <div class="celeb-fullname-sidebar">${fullname}</div>
-                    </div>
+                    <div class="celeb-nickname-sidebar">@${c.nickname}</div>
+                    <div class="celeb-fullname-sidebar">${fullname}</div>
                     
                     <button class="celeb-btn-follow">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
                         Follow
@@ -431,7 +429,10 @@
                 // Set Alert: Outline Bell, Border color icon, Text pink
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" style="color: #336ae9;"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2zm11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4c0-1.1.9-2 2-2s2 .9 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2zm-4-8c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h10v-7z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
                     <span style="color: #336ae9;">Set price alert</span>
                 </button>`;
             }
@@ -471,7 +472,7 @@
                         ${priceAlertBtn}
 
                         <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
-                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                             Buy now
                         </a>
                     </div>
@@ -491,7 +492,7 @@
                                 Price history
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L1 7v2h2.5c.35 3.63 2.5 6.64 6 7.42V20h-1.5v2h8v-2h-1.5v-3.58c3.5-.78 5.65-3.79 6-7.42H22V7L12 2zm-5.5 8c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm11 0c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z" fill="currentColor"/></svg>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>
                                 Compare prices (4)
                             </li>
                             <li>
@@ -779,12 +780,17 @@
                     </div>
                     <div class="ja-actions">
                         <button class="ja-btn ja-btn-add">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                             </svg>
                             Save product
                         </button>
-                        <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">Buy now</a>
+                        <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart">
+                                <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                            </svg>
+                            Buy now
+                        </a>
                     </div>
                 </div>
             `;
@@ -825,7 +831,10 @@
                             Your price target has been reached for the <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> at <strong>${alert.shop}</strong>.<br>
                             The price has dropped to <strong>${alert.currentPrice.toFixed(2)} &euro;</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
                         </div>
-                        <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 5px;">
+                        <a href="#" class="ja-btn ja-btn-buy" style="margin-top: 5px;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart">
+                                <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                            </svg>
                             Buy now at ${alert.shop}
                         </a>
                     </div>
