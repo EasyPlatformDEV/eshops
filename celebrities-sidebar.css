@@ -217,10 +217,18 @@
     white-space: nowrap;
 }
 
+.celeb-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .celeb-fullname-sidebar {
     font-size: 0.8rem;
     color: var(--text-light);
-    margin-bottom: 10px;
+    margin-bottom: 0;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -251,18 +259,6 @@
 
 .celeb-btn-follow:hover {
     background-color: #f8e1ea;
-}
-
-/* Hover effect for heart icon */
-.celeb-btn-follow .icon-follow-heart {
-    fill: transparent;
-    stroke: currentColor;
-    stroke-width: 1.5px;
-    transition: fill 0.2s ease;
-}
-
-.celeb-btn-follow:hover .icon-follow-heart {
-    fill: currentColor;
 }
 
 .celeb-btn-view {
