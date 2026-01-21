@@ -306,26 +306,29 @@
             // Reusing sidebar content classes but adapted for the card context
             const html = `
                 <li class="splide__slide">
-                    <div class="cat-product-card" style="padding-bottom: 8px;">
+                    <div class="cat-product-card">
                         
-                        <!-- Avatar Area (Mimicking Image Wrap) -->
-                        <div class="celeb-avatar-sidebar-wrapper" style="margin: 8px auto 8px auto; width: 80px; height: 80px;">
+                        <!-- Avatar Area -->
+                        <div class="celeb-avatar-sidebar-wrapper" style="margin: 10px auto; width: 70px; height: 70px;">
                             <img src="${c.avatar}" alt="${c.nickname}" class="celeb-avatar-sidebar" style="width: 100%; height: 100%;">
                             ${c.isVerified ? '<div class="celeb-verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
                         </div>
 
-                        <!-- Content Area -->
-                        <div class="cat-product-info" style="justify-content: flex-start; gap: 8px;">
+                        <!-- Content Area - Removing inline padding overrides to use CSS class defaults (10px padding) -->
+                        <div class="cat-product-info">
                             <div class="celeb-nickname-sidebar" style="text-align: center;">@${c.nickname}</div>
                             <div class="celeb-fullname-sidebar" style="text-align: center; margin-bottom: 0;">${fullname}</div>
                             
-                            <button class="celeb-btn-follow" style="width: 100%; margin-top: auto;">
-                                <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
-                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                                Follow
-                            </button>
-                            <a href="#" class="celeb-btn-view" style="width: 100%; text-align: center;">Products (${Math.floor(Math.random() * (20 - 3 + 1)) + 3})</a>
+                            <!-- Push to bottom -->
+                            <div style="margin-top: auto; width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                                <button class="celeb-btn-follow" style="width: 100%; margin: 0;">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
+                                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                    Follow
+                                </button>
+                                <a href="#" class="celeb-btn-view" style="width: 100%; text-align: center;">Products (${Math.floor(Math.random() * (20 - 3 + 1)) + 3})</a>
+                            </div>
                         </div>
                     </div>
                 </li>
