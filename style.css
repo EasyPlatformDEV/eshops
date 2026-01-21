@@ -2687,3 +2687,14 @@ a:hover {
 }
 
 @import 'category_filters.css';
+
+/* Mobile Only Nav Item */
+.mobile-only-nav {
+    display: flex !important;
+}
+
+@media (min-width: 1201px) {
+    .mobile-only-nav {
+        display: none !important;
+    }
+}
