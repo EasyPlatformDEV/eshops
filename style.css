@@ -2709,8 +2709,8 @@ a:hover {
     background: transparent;
     height: auto;
     /* Allow growth */
-    min-height: 280px;
-    /* Ensure space for avatar, text, buttons */
+    min-height: 240px;
+    /* Reduced by 40px */
     transition: none;
     box-sizing: border-box;
 }
@@ -2737,6 +2737,7 @@ a:hover {
     justify-content: center;
     position: relative;
     background: transparent;
+    flex-shrink: 0;
 }
 
 .celeb-avatar {
@@ -2749,7 +2750,8 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
-    box-shadow: 0 0 0 2px #d62976;
+    outline: 2px solid #d62976;
+    /* Pink ring */
     margin: 2px;
     flex-shrink: 0;
     aspect-ratio: 1 / 1;
