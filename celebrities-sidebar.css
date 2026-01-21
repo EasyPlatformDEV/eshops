@@ -253,6 +253,18 @@
     background-color: #f8e1ea;
 }
 
+/* Hover effect for heart icon */
+.celeb-btn-follow .icon-follow-heart {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 2px;
+    transition: fill 0.2s ease;
+}
+
+.celeb-btn-follow:hover .icon-follow-heart {
+    fill: currentColor;
+}
+
 .celeb-btn-view {
     background-color: #f1f3f5;
     /* Grey */
