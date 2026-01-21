@@ -281,6 +281,7 @@
     transition: background 0.2s;
     text-decoration: none;
     display: inline-block;
+    margin-bottom: 0;
 }
 
 .celeb-btn-view:hover {
