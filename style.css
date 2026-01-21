@@ -1470,12 +1470,24 @@ a:hover {
     gap: 5px;
 }
 
+/* Shared alert bell hover effect */
+.action-btn-common .icon-alert-bell,
 .ja-btn-add .icon-alert-bell {
     transition: fill 0.2s ease;
     fill: transparent;
 }
 
+.action-btn-common:hover .icon-alert-bell,
 .ja-btn-add:hover .icon-alert-bell {
+    fill: currentColor;
+}
+
+/* Fix for Buy Now icon start state */
+.ja-btn-buy .icon-buy-cart {
+    fill: transparent;
+}
+
+.ja-btn-buy:hover .icon-buy-cart {
     fill: currentColor;
 }
 
