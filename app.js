@@ -783,7 +783,7 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                             </svg>
-                            Save product
+                            Save product (v100)
                         </button>
                         <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">
                             <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" class="icon-buy-cart">
