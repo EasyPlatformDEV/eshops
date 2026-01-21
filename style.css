@@ -1516,6 +1516,11 @@ a:hover {
     color: #2e7d32;
     border: 1px solid transparent;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 12px;
 }
 
 .ja-btn-buy:hover {
