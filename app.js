@@ -2,8 +2,8 @@
     init: function () {
         this.fetchProducts();
         this.fetchShops();
-        this.fetchCelebrities();
-        this.fetchCelebritiesSidebar();
+        this.fetchShops();
+        this.fetchCelebritiesAndSidebar();
         this.fetchShopCategories();
         this.fetchFaqs(); // Load FAQs
         this.initCelebritiesMobileEvents(); // star watch mobile overlay
@@ -74,13 +74,14 @@
         }
     },
 
-    fetchCelebrities: async function () {
-        if (!document.getElementById('splide-celebrities')) return;
+    fetchCelebritiesAndSidebar: async function () {
         try {
-            const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/celebrities.json');
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
+
             this.renderCelebrities(items);
+            this.renderCelebritiesSidebar(items);
         } catch (error) {
             console.error("Error loading celebrities:", error);
         }
@@ -89,7 +90,7 @@
     fetchShops: async function () {
         if (!document.getElementById('splide-shops')) return;
         try {
-            const response = await fetch('json-files/shops.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/shops.json');
             if (!response.ok) throw new Error("Shops JSON not found");
             const items = await response.json();
             this.renderShops(items);
@@ -155,7 +156,7 @@
     fetchShopCategories: async function () {
         if (!document.getElementById('splide-categories')) return;
         try {
-            const response = await fetch('json-files/shop_categories.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/shop_categories.json');
             if (!response.ok) throw new Error("Categories JSON not found");
             const items = await response.json();
             // items.sort((a, b) => a.name.localeCompare(b.name));
@@ -220,7 +221,7 @@
 
         // Fetch just_added.json if not already cached (could add caching here, but fetch is fast enough for now)
         try {
-            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/just_added.json');
             const allProducts = await response.json();
 
             // 1. Filter matches
@@ -371,18 +372,7 @@
         if (overlay) overlay.addEventListener('click', closeSidebar);
     },
 
-    fetchCelebritiesSidebar: async function () {
-        const container = document.getElementById('celebrities-sidebar-content');
-        if (!container) return;
-        try {
-            const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
-            if (!response.ok) throw new Error("Celebrities JSON not found");
-            const items = await response.json();
-            this.renderCelebritiesSidebar(items);
-        } catch (error) {
-            console.error("Error loading celebrities sidebar:", error);
-        }
-    },
+    // fetchCelebritiesSidebar merged into fetchCelebritiesAndSidebar to avoid duplicate request
 
     renderCelebritiesSidebar: function (items) {
         const container = document.getElementById('celebrities-sidebar-content');
@@ -663,7 +653,7 @@
 
         // Fetch and render notifications
         try {
-            const response = await fetch('json-files/alerts.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/alerts.json');
             if (!response.ok) throw new Error("Alerts JSON not found");
             const alerts = await response.json();
             this.renderNotifications(alerts, content);
@@ -737,7 +727,7 @@
 
         // Fetch Data
         try {
-            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            const response = await fetch('json-files/just_added.json');
             if (!response.ok) throw new Error("Just Added JSON not found");
             const items = await response.json();
 
