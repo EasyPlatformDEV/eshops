@@ -27,7 +27,6 @@ body {
 }
 
 /* Header */
-/* Header */
 
 
 .sort-arrow {
@@ -95,53 +94,8 @@ body {
     background-color: #920260;
 }
 
-.actions-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
+/* Duplicates removed */
 
-.action-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.action-btn.blue {
-    background-color: var(--pink-highlight);
-    color: #fff;
-    transition: background-color 0.2s;
-}
-
-.action-btn.blue:hover {
-    background-color: #920260;
-    /* Darker pink for hover */
-}
-
-/* Search */
-.search-section {
-    margin-bottom: 15px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--bg-light);
-    font-size: 0.9rem;
-    /* Decreased from 1rem to match eshops input */
-}
-
-/* Filters */
-/* Filters */
 /* Filters */
 .filter-section {
     margin-bottom: 0px !important;
@@ -525,22 +479,7 @@ a:hover {
     /* Reset for dropdown items */
 }
 
-/* Generic Link Hover */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-.profile-dropdown a {
-    text-decoration: none;
-    /* Reset for dropdown items */
-}
+/* Dropdown links already defined above */
 
 /* Shop Link Button */
 .shop-link-btn {
@@ -2782,14 +2721,15 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 /* Reusing sidebar button styles or defining new ones if needed */
 .celeb-btn-follow,
 .celeb-btn-view {
     width: calc(100% - 20px);
-    margin: 0 10px 8px 10px;
+    margin: 0 10px 10px 10px;
+    /* 10px from bottom/sides */
     /* spacing inside card */
     box-sizing: border-box;
     display: flex;
@@ -2807,6 +2747,8 @@ a:hover {
 .celeb-btn-follow {
     background-color: #fdf2f7;
     color: var(--pink-highlight);
+    margin-top: auto;
+    /* Pushes button group to bottom */
 }
 
 .celeb-btn-follow:hover {
