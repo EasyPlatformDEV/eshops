@@ -2734,7 +2734,8 @@ a:hover {
     width: 100%;
     padding-top: 10px;
     /* Moves avatar up to 10px from top */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    /* Pushes nickname down */
     /* Pushes nickname down */
     display: flex;
     justify-content: center;
