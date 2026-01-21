@@ -253,7 +253,7 @@
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
                                 <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
-                                <button class="btn btn-light btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">
+                                <button class="alert-set-btn">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                     </svg>
