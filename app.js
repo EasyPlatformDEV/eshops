@@ -277,11 +277,11 @@
             }
 
             this.productCarousel = new Splide('#splide-category-products', {
+                type: 'loop', // Enabled infinite scrolling
                 perPage: 3,
                 gap: '10px',
                 pagination: false,
-                arrows: false, // As per instruction "no arrows" for filters, possibly for products user didn't specify but carousel suggests arrows usually? User requested "squared images".
-                // I will add arrows: false for consistency as swipe is primary on mobile
+                arrows: true, // Enabled arrows
                 breakpoints: {
                     600: { perPage: 2 },
                     400: { perPage: 2 }
