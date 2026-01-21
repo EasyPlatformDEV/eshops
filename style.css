@@ -2161,6 +2161,98 @@ a:hover {
     margin-top: 10px;
 }
 
+/* Actual classes used in app.js for carousel */
+.celeb-info {
+    padding: 0;
+    /* Remove padding to avoid double spacing */
+    margin-top: 10px;
+    /* 10px from avatar */
+}
+
+.celeb-nickname {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center;
+    width: 100%;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.celeb-fullname {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-align: center;
+    width: 100%;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* Carousel buttons */
+.celeb-btn-follow {
+    background-color: #fdf2f7;
+    color: var(--pink-highlight);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 120px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.celeb-btn-follow:hover {
+    background-color: #f8e1ea;
+}
+
+.celeb-btn-follow .icon-follow-heart {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    transition: fill 0.2s ease;
+}
+
+.celeb-btn-follow:hover .icon-follow-heart {
+    fill: currentColor;
+}
+
+.celeb-btn-view {
+    background-color: #f1f3f5;
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 100%;
+    max-width: 120px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.celeb-btn-view:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 /* Footer Content - Moved to footer.css */
 
 /* Sign In Button Header */
