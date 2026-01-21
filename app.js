@@ -831,7 +831,10 @@
                             Your price target has been reached for the <strong>${alert.title}</strong>, <strong>${alert.brand}</strong> at <strong>${alert.shop}</strong>.<br>
                             The price has dropped to <strong>${alert.currentPrice.toFixed(2)} &euro;</strong>, which is <strong>${discount}%</strong> less than on ${formattedDateSet}!
                         </div>
-                        <a href="#" class="action-btn-common buy-now-btn" style="width: auto; margin-top: 5px;">
+                        <a href="#" class="ja-btn ja-btn-buy" style="margin-top: 5px;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart">
+                                <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                            </svg>
                             Buy now at ${alert.shop}
                         </a>
                     </div>
