@@ -12,7 +12,106 @@
     --pink-highlight: #b60378;
     --blue-highlight: #336ae9;
     /* New blue for links and UI elements */
+
+/* Universal Button System */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    line-height: 1.5;
+    box-sizing: border-box;
 }
+
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-lg {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--pink-highlight);
+    color: #fff;
+    border-color: var(--pink-highlight);
+}
+
+.btn-primary:hover {
+    background-color: #920260;
+    border-color: #920260;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-color);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-light {
+    background-color: #fdf8df;
+    color: #333;
+    border-color: #e0e0e0;
+}
+
+.btn-light:hover {
+    background-color: #fcf0c0;
+    border-color: #d0d0d0;
+    text-decoration: none;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+}
+
+.btn-ghost:hover {
+    color: var(--blue-highlight);
+    background-color: transparent;
+    text-decoration: underline;
+}}
 
 * {
     box-sizing: border-box;
@@ -53,7 +152,7 @@ body {
 .app-content {
     padding: 15px;
     max-width: 600px;
-    /* РћРіСЂР°РЅРёС‡Р°РІР°РјРµ С€РёСЂРёРЅР°С‚Р° Р·Р° РґРµСЃРєС‚РѕРї, Р·Р° РґР° РёР·РіР»РµР¶РґР° РєР°С‚Рѕ РјРѕР±РёР»РЅРѕ */
+    /* ???????�?????�?�???�???� ?�?????????�?�?� ?�?� ???�?????�????, ?�?� ???� ???�???�?�?�???� ???�?�?? ?????�???�???? */
     margin: 0 auto;
 }
 
@@ -78,7 +177,7 @@ body {
     gap: 5px;
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
@@ -109,7 +208,7 @@ body {
     gap: 5px;
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     cursor: pointer;
 }
@@ -134,7 +233,7 @@ body {
     width: 100%;
     padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     background-color: var(--bg-light);
     font-size: 0.9rem;
     /* Decreased from 1rem to match eshops input */
@@ -168,7 +267,7 @@ body {
     width: 100%;
     padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     background: var(--bg-light);
     color: var(--text-color);
 }
@@ -326,7 +425,7 @@ body {
 .product-card {
     display: flex;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 0;
     /* Padding handled inside cols to accommodate full-height divider */
     margin-bottom: 15px;
@@ -480,7 +579,7 @@ body {
     height: 38px;
     /* Fixed height for all buttons */
     padding: 0 12px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     font-size: 0.85rem;
     cursor: pointer;
@@ -979,7 +1078,7 @@ a:hover {
     padding: 6px 15px;
     background-color: var(--secondary-color);
     color: #fff;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -1210,7 +1309,7 @@ a:hover {
         flex-direction: column;
         overflow-y: hidden;
         padding-bottom: 20px;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
     }
 
     .just-added-sidebar:hover .just-added-content {
@@ -1346,7 +1445,7 @@ a:hover {
 /* Feed Item Card */
 .ja-item {
     background: #fff;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 12px;
     margin-bottom: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -1383,7 +1482,7 @@ a:hover {
 }
 
 .ja-time::before {
-    content: "вЂў";
+    content: "???";
     margin-right: 4px;
     color: #ccc;
 }
@@ -1451,7 +1550,7 @@ a:hover {
     flex: 1;
     padding: 6px 0;
     font-size: 0.8rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     font-weight: 500;
     text-align: center;
@@ -1729,7 +1828,7 @@ a:hover {
 .promo-banner {
     background-color: #f8f9fa;
     /* Light grey background */
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 24px;
     margin: 0 0 20px 0;
     /* Removed top margin to pull it up (20px gap likely from header/main padding) */
@@ -1813,7 +1912,7 @@ a:hover {
         /* Exactly 20px gap from header as requested */
         align-items: center;
         width: 100%;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
     }
 
     .promo-image {
@@ -1886,7 +1985,7 @@ a:hover {
     background: var(--pink-highlight);
     color: white;
     padding: 8px 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -1953,7 +2052,7 @@ a:hover {
     align-items: center;
     /* Added center alignment */
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     padding: 0;
 }
@@ -1992,7 +2091,7 @@ a:hover {
 /* Shops */
 .shop-card {
     border: 1px solid #eee;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -2030,7 +2129,7 @@ a:hover {
     height: 100px;
     background-size: cover;
     background-position: center;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -2241,7 +2340,7 @@ a:hover {
 .logout-card {
     background: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: var(--border-radius-lg);
     text-align: center;
     width: 90%;
     max-width: 320px;
@@ -2314,7 +2413,7 @@ a:hover {
 .mobile-login-btn {
     background-color: #ffffff;
     border: 1px solid var(--pink-highlight);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     width: 34px;
     /* Reduced by 2px as requested */
     height: 34px;
@@ -2446,7 +2545,7 @@ a:hover {
     cursor: pointer;
     width: 36px;
     height: 36px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2704,7 +2803,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     background: transparent;
     height: auto;
@@ -2732,10 +2831,9 @@ a:hover {
 
 .celeb-avatar-wrapper {
     width: 100%;
-    padding-top: 10px;
-    /* Moves avatar up to 10px from top */
+    padding-top: 8px;
+    /* Adjusted for visual 10px from top */
     margin-bottom: 10px;
-    /* Pushes nickname down */
     /* Pushes nickname down */
     display: flex;
     justify-content: center;
@@ -2790,15 +2888,15 @@ a:hover {
 .celeb-btn-follow,
 .celeb-btn-view {
     width: calc(100% - 20px);
-    margin: 0 10px 8px 10px;
-    /* spacing inside card */
+    margin: 0 10px 10px 10px;
+    /* 10px spacing from bottom and sides */
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     padding: 8px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-size: 0.8rem;
     border: none;
     cursor: pointer;
@@ -2808,6 +2906,8 @@ a:hover {
 .celeb-btn-follow {
     background-color: #fdf2f7;
     color: var(--pink-highlight);
+    margin-top: auto;
+    /* Pins buttons to bottom of card */
 }
 
 .celeb-btn-follow:hover {

@@ -1,0 +1,101 @@
+/* Universal Button System */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Sizes */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-lg {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* Variants */
+.btn-primary {
+    background-color: var(--pink-highlight);
+    color: #fff;
+    border-color: var(--pink-highlight);
+}
+
+.btn-primary:hover {
+    background-color: #920260;
+    border-color: #920260;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-color);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-light {
+    background-color: #fdf8df;
+    color: #333;
+    border-color: #e0e0e0;
+}
+
+.btn-light:hover {
+    background-color: #fcf0c0;
+    border-color: #d0d0d0;
+    text-decoration: none;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+}
+
+.btn-ghost:hover {
+    color: var(--blue-highlight);
+    background-color: transparent;
+    text-decoration: underline;
+}
