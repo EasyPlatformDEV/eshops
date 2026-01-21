@@ -1499,6 +1499,18 @@ a:hover {
     fill: currentColor;
 }
 
+/* Unify Buy Now Icon Styles */
+.buy-now-btn .icon-buy-cart,
+.ja-btn-buy .icon-buy-cart {
+    fill: transparent;
+    transition: fill 0.2s ease;
+}
+
+.buy-now-btn:hover .icon-buy-cart,
+.ja-btn-buy:hover .icon-buy-cart {
+    fill: currentColor;
+}
+
 .ja-btn-buy {
     background: #e8f5e9;
     color: #2e7d32;
