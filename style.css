@@ -2732,7 +2732,10 @@ a:hover {
 
 .celeb-avatar-wrapper {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
+    /* Moves avatar up to 10px from top */
+    margin-bottom: 10px;
+    /* Pushes nickname down */
     display: flex;
     justify-content: center;
     position: relative;
