@@ -2709,7 +2709,7 @@ a:hover {
     background: transparent;
     height: auto;
     /* Allow growth */
-    min-height: 240px;
+    min-height: 245px;
     /* Reduced by 40px */
     transition: none;
     box-sizing: border-box;
@@ -2734,7 +2734,7 @@ a:hover {
     width: 100%;
     padding-top: 10px;
     /* Moves avatar up to 10px from top */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     /* Pushes nickname down */
     /* Pushes nickname down */
     display: flex;
