@@ -1521,6 +1521,7 @@ a:hover {
     justify-content: center;
     gap: 5px;
     padding: 0 12px;
+    height: 32px;
 }
 
 .ja-btn-buy:hover {
