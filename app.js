@@ -390,8 +390,8 @@
                     <div class="celeb-fullname-sidebar">${fullname}</div>
                     
                     <button class="celeb-btn-follow">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" class="icon-follow-heart">
-                             <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
+                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
                         Follow
                     </button>
@@ -429,7 +429,7 @@
                 // Set Alert: Outline Bell, Border color icon, Text pink
                 priceAlertBtn = `
                 <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                     </svg>
@@ -783,10 +783,10 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                             </svg>
-                            Save product (v100)
+                            Save product
                         </button>
                         <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">
-                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" class="icon-buy-cart">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-buy-cart">
                                 <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-8-2h9a1 1 0 0 0 .96-.74l2.5-9A1 1 0 0 0 19.5 7H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 6 18z"/>
                             </svg>
                             Buy now
