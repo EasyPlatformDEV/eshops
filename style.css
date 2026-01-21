@@ -2707,9 +2707,21 @@ a:hover {
     border-radius: 8px;
     overflow: hidden;
     background: transparent;
-    height: 100%;
+    height: auto;
+    /* Allow growth */
+    min-height: 280px;
+    /* Ensure space for avatar, text, buttons */
     transition: none;
     box-sizing: border-box;
+}
+
+/* Make all carousel arrows white */
+.splide__arrow svg {
+    fill: white;
+}
+
+.splide__arrow:hover svg {
+    fill: white;
 }
 
 .celeb-card:hover {
