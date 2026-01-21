@@ -2733,9 +2733,12 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px #d62976;
+    /* Instagram-like solid ring fallback or gradient if possible */
+    margin: 2px;
+    /* Space for ring */
     flex-shrink: 0;
-    /* Prevent squashing */
+    aspect-ratio: 1 / 1;
 }
 
 .celeb-info {
@@ -2789,6 +2792,15 @@ a:hover {
 
 .celeb-btn-follow:hover {
     background-color: #f8e1ea;
+    text-decoration: none;
+    /* No underline */
+    color: var(--pink-highlight);
+    /* Keep text color same */
+}
+
+/* Fill heart on hover */
+.celeb-btn-follow:hover svg path {
+    fill: var(--pink-highlight);
 }
 
 .celeb-btn-view {
@@ -2799,4 +2811,8 @@ a:hover {
 
 .celeb-btn-view:hover {
     background-color: #e9ecef;
+    text-decoration: none;
+    /* No underline */
+    color: var(--text-color);
+    /* Keep text color same */
 }
