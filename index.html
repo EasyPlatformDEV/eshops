@@ -43,8 +43,8 @@
                 </button>
 
                 <!-- Desktop: Buttons -->
-                <a href="sign_up.html" class="header-btn btn-sign-up desktop-only">Sign up</a>
-                <a href="log_in.html" class="header-btn btn-log-in desktop-only">Log in</a>
+                <a href="sign_up.html" class="btn btn-primary btn-sm desktop-only">Sign up</a>
+                <a href="log_in.html" class="btn btn-outline btn-sm desktop-only">Log in</a>
 
                 <!-- Mobile: Login Icon (redirects to Sign Up as requested) -->
                 <a href="sign_up.html" class="mobile-login-btn mobile-only" aria-label="Sign up">
@@ -67,7 +67,7 @@
                 <div class="promo-image">
                     <img src="assets/cta_4.svg" alt="Shopping Illustration">
                 </div>
-                <h2 class="promo-title">
+                <h2>
                     Save your favorite products,<br>
                     track price changes, set price alerts<br>
                     and buy them at the lowest price!
@@ -77,7 +77,7 @@
                     Paste a link and start tracking prices &rarr;
                 </div>
                 <div class="promo-actions">
-                    <button class="action-btn pink-filled hover-effect">
+                    <button class="btn btn-primary">
                         <svg viewBox="0 0 24 24" width="20" height="20">
                             <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                         </svg>
@@ -104,7 +104,8 @@
             <section class="search-row">
                 <div class="search-wrapper">
                     <input type="text" placeholder="Browse by shop name">
-                    <button class="btn-go" aria-label="Search">
+                    <button class="btn btn-primary" aria-label="Search"
+                        style="border-radius: 50%; width: 32px; height: 32px; padding: 0;">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
                             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                         </svg>
@@ -158,11 +159,11 @@
             <div class="section-divider"></div>
 
             <section class="faq-section landing-section">
-                <h3 class="faq-title">All you need to know about this site (FAQ)</h3>
+                <h3>All you need to know about this site (FAQ)</h3>
                 <div class="faq-list" id="faq-list">
                     <!-- Dynamic FAQs -->
                 </div>
-                <button id="view-all-faq" class="view-all-faq" style="display: none;">
+                <button id="view-all-faq" class="btn btn-ghost" style="display: none;">
                     <div class="circle-arrow">
                         <svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="3"
                             stroke-linecap="round" stroke-linejoin="round">

@@ -2,8 +2,8 @@
     init: function () {
         this.fetchProducts();
         this.fetchShops();
-        this.fetchShops();
-        this.fetchCelebritiesAndSidebar();
+        this.fetchCelebrities();
+        this.fetchCelebritiesSidebar();
         this.fetchShopCategories();
         this.fetchFaqs(); // Load FAQs
         this.initCelebritiesMobileEvents(); // star watch mobile overlay
@@ -74,14 +74,13 @@
         }
     },
 
-    fetchCelebritiesAndSidebar: async function () {
+    fetchCelebrities: async function () {
+        if (!document.getElementById('splide-celebrities')) return;
         try {
-            const response = await fetch('json-files/celebrities.json');
+            const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
-
             this.renderCelebrities(items);
-            this.renderCelebritiesSidebar(items);
         } catch (error) {
             console.error("Error loading celebrities:", error);
         }
@@ -90,7 +89,7 @@
     fetchShops: async function () {
         if (!document.getElementById('splide-shops')) return;
         try {
-            const response = await fetch('json-files/shops.json');
+            const response = await fetch('json-files/shops.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Shops JSON not found");
             const items = await response.json();
             this.renderShops(items);
@@ -156,7 +155,7 @@
     fetchShopCategories: async function () {
         if (!document.getElementById('splide-categories')) return;
         try {
-            const response = await fetch('json-files/shop_categories.json');
+            const response = await fetch('json-files/shop_categories.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Categories JSON not found");
             const items = await response.json();
             // items.sort((a, b) => a.name.localeCompare(b.name));
@@ -221,7 +220,7 @@
 
         // Fetch just_added.json if not already cached (could add caching here, but fetch is fast enough for now)
         try {
-            const response = await fetch('json-files/just_added.json');
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
             const allProducts = await response.json();
 
             // 1. Filter matches
@@ -253,7 +252,7 @@
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
                                 <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
-                                <button class="alert-set-btn">
+                                <button class="btn btn-light btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                     </svg>
@@ -372,7 +371,18 @@
         if (overlay) overlay.addEventListener('click', closeSidebar);
     },
 
-    // fetchCelebritiesSidebar merged into fetchCelebritiesAndSidebar to avoid duplicate request
+    fetchCelebritiesSidebar: async function () {
+        const container = document.getElementById('celebrities-sidebar-content');
+        if (!container) return;
+        try {
+            const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("Celebrities JSON not found");
+            const items = await response.json();
+            this.renderCelebritiesSidebar(items);
+        } catch (error) {
+            console.error("Error loading celebrities sidebar:", error);
+        }
+    },
 
     renderCelebritiesSidebar: function (items) {
         const container = document.getElementById('celebrities-sidebar-content');
@@ -653,7 +663,7 @@
 
         // Fetch and render notifications
         try {
-            const response = await fetch('json-files/alerts.json');
+            const response = await fetch('json-files/alerts.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Alerts JSON not found");
             const alerts = await response.json();
             this.renderNotifications(alerts, content);
@@ -727,7 +737,7 @@
 
         // Fetch Data
         try {
-            const response = await fetch('json-files/just_added.json');
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Just Added JSON not found");
             const items = await response.json();
 
