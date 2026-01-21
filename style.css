@@ -2730,13 +2730,15 @@ a:hover {
 .celeb-avatar {
     width: 70px;
     height: 70px;
+    min-width: 70px;
+    /* Force minimum width */
+    min-height: 70px;
+    /* Force minimum height */
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
     box-shadow: 0 0 0 2px #d62976;
-    /* Instagram-like solid ring fallback or gradient if possible */
     margin: 2px;
-    /* Space for ring */
     flex-shrink: 0;
     aspect-ratio: 1 / 1;
 }
@@ -2752,7 +2754,7 @@ a:hover {
 }
 
 .celeb-nickname {
-    font-weight: 600;
+    font-weight: normal;
     font-size: 0.9rem;
     color: var(--text-color);
 }
