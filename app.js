@@ -315,7 +315,7 @@
                         </div>
 
                         <!-- Content Area - Removing inline padding overrides to use CSS class defaults (10px padding) -->
-                        <div class="cat-product-info">
+                        <div class="celeb-info">
                             <div class="celeb-nickname-sidebar" style="text-align: center;">@${c.nickname}</div>
                             <div class="celeb-fullname-sidebar" style="text-align: center; margin-bottom: 0;">${fullname}</div>
                             
