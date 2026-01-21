@@ -252,7 +252,7 @@
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
                                 <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
-                                <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
+                                <button class="btn btn-light btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                     </svg>
@@ -431,7 +431,7 @@
             if (p.hasAlert) {
                 // Active Alert: Filled Bell, Price is Link, Icon X
                 priceAlertBtn = `
-                <button class="action-btn-common alert-active-btn">
+                <button class="btn btn-light btn-alert-active" style="width: 100%;">
                     <div style="display: flex; align-items: center; gap: 4px; width: 100%; justify-content: center;">
                         <svg viewBox="0 0 24 24" width="16" height="16" style="color: #336ae9;"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
                         <span style="font-weight:normal; color: #336ae9; cursor: pointer;">${p.alert_price}</span>
@@ -440,7 +440,7 @@
             } else {
                 // Set Alert: Outline Bell, Border color icon, Text pink
                 priceAlertBtn = `
-                <button class="action-btn-common alert-set-btn">
+                <button class="btn btn-light btn-alert-set" style="width: 100%;">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
@@ -483,7 +483,7 @@
                     <div style="width: 100%; margin-top: auto;">
                         ${priceAlertBtn}
 
-                        <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
+                        <a href="${p.link}" target="_blank" class="btn btn-sm btn-success">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                             Buy now
                         </a>
@@ -518,7 +518,7 @@
                         </ul>
                     </div>
 
-                    <a href="${p.link}" target="_blank" class="action-btn-common shop-link-btn" style="margin-top: auto;">
+                    <a href="${p.link}" target="_blank" class="btn btn-light" style="margin-top: auto; width: 100%;">
                         <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
                         ${p.shop_name}
                     </a>
@@ -791,7 +791,7 @@
                         </div>
                     </div>
                     <div class="ja-actions">
-                        <button class="ja-btn ja-btn-add">
+                        <button class="btn btn-sm btn-light" style="color: var(--pink-highlight);">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                             </svg>
