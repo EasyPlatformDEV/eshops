@@ -306,18 +306,18 @@
             // Reusing sidebar content classes but adapted for the card context
             const html = `
                 <li class="splide__slide">
-                    <div class="cat-product-card" style="padding-bottom: 10px;">
+                    <div class="cat-product-card" style="padding-bottom: 8px;">
                         
                         <!-- Avatar Area (Mimicking Image Wrap) -->
-                        <div class="celeb-avatar-sidebar-wrapper" style="margin: 20px auto 10px auto; width: 80px; height: 80px;">
+                        <div class="celeb-avatar-sidebar-wrapper" style="margin: 8px auto 8px auto; width: 80px; height: 80px;">
                             <img src="${c.avatar}" alt="${c.nickname}" class="celeb-avatar-sidebar" style="width: 100%; height: 100%;">
                             ${c.isVerified ? '<div class="celeb-verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
                         </div>
 
                         <!-- Content Area -->
-                        <div class="cat-product-info" style="justify-content: flex-start; gap: 5px;">
+                        <div class="cat-product-info" style="justify-content: flex-start; gap: 8px;">
                             <div class="celeb-nickname-sidebar" style="text-align: center;">@${c.nickname}</div>
-                            <div class="celeb-fullname-sidebar" style="text-align: center; margin-bottom: 10px;">${fullname}</div>
+                            <div class="celeb-fullname-sidebar" style="text-align: center; margin-bottom: 0;">${fullname}</div>
                             
                             <button class="celeb-btn-follow" style="width: 100%; margin-top: auto;">
                                 <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
