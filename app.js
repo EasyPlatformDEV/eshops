@@ -300,28 +300,49 @@
         list.innerHTML = '';
 
         items.forEach(c => {
+            const fullname = c.nickname.replace(/_/g, ' ').replace(/\./g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+            // Using .cat-product-card structure for dimensions
+            // Reusing sidebar content classes but adapted for the card context
             const html = `
                 <li class="splide__slide">
-                    <div class="celebrity-card">
-                        <div class="celebrity-avatar-wrapper">
-                            <img src="${c.avatar}" alt="${c.nickname}" class="celebrity-avatar">
-                            ${c.isVerified ? '<div class="verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
+                    <div class="cat-product-card" style="padding-bottom: 10px;">
+                        
+                        <!-- Avatar Area (Mimicking Image Wrap) -->
+                        <div class="celeb-avatar-sidebar-wrapper" style="margin: 20px auto 10px auto; width: 80px; height: 80px;">
+                            <img src="${c.avatar}" alt="${c.nickname}" class="celeb-avatar-sidebar" style="width: 100%; height: 100%;">
+                            ${c.isVerified ? '<div class="celeb-verified-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>' : ''}
                         </div>
-                        <div class="celebrity-nickname">${c.nickname}</div>
+
+                        <!-- Content Area -->
+                        <div class="cat-product-info" style="justify-content: flex-start; gap: 5px;">
+                            <div class="celeb-nickname-sidebar" style="text-align: center;">@${c.nickname}</div>
+                            <div class="celeb-fullname-sidebar" style="text-align: center; margin-bottom: 10px;">${fullname}</div>
+                            
+                            <button class="celeb-btn-follow" style="width: 100%; margin-top: auto;">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-follow-heart">
+                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                Follow
+                            </button>
+                            <a href="#" class="celeb-btn-view" style="width: 100%; text-align: center;">Products (${Math.floor(Math.random() * (20 - 3 + 1)) + 3})</a>
+                        </div>
                     </div>
                 </li>
             `;
             list.insertAdjacentHTML('beforeend', html);
         });
 
+        // Initialize with same config as Category Products (3 items)
         new Splide('#splide-celebrities', {
-            type: 'loop', // Infinite loop
-            perPage: 5,
-            gap: '1rem',
-            arrows: true, // Kept enabled per request
+            type: 'loop',
+            perPage: 3,
+            gap: '10px',
+            arrows: true,
             pagination: false,
             breakpoints: {
-                600: { perPage: 4 },
+                600: { perPage: 2 },
+                400: { perPage: 2 }
             }
         }).mount();
     },
