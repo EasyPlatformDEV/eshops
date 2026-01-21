@@ -2733,7 +2733,9 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    /* Prevent squashing */
 }
 
 .celeb-info {
@@ -2762,9 +2764,11 @@ a:hover {
 }
 
 /* Reusing sidebar button styles or defining new ones if needed */
-.celeb-btn-follow, .celeb-btn-view {
+.celeb-btn-follow,
+.celeb-btn-view {
     width: calc(100% - 20px);
-    margin: 0 10px 8px 10px; /* spacing inside card */
+    margin: 0 10px 8px 10px;
+    /* spacing inside card */
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -2782,6 +2786,7 @@ a:hover {
     background-color: #fdf2f7;
     color: var(--pink-highlight);
 }
+
 .celeb-btn-follow:hover {
     background-color: #f8e1ea;
 }
@@ -2791,6 +2796,7 @@ a:hover {
     color: var(--text-color);
     text-align: center;
 }
+
 .celeb-btn-view:hover {
     background-color: #e9ecef;
 }
