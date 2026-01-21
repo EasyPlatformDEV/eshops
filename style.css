@@ -1470,8 +1470,13 @@ a:hover {
     gap: 5px;
 }
 
-.ja-btn-add svg {
-    transition: fill 0.2s;
+.ja-btn-add .icon-alert-bell {
+    transition: fill 0.2s ease;
+    fill: transparent;
+}
+
+.ja-btn-add:hover .icon-alert-bell {
+    fill: currentColor;
 }
 
 .ja-btn-add:hover {
