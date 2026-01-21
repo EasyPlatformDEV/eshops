@@ -472,7 +472,7 @@
                         ${priceAlertBtn}
 
                         <a href="${p.link}" target="_blank" class="action-btn-common buy-now-btn">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-buy-cart"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                             Buy now
                         </a>
                     </div>
@@ -786,8 +786,8 @@
                             Save product
                         </button>
                         <a href="${item.link}" target="_blank" class="ja-btn ja-btn-buy">
-                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-buy-cart">
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-buy-cart">
+                                <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
                             </svg>
                             Buy now
                         </a>
