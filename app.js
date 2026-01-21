@@ -117,13 +117,14 @@
         });
 
         new Splide('#splide-shops', {
-            type: 'loop', // Infinite loop
-            perPage: 4,
+            type: 'loop',
+            autoWidth: true,
             gap: '1rem',
+            padding: { right: '2rem' },
             pagination: false,
             arrows: true,
             breakpoints: {
-                600: { perPage: 2 },
+                600: { padding: { right: '1rem' } },
             }
         }).mount();
     },
@@ -278,13 +279,14 @@
 
             this.productCarousel = new Splide('#splide-category-products', {
                 type: 'loop',
-                perPage: 3,
+                autoWidth: true,
                 gap: '10px',
+                padding: { right: '2rem' },
                 pagination: false,
                 arrows: true,
                 breakpoints: {
-                    600: { perPage: 2 },
-                    400: { perPage: 2 }
+                    600: { padding: { right: '1rem' } },
+                    400: { padding: { right: '1rem' } }
                 }
             });
             this.productCarousel.mount();
@@ -326,14 +328,15 @@
         });
 
         new Splide('#splide-celebrities', {
-            type: 'loop', // Infinite loop
-            perPage: 3,
+            type: 'loop',
+            autoWidth: true,
             gap: '10px',
-            arrows: true, // Kept enabled per request
+            padding: { right: '2rem' },
+            arrows: true,
             pagination: false,
             breakpoints: {
-                600: { perPage: 2 },
-                400: { perPage: 2 }
+                600: { padding: { right: '1rem' } },
+                400: { padding: { right: '1rem' } }
             }
         }).mount();
     },

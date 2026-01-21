@@ -52,8 +52,8 @@ body {
 /* Content */
 .app-content {
     padding: 15px;
-    max-width: 600px;
-    /* РћРіСЂР°РЅРёС‡Р°РІР°РјРµ С€РёСЂРёРЅР°С‚Р° Р·Р° РґРµСЃРєС‚РѕРї, Р·Р° РґР° РёР·РіР»РµР¶РґР° РєР°С‚Рѕ РјРѕР±РёР»РЅРѕ */
+    max-width: 695px;
+    /* Increased to match myproducts: 695 + 15 + 360 = 1070px total */
     margin: 0 auto;
 }
 
