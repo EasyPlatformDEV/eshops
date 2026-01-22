@@ -122,8 +122,12 @@
             gap: '1rem',
             pagination: false,
             arrows: true,
+            padding: { left: 0, right: '10%' }, // Peek effect
             breakpoints: {
-                600: { perPage: 2 },
+                600: {
+                    perPage: 2,
+                    padding: { left: 0, right: '15%' }
+                },
             }
         }).mount();
     },
@@ -282,9 +286,16 @@
                 gap: '10px',
                 pagination: false,
                 arrows: true,
+                padding: { left: 0, right: '10%' }, // Peek effect
                 breakpoints: {
-                    600: { perPage: 2 },
-                    400: { perPage: 2 }
+                    600: {
+                        perPage: 2,
+                        padding: { left: 0, right: '15%' }
+                    },
+                    400: {
+                        perPage: 1,
+                        padding: { left: 0, right: '20%' } // Larger peek on small screens
+                    }
                 }
             });
             this.productCarousel.mount();
@@ -331,9 +342,16 @@
             gap: '10px',
             arrows: true, // Kept enabled per request
             pagination: false,
+            padding: { left: 0, right: '10%' }, // Peek effect
             breakpoints: {
-                600: { perPage: 2 },
-                400: { perPage: 2 }
+                600: {
+                    perPage: 2,
+                    padding: { left: 0, right: '15%' }
+                },
+                400: {
+                    perPage: 1,
+                    padding: { left: 0, right: '20%' }
+                }
             }
         }).mount();
     },
