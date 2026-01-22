@@ -109,7 +109,9 @@
             const html = `
                 <li class="splide__slide">
                     <button class="category-filter-btn ${index === 0 ? 'active' : ''}" data-shop="${shop.shop}">
-                        <img src="${faviconUrl}" alt="" style="width: 16px; height: 16px; border-radius: 2px;">
+                        <span class="shop-favicon-circle">
+                            <img src="${faviconUrl}" alt="">
+                        </span>
                         ${shop.shop}
                     </button>
                 </li>
