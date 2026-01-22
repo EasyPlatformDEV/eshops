@@ -490,14 +490,41 @@ body {
 }
 
 .checkbox-group input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
     margin: 0;
     cursor: pointer;
-    accent-color: var(--pink-highlight);
-    /* Restore pink color */
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    /* Rounded corners (works depending on browser/OS, accents usually handle this differently but we'll try) */
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Rounded corners */
+    display: grid;
+    place-content: center;
+    transition: all 0.2s;
+}
+
+.checkbox-group input::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: 0.2s transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    /* Checkmark color */
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox-group input:checked {
+    background-color: var(--pink-highlight);
+    border-color: var(--pink-highlight);
+}
+
+.checkbox-group input:checked::before {
+    transform: scale(1);
+}
 }
 
 .checkbox-label {
