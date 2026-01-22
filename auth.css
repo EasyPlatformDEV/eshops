@@ -27,12 +27,93 @@ body {
 .auth-container {
     background-color: #ffffff;
     width: 100%;
-    max-width: 550px;
-    padding: 40px;
+    max-width: 1070px;
+    /* Expanded to 1070px */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    /* Subtle shadow like Vecteezy */
-    text-align: center;
+    display: flex;
+    /* Split Layout */
+    overflow: hidden;
+    /* For colored background */
+    padding: 0;
+    /* Remove padding from container, move to cols */
+}
+
+.auth-left {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-right {
+    flex: 1;
+    background-color: var(--pink-highlight);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: left;
+}
+
+.auth-right h2 {
+    font-size: 1.5rem;
+    /* Match auth-title size roughly */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.auth-right .subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.auth-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.auth-benefits li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    /* Space for icon */
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.auth-benefits li::before {
+    content: "✓";
+    /* Or SVG via background char */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+/* Mobile Responsive: Stack */
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+        max-width: 550px;
+        /* Revert to narrower on tablet/mobile */
+    }
+
+    .auth-right {
+        display: none;
+        /* Hide on mobile/tablet to keep it simple, or stacking: padding: 30px; */
+    }
+
+    .auth-left {
+        width: 100%;
+    }
 }
 
 .auth-header {
