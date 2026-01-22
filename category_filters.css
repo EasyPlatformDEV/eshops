@@ -216,3 +216,30 @@
 .cat-product-price {
     display: none;
 }
+
+/* Shop Favicon Circle Wrapper */
+.shop-favicon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    /* Fixed size */
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    /* Circle */
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.shop-favicon-circle img {
+    width: 14px !important;
+    /* Force small icon size */
+    height: 14px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 !important;
+    transform: none !important;
+    border-radius: 0 !important;
+}
