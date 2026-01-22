@@ -1879,24 +1879,30 @@ a:hover {
         /* Removed artificial padding to fix the huge gap on the right */
     }
 
-    .promo-subtitle {
-        grid-column: 1 / 3;
-        grid-row: 2;
-        font-size: 0.95rem;
-        color: #333;
-        text-align: left;
-        align-self: flex-start;
-    }
-
-    .promo-actions {
-        grid-column: 3;
+    .promo-bottom-row {
+        grid-column: 2 / 4;
         grid-row: 2;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-start;
+        /* Align left to match subtitle origin */
+        width: 100%;
+    }
+
+    .promo-subtitle {
+        font-size: 0.95rem;
+        color: #333;
+        text-align: left;
+        margin: 0;
+    }
+
+    .promo-actions {
+        display: flex;
+        flex-direction: row;
         align-items: center;
         width: auto;
-        justify-self: end;
     }
 
     .promo-actions .action-btn.pink-filled {
