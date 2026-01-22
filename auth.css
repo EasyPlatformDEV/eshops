@@ -69,6 +69,32 @@ body {
     /* Aligns content to top */
     color: white;
     text-align: left;
+    position: relative;
+    /* For absolute positioning of background */
+    overflow: hidden;
+    /* Clip the big icon */
+    z-index: 0;
+}
+
+/* Background Effect (Shopping Cart) */
+.auth-right::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    /* Shifted to right */
+    transform: translateY(-50%) rotate(-15deg);
+    width: 80%;
+    /* Adjusted size */
+    height: 80%;
+    background-image: url('assets/shopping_cart_bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.1;
+    /* Subtle watermark effect */
+    pointer-events: none;
+    z-index: -1;
 }
 
 .auth-right h2 {
