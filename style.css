@@ -181,51 +181,57 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    gap: 8px;
+    /* Add gap for spacing */
 }
 
-/* Custom Checkbox */
+/* Custom Checkbox matching Auth Page */
 .checkbox-container input {
-    position: absolute;
-    opacity: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    margin: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: relative;
-    height: 18px;
     width: 18px;
-    background-color: #eee;
-    margin-right: 8px;
+    height: 18px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    transition: background-color 0.2s;
+    /* Rounded corners */
+    display: grid;
+    place-content: center;
+    transition: all 0.2s;
+    position: relative;
+    /* Ensure it's visible and positioned */
+    opacity: 1;
+    /* Reset opacity from previous style */
 }
 
-.checkbox-container:hover input~.checkmark {
-    background-color: #ccc;
-}
-
-.checkbox-container input:checked~.checkmark {
-    background-color: var(--blue-highlight);
-}
-
-/* Checkmark indicator (hidden by default) */
-.checkmark:after {
+.checkbox-container input::before {
     content: "";
-    position: absolute;
-    display: none;
-    left: 6px;
-    top: 2px;
-    width: 3px;
-    height: 8px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: 0.2s transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    /* Checkmark color */
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
-.checkbox-container input:checked~.checkmark:after {
-    display: block;
+.checkbox-container input:checked {
+    background-color: var(--pink-highlight);
+    border-color: var(--pink-highlight);
+}
+
+.checkbox-container input:checked::before {
+    transform: scale(1);
+}
+
+/* Hide old checkmark span if present */
+.checkmark {
+    display: none;
 }
 
 .reset-filters-btn {
