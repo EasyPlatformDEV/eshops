@@ -354,8 +354,8 @@ body {
 }
 
 .auth-link.font-sm:hover {
-    text-decoration: underline;
-    color: #336ae9;
+    text-decoration: none;
+    color: var(--pink-highlight);
 }
 
 /* Legal Text Container */
@@ -372,8 +372,8 @@ body {
 }
 
 .legal-link:hover {
-    text-decoration: underline;
-    color: #336ae9;
+    text-decoration: none;
+    color: var(--pink-highlight);
 }
 
 .font-sm {
@@ -418,10 +418,10 @@ body {
 }
 
 .auth-link:hover {
-    text-decoration: underline;
-    /* Restore underline on hover */
-    color: #336ae9;
-    /* Keep blue color */
+    text-decoration: none;
+    /* Remove underline on hover */
+    color: var(--pink-highlight);
+    /* Pink on hover */
 }
 
 
