@@ -1945,13 +1945,16 @@ a:hover {
     /* Align Subtitle and Button on one line for Index */
     .page-index .promo-bottom-row {
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
+        /* Reduced gap */
         margin-top: 10px;
+        flex-wrap: wrap;
+        /* Allow wrapping to prevent cutoff */
     }
 
     .page-index .promo-subtitle {
         font-size: 1rem;
-        white-space: nowrap;
+        /* white-space: nowrap; REMOVED to prevent overflow */
     }
 
     .page-index .promo-title {
