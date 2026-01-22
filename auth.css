@@ -413,7 +413,10 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #920260;
+    background-color: #f8e1ea;
+    /* Light pink hover */
+    color: var(--pink-highlight);
+    /* Pink text */
 }
 
 .auth-footer {
@@ -439,10 +442,11 @@ body {
 
 /* Ensure back arrow hover works */
 .back-arrow:hover {
-    background-color: var(--pink-highlight) !important;
+    background-color: #f8e1ea !important;
+    /* Light pink hover */
+    color: var(--pink-highlight) !important;
+    /* Pink arrow on hover */
     opacity: 1;
-    color: white !important;
-    /* Force white text */
 }
 
 .checkbox-group {

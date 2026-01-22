@@ -125,4 +125,6 @@
     text-decoration: none;
     opacity: 1;
     /* Ensure no opacity change */
+    color: white;
+    /* Stronger specificity than generic a:hover */
 }
