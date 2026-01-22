@@ -1919,12 +1919,20 @@ a:hover {
         /* Reset padding to allow image to stand out more if needed */
     }
 
-    /* Bigger Image on Index */
+    /* Bigger Image on Index (Grid Span) */
+    .page-index .promo-image {
+        grid-row: 1 / span 3;
+        /* Span rows to cover title + subtitle */
+        height: 150px;
+        align-self: center;
+        margin-right: 15px;
+    }
+
     .page-index .promo-image img {
-        transform: scale(2.0);
-        /* Even bigger as 1.6 might be small */
-        margin-left: 10px;
-        transform-origin: center left;
+        transform: none;
+        height: 100%;
+        width: auto;
+        margin-left: 0;
     }
 
     /* Align Subtitle and Button on one line for Index */
