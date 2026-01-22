@@ -47,6 +47,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    text-align: center;
+    /* Center content horizontally */
     /* Aligns content to top */
 }
 
@@ -66,10 +68,9 @@ body {
 
 .auth-right h2 {
     font-size: 1.5rem;
-    /* Match auth-title size roughly */
     font-weight: 600;
     margin-top: 70px;
-    /* Aligns with left title (Nav 50px + bottom margin 20px) */
+    /* Aligns with Left Title (Nav 50px + Margin 20px) */
     margin-bottom: 20px;
 }
 
@@ -142,8 +143,8 @@ body {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
     position: relative;
-    height: 25px;
-    /* Reduced by half from 50px */
+    height: 50px;
+    /* Restored to 50px */
     justify-content: center;
     padding: 0;
     border-bottom: 1px solid #eee;
@@ -164,11 +165,9 @@ body {
     justify-content: center;
     /* Center icon */
     /* Center icon */
-    width: 24px;
-    /* Reduced from 32px */
+    width: 32px;
     /* Fixed width */
-    height: 24px;
-    /* Reduced from 32px */
+    height: 32px;
     /* Fixed height */
     background-color: #f0f0f0;
     /* Gray circle */
@@ -194,8 +193,8 @@ body {
 }
 
 .auth-logo-header {
-    max-height: 20px;
-    /* Reduced from 40px */
+    max-height: 40px;
+    /* Restored to 40px */
     /* Smaller logo for header style */
     width: auto;
 }
@@ -208,6 +207,8 @@ body {
     color: #000;
     /* Match logout title */
     margin: 0 0 25px 0;
+    text-align: center;
+    /* Explicitly center title */
 }
 
 .social-btns {
@@ -445,10 +446,10 @@ body {
     .back-arrow {
         color: #336ae9 !important;
         /* Ensure blue arrow */
-        width: 24px;
-        /* Reduced from 32px */
-        height: 24px;
-        /* Reduced from 32px */
+        width: 32px;
+        /* Restored size */
+        height: 32px;
+        /* Restored size */
         display: flex;
         align-items: center;
         justify-content: center;
