@@ -82,8 +82,8 @@ body {
     position: absolute;
     top: calc(50% + 50px);
     /* Moved down by 50px */
-    right: calc(-10% + 50px);
-    /* Moved left by 50px */
+    right: calc(-10% + 90px);
+    /* Moved left by 40px more (Total 90px) */
     transform: translateY(-50%) rotate(-15deg);
     width: 80%;
     /* Adjusted size */
