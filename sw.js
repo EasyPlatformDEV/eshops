@@ -1,7 +1,10 @@
-const CACHE_NAME = 'eshops-v59';
+const CACHE_NAME = 'eshops-v60';
 const ASSETS = [
     'myproducts.html',
     'style.css',
+    'auth.css',
+    'log_in.html',
+    'sign_up.html',
     'app.js',
     'json-files/manifest.json'
 ];

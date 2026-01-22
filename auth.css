@@ -236,8 +236,10 @@ body {
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+    cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
+    /* Unbolded */
     color: #333;
     text-decoration: none;
     transition: background-color 0.2s;
@@ -245,6 +247,8 @@ body {
 
 .social-btn:hover {
     background-color: #f5f5f5;
+    text-decoration: none;
+    /* No underline on hover */
 }
 
 .divider {
@@ -286,7 +290,8 @@ body {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
+    /* Unbolded from 500 */
     color: #333;
 }
 
@@ -435,6 +440,8 @@ body {
 .back-arrow:hover {
     background-color: var(--pink-highlight) !important;
     opacity: 1;
+    color: white !important;
+    /* Force white text */
 }
 
 .checkbox-group {
@@ -446,9 +453,8 @@ body {
 
 .checkbox-group input {
     margin: 0;
-    accent-color: var(--pink-highlight);
-    /* Pink checkbox */
     cursor: pointer;
+    /* Removed pink accent-color to revert to default */
 }
 
 .checkbox-label {
@@ -504,6 +510,8 @@ body {
         left: 0 !important;
         background-color: var(--pink-highlight) !important;
         /* Pink background */
+        opacity: 1;
+        /* Ensure no opacity change */
     }
 
     .auth-title {
