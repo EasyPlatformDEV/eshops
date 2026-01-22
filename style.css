@@ -1841,8 +1841,10 @@ a:hover {
     .promo-banner {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        column-gap: 20px;
-        row-gap: 20px;
+        column-gap: 15px;
+        /* Reduced from 20px */
+        row-gap: 10px;
+        /* Reduced from 20px */
         text-align: center;
         padding: 20px;
         /* Reduced from 24px */
@@ -1957,11 +1959,12 @@ a:hover {
 
     /* Align Subtitle and Button on one line for Index */
     /* Align Subtitle and Button on one line for Index */
+    /* Align Subtitle and Button on one line for Index */
     .page-index .promo-bottom-row {
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         /* Reduced gap further as requested */
-        margin-top: 5px;
+        margin-top: 2px;
         /* Reduced top margin */
         flex-wrap: wrap;
         align-items: center;
@@ -1976,6 +1979,8 @@ a:hover {
     .page-index .promo-subtitle {
         font-size: 1rem;
         /* white-space: nowrap; REMOVED to prevent overflow */
+        text-align: center;
+        /* Center text as requested */
     }
 
     .page-index .promo-title {
