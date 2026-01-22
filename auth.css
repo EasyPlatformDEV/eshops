@@ -107,8 +107,11 @@ body {
 @media (max-width: 900px) {
     .auth-container {
         flex-direction: column;
-        max-width: 550px;
-        /* Revert to narrower on tablet/mobile */
+        max-width: 100%;
+        /* Use full width provided by body/margins */
+        width: 92%;
+        /* 4% margin on sides */
+        margin: 0 auto;
     }
 
     .auth-right {
@@ -138,7 +141,8 @@ body {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
     position: relative;
-    height: 50px;
+    height: 25px;
+    /* Reduced by half from 50px */
     justify-content: center;
     padding: 0;
     border-bottom: 1px solid #eee;
@@ -158,9 +162,12 @@ body {
     align-items: center;
     justify-content: center;
     /* Center icon */
-    width: 32px;
+    /* Center icon */
+    width: 24px;
+    /* Reduced from 32px */
     /* Fixed width */
-    height: 32px;
+    height: 24px;
+    /* Reduced from 32px */
     /* Fixed height */
     background-color: #f0f0f0;
     /* Gray circle */
@@ -186,7 +193,8 @@ body {
 }
 
 .auth-logo-header {
-    max-height: 40px;
+    max-height: 20px;
+    /* Reduced from 40px */
     /* Smaller logo for header style */
     width: auto;
 }
@@ -412,8 +420,11 @@ body {
         /* Remove shadow */
         border-radius: 0;
         /* Remove rounded corners */
-        padding: 20px;
-        /* Adjust padding */
+        /* Remove shadow */
+        border-radius: 0;
+        /* Remove rounded corners */
+        padding: 0;
+        /* Remove container padding (handled by auth-left) */
         min-height: auto;
         /* Allow natural height */
         padding-bottom: 20px;
@@ -433,8 +444,10 @@ body {
     .back-arrow {
         color: #336ae9 !important;
         /* Ensure blue arrow */
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        /* Reduced from 32px */
+        height: 24px;
+        /* Reduced from 32px */
         display: flex;
         align-items: center;
         justify-content: center;
