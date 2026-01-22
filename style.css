@@ -1409,7 +1409,7 @@ a:hover {
 }
 
 .ja-time::before {
-    content: "вЂў";
+    content: "\2022";
     margin-right: 4px;
     color: #ccc;
 }
