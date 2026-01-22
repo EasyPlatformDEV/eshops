@@ -1912,6 +1912,37 @@ a:hover {
         min-width: 0;
         flex: none;
     }
+
+    /* Scoped Promo overrides for Index Page */
+    .page-index .promo-banner {
+        padding-left: 0;
+        /* Reset padding to allow image to stand out more if needed */
+    }
+
+    /* Bigger Image on Index */
+    .page-index .promo-image img {
+        transform: scale(2.0);
+        /* Even bigger as 1.6 might be small */
+        margin-left: 10px;
+        transform-origin: center left;
+    }
+
+    /* Align Subtitle and Button on one line for Index */
+    .page-index .promo-bottom-row {
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .page-index .promo-subtitle {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .page-index .promo-title {
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+    }
 }
 
 .action-btn.pink-filled {
