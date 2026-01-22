@@ -1800,6 +1800,19 @@ a:hover {
 .promo-subtitle {
     font-size: 0.95rem;
     color: #333;
+    text-align: center;
+    /* Center subtitle globally (mobile) as requested? Or just let flex handle it */
+    margin: 0;
+}
+
+/* Mobile: Ensure bottom row stacks with gap */
+.promo-bottom-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Restore gap on mobile */
+    align-items: center;
+    width: 100%;
 }
 
 /* Mobile defaults for promo banner components */
@@ -1943,13 +1956,21 @@ a:hover {
     }
 
     /* Align Subtitle and Button on one line for Index */
+    /* Align Subtitle and Button on one line for Index */
     .page-index .promo-bottom-row {
         justify-content: center;
-        gap: 15px;
-        /* Reduced gap */
-        margin-top: 10px;
+        gap: 10px;
+        /* Reduced gap further as requested */
+        margin-top: 5px;
+        /* Reduced top margin */
         flex-wrap: wrap;
-        /* Allow wrapping to prevent cutoff */
+        align-items: center;
+        /* Vertically center items */
+    }
+
+    .page-index .promo-title {
+        margin-bottom: 2px;
+        /* Tighter spacing to subtitle */
     }
 
     .page-index .promo-subtitle {
