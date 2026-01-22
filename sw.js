@@ -1,4 +1,4 @@
-const CACHE_NAME = 'eshops-v49';
+const CACHE_NAME = 'eshops-v50';
 const ASSETS = [
     'myproducts.html',
     'style.css',
