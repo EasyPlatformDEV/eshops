@@ -871,10 +871,15 @@
             const diffDays = Math.floor(diffHrs / 24);
 
             let timeAgo = '';
-            if (diffDays > 0) timeAgo = `${diffDays}d ago`;
-            else if (diffHrs > 0) timeAgo = `${diffHrs}h ago`;
-            else if (diffMins > 0) timeAgo = `${diffMins}m ago`;
-            else timeAgo = 'Just now';
+            if (diffDays > 0) {
+                timeAgo = diffDays + 'd ago';
+            } else if (diffHrs > 0) {
+                timeAgo = diffHrs + 'h ago';
+            } else if (diffMins > 0) {
+                timeAgo = diffMins + 'm ago';
+            } else {
+                timeAgo = 'Just now';
+            }
 
             const html = `
                 <div class="ja-item">
