@@ -1136,7 +1136,7 @@ a:hover {
     /* Increase size slightly */
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1100px) {
     .just-added-btn {
         display: none;
         /* Hidden on large screens where sidebar is fixed */
@@ -1144,7 +1144,7 @@ a:hover {
 }
 
 /* Main Layout Adjustment for Desktop Fixed Sidebar */
-@media (min-width: 1201px) {
+@media (min-width: 1100px) {
     body {
         padding-right: 0;
         /* REMOVED padding */
@@ -1165,8 +1165,10 @@ a:hover {
     }
 
     .app-content {
-        max-width: none;
-        /* Allow full width expansion */
+        max-width: 695px;
+        /* Explicitly set to 695px */
+        width: 100%;
+        /* Fill flex space up to max-width */
         min-width: 0;
         /* Allow shrinking below content size if needed */
         margin: 0;
@@ -1194,7 +1196,7 @@ a:hover {
     background-color: var(--bg-light);
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1100px) {
     .just-added-sidebar {
         position: sticky;
         top: 76px;
@@ -1237,7 +1239,7 @@ a:hover {
 
 
 /* Mobile: Modal Style (Overrides Desktop Fixed style) */
-@media (max-width: 1200px) {
+@media (max-width: 1099px) {
     .just-added-sidebar {
         position: fixed;
         top: 0;
@@ -1322,7 +1324,7 @@ a:hover {
     transform: rotate(90deg);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1099px) {
     .just-added-close {
         display: block;
     }
