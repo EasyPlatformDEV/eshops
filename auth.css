@@ -41,20 +41,24 @@ body {
 
 .auth-left {
     flex: 1;
-    padding: 40px;
+    padding: 50px 40px;
+    /* Top padding matches auth-right for alignment */
     background: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Aligns content to top */
 }
 
 .auth-right {
     flex: 1;
     background-color: var(--pink-highlight);
-    padding: 40px;
+    padding: 50px 40px;
+    /* Top padding matches auth-left */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Aligns content to top */
     color: white;
     text-align: left;
 }
