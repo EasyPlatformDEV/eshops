@@ -433,7 +433,8 @@ body {
 
 /* Ensure back arrow hover works */
 .back-arrow:hover {
-    background-color: #e0e0e0 !important;
+    background-color: var(--pink-highlight) !important;
+    opacity: 1;
 }
 
 .checkbox-group {
@@ -445,6 +446,9 @@ body {
 
 .checkbox-group input {
     margin: 0;
+    accent-color: var(--pink-highlight);
+    /* Pink checkbox */
+    cursor: pointer;
 }
 
 .checkbox-label {
@@ -490,16 +494,20 @@ body {
     }
 
     .back-arrow {
-        color: #336ae9 !important;
-        /* Ensure blue arrow */
+        color: white !important;
+        /* White arrow */
         width: 32px;
-        /* Restored size */
         height: 32px;
-        /* Restored size */
         display: flex;
         align-items: center;
         justify-content: center;
         left: 0 !important;
-        background-color: #f0f0f0 !important;
+        background-color: var(--pink-highlight) !important;
+        /* Pink background */
+    }
+
+    .auth-title {
+        font-size: 1.25rem;
+        /* Reduced from 1.5rem */
     }
 }
