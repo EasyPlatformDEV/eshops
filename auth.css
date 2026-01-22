@@ -337,18 +337,43 @@ body {
     margin-bottom: 20px;
 }
 
-/* Standardize small gray text (Remember me, Forgot password) */
-.checkbox-label,
-.auth-link.font-sm {
+/* Standardize small gray text (Remember me labels) */
+.checkbox-label {
     font-size: 12px;
     color: #777;
     font-weight: 400;
-    /* Ensure not bold */
 }
 
-/* Specific fix for link color in this context */
+/* Small links (Forgot password) - Blue, no underline */
 .auth-link.font-sm {
+    font-size: 12px;
+    color: #336ae9;
+    /* Blue */
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.auth-link.font-sm:hover {
+    text-decoration: underline;
+    color: #336ae9;
+}
+
+/* Legal Text Container */
+.legal-text {
+    font-size: 12px;
     color: #777;
+    margin-bottom: 20px;
+}
+
+/* Legal Links - Blue, no underline */
+.legal-link {
+    color: #336ae9;
+    text-decoration: none;
+}
+
+.legal-link:hover {
+    text-decoration: underline;
+    color: #336ae9;
 }
 
 .font-sm {
@@ -393,8 +418,8 @@ body {
 }
 
 .auth-link:hover {
-    text-decoration: none;
-    /* Remove underline on hover */
+    text-decoration: underline;
+    /* Restore underline on hover */
     color: #336ae9;
     /* Keep blue color */
 }
