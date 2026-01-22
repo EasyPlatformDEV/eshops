@@ -1841,17 +1841,13 @@ a:hover {
     .promo-banner {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        column-gap: 15px;
-        /* Reduced from 20px */
-        row-gap: 10px;
-        /* Reduced from 20px */
+        column-gap: 20px;
+        row-gap: 15px;
         text-align: center;
         padding: 20px;
-        /* Reduced from 24px */
         overflow: hidden;
         background-color: #f8f9fa;
         margin: 20px 0 30px 0;
-        /* Exactly 20px gap from header as requested */
         align-items: center;
         width: 100%;
         border-radius: 8px;
@@ -1863,11 +1859,9 @@ a:hover {
         display: block;
         width: auto;
         height: 100px;
-        /* Back to ~100px for better visibility */
         flex-shrink: 0;
         justify-self: start;
         margin-left: -15px;
-        /* Pulled more to the left */
         overflow: visible;
     }
 
@@ -1877,13 +1871,13 @@ a:hover {
         object-fit: contain;
         display: block;
         transform: scale(1.2);
-        /* Zoomed in as requested */
         transform-origin: center left;
     }
 
+    /* GLOBAL (MyProducts) Grid Placement: 4 Children */
     .promo-title {
-        grid-column: 2;
-        /* Changed from 2 / 4 to prevent overlapping right gaps */
+        grid-column: 2 / 4;
+        /* Spans top text area */
         grid-row: 1;
         text-align: center;
         font-size: 1.1rem;
@@ -1894,98 +1888,94 @@ a:hover {
         font-weight: 500;
     }
 
-    .promo-bottom-row {
-        grid-column: 2;
-        /* Changed from 2 / 4 */
-        grid-row: 2;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-        justify-content: flex-start;
-        width: 100%;
-    }
-
+    /* Standard subtitle placement for MyProducts (Col 2, Row 2) */
     .promo-subtitle {
+        grid-column: 2;
+        grid-row: 2;
         font-size: 0.95rem;
         color: #333;
         text-align: left;
         margin: 0;
+        align-self: center;
     }
 
+    /* Standard actions placement for MyProducts (Col 3, Row 2) */
     .promo-actions {
+        grid-column: 3;
+        grid-row: 2;
         display: flex;
         flex-direction: row;
         align-items: center;
         width: auto;
+        justify-self: end;
     }
 
-    .promo-actions .action-btn.pink-filled {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        width: auto !important;
-        min-width: 0;
-        flex: none;
+    /* Wrapper for Index Page (doesn't exist in MyProducts, so global style is safe) */
+    .promo-bottom-row {
+        display: none;
+        /* Hide globally mainly to be safe, but index overrides it */
     }
 
-    /* Scoped Promo overrides for Index Page */
+    /* --- INDEX PAGE OVERRIDES --- */
+
+    /* 1. Scoped container gaps */
     .page-index .promo-banner {
         padding-left: 0;
-        /* Reset padding to allow image to stand out more if needed */
+        column-gap: 15px;
+        row-gap: 10px;
     }
 
-    /* Bigger Image on Index (Grid Span) */
-    /* Bigger Image on Index (Grid Span) */
+    /* 2. Image: Spans full left column, fixed width */
     .page-index .promo-image {
         grid-row: 1 / span 3;
-        /* Span rows to cover title + subtitle */
+        /* Spans 2 rows really, but 3 covers it */
         height: 150px;
         width: 200px;
-        /* Fixed width 200px */
+        /* Fixed 200px */
         display: flex;
         justify-content: center;
         align-items: center;
         align-self: center;
         margin-right: 15px;
+        margin-left: 0;
+        transform: none;
     }
 
     .page-index .promo-image img {
         transform: scale(1.4);
-        /* Zoom in to reduce whitespace */
         height: 100%;
         width: auto;
         margin-left: 0;
     }
 
-    /* Align Subtitle and Button on one line for Index */
-    /* Align Subtitle and Button on one line for Index */
-    /* Align Subtitle and Button on one line for Index */
-    /* Align Subtitle and Button on one line for Index */
+    /* 3. Title: Same grid position (2/4) but different margin */
+    .page-index .promo-title {
+        grid-column: 2 / 4;
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+    }
+
+    /* 4. Bottom Row Wrapper (Exists only in Index) */
     .page-index .promo-bottom-row {
+        display: flex;
+        grid-column: 2 / 4;
+        grid-row: 2;
+        flex-direction: row;
         justify-content: center;
         gap: 20px;
-        /* Specific gap requested by user */
+        /* Specific verified gap */
         margin-top: 2px;
         flex-wrap: wrap;
         align-items: center;
-        /* Vertically center items */
+        width: 100%;
     }
 
-    .page-index .promo-title {
-        margin-bottom: 2px;
-        /* Tighter spacing to subtitle */
-    }
-
+    /* 5. Subtitle inside wrapper */
     .page-index .promo-subtitle {
-        font-size: 1rem;
-        /* white-space: nowrap; REMOVED to prevent overflow */
         text-align: center;
-        /* Center text as requested */
-    }
-
-    .page-index .promo-title {
-        font-size: 1.25rem;
-        margin-bottom: 5px;
+        grid-column: auto;
+        /* Reset grid properties */
+        grid-row: auto;
     }
 }
 
