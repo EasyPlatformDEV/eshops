@@ -1156,36 +1156,60 @@ a:hover {
         /* Prevent wrapping */
         align-items: flex-start;
         /* Align top */
-        max-width: 1070px !important;
+        /* Width Calculation (Default for MyProducts):
+           Left Sidebar: 210px
+           Gap: 15px
+           Content: 470px
+           Gap: 15px
+           Right Sidebar: 360px
+           Total: 1070px
+        */
+        max-width: 1070px;
+        width: 100%;
+        box-sizing: border-box;
         margin: 0 auto;
-        padding-top: 0;
-        /* Removed 10px offset pushed everything down */
-        gap: 15px;
         justify-content: center;
+        gap: 15px;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
+    /* Base Content Column (470px) */
     .app-content {
-        max-width: 695px !important;
-        /* Explicitly set to 695px */
-        width: 100% !important;
-        /* Fill flex space up to max-width */
-        min-width: 0;
-        /* Allow shrinking below content size if needed */
+        flex: 0 0 470px;
+        width: 470px;
+        max-width: 470px;
+        min-width: 470px;
         margin: 0;
-        flex: 1;
-        padding-top: 0;
-        /* Neutralized to allow exact 20px gap from promo-banner margin */
+        padding: 0;
     }
 
     .app-header .header-container {
-        /* Matches main layout width */
-        max-width: 1070px !important;
+        max-width: 1070px;
         margin: 0 auto;
         width: 100%;
         height: 56px;
-        /* Fixed height as requested */
         padding: 0 10px;
-        /* Match typical padding */
+    }
+
+    /* Scoped Override for Index Page (2 Columns) */
+    /* 
+       Total: 1070px
+       Left Sidebar: HIDDEN
+       Content: 695px
+       Gap: 15px
+       Right Sidebar: 360px
+    */
+    .page-index .celebrities-sidebar {
+        display: none !important;
+    }
+
+    .page-index .app-content {
+        flex: 0 0 695px !important;
+        width: 695px !important;
+        max-width: 695px !important;
+        min-width: 695px !important;
     }
 }
 
