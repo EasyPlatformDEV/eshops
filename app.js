@@ -103,35 +103,128 @@
         if (!list) return;
         list.innerHTML = '';
 
-        items.forEach(shop => {
+        items.forEach((shop, index) => {
             const faviconUrl = `https://www.google.com/s2/favicons?domain=${shop.shop}&sz=32`;
+            // Use category-filter-btn class for consistent styling
             const html = `
-                <li class="splide__slide shop-slide">
-                    <div class="shop-card">
-                        <img src="${faviconUrl}" alt="${shop.shop}">
-                        <span class="shop-name">${shop.shop}</span>
-                    </div>
+                <li class="splide__slide">
+                    <button class="category-filter-btn ${index === 0 ? 'active' : ''}" data-shop="${shop.shop}">
+                        <img src="${faviconUrl}" alt="" style="width: 16px; height: 16px; border-radius: 2px;">
+                        ${shop.shop}
+                    </button>
                 </li>
             `;
             list.insertAdjacentHTML('beforeend', html);
         });
 
+        // Initialize Filter Carousel (Same generic settings as Categories)
         new Splide('#splide-shops', {
-            type: 'loop', // Infinite loop
-            fixedWidth: '150px', // Fixed width as requested
-            gap: '1rem',
-            drag: 'free',
-            snap: true, // Snap to closest? User said "stops where user reached". usually drag:free is enough, but snap:true makes it snap to closest slide AFTER free scroll momentum stops. User said "NOT trying to insert exact number of cards, want it to stand where it reached". This implies NO snapping to grid. So snap: false.
-            // Actually Splide default for drag:free is no snap.
+            type: 'loop',
+            autoWidth: true,
             pagination: false,
-            arrows: true,
-            breakpoints: {
-                600: {
-                    // No specific perPage needed with fixedWidth
-                    gap: '10px'
-                },
-            }
+            arrows: false,
+            focus: 0,
+            trimSpace: false,
+            gap: '10px',
         }).mount();
+
+        // Bind Click Events
+        const buttons = list.querySelectorAll('.category-filter-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Toggle Active State within this list
+                list.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Load Products
+                const shopName = btn.getAttribute('data-shop');
+                this.loadShopProducts(shopName);
+            });
+        });
+
+        // Load initial products (first shop)
+        if (items.length > 0) {
+            this.loadShopProducts(items[0].shop);
+        }
+    },
+
+    loadShopProducts: async function (shopName) {
+        const list = document.getElementById('shop-products-list');
+        if (!list) return;
+
+        try {
+            // Using just_added.json for broader product sample, or products.json if preferred. 
+            // User request implies dynamic loading similar to categories.
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            const allProducts = await response.json();
+
+            // 1. Filter matches (Normalize matching)
+            // Shop names in json might be "About You", "FashionDays" etc.
+            let matches = allProducts.filter(p => {
+                // Simple inclusion check or exact match
+                return p.shop_name && p.shop_name.toLowerCase().includes(shopName.toLowerCase());
+            });
+
+            // 2. Fill if < 10
+            let displayProducts = [...matches];
+            if (displayProducts.length < 10) {
+                const others = allProducts.filter(p => !p.shop_name || !p.shop_name.toLowerCase().includes(shopName.toLowerCase()));
+                const shuffled = others.sort(() => 0.5 - Math.random());
+                const needed = 10 - displayProducts.length;
+                displayProducts = displayProducts.concat(shuffled.slice(0, needed));
+            } else {
+                displayProducts = displayProducts.slice(0, 10);
+            }
+
+            // 3. Render
+            list.innerHTML = '';
+            displayProducts.forEach(p => {
+                // Reuse card structure similar to categories
+                const html = `
+                    <li class="splide__slide">
+                        <div class="cat-product-card">
+                            <a href="${p.link}" class="cat-product-image-link">
+                                <div class="cat-product-image-wrap">
+                                    <img src="${p.image}" alt="${p.title}">
+                                </div>
+                            </a>
+                            <div class="cat-product-info">
+                                <h4 class="cat-product-title">${p.title}</h4>
+                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
+                                <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                    Save product
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                `;
+                list.insertAdjacentHTML('beforeend', html);
+            });
+
+            // 4. Init/Refresh Carousel
+            if (this.shopProductCarousel) {
+                this.shopProductCarousel.destroy();
+            }
+
+            this.shopProductCarousel = new Splide('#splide-shop-products', {
+                type: 'loop',
+                fixedWidth: '150px',
+                gap: '10px',
+                drag: 'free',
+                pagination: false,
+                arrows: true,
+                breakpoints: {
+                    600: { gap: '10px' }
+                }
+            });
+            this.shopProductCarousel.mount();
+
+        } catch (error) {
+            console.error("Error loading shop products", error);
+        }
     },
 
     // SVG Map for Categories
