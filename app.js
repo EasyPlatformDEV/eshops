@@ -118,15 +118,14 @@
 
         new Splide('#splide-shops', {
             type: 'loop', // Infinite loop
-            perPage: 4,
+            fixedWidth: '150px', // Fixed width as requested
             gap: '1rem',
             pagination: false,
             arrows: true,
-            padding: { left: 0, right: '10%' }, // Peek effect
             breakpoints: {
                 600: {
-                    perPage: 2,
-                    padding: { left: 0, right: '15%' }
+                    // No specific perPage needed with fixedWidth
+                    gap: '10px'
                 },
             }
         }).mount();
@@ -270,10 +269,10 @@
             });
 
             // 4. Init/Refresh Carousel
-            // Splide needs to be re-initialized or updated if element exists. 
+            // Splide needs to be re-initialized or updated if element exists.
             // Simpler to destroy old one if we tracked it, but here we might just init.
-            // CAUTION: Initializing on same element twice causes issues. 
-            // Better to check if existing instance on this ID? 
+            // CAUTION: Initializing on same element twice causes issues.
+            // Better to check if existing instance on this ID?
             // In simple implementation, we can target the ID.
 
             if (this.productCarousel) {
@@ -282,20 +281,13 @@
 
             this.productCarousel = new Splide('#splide-category-products', {
                 type: 'loop',
-                perPage: 3,
+                fixedWidth: '150px', // Fixed width as requested
                 gap: '10px',
                 pagination: false,
                 arrows: true,
-                padding: { left: 0, right: '10%' }, // Peek effect
                 breakpoints: {
-                    600: {
-                        perPage: 2,
-                        padding: { left: 0, right: '15%' }
-                    },
-                    400: {
-                        perPage: 1,
-                        padding: { left: 0, right: '20%' } // Larger peek on small screens
-                    }
+                    600: { gap: '10px' },
+                    400: { gap: '10px' }
                 }
             });
             this.productCarousel.mount();
@@ -338,20 +330,13 @@
 
         new Splide('#splide-celebrities', {
             type: 'loop', // Infinite loop
-            perPage: 3,
+            fixedWidth: '150px', // Fixed width as requested
             gap: '10px',
             arrows: true, // Kept enabled per request
             pagination: false,
-            padding: { left: 0, right: '10%' }, // Peek effect
             breakpoints: {
-                600: {
-                    perPage: 2,
-                    padding: { left: 0, right: '15%' }
-                },
-                400: {
-                    perPage: 1,
-                    padding: { left: 0, right: '20%' }
-                }
+                600: { gap: '10px' },
+                400: { gap: '10px' }
             }
         }).mount();
     },
