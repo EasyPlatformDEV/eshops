@@ -182,8 +182,9 @@ body {
 }
 
 .back-arrow:hover {
-    background-color: #920260;
-    /* Darker pink on hover */
+    background-color: var(--pink-highlight);
+    /* No change on hover */
+    opacity: 1;
 }
 
 
@@ -336,8 +337,18 @@ body {
     margin-bottom: 20px;
 }
 
-.form-actions-row .checkbox-group {
-    margin-bottom: 0;
+/* Standardize small gray text (Remember me, Forgot password) */
+.checkbox-label,
+.auth-link.font-sm {
+    font-size: 12px;
+    color: #777;
+    font-weight: 400;
+    /* Ensure not bold */
+}
+
+/* Specific fix for link color in this context */
+.auth-link.font-sm {
+    color: #777;
 }
 
 .font-sm {
@@ -382,7 +393,10 @@ body {
 }
 
 .auth-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    /* Remove underline on hover */
+    color: #336ae9;
+    /* Keep blue color */
 }
 
 
@@ -404,8 +418,8 @@ body {
 }
 
 .checkbox-label {
-    font-size: 14px;
-    color: #333;
+    font-size: 12px;
+    color: #777;
 }
 
 /* Mobile Responsive Styles */
