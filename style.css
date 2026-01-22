@@ -1945,7 +1945,8 @@ a:hover {
     }
 
     .page-index .promo-image img {
-        transform: scale(1.4);
+        transform: scale(1.7);
+        /* Increased zoom to 1.7 as requested */
         height: 100%;
         width: auto;
         margin-left: 0;
