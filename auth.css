@@ -11,9 +11,9 @@ body {
     align-items: flex-start;
     /* Align to top to keep consistent start position */
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 15px;
     /* Fixed top spacing */
-    padding-bottom: 60px;
+    padding-bottom: 15px;
     box-sizing: border-box;
 }
 
