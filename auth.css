@@ -158,7 +158,8 @@ body {
     transform: translateY(-50%);
     /* Centered vertically */
     /* Centered vertically */
-    color: #336ae9;
+    color: white;
+    /* White icon */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -169,7 +170,8 @@ body {
     /* Fixed width */
     height: 32px;
     /* Fixed height */
-    background-color: #f0f0f0;
+    background-color: var(--pink-highlight);
+    /* Pink background */
     /* Gray circle */
     border-radius: 50%;
     /* Circle shape */
@@ -180,8 +182,8 @@ body {
 }
 
 .back-arrow:hover {
-    background-color: #e0e0e0;
-    /* Darker on hover */
+    background-color: #920260;
+    /* Darker pink on hover */
 }
 
 
@@ -351,8 +353,8 @@ body {
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #336ae9;
-    /* Primary Blue from main site */
+    background-color: var(--pink-highlight);
+    /* Pink background */
     color: white;
     border: none;
     border-radius: 4px;
@@ -364,7 +366,7 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #2554c7;
+    background-color: #920260;
 }
 
 .auth-footer {
