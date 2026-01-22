@@ -41,8 +41,8 @@ body {
 
 .auth-left {
     flex: 1;
-    padding: 50px 40px;
-    /* Top padding matches auth-right for alignment */
+    padding: 25px 40px 50px 40px;
+    /* Reduced top padding to 25px */
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,8 @@ body {
 .auth-right {
     flex: 1;
     background-color: var(--pink-highlight);
-    padding: 50px 40px;
+    padding: 25px 40px 50px 40px;
+    /* Reduced top padding to 25px */
     /* Top padding matches auth-left */
     display: flex;
     flex-direction: column;
