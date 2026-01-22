@@ -80,9 +80,10 @@ body {
 .auth-right::before {
     content: '';
     position: absolute;
-    top: 50%;
-    right: -10%;
-    /* Shifted to right */
+    top: calc(50% + 50px);
+    /* Moved down by 50px */
+    right: calc(-10% + 50px);
+    /* Moved left by 50px */
     transform: translateY(-50%) rotate(-15deg);
     width: 80%;
     /* Adjusted size */
