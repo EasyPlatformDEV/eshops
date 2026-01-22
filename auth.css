@@ -67,7 +67,8 @@ body {
     font-size: 1.5rem;
     /* Match auth-title size roughly */
     font-weight: 600;
-    margin-top: 0;
+    margin-top: 70px;
+    /* Aligns with left title (Nav 50px + bottom margin 20px) */
     margin-bottom: 20px;
 }
 
@@ -111,12 +112,14 @@ body {
     }
 
     .auth-right {
-        display: none;
-        /* Hide on mobile/tablet to keep it simple, or stacking: padding: 30px; */
+        display: none !important;
+        /* Force hide on mobile/tablet */
     }
 
     .auth-left {
         width: 100%;
+        padding: 30px 20px;
+        /* Reduced padding for mobile */
     }
 }
 
