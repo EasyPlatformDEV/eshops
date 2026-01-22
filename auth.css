@@ -344,6 +344,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Ensure vertical center alignment */
     margin-bottom: 20px;
 }
 
@@ -454,7 +455,12 @@ body {
 .checkbox-group input {
     margin: 0;
     cursor: pointer;
-    /* Removed pink accent-color to revert to default */
+    accent-color: var(--pink-highlight);
+    /* Restore pink color */
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    /* Rounded corners (works depending on browser/OS, accents usually handle this differently but we'll try) */
 }
 
 .checkbox-label {
