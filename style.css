@@ -2400,16 +2400,11 @@ a:hover {
 }
 
 .btn-sign-up:hover {
-    background: #a91b93;
-    border-color: #a91b93;
-    opacity: 1;
+    background-color: #f8e1ea !important;
+    border-color: #f8e1ea !important;
+    color: var(--pink-highlight) !important;
     text-decoration: none !important;
-    /* Remove underline */
-    /* box-shadow: 0 2px 5px rgba(00, 0, 0, 0.2); Removed per user request */
-
-    /* Add shadow */
-    color: white !important;
-    /* Ensure text stays white */
+    opacity: 1;
 }
 
 /* Logout Overlay */

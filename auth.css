@@ -413,10 +413,10 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #f8e1ea;
-    /* Light pink hover */
-    color: var(--pink-highlight);
-    /* Pink text */
+    background-color: #f8e1ea !important;
+    /* Force light pink hover */
+    color: var(--pink-highlight) !important;
+    /* Force pink text */
 }
 
 .auth-footer {
@@ -453,7 +453,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    /* Remove margin to fix alignment in flex row */
 }
 
 .checkbox-group input {
