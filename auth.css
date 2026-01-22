@@ -38,6 +38,10 @@ body {
     /* For colored background */
     padding: 0;
     /* Remove padding from container, move to cols */
+    min-height: calc(100vh - 30px);
+    /* Fill screen minus 15px top + 15px bottom padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Ensure shadow is visible */
 }
 
 .auth-left {
