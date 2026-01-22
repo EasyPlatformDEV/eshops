@@ -362,6 +362,9 @@ body {
     /* Blue */
     font-weight: 400;
     text-decoration: none;
+    display: inline-flex;
+    /* Ensure flex for alignment */
+    align-items: center;
 }
 
 .auth-link.font-sm:hover {
@@ -417,6 +420,8 @@ body {
     /* Force light pink hover */
     color: var(--pink-highlight) !important;
     /* Force pink text */
+    font-weight: 600 !important;
+    /* Maintain bold weight */
 }
 
 .auth-footer {

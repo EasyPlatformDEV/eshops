@@ -2405,6 +2405,8 @@ a:hover {
     color: var(--pink-highlight) !important;
     text-decoration: none !important;
     opacity: 1;
+    font-weight: 500 !important;
+    /* Prevent bold effect */
 }
 
 /* Logout Overlay */
