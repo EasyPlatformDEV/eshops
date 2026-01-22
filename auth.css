@@ -8,9 +8,12 @@ body {
     /* Remove default padding */
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* Center vertically */
+    align-items: flex-start;
+    /* Align to top to keep consistent start position */
     min-height: 100vh;
+    padding-top: 60px;
+    /* Fixed top spacing */
+    padding-bottom: 60px;
     box-sizing: border-box;
 }
 
