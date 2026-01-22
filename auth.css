@@ -5,15 +5,13 @@ body {
     /* Matching main site font */
     margin: 0;
     padding: 0;
+    /* Remove default padding */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    /* Center vertically */
     min-height: 100vh;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    /* Add top spacing */
     box-sizing: border-box;
-    /* Include padding in height */
 }
 
 /* Mobile Responsive adjustment for body padding */
