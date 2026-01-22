@@ -1156,7 +1156,7 @@ a:hover {
         /* Prevent wrapping */
         align-items: flex-start;
         /* Align top */
-        max-width: 1070px;
+        max-width: 1070px !important;
         margin: 0 auto;
         padding-top: 0;
         /* Removed 10px offset pushed everything down */
@@ -1165,9 +1165,9 @@ a:hover {
     }
 
     .app-content {
-        max-width: 695px;
+        max-width: 695px !important;
         /* Explicitly set to 695px */
-        width: 100%;
+        width: 100% !important;
         /* Fill flex space up to max-width */
         min-width: 0;
         /* Allow shrinking below content size if needed */
@@ -1179,7 +1179,7 @@ a:hover {
 
     .app-header .header-container {
         /* Matches main layout width */
-        max-width: 1070px;
+        max-width: 1070px !important;
         margin: 0 auto;
         width: 100%;
         height: 56px;
