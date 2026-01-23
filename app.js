@@ -525,7 +525,12 @@
 
     renderProducts: function (products) {
         const container = document.getElementById('product-list');
+        if (!container) return; // Guard clause
         container.innerHTML = '';
+
+        // Detect Search Page
+        const isSearchPage = window.location.pathname.includes('search.html') ||
+            (document.querySelector('.app-content') && !document.querySelector('.myproducts-main'));
 
         products.forEach(p => {
             let domain = "";
@@ -547,15 +552,27 @@
                     </div>
                 </button>`;
             } else {
-                // Set Alert: Outline Bell, Border color icon, Text pink
-                priceAlertBtn = `
-                <button class="action-btn-common alert-set-btn">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                    </svg>
-                    <span style="color: #336ae9;">Set price alert</span>
-                </button>`;
+                // Not active alert
+                if (isSearchPage) {
+                    // Search layout: Pink Save Product button (like Just Added sidebar)
+                    priceAlertBtn = `
+                    <button class="ja-btn ja-btn-add" style="width: 100%; justify-content: center; padding: 8px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Save product
+                    </button>`;
+                } else {
+                    // Default layout (My Products): Blue Set Price Alert
+                    priceAlertBtn = `
+                    <button class="action-btn-common alert-set-btn">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="transparent" stroke="currentColor" stroke-width="2" style="color: #336ae9;" class="icon-alert-bell">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span style="color: #336ae9;">Set price alert</span>
+                    </button>`;
+                }
             }
 
             const card = `
