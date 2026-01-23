@@ -80,6 +80,7 @@
             const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
+            this.celebritiesList = items; // Store for reuse
             this.renderCelebrities(items);
         } catch (error) {
             console.error("Error loading celebrities:", error);
@@ -620,6 +621,26 @@
                             </li>
                         </ul>
                     </div>
+
+                    ${(() => {
+                    // Check for Technopolis
+                    if (p.shop_name.toLowerCase().includes('technopolis') && this.celebritiesList) {
+                        // Get 3 random celebs
+                        const shuffled = [...this.celebritiesList].sort(() => 0.5 - Math.random());
+                        const selected = shuffled.slice(0, 3);
+
+                        let avatarsHtml = '<div class="product-celeb-avatars-container">';
+                        selected.forEach(c => {
+                            avatarsHtml += `
+                                    <div class="product-celeb-avatar-wrapper">
+                                        <img src="${c.avatar}" alt="${c.nickname}" class="product-celeb-avatar">
+                                    </div>`;
+                        });
+                        avatarsHtml += '</div>';
+                        return avatarsHtml;
+                    }
+                    return '';
+                })()}
 
                     <a href="${p.link}" target="_blank" class="action-btn-common shop-link-btn" style="margin-top: auto;">
                         <img src="https://www.google.com/s2/favicons?sz=64&domain=${domain}" class="shop-icon" onerror="this.src='https://via.placeholder.com/20?text=S'">
