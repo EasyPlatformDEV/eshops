@@ -529,7 +529,7 @@
         container.innerHTML = '';
 
         // Detect Search Page
-        const isSearchPage = window.location.pathname.includes('search.html') ||
+        const isSearchPage = window.location.pathname.includes('browse.html') ||
             (document.querySelector('.app-content') && !document.querySelector('.myproducts-main'));
 
         products.forEach((p, index) => {
