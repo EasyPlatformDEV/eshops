@@ -545,11 +545,9 @@
             // Show on Search Page (First Item) OR My Products (All Items)
             if ((isSearchPage && index === 0) || !isSearchPage) {
                 statusIcon = `
-                 <div class="status-icon-badge" style="position: absolute; top: 5px; left: 5px; width: 32px; height: 32px; background: #b60378; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; color: white;">
-                    <svg viewBox="0 0 24 24" width="20" height="20" class="icon-favorite">
-                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="currentColor" />
-                    </svg>
-                 </div>`;
+                 <svg viewBox="0 0 24 24" width="24" height="24" class="icon-favorite" style="position: absolute; top: 0; left: 0; z-index: 10; color: #b60378;">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="currentColor" />
+                 </svg>`;
             }
 
             // Price Alert Button Logic
