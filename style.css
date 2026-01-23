@@ -1751,6 +1751,17 @@ a:hover {
     }
 }
 
+/* Search Page Spacing Overrides */
+.search-page-main .promo-banner {
+    margin-bottom: 15px !important;
+    /* Override default 20px */
+}
+
+.search-page-main .filter-row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* =========================================
    LANDING PAGE STYLES (INDEX.HTML)
    ================================********* */
