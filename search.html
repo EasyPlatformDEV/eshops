@@ -171,9 +171,7 @@
                 </div>
             </section>
 
-            <section class="search-section">
-                <input type="text" class="search-input" placeholder="Search your products by title or URL">
-            </section>
+            <!-- Search Section Removed -->
 
             <section class="filters-section">
                 <div class="filter-row">
@@ -182,14 +180,12 @@
                         <input type="text" id="eshops-filter" value="eBag.bg, ozone.bg, remedium.bg, +3" readonly>
                     </div>
                 </div>
-                <div class="filter-row alerts-row">
-                    <label class="checkbox-container">
-                        <input type="checkbox" checked>
-                        <span class="checkmark"></span>
-                        Products with price alerts
-                    </label>
-                    <button class="reset-filters-btn">Reset Filters</button>
+                <div class="filter-row" style="margin-top: 10px;">
+                    <div class="eshops-input-container">
+                        <input type="text" id="celebs-filter" value="Galena, Azis, +14" readonly>
+                    </div>
                 </div>
+
                 <div class="stats-row">
                     <span>Products: <strong id="total-products">27</strong></span>
                     <span>Value: <strong id="total-value">279.76 €</strong></span>
@@ -338,7 +334,17 @@
                 </span>
                 Discover
             </a>
-            <a href="#" class="menu-item active">
+            <a href="search.html" class="menu-item active">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Search
+            </a>
+            <a href="myproducts.html" class="menu-item">
                 <span class="menu-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
                         <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
