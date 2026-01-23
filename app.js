@@ -1,9 +1,13 @@
 ﻿const app = {
-    init: function () {
+    init: async function () {
+        // Fetch celebrities first to populate this.celebritiesList for product cards
+        await Promise.all([
+            this.fetchCelebrities(),
+            this.fetchCelebritiesSidebar()
+        ]);
+
         this.fetchProducts();
         this.fetchShops();
-        this.fetchCelebrities();
-        this.fetchCelebritiesSidebar();
         this.fetchShopCategories();
         this.fetchFaqs(); // Load FAQs
         this.initCelebritiesMobileEvents(); // star watch mobile overlay
@@ -482,6 +486,7 @@
             const response = await fetch('json-files/celebrities.json?v=' + new Date().getTime());
             if (!response.ok) throw new Error("Celebrities JSON not found");
             const items = await response.json();
+            this.celebritiesList = items; // Store for reuse in product cards
             this.renderCelebritiesSidebar(items);
         } catch (error) {
             console.error("Error loading celebrities sidebar:", error);
