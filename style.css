@@ -3086,3 +3086,7 @@ a:hover {
     /* White border inside gradient */
     display: block;
 }
+.nav-item:hover { text-decoration: none !important; color: inherit !important; }
+.nav-item:hover .nav-label { text-decoration: none !important; color: inherit !important; }
+
+.product-celeb-avatars-container { margin-top: 16px !important; margin-bottom: 8px !important; margin-left: 0; }
