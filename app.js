@@ -546,8 +546,8 @@
             if ((isSearchPage && index === 0) || !isSearchPage) {
                 statusIcon = `
                  <div class="status-icon-badge" style="position: absolute; top: 5px; left: 5px; width: 32px; height: 32px; background: #b60378; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; color: white;">
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                    <svg viewBox="0 0 24 24" width="20" height="20" class="icon-favorite">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="currentColor" />
                     </svg>
                  </div>`;
             }
