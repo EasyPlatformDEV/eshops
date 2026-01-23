@@ -359,6 +359,8 @@ body {
     margin-bottom: 10px;
     position: relative;
     overflow: visible;
+    width: 100%;
+    /* Ensure container spans full width of column so icons go to corners */
 }
 
 .product-img {
