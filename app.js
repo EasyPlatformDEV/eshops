@@ -556,7 +556,7 @@
                 if (isSearchPage) {
                     // Search layout: Pink Save Product button (like Just Added sidebar)
                     priceAlertBtn = `
-                    <button class="ja-btn ja-btn-add" style="width: 100%; justify-content: center; padding: 8px;">
+                    <button class="ja-btn ja-btn-add" style="width: 100%; justify-content: center; padding: 8px; margin-bottom: 8px;">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="transparent" stroke="currentColor" stroke-width="2" class="icon-alert-bell">
                             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                         </svg>
