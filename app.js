@@ -532,12 +532,24 @@
         const isSearchPage = window.location.pathname.includes('search.html') ||
             (document.querySelector('.app-content') && !document.querySelector('.myproducts-main'));
 
-        products.forEach(p => {
+        products.forEach((p, index) => {
             let domain = "";
             try {
                 domain = new URL(p.link).hostname;
             } catch (e) {
                 domain = p.link.replace('https://', '').replace('http://', '').split('/')[0];
+            }
+
+            // Status Icon Logic (Filled Plus at Top Left)
+            let statusIcon = '';
+            // Show on Search Page (First Item) OR My Products (All Items)
+            if ((isSearchPage && index === 0) || !isSearchPage) {
+                statusIcon = `
+                 <div class="status-icon-badge" style="position: absolute; top: 5px; left: 5px; width: 32px; height: 32px; background: #b60378; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; color: white;">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                    </svg>
+                 </div>`;
             }
 
             // Price Alert Button Logic
@@ -581,6 +593,7 @@
                 <!-- Left Column -->
                 <div class="product-left-col">
                     <div class="product-image-container" style="position: relative;">
+                        ${statusIcon}
                         ${(() => {
                     if (p.old_price) {
                         try {

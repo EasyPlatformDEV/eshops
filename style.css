@@ -381,10 +381,9 @@ body {
 .discount-badge {
     position: absolute;
     top: 5px;
-    left: -55px;
-    /* Moved further left to avoid overlap */
-    right: auto;
-    /* Adjust based on image container handling */
+    right: 5px;
+    /* Mirrored */
+    left: auto;
     background-color: var(--pink-highlight);
     color: #fff;
     font-size: 1rem;
@@ -641,8 +640,8 @@ a:hover {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: auto;
-        left: -15px;
+        right: 5px;
+        left: auto;
         /* Move to left to avoid overlap with right col */
         top: -5px;
         margin-left: -5px;
