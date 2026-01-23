@@ -1762,6 +1762,15 @@ a:hover {
     margin-bottom: 15px;
 }
 
+/* My Products Page Spacing */
+.myproducts-main .promo-banner {
+    margin-bottom: 15px !important;
+    /* Override 20px default */
+}
+
+/* Ensure search section gap is 15px (it is 15px by default but good to be explicit if needed, 
+   though checking style.css line 130 confirms .search-section has margin-bottom: 15px) */
+
 /* =========================================
    LANDING PAGE STYLES (INDEX.HTML)
    ================================********* */
