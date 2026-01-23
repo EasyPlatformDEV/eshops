@@ -3086,7 +3086,37 @@ a:hover {
     /* White border inside gradient */
     display: block;
 }
-.nav-item:hover { text-decoration: none !important; color: inherit !important; }
-.nav-item:hover .nav-label { text-decoration: none !important; color: inherit !important; }
 
-.product-celeb-avatars-container { margin-top: 16px !important; margin-bottom: 8px !important; margin-left: 0; }
+.nav-item:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.nav-item:hover .nav-label {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Pink Hover Effect for Header Icons (like Logout button) */
+.nav-item:hover .nav-icon-sq {
+    background-color: #f8e1ea;
+    /* Light pink background */
+    color: var(--pink-highlight);
+    /* Pink icon color */
+    transform: scale(1.05);
+    /* Slight scale up */
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    /* Ensure rounded corners */
+}
+
+/* Product Card Celebrity Avatars - Corrected Spacing */
+.product-celeb-avatars-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    /* 16px above */
+    margin-bottom: 8px;
+    /* 8px below */
+    margin-left: 0;
+}
