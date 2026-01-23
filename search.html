@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShops SPA PWA</title>
+    <link rel="stylesheet" href="style.css?v=2056">
+    <link rel="manifest" href="json-files/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="celebrities-sidebar.css?v=24">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/logo_m.png">
+                        <img src="assets/logo.png" alt="eShops Logo" class="logo-img">
+                    </picture>
+                </a>
+                <nav class="header-nav">
+
+                    <a href="index.html" class="nav-item">
+                        <div class="nav-icon-sq">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Discover</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon-sq">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Add products</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon-sq">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Share with friends</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="just-added-btn" id="just-added-btn" aria-label="Just Added">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+                <div class="notification-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                            fill="currentColor" />
+                    </svg>
+                    <span class="badge">19</span>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-wrapper">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100&auto=format&fit=crop"
+                            alt="User Profile" class="profile-img">
+                        <div class="profile-arrow-badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profile-dropdown">
+                        <a href="#">Edit profile</a>
+                        <a href="index.html#logout" class="menu-link-logout">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- New Celebrities Sidebar -->
+        <aside id="celebrities-sidebar" class="celebrities-sidebar">
+            <div class="celebrities-header">
+                <div class="header-title-row">
+                    <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
+                        <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.01 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            fill="currentColor" />
+                    </svg>
+                    <div>
+                        <h3>Star watch</h3>
+                        <p class="header-description">Follow celebrities</p>
+                    </div>
+                </div>
+                <button class="celebrities-close" id="celebrities-close">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+            <div class="celebrities-content" id="celebrities-sidebar-content">
+                <!-- JS will populate -->
+            </div>
+        </aside>
+        <div class="celebrities-overlay" id="celebrities-overlay"></div>
+
+        <main class="app-content">
+            <section class="actions-bar">
+                <a href="index.html" class="action-btn blue">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                            fill="currentColor" />
+                    </svg>
+                    Discover
+                </a>
+                <button class="action-btn blue">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                    </svg>
+                    Add products
+                </button>
+                <button class="action-btn blue">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path
+                            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.34 2.92 3 2.92s3-1.31 3-2.92c0-1.61-1.34-2.92-3-2.92z"
+                            fill="currentColor" />
+                    </svg>
+                    Share
+                </button>
+            </section>
+
+            <!-- Sync Promo Banner (No internal buttons) -->
+
+            <section class="promo-banner">
+                <div class="promo-image">
+                    <img src="assets/cta_1.svg" alt="Shopping Illustration">
+                </div>
+                <h2 class="promo-title">
+                    Stop overpaying! We’ll notify you the moment the price drops.
+                </h2>
+                <div class="promo-subtitle">
+                    Ready to save money? Drop a URL here and watch for price drops &rarr;
+                </div>
+                <div class="promo-actions">
+                    <button class="action-btn pink-filled hover-effect">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                        </svg>
+                        Add products
+                    </button>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <input type="text" class="search-input" placeholder="Search your products by title or URL">
+            </section>
+
+            <section class="filters-section">
+                <div class="filter-row">
+                    <!-- Removed label as requested -->
+                    <div class="eshops-input-container">
+                        <input type="text" id="eshops-filter" value="eBag.bg, ozone.bg, remedium.bg, +3" readonly>
+                    </div>
+                </div>
+                <div class="filter-row alerts-row">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        Products with price alerts
+                    </label>
+                    <button class="reset-filters-btn">Reset Filters</button>
+                </div>
+                <div class="stats-row">
+                    <span>Products: <strong id="total-products">27</strong></span>
+                    <span>Value: <strong id="total-value">279.76 €</strong></span>
+                </div>
+            </section>
+
+            <section class="sort-section">
+                <label for="sort-by">Sort by:</label>
+                <div class="sort-dropdown-wrapper">
+                    <span class="sort-selected" id="sort-selected">
+                        Price (low to high)
+                        <svg class="sort-arrow" id="sort-arrow" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <div class="sort-dropdown-menu" id="sort-dropdown-menu">
+                        <a href="#" data-value="price_asc">Price (low to high)</a>
+                        <a href="#" data-value="price_desc">Price (high to low)</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="product-list" class="product-list">
+            </section>
+        </main>
+
+        <!-- Just Added Sidebar (Fixed on Desktop, Modal on Mobile) -->
+        <aside id="just-added-sidebar" class="just-added-sidebar">
+            <div class="just-added-header">
+                <div class="header-title-row">
+                    <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
+                        <path
+                            d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
+                            fill="currentColor" />
+                    </svg>
+                    <div>
+                        <h3>Just added</h3>
+                        <p class="header-description">Real-time updates from the community</p>
+                    </div>
+                </div>
+                <button class="just-added-close" id="just-added-close">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+            <div class="just-added-content" id="just-added-content">
+                <!-- Content loaded via JS -->
+            </div>
+        </aside>
+        <div class="just-added-overlay" id="just-added-overlay"></div>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-icons">
+                <!-- Facebook -->
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg></a>
+                <!-- Instagram -->
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg></a>
+                <!-- TikTok -->
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg></a>
+                <!-- LinkedIn -->
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                        </path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg></a>
+            </div>
+            <div class="footer-made-with">
+                Made with <svg class="footer-heart" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg> in Bulgaria.
+            </div>
+            <div class="footer-links">
+                <a href="#">Terms & Service</a>
+                <span style="color: #666;">|</span>
+                <a href="#">Privacy policy</a>
+            </div>
+        </div>
+    </footer>
+    <div class="notifications-overlay" id="notifications-overlay"></div>
+    <div class="notifications-modal" id="notifications-modal">
+        <div class="notifications-header">
+            <div class="header-title-row">
+                <svg viewBox="0 0 24 24" width="32" height="32" class="icon-pink">
+                    <path
+                        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                        fill="currentColor" />
+                </svg>
+                <div>
+                    <h3>Notifications</h3>
+                    <p class="header-description">Also sent via email and push</p>
+                </div>
+            </div>
+            <button class="notifications-close" id="notifications-close">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+        <div class="notifications-content" id="notifications-content">
+            <!-- Notifications will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Navigation Menu Modal -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="menu-modal" id="menu-modal">
+        <div class="menu-header">
+            <h3>Menu</h3>
+            <button class="menu-close" id="menu-close" aria-label="Close Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+        <div class="menu-content">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Discover
+            </a>
+            <a href="#" class="menu-item active">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                My products
+            </a>
+            <a href="#" class="menu-item mobile-only-nav" id="menu-link-star-watch">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.01 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Star watch
+            </a>
+            <a href="#" class="menu-item" id="menu-link-just-added">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M19.07 4.93L17.66 6.34C18.78 7.46 19.5 9 19.5 10.74c0 3.25-2.63 5.88-5.88 5.88H13.5v2h.12c4.35 0 7.88-3.53 7.88-7.88 0-2.18-.88-4.16-2.43-5.81zM11 2L6.37 6.63H3C2.45 6.63 2 7.08 2 7.63v4.74c0 .55.45 1 1 1h3.37L11 18V2zm-2 12.82l-2.62-2.62H4.19v-4.4h2.19L9 5.18v9.64zM16.5 10.74c0-1.74-1.41-3.15-3.15-3.15v6.3c1.74 0 3.15-1.41 3.15-3.15z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Just Added
+            </a>
+            <a href="#" class="menu-item" id="menu-link-notifications">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Notifications
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Edit profile
+            </a>
+            <a href="#" class="menu-item menu-link-logout">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path
+                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                Log out
+            </a>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="logout-modal" id="logout-modal">
+        <div class="logout-content">
+            <button class="logout-close" id="logout-close">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
+            <div class="logout-icon">
+                <!-- Person and Door Icon -->
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M21 12H9" />
+                    <line x1="8" y1="12" x2="8" y2="12.01" stroke-width="3" /> <!-- Handle dot -->
+                </svg>
+            </div>
+            <h3 class="logout-title">Logout successful!</h3>
+            <p class="logout-text">Thank you for visiting! We hope to see you again soon, simply log back in.</p>
+            <a href="log_in.html" class="logout-btn-action" id="logout-login-btn">
+                Log in again
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                    <polyline points="10 17 15 12 10 7" />
+                    <line x1="15" y1="12" x2="3" y2="12" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="app.js?v=111"></script>
+</body>
+
+</html>
