@@ -3060,16 +3060,16 @@ a:hover {
     display: flex;
     gap: 8px;
     /* Space between avatars */
-    margin-bottom: 8px;
-    /* Space above shop button */
+    margin-bottom: 16px;
+    /* Increased spacing */
 }
 
 .product-celeb-avatar-wrapper {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    padding: 2px;
-    /* For border gap */
+    padding: 1px;
+    /* Thinner border (1px) */
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     /* Instagram-like gradient */
     display: flex;
