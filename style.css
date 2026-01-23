@@ -3120,3 +3120,10 @@ a:hover {
     /* 8px below */
     margin-left: 0;
 }
+
+/* Promo Box Button Hover */
+.action-btn.pink-filled:hover {
+    background-color: #f8e1ea !important;
+    /* Light pink */
+    color: var(--pink-highlight) !important;
+}
