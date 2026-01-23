@@ -389,8 +389,9 @@ body {
     /* Light pink background */
     color: var(--pink-highlight);
     /* Pink text */
-    font-size: 1rem;
-    font-weight: normal;
+    font-size: 0.85rem;
+    font-weight: bold;
+    /* Bold text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -400,8 +401,21 @@ body {
     border-radius: 50%;
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Fix vertical alignment */
-    line-height: 1;
+}
+
+.icon-favorite {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.icon-favorite:hover {
+    fill: transparent !important;
+    stroke: currentColor;
+    stroke-width: 2px;
+}
+
+/* Fix vertical alignment */
+line-height: 1;
 }
 
 .product-brand {
