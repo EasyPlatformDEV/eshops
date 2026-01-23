@@ -385,8 +385,10 @@ body {
     top: 0;
     right: 0;
     left: auto;
-    background-color: var(--pink-highlight);
-    color: #fff;
+    background-color: #f8e1ea;
+    /* Light pink background */
+    color: var(--pink-highlight);
+    /* Pink text */
     font-size: 1rem;
     font-weight: normal;
     display: flex;
