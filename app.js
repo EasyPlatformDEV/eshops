@@ -613,8 +613,8 @@
                     </div>
                     
                     <div class="product-price-block">
-                        <div class="product-price ${p.old_price ? 'discounted' : ''}">${p.price}</div>
-                        ${p.old_price ? `<div class="product-old-price">${p.old_price}</div>` : ''}
+                        <div class="product-price ${p.old_price ? 'discounted' : ''}">${this.formatPrice(p.price)}</div>
+                        ${p.old_price ? `<div class="product-old-price">${this.formatPrice(p.old_price)}</div>` : ''}
                     </div>
 
                     <div style="width: 100%; margin-top: auto;">
@@ -763,6 +763,20 @@
                 sortWrapper.classList.remove('active');
             });
         }
+    },
+
+    formatPrice: function (priceStr) {
+        if (!priceStr) return '';
+        // Extract number and currency
+        const match = priceStr.match(/([\d\.]+)\s*([^\d\s]+)?/);
+        if (!match) return priceStr;
+        const val = parseFloat(match[1]);
+        const symbol = match[2] || '€';
+        if (isNaN(val)) return priceStr;
+
+        // Format with thousand separator (comma) and decimal dot. ex: 2,348.50
+        const formatted = val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return `${formatted} ${symbol}`;
     },
 
     initMenu: function () {
