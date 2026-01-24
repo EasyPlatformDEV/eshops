@@ -3290,3 +3290,58 @@ a:hover {
         align-items: center;
     }
 }
+
+/* MOBILE PROMO FIX (CLEAN) */
+@media (max-width: 480px) {
+    .promo-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .promo-actions .action-btn {
+        width: auto;
+        padding: 8px 4px;
+        font-size: 0.8rem;
+        margin: 0;
+        justify-content: center;
+    }
+}
+
+/* Harmonize Fonts (Clean) */
+.promo-actions .action-btn,
+.promo-actions button.action-btn,
+.promo-actions a.action-btn {
+    font-weight: 400;
+}
+
+
+/* MOBILE PROMO FIX (CLEAN - RETRY) */
+@media (max-width: 480px) {
+    .promo-actions {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .promo-actions .action-btn {
+        width: auto !important;
+        padding: 8px 4px !important;
+        font-size: 0.8rem !important;
+        margin: 0 !important;
+        justify-content: center !important;
+    }
+}
+
+/* Harmonize Fonts & Appearance */
+.promo-actions .action-btn,
+.promo-actions button.action-btn,
+.promo-actions a.action-btn {
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
+    /* Ensure they use the same font */
+}
