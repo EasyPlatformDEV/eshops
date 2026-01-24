@@ -2133,6 +2133,17 @@ a:hover {
 }
 
 /* 5. Carousels Customization */
+/* Mobile Menu Separator */
+.menu-separator {
+    height: 1px;
+    background-color: #d1d5db;
+    /* Visible light grey */
+    margin: 8px 0;
+    width: 100%;
+    border: none;
+    display: block;
+}
+
 /* Shops */
 .shop-card {
     border: 1px solid #eee;
