@@ -88,7 +88,8 @@
                         </div>
                     </div>
                     <div class="profile-dropdown">
-                        <a href="#" class="trigger-add-products">Add products</a>
+                        <a href="#" class="trigger-add-products" onclick="app.openAddProductsOverlay(event)">Add
+                            products</a>
                         <a href="myproducts.html">My stuff</a>
                         <a href="#">Share products</a>
                         <a href="index.html#logout" class="menu-link-logout">Log out</a>
@@ -351,7 +352,7 @@
 
             <div class="menu-separator"></div>
 
-            <a href="#" class="menu-item trigger-add-products">
+            <a href="#" class="menu-item trigger-add-products" onclick="app.openAddProductsOverlay(event)">
                 <span class="menu-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
                         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />

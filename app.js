@@ -1116,6 +1116,37 @@ document.addEventListener('DOMContentLoaded', () => {
     app.initJustAdded();
 });
 
+// Direct Trigger Function (Assigned to app object for global access)
+app.openAddProductsOverlay = function (e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    const overlay = document.getElementById('add-products-overlay');
+
+    // Close other menus (Sidebar, Main Menu)
+    document.getElementById('menu-modal')?.classList.remove('active');
+    document.getElementById('menu-overlay')?.classList.remove('active');
+    document.getElementById('just-added-sidebar')?.classList.remove('active');
+    document.getElementById('just-added-overlay')?.classList.remove('active');
+
+    if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Trigger fetch data if needed (internal helper)
+        if (app._fetchOverlayData) {
+            app._fetchOverlayData();
+        } else {
+            // If helper not defined yet, define it or run logic here. 
+            // Ideally we separate init logic.
+            // For now, let's keep the fetch logic inside init or separate it.
+            // To be safe, I will rely on initAddProductsOverlay *Logic* being separate.
+        }
+    }
+};
+
 app.initAddProductsOverlay = function () {
     // Select all triggers with the specific class (Explicit Binding)
     const addProdsBtns = document.querySelectorAll('.trigger-add-products');
@@ -1132,8 +1163,8 @@ app.initAddProductsOverlay = function () {
     let shopsLoaded = false;
     let productsList = [];
 
-    // Helper: Fetch Data
-    const fetchData = async () => {
+    // Assign internal helper for the global open function to use
+    app._fetchOverlayData = async () => {
         if (shopsLoaded) return; // Avoid re-fetching
 
         try {
@@ -1261,16 +1292,7 @@ app.initAddProductsOverlay = function () {
         document.body.style.overflow = '';
     };
 
-    // Attach click listeners to specific triggers (Logout Pattern)
-    if (addProdsBtns.length > 0) {
-        addProdsBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault(); // STOP everything
-                e.stopPropagation();
-                openOverlay(e);
-            });
-        });
-    }
+    // Event Listeners removed in favor of direct onclick="app.openAddProductsOverlay(event)"
 
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
