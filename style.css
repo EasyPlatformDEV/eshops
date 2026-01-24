@@ -3342,11 +3342,11 @@ a:hover {
     /* Favorites Icon - High Specificity - ACCOUNTING FOR 10PX PARENT PADDING */
     body .product-card .product-image-container .product-card-favorite,
     body .product-card .product-image-container .icon-favorite {
-        position: absolute;
-        top: -8px;
-        /* 10px padding - 8px = 2px from edge */
-        left: -8px;
-        /* 10px padding - 8px = 2px from edge */
+        position: absolute !important;
+        top: -5px !important;
+        /* 10px padding - 5px = 5px from edge - FORCED */
+        left: -5px !important;
+        /* 10px padding - 5px = 5px from edge - FORCED */
         z-index: 10;
         background: transparent;
         padding: 0;
