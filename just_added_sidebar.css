@@ -1,0 +1,358 @@
+/* Just Added Sidebar */
+.just-added-sidebar {
+    /* Default / Mobile styles are overridden in media query below */
+    z-index: 900;
+    background-color: var(--bg-light);
+}
+
+@media (min-width: 1100px) {
+    .just-added-sidebar {
+        position: sticky;
+        top: 76px;
+        /* 56px header + 20px gap */
+        width: 360px;
+        /* Increased from 320px */
+        min-width: 360px;
+        flex-shrink: 0;
+        height: calc(100vh - 100px);
+        background-color: var(--bg-light);
+        border: none;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        padding-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .just-added-sidebar:hover .just-added-content {
+        overflow-y: auto;
+        /* Scroll ONLY content on hover */
+    }
+
+    .just-added-content {
+        scrollbar-gutter: stable;
+        /* Reserves space */
+        padding-left: 20px !important;
+        /* Reverted to 20px for card sizing */
+        padding-right: 10px;
+        /* Explicit right padding */
+        box-sizing: border-box;
+        /* Ensure padding shrinks content */
+    }
+
+    /* Custom scrollbar styling for just-added sidebar */
+    .just-added-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .just-added-content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .just-added-content::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+
+    .just-added-content::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
+
+    /* Smaller title on desktop */
+    .just-added-header h3 {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* Mobile: Modal Style (Overrides Desktop Fixed style) */
+@media (max-width: 1099px) {
+    .just-added-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        /* Hidden off-screen right */
+        bottom: auto;
+        height: 100%;
+        width: 400px;
+        /* Fixed width like notifications modal */
+        max-width: 90%;
+        /* Max width 90% */
+        border-left: none;
+        z-index: 2000;
+        /* Higher than notifications? */
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #fff;
+        display: flex;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ensure content scrolls on mobile too */
+    .just-added-sidebar .just-added-content {
+        overflow-y: auto;
+    }
+
+    .just-added-sidebar.active {
+        right: 0;
+    }
+}
+
+.just-added-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.just-added-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Header inside Sidebar */
+.just-added-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    /* Default transparent for Desktop */
+    flex-shrink: 0;
+    /* Ensure header doesn't shrink */
+    z-index: 10;
+}
+
+.just-added-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--pink-highlight);
+}
+
+.just-added-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    display: none;
+    /* Hidden on desktop by default */
+    padding: 0;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.just-added-close:hover {
+    color: var(--text-color);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 1099px) {
+    .just-added-close {
+        display: block;
+    }
+
+    .just-added-header {
+        background: #fff;
+        /* Restore white on mobile */
+        border-bottom: 1px solid var(--border-color);
+        /* Restore border on mobile */
+    }
+}
+
+/* Feed Content */
+.just-added-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: hidden;
+    /* Default hidden scroll */
+}
+
+/* Feed Item Card */
+.ja-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.ja-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.ja-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ja-username {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.ja-time {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-left: auto;
+    /* Push to right? Or next to username? Reddit puts it next to username. User: "{USERNAME) {TIME AGO}". */
+    margin-left: 4px;
+    /* Small gap */
+}
+
+.ja-time::before {
+    content: "\2022";
+    margin-right: 4px;
+    color: #ccc;
+}
+
+.ja-body {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ja-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    /* Restored border */
+    flex-shrink: 0;
+    padding: 2px;
+    /* Small padding inside border */
+}
+
+.ja-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ja-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    /* Reduced from 500 */
+    color: var(--text-color);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.ja-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    /* Reduced from 0.85rem */
+}
+
+.ja-price {
+    font-weight: 600;
+    /* Slightly reduced bold */
+    color: var(--text-color);
+}
+
+.ja-shop {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    /* Smaller shop text */
+}
+
+.ja-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ja-btn {
+    flex: 1;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.ja-btn-add {
+    background: #fdf2f7;
+    color: var(--pink-highlight);
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Shared alert bell hover effect */
+.action-btn-common .icon-alert-bell,
+.ja-btn-add .icon-alert-bell {
+    transition: fill 0.2s ease;
+    fill: transparent;
+}
+
+.action-btn-common:hover .icon-alert-bell,
+.ja-btn-add:hover .icon-alert-bell {
+    fill: currentColor;
+}
+
+/* Fix for Buy Now icon start state */
+.ja-btn-buy .icon-buy-cart {
+    fill: transparent;
+}
+
+.ja-btn-buy:hover .icon-buy-cart {
+    fill: currentColor;
+}
+
+.ja-btn-add:hover {
+    background: #f8e1ea;
+}
+
+.ja-btn-add:hover svg {
+    fill: currentColor;
+}
+
+/* Unify Buy Now Icon Styles */
+.buy-now-btn .icon-buy-cart,
+.ja-btn-buy .icon-buy-cart {
+    fill: transparent;
+    transition: fill 0.2s ease;
+}
+
+.buy-now-btn:hover .icon-buy-cart,
+.ja-btn-buy:hover .icon-buy-cart {
+    fill: currentColor;
+}
+
+.ja-btn-buy {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 12px;
+    height: 32px;
+}
+
+.ja-btn-buy:hover {
+    background: #c8e6c9;
+}
