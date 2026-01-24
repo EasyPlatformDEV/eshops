@@ -3272,24 +3272,6 @@ a:hover {
     }
 }
 
-/* MOBILE PROMO FIX (CLEAN) */
-@media (max-width: 480px) {
-    .promo-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        width: 100%;
-    }
-
-    .promo-actions .action-btn {
-        width: auto;
-        padding: 8px 4px;
-        font-size: 0.8rem;
-        margin: 0;
-        justify-content: center;
-    }
-}
-
 /* Harmonize Fonts & Appearance */
 .promo-actions .action-btn,
 .promo-actions button.action-btn,
