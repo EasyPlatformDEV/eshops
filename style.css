@@ -3206,8 +3206,12 @@ a:hover {
 /* Allow full width header on desktop for right alignment to edges */
 @media (min-width: 1201px) {
     .header-container {
-        max-width: 100% !important;
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: 600px !important;
+        /* Match app-content width */
+        margin: 0 auto;
+        /* Center it */
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
