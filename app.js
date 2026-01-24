@@ -1117,9 +1117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 app.initAddProductsOverlay = function () {
-    const addProdsBtns = Array.from(document.querySelectorAll('.action-btn.pink-filled, .menu-item, .profile-dropdown a')).filter(btn => {
-        return btn.textContent.includes('Add products');
-    });
+    // Select all triggers with the specific class
+    const addProdsBtns = document.querySelectorAll('.trigger-add-products');
 
     const overlay = document.getElementById('add-products-overlay');
     const closeBtn = document.getElementById('close-add-products');
