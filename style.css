@@ -3331,11 +3331,11 @@ a:hover {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: -12px;
-        /* -10px padding + -2px user requested */
+        right: -8px;
+        /* 10px padding - 8px = 2px from edge */
         left: auto;
-        top: -12px;
-        /* -10px padding + -2px user requested */
+        top: -8px;
+        /* 10px padding - 8px = 2px from edge */
         margin-left: 0;
     }
 
@@ -3343,10 +3343,10 @@ a:hover {
     body .product-card .product-image-container .product-card-favorite,
     body .product-card .product-image-container .icon-favorite {
         position: absolute;
-        top: -12px;
-        /* -10px padding + -2px user requested */
-        left: -12px;
-        /* -10px padding + -2px user requested */
+        top: -8px;
+        /* 10px padding - 8px = 2px from edge */
+        left: -8px;
+        /* 10px padding - 8px = 2px from edge */
         z-index: 10;
         background: transparent;
         padding: 0;
