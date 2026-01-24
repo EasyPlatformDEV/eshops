@@ -714,25 +714,19 @@ a:hover {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: 8px;
+        right: 5px;
         left: auto;
-        /* Move to left to avoid overlap with right col */
-        top: -8px;
-        margin-left: -5px;
-        /* Slight offset if needed */
+        top: -3px;
+        margin-left: 0;
     }
 
     .product-card-favorite {
         position: absolute;
-        top: -8px;
-        left: -8px;
+        top: -3px;
+        left: 0;
         z-index: 10;
-        background: white;
-        /* Optional: in case it needs bg */
-        border-radius: 50%;
-        /* Optional */
-        padding: 2px;
-        /* Optional space */
+        background: transparent;
+        padding: 0;
     }
 }
 
