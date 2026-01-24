@@ -143,34 +143,37 @@ body {
     margin-top: 15px;
     display: flex;
     gap: 8px;
-    flex-wrap: nowrap;
     width: 100%;
     box-sizing: border-box;
     align-items: center;
 }
 
-/* Specificity override for font-weight */
-.promo-actions .action-btn {
-    font-weight: normal;
+/* Ensure consistent font weight for both element types */
+.promo-actions .action-btn,
+.promo-actions button.action-btn,
+.promo-actions a.action-btn {
+    font-weight: 500;
+    /* Match standard button weight */
 }
 
 @media (max-width: 480px) {
     .promo-actions {
-        gap: 6px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Force two equal columns */
+        gap: 8px;
     }
 
     .promo-actions .action-btn {
+        width: auto;
         padding: 8px 4px;
-        /* Reduced padding without !important */
-        font-size: 0.75rem;
-        /* Smaller text */
-        flex: 1;
-        /* Equal width */
+        font-size: 0.8rem;
         min-width: 0;
         justify-content: center;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin: 0;
     }
 
     .promo-actions .action-btn svg {
