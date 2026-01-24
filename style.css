@@ -157,26 +157,31 @@ body {
 }
 
 @media (max-width: 480px) {
+
+    /* Ultra-specific selectors for promo-banner buttons */
+    section.promo-banner .promo-actions,
+    .promo-banner .promo-bottom-row .promo-actions,
     .promo-actions {
         display: flex !important;
         flex-direction: column !important;
-        /* Stack buttons vertically on mobile */
         gap: 10px !important;
         align-items: center !important;
-        /* Center buttons */
+        width: 100% !important;
     }
 
-    .promo-actions .action-btn {
+    section.promo-banner .promo-actions .action-btn,
+    .promo-banner .promo-bottom-row .promo-actions .action-btn,
+    .promo-actions .action-btn,
+    .promo-actions button.action-btn,
+    .promo-actions a.action-btn {
         width: 100% !important;
         max-width: 280px !important;
-        /* Center with max-width */
         padding: 12px 16px !important;
-        /* Height increased from ~36px to 44px */
         font-size: 0.9rem !important;
         gap: 6px !important;
-        /* Reduced from standard 5px to bring icon closer */
         justify-content: center !important;
         margin: 0 !important;
+        flex: none !important;
     }
 
     .promo-actions .action-btn svg {
