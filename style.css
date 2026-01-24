@@ -158,30 +158,30 @@ body {
 
 @media (max-width: 480px) {
     .promo-actions {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
         /* Stack buttons vertically on mobile */
-        gap: 10px;
-        align-items: center;
+        gap: 10px !important;
+        align-items: center !important;
         /* Center buttons */
     }
 
     .promo-actions .action-btn {
-        width: 100%;
-        max-width: 280px;
+        width: 100% !important;
+        max-width: 280px !important;
         /* Center with max-width */
-        padding: 12px 16px;
+        padding: 12px 16px !important;
         /* Height increased from ~36px to 44px */
-        font-size: 0.9rem;
-        gap: 6px;
+        font-size: 0.9rem !important;
+        gap: 6px !important;
         /* Reduced from standard 5px to bring icon closer */
-        justify-content: center;
-        margin: 0;
+        justify-content: center !important;
+        margin: 0 !important;
     }
 
     .promo-actions .action-btn svg {
-        width: 18px;
-        height: 16px;
+        width: 18px !important;
+        height: 16px !important;
         flex-shrink: 0;
         margin-right: 4px;
     }
