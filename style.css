@@ -3155,15 +3155,14 @@ a:hover {
     background-color: #f8e1ea;
     /* Light pink background */
     padding: 2px 8px;
-    border-radius: 8px;
+    border-radius: 4px;
+    /* Reduced from 8px */
     margin-left: 8px;
     align-self: center;
     position: relative;
     top: -2px;
     font-weight: 400 !important;
-    /* Normal, was 500 */
     text-transform: none !important;
-    /* No Caps */
     display: inline-block;
 }
 
@@ -3178,17 +3177,16 @@ a:hover {
         width: 20px !important;
         height: 20px !important;
         transform: none !important;
-        /* Reset any scaling */
     }
 
     /* Reduce Header Gap on Mobile */
     .header-right {
-        gap: 5px !important;
-        /* Tighter spacing */
+        gap: 15px !important;
+        /* Unified spacing 15px */
     }
 
     .header-right>*+* {
-        margin-left: 5px !important;
-        /* Fallback */
+        margin-left: 0 !important;
+        /* Rely on gap */
     }
 }
