@@ -1334,6 +1334,24 @@ a:hover {
         /* Ensure padding shrinks content */
     }
 
+    /* Custom scrollbar styling for just-added sidebar */
+    .just-added-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .just-added-content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .just-added-content::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+
+    .just-added-content::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
+
     /* Smaller title on desktop */
     .just-added-header h3 {
         font-size: 0.95rem;
