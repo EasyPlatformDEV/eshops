@@ -468,9 +468,11 @@ body {
     left: 10px;
     cursor: pointer;
     transition: all 0.2s ease;
+    z-index: 10;
+    /* Bring to front on desktop */
 }
 
-.icon-favorite:hover {
+.icon-favorite:hover path {
     fill: transparent !important;
     stroke: var(--pink-highlight) !important;
     stroke-width: 2px !important;
