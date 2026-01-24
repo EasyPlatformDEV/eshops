@@ -475,6 +475,11 @@
         };
 
         if (starWatchLink) starWatchLink.addEventListener('click', openSidebar);
+
+        // Header Button Listener (Mobile)
+        const headerStarWatchBtn = document.getElementById('mobile-header-star-watch-btn');
+        if (headerStarWatchBtn) headerStarWatchBtn.addEventListener('click', openSidebar);
+
         if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
         if (overlay) overlay.addEventListener('click', closeSidebar);
     },
@@ -767,14 +772,23 @@
 
     formatPrice: function (priceStr) {
         if (!priceStr) return '';
-        // Extract number and currency
-        const match = priceStr.match(/([\d\.]+)\s*([^\d\s]+)?/);
+        // Extract number and currency (flexible space)
+        const match = priceStr.match(/([\d\.,]+)\s*([^\d\s\.,]+)?/);
         if (!match) return priceStr;
-        const val = parseFloat(match[1]);
+
+        let valStr = match[1];
+        // If string has commas as decimal separator (e.g. 1.200,00), normalize? 
+        // But user JSON is "1099.00". So standard float parse is fine if we remove non-digit/non-dots.
+        // If JSON is "1,099.00", parseFloat("1,099.00") -> 1 (stops at comma).
+        // Let's assume input is standard "1099.00" or similar.
+        // Safety: remove commas before parsing if they are group separators? JSON usually doesn't have them.
+
+        const val = parseFloat(valStr.replace(/,/g, ''));
         const symbol = match[2] || '€';
+
         if (isNaN(val)) return priceStr;
 
-        // Format with thousand separator (comma) and decimal dot. ex: 2,348.50
+        // Format: 2,348.50
         const formatted = val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         return `${formatted} ${symbol}`;
     },
