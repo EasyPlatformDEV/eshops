@@ -1117,16 +1117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 app.initAddProductsOverlay = function () {
-    // Buttons that open the overlay
-    // 1. "Add products" in Header (Desktop: N/A maybe? Check HTML) - Wait, header has "Add products" in promo banner
-    // 2. Promo Banner button
-
-    // Select all buttons with "Add products" intent. 
-    // They don't have a unique class in the shared HTML, so let's target by text or a new class if I added one.
-    // I added .action-btn.pink-filled ... let's see. 
-    // Actually, in the HTML, the buttons don't have IDs. I should have added IDs or classes.
-    // But I can select them by text content for safety or class .pink-filled.
-
     const addProdsBtns = Array.from(document.querySelectorAll('.action-btn.pink-filled, .menu-item')).filter(btn => {
         return btn.textContent.includes('Add products');
     });
@@ -1134,8 +1124,102 @@ app.initAddProductsOverlay = function () {
     const overlay = document.getElementById('add-products-overlay');
     const closeBtn = document.getElementById('close-add-products');
     const saveBtn = document.getElementById('save-products-btn');
+    const shopSelect = overlay ? overlay.querySelector('.styled-select') : null;
+    const searchInput = document.getElementById('add-prod-search');
+    const resultsList = overlay ? overlay.querySelector('.results-list') : null;
 
     if (!overlay) return;
+
+    let shopsLoaded = false;
+    let productsList = [];
+
+    // Helper: Fetch Data
+    const fetchData = async () => {
+        if (shopsLoaded) return; // Avoid re-fetching
+
+        try {
+            // 1. Fetch Shops
+            const shopsResponse = await fetch('json-files/shops.json?v=' + new Date().getTime());
+            const shops = await shopsResponse.json();
+
+            if (shopSelect) {
+                shopSelect.innerHTML = '<option value="">Select eShop...</option>';
+                // Sort alphabetically
+                shops.sort((a, b) => a.shop.localeCompare(b.shop));
+                shops.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s.shop;
+                    opt.textContent = s.shop;
+                    shopSelect.appendChild(opt);
+                });
+            }
+
+            // 2. Fetch Products for Search
+            const prodsResponse = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            productsList = await prodsResponse.json();
+
+            shopsLoaded = true;
+
+            // Clear initial hardcoded results
+            if (resultsList) resultsList.innerHTML = '<div class="results-count">Start typing to search...</div>';
+            if (searchInput) searchInput.value = ''; // Clear "harry potter"
+
+        } catch (error) {
+            console.error("Error loading overlay data:", error);
+            if (resultsList) resultsList.innerHTML = '<div class="results-count" style="color:red;">Error loading data.</div>';
+        }
+    };
+
+    // Helper: Render Results
+    const renderResults = (results) => {
+        if (!resultsList) return;
+
+        if (results.length === 0) {
+            resultsList.innerHTML = '<div class="results-count">No results found.</div>';
+            return;
+        }
+
+        let html = `<div class="results-count">${results.length} results found:</div>`;
+
+        results.forEach(p => {
+            html += `
+                <div class="add-product-item">
+                    <div class="item-checkbox">
+                        <input type="checkbox">
+                    </div>
+                    <img src="${p.image}" class="item-thumbnail" alt="${p.title}" onerror="this.src='https://via.placeholder.com/40x50'">
+                    <div class="item-details">
+                        <div class="item-title">${p.title}</div>
+                        <div class="item-meta">
+                            <span class="item-price">${app.formatPrice(p.price)}</span>
+                            <span class="item-gtin">Shop: ${p.shop}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        resultsList.innerHTML = html;
+    };
+
+    // Helper: Search Logic
+    const handleSearch = () => {
+        if (!searchInput) return;
+        const query = searchInput.value.toLowerCase().trim();
+
+        if (query.length < 2) {
+            if (resultsList) resultsList.innerHTML = '<div class="results-count">Type at least 2 characters...</div>';
+            return;
+        }
+
+        const filtered = productsList.filter(p => {
+            return p.title.toLowerCase().includes(query) ||
+                p.brand.toLowerCase().includes(query) ||
+                (p.gtin && p.gtin.includes(query));
+        });
+
+        renderResults(filtered);
+    };
 
     const openOverlay = (e) => {
         e.preventDefault();
@@ -1145,8 +1229,11 @@ app.initAddProductsOverlay = function () {
         document.getElementById('menu-modal')?.classList.remove('active');
         document.getElementById('menu-overlay')?.classList.remove('active');
 
-        overlay.classList.add('active'); // active class from logout.css handles display:flex
+        overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Trigger fetch on first open
+        fetchData();
     };
 
     const closeOverlay = () => {
@@ -1160,17 +1247,29 @@ app.initAddProductsOverlay = function () {
 
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
-    // Close on click outside (backdrop)
+    // Close on click outside
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeOverlay();
     });
 
     if (saveBtn) {
         saveBtn.addEventListener('click', () => {
-            // Mock save
             closeOverlay();
-            // Optional: Show toast
+            // Logic to actually save? For now just close.
         });
+    }
+
+    if (searchInput) {
+        // Debounce search
+        let timeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(handleSearch, 300);
+        });
+
+        // Handle clear button click explicitly if generic logic doesn't catch it
+        // The generic logic in app.js toggles visibility, but we need to trigger search reset
+        // The generic logic dispatches 'input', so handleSearch should run.
     }
 };
 
