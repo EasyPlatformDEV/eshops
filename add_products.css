@@ -256,11 +256,16 @@
     margin-bottom: 10px;
     background: #f9f9f9;
     gap: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
 .add-product-item:hover {
     background-color: #f9f9f9;
+}
+
+/* Light pink border when checkbox is checked */
+.add-product-item:has(.custom-checkbox:checked) {
+    border-color: #f8e1ea;
 }
 
 /* Checkbox */
@@ -276,7 +281,7 @@
     -moz-appearance: none;
     width: 18px;
     height: 18px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     position: relative;
