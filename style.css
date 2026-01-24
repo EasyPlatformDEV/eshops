@@ -2596,6 +2596,8 @@ a:hover {
 .header-right {
     display: flex;
     align-items: center;
+    margin-left: auto;
+    /* Push to right */
     justify-content: flex-end;
     /* Pack right */
     width: auto;
@@ -3158,8 +3160,8 @@ a:hover {
     align-self: center;
     position: relative;
     top: -2px;
-    font-weight: 500 !important;
-    /* Normal/Medium, not bold */
+    font-weight: 400 !important;
+    /* Normal, was 500 */
     text-transform: none !important;
     /* No Caps */
     display: inline-block;
@@ -3171,10 +3173,22 @@ a:hover {
     .menu-icon svg,
     .just-added-btn svg,
     .star-watch-btn svg,
-    #mobile-header-star-watch-btn svg {
+    #mobile-header-star-watch-btn svg,
+    .notification-icon svg {
         width: 20px !important;
         height: 20px !important;
         transform: none !important;
         /* Reset any scaling */
+    }
+
+    /* Reduce Header Gap on Mobile */
+    .header-right {
+        gap: 5px !important;
+        /* Tighter spacing */
+    }
+
+    .header-right>*+* {
+        margin-left: 5px !important;
+        /* Fallback */
     }
 }
