@@ -1259,8 +1259,13 @@ app.initAddProductsOverlay = function () {
         document.body.style.overflow = '';
     };
 
-    addProdsBtns.forEach(btn => {
-        btn.addEventListener('click', openOverlay);
+    // Event Delegation for Opening Overlay
+    document.body.addEventListener('click', (e) => {
+        // Check if the clicked element or its parent is an "Add products" button/link
+        const target = e.target.closest('button, a, .menu-item');
+        if (target && target.textContent.trim().includes('Add products')) {
+            openOverlay(e);
+        }
     });
 
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);

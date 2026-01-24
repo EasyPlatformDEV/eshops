@@ -438,14 +438,14 @@
     <!-- Add Products Overlay -->
     <div id="add-products-overlay" class="logout-modal">
         <div class="logout-content add-products-content">
-            <div class="logout-close" id="close-add-products">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                    <path
-                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                </svg>
-            </div>
             <div class="logout-header">
-                <h3 class="logout-title" style="font-size: 1.2rem; margin-bottom: 20px;">Adding new products</h3>
+                <h3 class="logout-title">Adding new products</h3>
+                <div class="logout-close" id="close-add-products">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </div>
             </div>
             <div class="add-products-body">
                 <div class="form-group">
@@ -466,7 +466,9 @@
                             style="display:block;">&times;</button>
                     </div>
                     <div class="info-text-wrapper">
-                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <!-- New Clean Info Icon (Info Circle) -->
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="12" y1="16" x2="12" y2="12"></line>
                             <line x1="12" y1="8" x2="12.01" y2="8"></line>

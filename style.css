@@ -3411,81 +3411,105 @@ a:hover {
 .add-products-content {
     /* Overrides specific to this modal */
     max-width: 450px;
-    /* Slightly wider than standard logout */
-    text-align: left;
-    /* Reset text align from center */
     padding: 25px 30px;
 }
 
-/* Align Title and Close Button */
+/* Header Alignment: Title and Close Button on same line */
 .add-products-content .logout-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    padding-right: 30px;
-    /* Space for close button */
-    min-height: 30px;
-    /* Ensure height matches close button area */
+    position: relative;
+    /* Context for absolute positioning if needed, but flex is better */
+    padding: 10px 0;
+    /* Add some breathing room */
 }
 
-/* Override default title margins to align */
+/* Title Styling */
 .add-products-content .logout-title {
     margin: 0 !important;
     font-size: 1.2rem;
-    line-height: normal;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
 }
 
+/* Close Button Styling - Match Logout Modal EXACTLY */
+/* We reset top/right absolute positioning to make it part of the flex flow or positioned relative to header */
 .add-products-content .logout-close {
-    top: 25px;
-    /* Align with new padding */
-    right: 30px;
+    position: static;
+    /* Remove absolute positioning from logout.css override */
+    margin-left: 15px;
+    background: #f0f0f0;
+    /* Ensure same bg as logout usually has */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: #333;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.add-products-content .logout-close:hover {
+    background: #e0e0e0;
 }
 
 .add-products-body {
     margin-top: 10px;
 }
 
+/* Left Align Labels */
 .add-products-body .form-group {
     margin-bottom: 20px;
+    text-align: left;
+    /* FORCE LEFT ALIGNMENT */
 }
 
 .add-products-body label {
     display: block;
-    font-weight: 400;
-    /* Removed bold */
+    font-weight: 500;
+    /* Revert to slightly bolder for readability */
     margin-bottom: 8px;
-    font-size: 0.9rem;
-    /* Reduced size */
+    font-size: 0.95rem;
+    /* Slight increase */
     color: #333;
+    text-align: left !important;
 }
 
 /* Info Icon + Small Text */
 .info-text-wrapper {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     margin-top: 8px;
 }
 
+/* New Info Icon Style */
 .info-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: #666;
     flex-shrink: 0;
 }
 
 .add-products-body small {
     display: block;
-    color: #999;
-    font-size: 0.8rem;
+    color: #777;
+    font-size: 0.85rem;
     margin: 0;
-    /* Reset margin since wrapper handles gap */
+    line-height: 1.3;
 }
 
 /* Styled Select with Arrow */
 .custom-select-wrapper {
     position: relative;
+    text-align: left;
 }
 
 /* Add arrow via pseudo-element or background icon */
