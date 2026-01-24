@@ -141,8 +141,8 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 10px;
-    width: 160px;
-    /* Increased to 160px per request */
+    width: 170px;
+    /* Increased to 170px per request */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
