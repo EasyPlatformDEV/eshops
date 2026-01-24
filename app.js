@@ -1113,7 +1113,66 @@ document.addEventListener('DOMContentLoaded', () => {
     app.initNotifications();
     app.initMenu();
     app.initJustAdded();
+    app.initAddProductsOverlay();
 });
+
+app.initAddProductsOverlay = function () {
+    // Buttons that open the overlay
+    // 1. "Add products" in Header (Desktop: N/A maybe? Check HTML) - Wait, header has "Add products" in promo banner
+    // 2. Promo Banner button
+
+    // Select all buttons with "Add products" intent. 
+    // They don't have a unique class in the shared HTML, so let's target by text or a new class if I added one.
+    // I added .action-btn.pink-filled ... let's see. 
+    // Actually, in the HTML, the buttons don't have IDs. I should have added IDs or classes.
+    // But I can select them by text content for safety or class .pink-filled.
+
+    const addProdsBtns = Array.from(document.querySelectorAll('.action-btn.pink-filled, .menu-item')).filter(btn => {
+        return btn.textContent.includes('Add products');
+    });
+
+    const overlay = document.getElementById('add-products-overlay');
+    const closeBtn = document.getElementById('close-add-products');
+    const saveBtn = document.getElementById('save-products-btn');
+
+    if (!overlay) return;
+
+    const openOverlay = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Close other menus
+        document.getElementById('menu-modal')?.classList.remove('active');
+        document.getElementById('menu-overlay')?.classList.remove('active');
+
+        overlay.classList.add('active'); // active class from logout.css handles display:flex
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeOverlay = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    addProdsBtns.forEach(btn => {
+        btn.addEventListener('click', openOverlay);
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
+
+    // Close on click outside (backdrop)
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeOverlay();
+    });
+
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            // Mock save
+            closeOverlay();
+            // Optional: Show toast
+        });
+    }
+};
 
 // --- Clear Input Button Logic ---
 document.addEventListener('DOMContentLoaded', () => {
