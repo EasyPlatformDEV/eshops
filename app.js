@@ -112,11 +112,14 @@
             }
         };
 
-        // Update save button state based on checkbox selection
+        // Update save button state based on checkbox selection AND shop selection
         const updateSaveButtonState = () => {
+            const selectedShop = shopSelect ? shopSelect.value : '';
             const checkboxes = resultsList ? resultsList.querySelectorAll('.custom-checkbox:checked') : [];
+
             if (saveBtn) {
-                if (checkboxes.length > 0) {
+                // Button enabled only if: shop is selected AND at least one checkbox is checked
+                if (selectedShop && checkboxes.length > 0) {
                     saveBtn.disabled = false;
                 } else {
                     saveBtn.disabled = true;
@@ -225,7 +228,14 @@
         }
 
         if (saveBtn) {
-            saveBtn.addEventListener('click', closeOverlay);
+            saveBtn.addEventListener('click', (e) => {
+                // Only close if button is not disabled
+                if (!saveBtn.disabled) {
+                    closeOverlay();
+                } else {
+                    e.preventDefault();
+                }
+            });
         }
 
         // Close on click outside
@@ -243,7 +253,10 @@
         }
 
         if (shopSelect) {
-            shopSelect.addEventListener('change', handleFilter);
+            shopSelect.addEventListener('change', () => {
+                handleFilter();
+                updateSaveButtonState(); // Update button state when shop changes
+            });
         }
     },
 
