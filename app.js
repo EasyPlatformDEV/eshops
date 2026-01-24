@@ -1117,8 +1117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 app.initAddProductsOverlay = function () {
-    // Select all triggers with the specific class
-    const addProdsBtns = document.querySelectorAll('.trigger-add-products');
+    // Event Delegation for Opening Overlay - targeted to specific class
+    // Using delegation ensures triggers work even if added dynamically, and sidesteps 'btn not found' issues.
+    document.body.addEventListener('click', (e) => {
+        const target = e.target.closest('.trigger-add-products');
+        if (target) {
+            e.preventDefault();
+            e.stopPropagation();
+            openOverlay(e);
+        }
+    });
+
+    // Legacy: Keep select for other logic if needed, but the listener is now on body
+    // const addProdsBtns = document.querySelectorAll('.trigger-add-products');
 
     const overlay = document.getElementById('add-products-overlay');
     const closeBtn = document.getElementById('close-add-products');
@@ -1261,12 +1272,7 @@ app.initAddProductsOverlay = function () {
         document.body.style.overflow = '';
     };
 
-    // Attach click listeners to specific triggers (Logout Pattern)
-    if (addProdsBtns.length > 0) {
-        addProdsBtns.forEach(btn => {
-            btn.addEventListener('click', openOverlay);
-        });
-    }
+    // Listener attached via delegation above
 
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
