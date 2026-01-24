@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShops SPA PWA</title>
     <link rel="stylesheet" href="style.css?v=19000">
+    <link rel="stylesheet" href="add_products.css">
     <link rel="manifest" href="json-files/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="logout.css">
@@ -88,7 +89,7 @@
                         </div>
                     </div>
                     <div class="profile-dropdown">
-                        <a href="#">Add products</a>
+                        <a href="#" class="menu-link-add-products">Add products</a>
                         <a href="myproducts.html">My stuff</a>
                         <a href="#">Share products</a>
                         <a href="index.html#logout" class="menu-link-logout">Log out</a>
@@ -351,13 +352,14 @@
 
             <div class="menu-separator"></div>
 
-            <a href="#" class="menu-item">
+            <a href="#" class="menu-item menu-link-add-products">
                 <span class="menu-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24">
                         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                     </svg>
                 </span>
                 Add products
+                <span class="login-required">Login required</span>
             </a>
             <a href="myproducts.html" class="menu-item">
                 <span class="menu-icon">
@@ -432,6 +434,52 @@
                     <line x1="15" y1="12" x2="3" y2="12" />
                 </svg>
             </a>
+        </div>
+    </div>
+
+    <!-- Add Products Overlay -->
+    <div id="add-products-overlay">
+        <div class="add-products-content">
+            <div class="logout-header">
+                <h3 class="logout-title">Adding new products</h3>
+                <div class="logout-close" id="close-add-products">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="add-products-body">
+                <div class="form-group">
+                    <div class="custom-select-wrapper">
+                        <select class="styled-select" id="add-prod-shop-select">
+                            <option value="">Select eShop...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group search-group">
+                    <div class="input-with-clear">
+                        <input type="text" id="add-prod-search" placeholder="Search for a product...">
+                        <button class="clear-input-btn" data-target="add-prod-search"
+                            style="display:none;">&times;</button>
+                    </div>
+                    <div class="info-text-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <small>Search for product title, GTIN or URL address</small>
+                    </div>
+                </div>
+                <div class="results-list">
+                    <div class="results-count">Start typing or select a shop...</div>
+                </div>
+            </div>
+            <div class="logout-footer">
+                <button class="logout-btn-action" id="save-products-btn">Save Products</button>
+            </div>
         </div>
     </div>
 

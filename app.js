@@ -12,6 +12,7 @@
         this.fetchFaqs(); // Load FAQs
         this.initCelebritiesMobileEvents(); // star watch mobile overlay
         this.bindLogoutEvents(); // Add logout listener
+        this.bindAddProductsEvents(); // Add products overlay listener
     },
 
     bindLogoutEvents: function () {
@@ -61,6 +62,166 @@
                     body.style.overflow = '';
                 }
             });
+        }
+    },
+
+    bindAddProductsEvents: function () {
+        // Open Modal triggers
+        const addProductsLinks = document.querySelectorAll('.menu-link-add-products');
+        const overlay = document.getElementById('add-products-overlay');
+        const body = document.body;
+
+        if (!overlay) return;
+
+        // Internal state
+        let shopsLoaded = false;
+        let productsList = [];
+
+        const shopSelect = document.getElementById('add-prod-shop-select');
+        const searchInput = document.getElementById('add-prod-search');
+        const resultsList = overlay.querySelector('.results-list');
+
+        // Fetch Data Helper
+        const fetchData = async () => {
+            if (shopsLoaded) return;
+
+            try {
+                // Fetch Shops
+                const shopsResponse = await fetch('json-files/shops.json?v=' + new Date().getTime());
+                const shops = await shopsResponse.json();
+
+                if (shopSelect) {
+                    shops.sort((a, b) => a.shop.localeCompare(b.shop));
+                    shops.forEach(s => {
+                        const opt = document.createElement('option');
+                        opt.value = s.shop;
+                        opt.textContent = s.shop;
+                        shopSelect.appendChild(opt);
+                    });
+                }
+
+                // Fetch Products
+                const prodsResponse = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+                productsList = await prodsResponse.json();
+
+                shopsLoaded = true;
+            } catch (error) {
+                console.error("Error loading overlay data:", error);
+                if (resultsList) resultsList.innerHTML = '<div class="results-count" style="color:red;">Error loading data.</div>';
+            }
+        };
+
+        // Render Results Helper
+        const renderResults = (results) => {
+            if (!resultsList) return;
+
+            if (results.length === 0) {
+                resultsList.innerHTML = '<div class="results-count">No results found.</div>';
+                return;
+            }
+
+            let html = `<div class="results-count">${results.length} results found:</div>`;
+
+            results.forEach(p => {
+                html += `
+                    <div class="add-product-item">
+                        <div class="item-checkbox">
+                            <input type="checkbox" class="custom-checkbox">
+                        </div>
+                        <img src="${p.image}" class="item-thumbnail" alt="${p.title}" onerror="this.src='https://via.placeholder.com/40x50'">
+                        <div class="item-details">
+                            <div class="item-title">${p.title}</div>
+                            <div class="item-meta">
+                                <span class="item-price">${this.formatPrice(p.price)}</span>
+                                <span class="item-gtin">${p.shop}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsList.innerHTML = html;
+        };
+
+        // Filter Handler
+        const handleFilter = () => {
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            const selectedShop = shopSelect ? shopSelect.value : '';
+
+            if (!selectedShop && query.length < 2) {
+                if (resultsList) resultsList.innerHTML = '<div class="results-count">Start typing or select a shop...</div>';
+                return;
+            }
+
+            let filtered = productsList;
+
+            if (selectedShop) {
+                filtered = filtered.filter(p => p.shop === selectedShop);
+            }
+
+            if (query.length >= 2) {
+                filtered = filtered.filter(p => {
+                    return p.title.toLowerCase().includes(query) ||
+                        p.brand.toLowerCase().includes(query) ||
+                        (p.gtin && p.gtin.includes(query));
+                });
+            }
+
+            renderResults(filtered);
+        };
+
+        // Open overlay
+        if (addProductsLinks.length > 0) {
+            addProductsLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Close other menus if open
+                    document.getElementById('menu-modal')?.classList.remove('active');
+                    document.getElementById('menu-overlay')?.classList.remove('active');
+
+                    // Show Add Products Overlay
+                    overlay.classList.add('active');
+                    body.style.overflow = 'hidden';
+
+                    // Fetch data on first open
+                    fetchData();
+                });
+            });
+        }
+
+        // Close Logic
+        const closeBtn = document.getElementById('close-add-products');
+        const saveBtn = document.getElementById('save-products-btn');
+
+        const closeOverlay = () => {
+            overlay.classList.remove('active');
+            body.style.overflow = '';
+        };
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeOverlay);
+        }
+
+        if (saveBtn) {
+            saveBtn.addEventListener('click', closeOverlay);
+        }
+
+        // Close on click outside
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeOverlay();
+        });
+
+        // Search and filter events
+        if (searchInput) {
+            let timeout;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(timeout);
+                timeout = setTimeout(handleFilter, 300);
+            });
+        }
+
+        if (shopSelect) {
+            shopSelect.addEventListener('change', handleFilter);
         }
     },
 
