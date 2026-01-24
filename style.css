@@ -3158,8 +3158,10 @@ a:hover {
     /* High increased by 4px (2+2) */
     border-radius: 10px;
     /* Radius 10px */
-    margin-left: 15px;
-    /* Spacing */
+    margin-left: auto;
+    /* Right aligned */
+    margin-right: 15px;
+    /* 15px space from edge */
     align-self: center;
     position: relative;
     top: -2px;
