@@ -1108,18 +1108,17 @@
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    app.initAddProductsOverlay(); // Essential interaction, run first
     app.init();
     app.initDropdowns();
     app.initNotifications();
     app.initMenu();
     app.initJustAdded();
-    app.initAddProductsOverlay();
 });
 
 app.initAddProductsOverlay = function () {
     // Select all triggers with the specific class (Explicit Binding)
     const addProdsBtns = document.querySelectorAll('.trigger-add-products');
-    console.log(`Found ${addProdsBtns.length} add product triggers`);
 
     const overlay = document.getElementById('add-products-overlay');
     const closeBtn = document.getElementById('close-add-products');
@@ -1265,7 +1264,11 @@ app.initAddProductsOverlay = function () {
     // Attach click listeners to specific triggers (Logout Pattern)
     if (addProdsBtns.length > 0) {
         addProdsBtns.forEach(btn => {
-            btn.addEventListener('click', openOverlay);
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); // STOP everything
+                e.stopPropagation();
+                openOverlay(e);
+            });
         });
     }
 
