@@ -278,6 +278,8 @@
     transition: background-color 0.2s, border-color 0.2s;
     box-sizing: border-box;
     cursor: pointer;
+    width: 100%;
+    /* Ensure label takes full width */
 }
 
 .add-product-item:hover {
