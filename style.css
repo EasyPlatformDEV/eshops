@@ -125,6 +125,20 @@ body {
     /* Darker pink for hover */
 }
 
+.action-btn.pink-filled {
+    background-color: var(--pink-highlight);
+    color: white;
+    border: 1px solid var(--pink-highlight);
+}
+
+.action-btn.pink-filled:hover {
+    background-color: #f8e1ea !important;
+    border-color: #f8e1ea !important;
+    color: var(--pink-highlight) !important;
+    text-decoration: none !important;
+    opacity: 1;
+}
+
 /* Search */
 .search-section {
     margin-bottom: 15px;
@@ -3160,8 +3174,8 @@ a:hover {
     /* Radius 10px */
     margin-left: auto;
     /* Right aligned */
-    margin-right: 15px;
-    /* 15px space from edge */
+    margin-right: 10px;
+    /* 10px space from edge */
     align-self: center;
     position: relative;
     top: -2px;
