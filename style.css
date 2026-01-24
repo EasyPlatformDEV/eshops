@@ -707,32 +707,7 @@ a:hover {
     object-fit: contain;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 480px) {
-    .discount-badge {
-        font-size: 0.85rem;
-        width: 35px;
-        height: 35px;
-        padding: 0;
-        right: -5px;
-        /* Overhang edge */
-        left: auto;
-        top: -5px;
-        /* Overhang top */
-        margin-left: 0;
-    }
 
-    .product-card-favorite {
-        position: absolute !important;
-        top: -5px !important;
-        /* Overhang top */
-        left: -5px !important;
-        /* Overhang left */
-        z-index: 10;
-        background: transparent !important;
-        padding: 0;
-    }
-}
 
 /* Celebrities */
 .celeb-card {
