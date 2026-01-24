@@ -3422,8 +3422,10 @@ a:hover {
     margin-bottom: 20px;
     position: relative;
     /* Context for absolute positioning if needed, but flex is better */
-    padding: 10px 0;
-    /* Add some breathing room */
+    padding: 0;
+    /* REMOVED padding to move it up as requested */
+    margin-top: -10px;
+    /* Slight negative margin or just reduce padding of container */
 }
 
 /* Title Styling */
@@ -3492,9 +3494,10 @@ a:hover {
 
 /* New Info Icon Style */
 .info-icon {
-    width: 16px;
-    height: 16px;
-    color: #666;
+    width: 18px;
+    height: 18px;
+    color: var(--pink-highlight);
+    /* Requested PINK */
     flex-shrink: 0;
 }
 
@@ -3562,25 +3565,30 @@ a:hover {
     border-top: 1px solid #eee;
     padding-top: 15px;
     max-height: 300px;
-    /* Scrollable results */
+    /* IMPORTANT: Scrollable results */
     overflow-y: auto;
+    padding-right: 5px;
+    /* Space for scrollbar */
 }
 
 .results-count {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .add-product-item {
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #eee;
     border-radius: 8px;
     margin-bottom: 10px;
+    background: #f9f9f9;
     gap: 10px;
+    /* Kept from original, not explicitly removed */
     transition: background-color 0.2s;
+    /* Kept from original, not explicitly removed */
 }
 
 .add-product-item:hover {
@@ -3591,6 +3599,7 @@ a:hover {
 .item-checkbox {
     display: flex;
     align-items: center;
+    margin-right: 15px;
 }
 
 .custom-checkbox {
@@ -3599,8 +3608,6 @@ a:hover {
     width: 20px;
     height: 20px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    /* 6px is better for 20px box, user asked for 8px but for small box 8px is almost circle. Let's try 6px visually or 8px if strict. */
     border-radius: 8px;
     /* As requested */
     cursor: pointer;

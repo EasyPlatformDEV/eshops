@@ -1216,7 +1216,10 @@ app.initAddProductsOverlay = function () {
 
         // If no shop selected and no query, show nothing or instructions
         if (!selectedShop && query.length < 2) {
-            if (resultsList) resultsList.innerHTML = '<div class="results-count">Select a shop or type to search...</div>';
+            // Do NOT show error, just wait.
+            // If we want to show all products initially when nothing is typed? 
+            // Logic says: "Start typing or select a shop"
+            if (resultsList) resultsList.innerHTML = '<div class="results-count">Start typing or select a shop...</div>';
             return;
         }
 
@@ -1261,9 +1264,16 @@ app.initAddProductsOverlay = function () {
 
     // Event Delegation for Opening Overlay
     document.body.addEventListener('click', (e) => {
-        // Check if the clicked element or its parent is an "Add products" button/link
-        const target = e.target.closest('button, a, .menu-item');
-        if (target && target.textContent.trim().includes('Add products')) {
+        // Target specific classes or text content
+        const target = e.target.closest('a, button, .menu-item');
+        if (!target) return;
+
+        const text = target.textContent.trim().toLowerCase();
+
+        // Check for "Add products" text
+        if (text.includes('add products')) {
+            e.preventDefault(); // Stop navigation
+            e.stopPropagation();
             openOverlay(e);
         }
     });
