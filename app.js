@@ -197,7 +197,7 @@
                             </a>
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
-                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
+                                <div class="cat-product-price" style="display:none;">${this.formatPrice(p.price)}</div>
                                 <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -357,7 +357,7 @@
                             </a>
                             <div class="cat-product-info">
                                 <h4 class="cat-product-title">${p.title}</h4>
-                                <div class="cat-product-price" style="display:none;">${p.price.toFixed(2)} &euro;</div>
+                                <div class="cat-product-price" style="display:none;">${this.formatPrice(p.price)}</div>
                                 <button class="alert-set-btn" style="margin-top: auto; width: 100%; justify-content: center;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -705,7 +705,7 @@
 
         const totalValueEl = document.getElementById('total-value');
         if (totalValueEl) {
-            totalValueEl.innerHTML = totalValue.toFixed(2) + ' &euro;';
+            totalValueEl.innerHTML = totalValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' &euro;';
         }
     },
 
@@ -770,19 +770,21 @@
         }
     },
 
-    formatPrice: function (priceStr) {
-        if (!priceStr) return '';
+    formatPrice: function (input) {
+        if (input === null || input === undefined) return '';
+
+        // Handle Number
+        if (typeof input === 'number') {
+            return input.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        }
+
+        const priceStr = String(input);
+
         // Extract number and currency (flexible space)
         const match = priceStr.match(/([\d\.,]+)\s*([^\d\s\.,]+)?/);
         if (!match) return priceStr;
 
         let valStr = match[1];
-        // If string has commas as decimal separator (e.g. 1.200,00), normalize? 
-        // But user JSON is "1099.00". So standard float parse is fine if we remove non-digit/non-dots.
-        // If JSON is "1,099.00", parseFloat("1,099.00") -> 1 (stops at comma).
-        // Let's assume input is standard "1099.00" or similar.
-        // Safety: remove commas before parsing if they are group separators? JSON usually doesn't have them.
-
         const val = parseFloat(valStr.replace(/,/g, ''));
         const symbol = match[2] || '€';
 
