@@ -1117,7 +1117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 app.initAddProductsOverlay = function () {
-    const addProdsBtns = Array.from(document.querySelectorAll('.action-btn.pink-filled, .menu-item')).filter(btn => {
+    const addProdsBtns = Array.from(document.querySelectorAll('.action-btn.pink-filled, .menu-item, .profile-dropdown a')).filter(btn => {
         return btn.textContent.includes('Add products');
     });
 
@@ -1199,7 +1199,7 @@ app.initAddProductsOverlay = function () {
                         <div class="item-title">${p.title}</div>
                         <div class="item-meta">
                             <span class="item-price">${app.formatPrice(p.price)}</span>
-                            <span class="item-gtin">Shop: ${p.shop}</span>
+                            <span class="item-gtin">${p.shop}</span>
                         </div>
                     </div>
                 </div>
