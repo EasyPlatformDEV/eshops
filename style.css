@@ -3318,29 +3318,35 @@ a:hover {
     font-family: inherit;
     /* Ensure they use the same font */
 }
+
 /* FINAL MOBILE BADGE FIX (CLEAN, SPECIFIC) */
 @media (max-width: 480px) {
-    /* Discount Badge */
+
+    /* Discount Badge - ACCOUNTING FOR 10PX PARENT PADDING */
     .discount-badge {
         font-size: 0.85rem;
         width: 35px;
         height: 35px;
         padding: 0;
-        right: -5px;
+        right: -12px;
+        /* -10px padding + -2px user requested */
         left: auto;
-        top: -5px;
+        top: -12px;
+        /* -10px padding + -2px user requested */
         margin-left: 0;
     }
-    /* Favorites Icon - High Specificity */
+
+    /* Favorites Icon - High Specificity - ACCOUNTING FOR 10PX PARENT PADDING */
     body .product-card .product-image-container .product-card-favorite,
     body .product-card .product-image-container .icon-favorite {
         position: absolute;
-        top: -5px;
-        left: -5px;
+        top: -12px;
+        /* -10px padding + -2px user requested */
+        left: -12px;
+        /* -10px padding + -2px user requested */
         z-index: 10;
         background: transparent;
         padding: 0;
         margin: 0;
     }
 }
-
