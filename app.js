@@ -80,6 +80,7 @@
         const shopSelect = document.getElementById('add-prod-shop-select');
         const searchInput = document.getElementById('add-prod-search');
         const resultsList = overlay.querySelector('.results-list');
+        const saveBtn = document.getElementById('save-products-btn');
 
         // Fetch Data Helper
         const fetchData = async () => {
@@ -111,12 +112,25 @@
             }
         };
 
+        // Update save button state based on checkbox selection
+        const updateSaveButtonState = () => {
+            const checkboxes = resultsList ? resultsList.querySelectorAll('.custom-checkbox:checked') : [];
+            if (saveBtn) {
+                if (checkboxes.length > 0) {
+                    saveBtn.disabled = false;
+                } else {
+                    saveBtn.disabled = true;
+                }
+            }
+        };
+
         // Render Results Helper
         const renderResults = (results) => {
             if (!resultsList) return;
 
             if (results.length === 0) {
                 resultsList.innerHTML = '<div class="results-count">No results found.</div>';
+                updateSaveButtonState(); // Ensure button is disabled
                 return;
             }
 
@@ -141,6 +155,15 @@
             });
 
             resultsList.innerHTML = html;
+
+            // Add checkbox listeners to toggle save button
+            const checkboxes = resultsList.querySelectorAll('.custom-checkbox');
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', updateSaveButtonState);
+            });
+
+            // Initial state - button disabled since no checkboxes are checked
+            updateSaveButtonState();
         };
 
         // Filter Handler
@@ -191,7 +214,6 @@
 
         // Close Logic
         const closeBtn = document.getElementById('close-add-products');
-        const saveBtn = document.getElementById('save-products-btn');
 
         const closeOverlay = () => {
             overlay.classList.remove('active');

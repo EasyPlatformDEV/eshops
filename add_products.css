@@ -44,7 +44,6 @@
     max-height: calc(100vh - 80px);
     /* 40px margin top + 40px margin bottom */
     height: auto;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -111,10 +110,10 @@
     margin-top: 10px;
     flex: 1;
     /* Take remaining space */
-    overflow-y: auto;
-    /* Scroll if content is too tall */
     min-height: 0;
     /* Important for flex children to shrink */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Left Align Labels and Groups */
@@ -232,8 +231,12 @@
     margin-top: 20px;
     border-top: 1px solid #eee;
     padding-top: 15px;
-    max-height: 300px;
+    flex: 1;
+    /* Take remaining space in body */
+    min-height: 0;
+    /* Allow shrinking */
     overflow-y: auto;
+    /* Scroll only this section */
     padding-right: 5px;
 }
 
@@ -266,18 +269,38 @@
     align-items: center;
 }
 
+/* Custom styled checkbox */
 .custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     width: 18px;
     height: 18px;
-    accent-color: var(--pink-highlight, #b60378);
+    border: 2px solid #ccc;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 50% !important;
-    /* Force round */
+    position: relative;
+    background: white;
+    transition: all 0.2s ease;
 }
 
-/* Force round appearance for standard checkbox if supported, else relies on accent-color */
-input[type="checkbox"].custom-checkbox {
-    border-radius: 50%;
+.custom-checkbox:checked {
+    background-color: var(--pink-highlight, #b60378);
+    border-color: var(--pink-highlight, #b60378);
+    border-radius: 8px;
+    /* Keep rounded when checked */
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 /* Thumbnail */
@@ -348,4 +371,27 @@ input[type="checkbox"].custom-checkbox {
     background-color: #f8e1ea;
     color: var(--pink-highlight, #b60378);
     text-decoration: none;
+}
+
+/* Disabled state - light pink */
+.logout-btn-action:disabled,
+.logout-btn-action.disabled {
+    background-color: #f8e1ea;
+    color: #d4a5be;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.logout-btn-action:disabled:hover,
+.logout-btn-action.disabled:hover {
+    background-color: #f8e1ea;
+    color: #d4a5be;
+    opacity: 0.7;
+}
+
+/* Icon in button */
+.logout-btn-action svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
