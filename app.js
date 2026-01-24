@@ -211,6 +211,9 @@
 
                     // Fetch data on first open
                     fetchData();
+
+                    // Ensure button starts disabled
+                    updateSaveButtonState();
                 });
             });
         }
