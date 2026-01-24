@@ -142,20 +142,42 @@ body {
 .promo-actions {
     margin-top: 15px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: nowrap;
-    /* Ensure single line */
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Specificity override for font-weight */
+.promo-actions .action-btn {
+    font-weight: normal;
 }
 
 @media (max-width: 480px) {
+    .promo-actions {
+        gap: 6px;
+    }
+
     .promo-actions .action-btn {
-        padding: 10px 5px !important;
-        /* Reduce padding to fit */
-        font-size: 0.85rem;
-        /* Slightly smaller text */
+        padding: 8px 4px;
+        /* Reduced padding without !important */
+        font-size: 0.75rem;
+        /* Smaller text */
         flex: 1;
-        /* Distribute space equally */
+        /* Equal width */
+        min-width: 0;
+        justify-content: center;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .promo-actions .action-btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-right: 4px;
     }
 }
 
@@ -689,12 +711,25 @@ a:hover {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: 5px;
+        right: 8px;
         left: auto;
         /* Move to left to avoid overlap with right col */
-        top: -5px;
+        top: -8px;
         margin-left: -5px;
         /* Slight offset if needed */
+    }
+
+    .product-card-favorite {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        z-index: 10;
+        background: white;
+        /* Optional: in case it needs bg */
+        border-radius: 50%;
+        /* Optional */
+        padding: 2px;
+        /* Optional space */
     }
 }
 
