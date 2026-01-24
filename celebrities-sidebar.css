@@ -36,6 +36,24 @@
         overflow-y: auto;
         /* Scroll on hover like Right Sidebar */
     }
+
+    /* Custom scrollbar styling */
+    .celebrities-sidebar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .celebrities-sidebar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .celebrities-sidebar::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+
+    .celebrities-sidebar::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
 }
 
 /* Mobile: Hide by default unless we implement a modal later. 
