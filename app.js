@@ -1261,21 +1261,12 @@ app.initAddProductsOverlay = function () {
         document.body.style.overflow = '';
     };
 
-    // Event Delegation for Opening Overlay
-    document.body.addEventListener('click', (e) => {
-        // Target specific classes or text content
-        const target = e.target.closest('a, button, .menu-item');
-        if (!target) return;
-
-        const text = target.textContent.trim().toLowerCase();
-
-        // Check for "Add products" text
-        if (text.includes('add products')) {
-            e.preventDefault(); // Stop navigation
-            e.stopPropagation();
-            openOverlay(e);
-        }
-    });
+    // Attach click listeners to specific triggers (Logout Pattern)
+    if (addProdsBtns.length > 0) {
+        addProdsBtns.forEach(btn => {
+            btn.addEventListener('click', openOverlay);
+        });
+    }
 
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
