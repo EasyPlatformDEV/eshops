@@ -163,9 +163,10 @@ body {
     .promo-banner .promo-bottom-row .promo-actions,
     .promo-actions {
         display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
+        flex-direction: row !important;
+        gap: 8px !important;
         align-items: center !important;
+        justify-content: center !important;
         width: 100% !important;
     }
 
