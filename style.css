@@ -3331,11 +3331,11 @@ a:hover {
         width: 35px;
         height: 35px;
         padding: 0;
-        right: -8px;
-        /* 10px padding - 8px = 2px from edge (8px overhang) */
+        right: -2px;
+        /* Less negative = MORE overhang */
         left: auto;
-        top: -8px;
-        /* 10px padding - 8px = 2px from edge (8px overhang) */
+        top: -2px;
+        /* Less negative = MORE overhang */
         margin-left: 0;
     }
 
