@@ -40,6 +40,13 @@
     /* Specific padding */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
+    /* Fixed height with margins from screen edges */
+    max-height: calc(100vh - 80px);
+    /* 40px margin top + 40px margin bottom */
+    height: auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -102,6 +109,12 @@
 /* Body Content */
 .add-products-body {
     margin-top: 10px;
+    flex: 1;
+    /* Take remaining space */
+    overflow-y: auto;
+    /* Scroll if content is too tall */
+    min-height: 0;
+    /* Important for flex children to shrink */
 }
 
 /* Left Align Labels and Groups */
