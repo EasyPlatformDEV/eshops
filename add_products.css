@@ -265,7 +265,7 @@
 
 /* Light pink border when checkbox is checked */
 .add-product-item:has(.custom-checkbox:checked) {
-    border-color: #f8e1ea;
+    border-color: var(--pink-highlight, #b60378);
 }
 
 /* Checkbox */
