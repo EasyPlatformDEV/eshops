@@ -550,7 +550,7 @@
             // Show on Search Page (First Item) OR My Products (All Items)
             if ((isSearchPage && index === 0) || !isSearchPage) {
                 statusIcon = `
-                 <svg viewBox="0 0 24 24" width="24" height="24" class="icon-favorite" style="position: absolute; top: 0; left: 0; z-index: 10; color: #b60378;">
+                 <svg viewBox="0 0 24 24" width="24" height="24" class="icon-favorite product-card-favorite">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="currentColor" />
                  </svg>`;
             }
@@ -1115,3 +1115,41 @@ document.addEventListener('DOMContentLoaded', () => {
     app.initJustAdded();
 });
 
+// --- Clear Input Button Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+    const clearBtns = document.querySelectorAll('.clear-input-btn');
+
+    function toggleClearBtn(input, btn) {
+        if (input.value.trim().length > 0) {
+            btn.style.display = 'block';
+        } else {
+            btn.style.display = 'none';
+        }
+    }
+
+    clearBtns.forEach(btn => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId) || btn.parentElement.querySelector('input');
+
+        if (input) {
+            // Initial check
+            toggleClearBtn(input, btn);
+
+            // Input listener
+            input.addEventListener('input', () => {
+                toggleClearBtn(input, btn);
+            });
+
+            // Click listener
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                input.value = '';
+                toggleClearBtn(input, btn);
+                input.focus();
+                // Trigger input event to update any listeners (filtering)
+                input.dispatchEvent(new Event('input'));
+                input.dispatchEvent(new Event('change'));
+            });
+        }
+    });
+});

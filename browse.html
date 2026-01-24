@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShops SPA PWA</title>
-    <link rel="stylesheet" href="style.css?v=15000">
+    <link rel="stylesheet" href="style.css?v=15500">
     <link rel="manifest" href="json-files/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="logout.css">
@@ -154,16 +154,18 @@
 
             <!-- Search Section Removed -->
 
-            <section class="filters-section">
+            <section class="filters-section middle-col-align">
                 <div class="filter-row" style="margin-top: 15px; margin-bottom: 15px;">
                     <!-- Removed label as requested -->
                     <div class="eshops-input-container">
                         <input type="text" id="eshops-filter" value="eBag.bg, ozone.bg, remedium.bg, +3" readonly>
+                        <button class="clear-input-btn" data-target="eshops-filter">&times;</button>
                     </div>
                 </div>
                 <div class="filter-row" style="margin-top: 15px; margin-bottom: 15px;">
                     <div class="eshops-input-container">
                         <input type="text" id="celebs-filter" value="Galena, Azis, +14" readonly>
+                        <button class="clear-input-btn" data-target="celebs-filter">&times;</button>
                     </div>
                 </div>
 
@@ -433,7 +435,7 @@
         </div>
     </div>
 
-    <script src="app.js?v=15000"></script>
+    <script src="app.js?v=15500"></script>
     </script>
     </script>
 </body>

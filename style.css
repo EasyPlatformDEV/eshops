@@ -3355,3 +3355,46 @@ a:hover {
         margin: 0;
     }
 }
+
+/* --- Filter & Input Enhancements --- */
+
+/* Alignment for Browse Filters Middle Column */
+.filters-section.middle-col-align {
+    margin-top: 40px;
+    /* Push down to align with sidebars */
+}
+
+/* Input Container for X button positioning */
+.eshops-input-container,
+.search-section {
+    position: relative;
+    width: 100%;
+}
+
+/* Clear Input "X" Button */
+.clear-input-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    display: none;
+    /* Hidden by default, shown when input has value */
+    z-index: 5;
+    line-height: 1;
+}
+
+.clear-input-btn:hover {
+    color: #333;
+}
+
+/* Show X button when input wrapper has class 'has-value' or handled via JS */
+.eshops-input-container:hover .clear-input-btn,
+.search-section:hover .clear-input-btn {
+    /* Optional: show on hover even if empty? No, logic should handle visibility based on value */
+}
