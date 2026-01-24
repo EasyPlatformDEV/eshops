@@ -414,9 +414,7 @@ body {
     stroke-width: 2px;
 }
 
-/* Fix vertical alignment */
-line-height: 1;
-}
+
 
 .product-brand {
     font-size: 0.75rem;
@@ -3148,9 +3146,17 @@ a:hover {
     margin-left: 0;
 }
 
-/* Promo Box Button Hover */
-.action-btn.pink-filled:hover {
-    background-color: #f8e1ea !important;
-    /* Light pink */
-    color: var(--pink-highlight) !important;
+/* Login Required Text */
+.login-required {
+    font-size: 0.65rem !important;
+    color: #e91e63 !important;
+    /* Hardcoded pink to be safe, var(--pink-highlight) is usually #e91e63 */
+    margin-left: 8px;
+    align-self: center;
+    /* Flex alignment */
+    /* To simulate superscript in flex row: */
+    position: relative;
+    top: -5px;
+    font-weight: 700 !important;
+    text-transform: uppercase;
 }
