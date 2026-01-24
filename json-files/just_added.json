@@ -64,6 +64,19 @@
         "userAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=BeautyQueen",
         "shop_category": "Beauty"
     },
+	{
+        "id": 105,
+        "title": "Estée Lauder Advanced Day Repair",
+        "brand": "Estée Lauder",
+        "shop": "douglas.bg",
+        "price": 180.00,
+        "image": "https://www.parfumdo.com/80862-thickbox_default/advanced-night-repair-complex-multi-reparation-synchronized.jpg",
+        "link": "https://douglas.bg",
+        "dateAdded": "2026-01-20T10:00:00",
+        "username": "BeautyQueen",
+        "userAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=BeautyQueen",
+        "shop_category": "Beauty"
+    },
     {
         "id": 106,
         "title": "Jack Daniel's Tennessee Whiskey",
