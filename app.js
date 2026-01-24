@@ -141,7 +141,7 @@
 
             results.forEach(p => {
                 html += `
-                    <label class="add-product-item">
+                    <div class="add-product-item">
                         <div class="item-checkbox">
                             <input type="checkbox" class="custom-checkbox">
                         </div>
@@ -153,7 +153,7 @@
                                 <span class="item-gtin">${p.shop}</span>
                             </div>
                         </div>
-                    </label>
+                    </div>
                 `;
             });
 
@@ -163,6 +163,20 @@
             const checkboxes = resultsList.querySelectorAll('.custom-checkbox');
             checkboxes.forEach(cb => {
                 cb.addEventListener('change', updateSaveButtonState);
+            });
+
+            // Make entire product container clickable by adding event to container
+            const productItems = resultsList.querySelectorAll('.add-product-item');
+            productItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Find checkbox within this item
+                    const checkbox = item.querySelector('.custom-checkbox');
+                    if (checkbox && e.target !== checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                        // Trigger change event to update save button
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
             });
 
             // Initial state - button disabled since no checkboxes are checked
