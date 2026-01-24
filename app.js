@@ -1153,3 +1153,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// --- Add Products Overlay Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+    const addProdsOverlay = document.getElementById('add-products-overlay');
+    const closeAddProdsBtn = document.getElementById('close-add-products');
+    const saveProdsBtn = document.getElementById('save-products-btn');
+
+    // Open Buttons (Find multiple triggers)
+    // 1. Menu "Add products" links
+    const menuAddProds = document.querySelectorAll('a[href="#"]'); // Just general for now, but targeting specifc text content
+
+    // Refine selector for specific "Add products" buttons/links
+    const allLinks = document.querySelectorAll('a, button');
+    allLinks.forEach(link => {
+        if (link.textContent.trim().includes('Add products') && !link.classList.contains('logout-confirm-btn')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openAddProducts();
+            });
+        }
+    });
+
+    function openAddProducts() {
+        if (addProdsOverlay) {
+            addProdsOverlay.classList.add('active'); // active handles display:flex via CSS
+            addProdsOverlay.style.display = 'flex'; // Ensure display if CSS class issues
+            setTimeout(() => {
+                addProdsOverlay.classList.add('active');
+                addProdsOverlay.querySelector('.logout-modal').classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeAddProducts() {
+        if (addProdsOverlay) {
+            addProdsOverlay.classList.remove('active');
+            addProdsOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (closeAddProdsBtn) {
+        closeAddProdsBtn.addEventListener('click', closeAddProducts);
+    }
+
+    if (saveProdsBtn) {
+        saveProdsBtn.addEventListener('click', () => {
+            // Mock save action
+            closeAddProducts();
+            // Maybe show specific toast or alert?
+        });
+    }
+
+    // Close on click outside
+    if (addProdsOverlay) {
+        addProdsOverlay.addEventListener('click', (e) => {
+            if (e.target === addProdsOverlay) {
+                closeAddProducts();
+            }
+        });
+    }
+});
