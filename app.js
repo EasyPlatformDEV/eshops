@@ -1191,12 +1191,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function openAddProducts() {
         if (addProdsOverlay) {
             addProdsOverlay.classList.add('active'); // active handles display:flex via CSS
-            addProdsOverlay.style.display = 'flex'; // Ensure display if CSS class issues
-            setTimeout(() => {
-                addProdsOverlay.classList.add('active');
-                addProdsOverlay.querySelector('.logout-modal').classList.add('active');
-            }, 10);
-            document.body.style.overflow = 'hidden';
         }
     }
 

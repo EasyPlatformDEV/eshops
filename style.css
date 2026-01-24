@@ -3400,14 +3400,18 @@ a:hover {
     /* Optional: show on hover even if empty? No, logic should handle visibility based on value */
 }
 
-/* --- Add Products Overlay (Recycles logout-overlay) --- */
-.add-products-modal {
+/* --- Add Products Overlay (Recycles logout-overlay structure) --- */
+/* Note: The outer container should assume .logout-modal class for fixed positioning/bg */
+
+.add-products-content {
+    /* Extends .logout-content */
     width: 90%;
     max-width: 450px;
-    /* Slightly wider than logout */
+    /* Slightly wider than standard logout */
     text-align: left;
-    /* Reset text align */
-    padding: 30px;
+    /* Reset text align from center */
+    padding: 25px 30px;
+    /* Adjust padding if needed */
 }
 
 .add-products-body {
