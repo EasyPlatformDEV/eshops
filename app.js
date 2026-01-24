@@ -1146,12 +1146,15 @@ app.initAddProductsOverlay = function () {
                 shopSelect.innerHTML = '<option value="">Select eShop...</option>';
                 // Sort alphabetically
                 shops.sort((a, b) => a.shop.localeCompare(b.shop));
+                const currentShop = shopSelect.value;
+                shopSelect.innerHTML = '<option value="">Select eShop...</option>';
                 shops.forEach(s => {
                     const opt = document.createElement('option');
                     opt.value = s.shop;
                     opt.textContent = s.shop;
                     shopSelect.appendChild(opt);
                 });
+                if (currentShop) shopSelect.value = currentShop;
             }
 
             // 2. Fetch Products for Search
@@ -1160,9 +1163,13 @@ app.initAddProductsOverlay = function () {
 
             shopsLoaded = true;
 
-            // Clear initial hardcoded results
-            if (resultsList) resultsList.innerHTML = '<div class="results-count">Start typing to search...</div>';
-            if (searchInput) searchInput.value = ''; // Clear "harry potter"
+            // Clear search input but DONT clear results if we have a shop selected or just opened
+            // Actually, keep behavior simple: clear on open.
+            if (resultsList && !searchInput.value) {
+                resultsList.innerHTML = '<div class="results-count">Start typing or select a shop...</div>';
+            }
+            // If already have value (e.g. user typed while loading), handle filter
+            // But openOverlay calls fetchData.
 
         } catch (error) {
             console.error("Error loading overlay data:", error);
@@ -1185,7 +1192,7 @@ app.initAddProductsOverlay = function () {
             html += `
                 <div class="add-product-item">
                     <div class="item-checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" class="custom-checkbox">
                     </div>
                     <img src="${p.image}" class="item-thumbnail" alt="${p.title}" onerror="this.src='https://via.placeholder.com/40x50'">
                     <div class="item-details">
@@ -1202,21 +1209,32 @@ app.initAddProductsOverlay = function () {
         resultsList.innerHTML = html;
     };
 
-    // Helper: Search Logic
-    const handleSearch = () => {
-        if (!searchInput) return;
-        const query = searchInput.value.toLowerCase().trim();
+    // Helper: Search and Filter Logic
+    const handleFilter = () => {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const selectedShop = shopSelect ? shopSelect.value : '';
 
-        if (query.length < 2) {
-            if (resultsList) resultsList.innerHTML = '<div class="results-count">Type at least 2 characters...</div>';
+        // If no shop selected and no query, show nothing or instructions
+        if (!selectedShop && query.length < 2) {
+            if (resultsList) resultsList.innerHTML = '<div class="results-count">Select a shop or type to search...</div>';
             return;
         }
 
-        const filtered = productsList.filter(p => {
-            return p.title.toLowerCase().includes(query) ||
-                p.brand.toLowerCase().includes(query) ||
-                (p.gtin && p.gtin.includes(query));
-        });
+        let filtered = productsList;
+
+        // Filter by Shop
+        if (selectedShop) {
+            filtered = filtered.filter(p => p.shop === selectedShop);
+        }
+
+        // Filter by Search Query
+        if (query.length >= 2) {
+            filtered = filtered.filter(p => {
+                return p.title.toLowerCase().includes(query) ||
+                    p.brand.toLowerCase().includes(query) ||
+                    (p.gtin && p.gtin.includes(query));
+            });
+        }
 
         renderResults(filtered);
     };
@@ -1264,12 +1282,16 @@ app.initAddProductsOverlay = function () {
         let timeout;
         searchInput.addEventListener('input', () => {
             clearTimeout(timeout);
-            timeout = setTimeout(handleSearch, 300);
+            timeout = setTimeout(handleFilter, 300);
         });
 
         // Handle clear button click explicitly if generic logic doesn't catch it
         // The generic logic in app.js toggles visibility, but we need to trigger search reset
-        // The generic logic dispatches 'input', so handleSearch should run.
+        // The generic logic dispatches 'input', so handleFilter should run.
+    }
+
+    if (shopSelect) {
+        shopSelect.addEventListener('change', handleFilter);
     }
 };
 

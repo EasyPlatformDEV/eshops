@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShops SPA PWA</title>
-    <link rel="stylesheet" href="style.css?v=21000">
+    <link rel="stylesheet" href="style.css?v=22000">
     <link rel="manifest" href="json-files/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="logout.css">
@@ -465,7 +465,14 @@
                         <button class="clear-input-btn" data-target="add-prod-search"
                             style="display:block;">&times;</button>
                     </div>
-                    <small>Search for product title, GTIN or URL address</small>
+                    <div class="info-text-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <small>Search for product title, GTIN or URL address</small>
+                    </div>
                 </div>
 
                 <div class="results-list">
@@ -474,7 +481,7 @@
                     <!-- Result Item 1 -->
                     <div class="add-product-item">
                         <div class="item-checkbox">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" checked class="custom-checkbox">
                         </div>
                         <img src="assets/book_1.jpg" class="item-thumbnail" alt="Product"
                             onerror="this.src='https://via.placeholder.com/40x50'">
@@ -490,7 +497,7 @@
                     <!-- Result Item 2 -->
                     <div class="add-product-item">
                         <div class="item-checkbox">
-                            <input type="checkbox">
+                            <input type="checkbox" class="custom-checkbox">
                         </div>
                         <img src="assets/book_2.jpg" class="item-thumbnail" alt="Product"
                             onerror="this.src='https://via.placeholder.com/40x50'">

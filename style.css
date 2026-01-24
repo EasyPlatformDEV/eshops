@@ -3394,17 +3394,18 @@ a:hover {
 }
 
 /* Show X button when input wrapper has class 'has-value' or handled via JS */
-.eshops-input-container:hover .clear-input-btn,
-.search-section:hover .clear-input-btn {
-    /* Optional: show on hover even if empty? No, logic should handle visibility based on value */
-}
+
 
 /* --- Add Products Overlay (Extends logout.css structure) --- */
 /* The outer container uses .logout-modal from logout.css */
 
 /* Ensure z-index is super high to avoid being "under" anything */
+#add-products-overlay {
+    z-index: 10000 !important;
+}
+
 #add-products-overlay.logout-modal {
-    z-index: 9999 !important;
+    z-index: 10000 !important;
 }
 
 .add-products-content {
@@ -3468,9 +3469,10 @@ a:hover {
 }
 
 .info-icon {
-    width: 14px;
-    height: 14px;
-    color: #999;
+    width: 18px;
+    height: 18px;
+    color: #666;
+    flex-shrink: 0;
 }
 
 .add-products-body small {
@@ -3493,10 +3495,10 @@ a:hover {
     top: 50%;
     right: 12px;
     transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%23666'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%23444'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
