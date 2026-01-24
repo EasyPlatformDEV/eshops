@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShops SPA PWA</title>
-    <link rel="stylesheet" href="style.css?v=21000">
+    <link rel="stylesheet" href="style.css?v=19000">
     <link rel="manifest" href="json-files/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="logout.css">
@@ -435,80 +435,7 @@
         </div>
     </div>
 
-    <!-- Add Products Overlay -->
-    <div id="add-products-overlay" class="logout-modal">
-        <div class="logout-content add-products-content">
-            <div class="logout-header">
-                <h2>Adding new products</h2>
-                <button class="logout-close" id="close-add-products">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path
-                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                            fill="currentColor" />
-                    </svg>
-                </button>
-            </div>
-            <div class="add-products-body">
-                <div class="form-group">
-                    <label>Select eShop:</label>
-                    <div class="custom-select-wrapper">
-                        <select class="styled-select">
-                            <option>ozone.bg</option>
-                            <option>emag.bg</option>
-                            <option>technopolis.bg</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group search-group">
-                    <label>Search for a product:</label>
-                    <div class="input-with-clear">
-                        <input type="text" id="add-prod-search" value="harry potter">
-                        <button class="clear-input-btn" data-target="add-prod-search">&times;</button>
-                    </div>
-                    <small>Search for product title, GTIN or URL address</small>
-                </div>
-
-                <div class="results-list">
-                    <div class="results-count">2 results found:</div>
-
-                    <!-- Result Item 1 -->
-                    <div class="add-product-item">
-                        <div class="item-checkbox">
-                            <input type="checkbox" checked>
-                        </div>
-                        <img src="assets/book_1.jpg" class="item-thumbnail" alt="Product">
-                        <div class="item-details">
-                            <div class="item-title">Harry Potter and the Philosopher's Stone</div>
-                            <div class="item-meta">
-                                <span class="item-price">35.87 EUR</span>
-                                <span class="item-gtin">GTIN: 12236664284</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Result Item 2 -->
-                    <div class="add-product-item">
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                        </div>
-                        <img src="assets/book_2.jpg" class="item-thumbnail" alt="Product">
-                        <div class="item-details">
-                            <div class="item-title">Harry Potter and the Philosopher's Stone - Hard Cover</div>
-                            <div class="item-meta">
-                                <span class="item-price">45.12 EUR</span>
-                                <span class="item-gtin">GTIN: 12236664222</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="logout-footer">
-                <button class="logout-confirm-btn" id="save-products-btn">Save Products</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js?v=21000"></script>
+    <script src="app.js?v=19000"></script>
     </script>
     </script>
 </body>

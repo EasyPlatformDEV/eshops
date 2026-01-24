@@ -894,92 +894,78 @@
         const jaClose = document.getElementById('just-added-close');
         const jaContent = document.getElementById('just-added-content');
 
-        e.preventDefault();
-        e.stopPropagation();
-    }
-            // If mobile (check by class or media query, but toggl    initStarWatch: async function () {
-        const swSidebar = document.getElementById('celebrities-sidebar');
-    const swOverlay = document.getElementById('celebrities-overlay');
-    const swClose = document.getElementById('celebrities-close');
-    const swContent = document.getElementById('celebrities-sidebar-content');
+        const openJa = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            // If mobile (check by class or media query, but toggling class is safe)
+            if (jaSidebar) jaSidebar.classList.add('active');
+            if (jaOverlay) jaOverlay.classList.add('active');
 
-    // Opening Triggers
-    // 1. Header Icon
-    const swIconBtn = document.getElementById('star-watch-icon-btn');
-    // 2. Mobile Menu Link
-    const swMenuLink = document.getElementById('menu-link-celebs');
+            // If opened via menu, close menu
+            const menuModal = document.getElementById('menu-modal');
+            const menuOverlay = document.getElementById('menu-overlay');
+            if (menuModal && menuModal.classList.contains('active')) {
+                menuModal.classList.remove('active');
+                if (menuOverlay) menuOverlay.classList.remove('active');
+            }
+        };
 
-    const openSw = (e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
+        const closeJa = () => {
+            if (jaSidebar) jaSidebar.classList.remove('active');
+            if (jaOverlay) jaOverlay.classList.remove('active');
+        };
+
+        if (jaBtn) jaBtn.addEventListener('click', openJa);
+        if (jaLink) jaLink.addEventListener('click', openJa);
+        if (jaClose) jaClose.addEventListener('click', closeJa);
+        if (jaOverlay) jaOverlay.addEventListener('click', closeJa);
+
+        // Fetch Data
+        try {
+            const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("Just Added JSON not found");
+            const items = await response.json();
+
+            // Randomize and take 10
+            const shuffled = items.sort(() => 0.5 - Math.random());
+            const selectedItems = shuffled.slice(0, 10);
+
+            this.renderJustAdded(selectedItems, jaContent);
+        } catch (error) {
+            console.error("Error loading Just Added:", error);
+            if (jaContent) jaContent.innerHTML = '<p style="padding:15px; text-align:center; color:#999;">Failed to load items.</p>';
         }
-        if (swSidebar) swSidebar.classList.add('active');
-        if (swOverlay) swOverlay.classList.add('active');
-
-        // Close menu if open
-        const menuModal = document.getElementById('menu-modal');
-        const menuOverlay = document.getElementById('menu-overlay');
-        if (menuModal && menuModal.classList.contains('active')) {
-            menuModal.classList.remove('active');
-            if (menuOverlay) menuOverlay.classList.remove('active');
-        }
-    };
-
-    const closeSw = () => {
-        if (swSidebar) swSidebar.classList.remove('active');
-        if (swOverlay) swOverlay.classList.remove('active');
-    };
-
-    if(swIconBtn) swIconBtn.addEventListener('click', openSw);
-    if(swMenuLink) swMenuLink.addEventListener('click', openSw);
-    if(swClose) swClose.addEventListener('click', closeSw);
-    if(swOverlay) swOverlay.addEventListener('click', closeSw);
-
-    // Fetch Data
-    try {
-        const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
-        if(!response.ok) throw new Error("Just Added JSON not found");
-        const items = await response.json();
-
-        // Randomize and take 10
-        const shuffled = items.sort(() => 0.5 - Math.random());
-        const selectedItems = shuffled.slice(0, 10);
-
-        this.renderJustAdded(selectedItems, jaContent);
-    } catch(error) {
-        console.error("Error loading Just Added:", error);
-        if (jaContent) jaContent.innerHTML = '<p style="padding:15px; text-align:center; color:#999;">Failed to load items.</p>';
-    }
-},
+    },
 
     renderJustAdded: function (items, container) {
         if (!container) return;
-container.innerHTML = '';
+        container.innerHTML = '';
 
-items.forEach(item => {
-    // Time Ago Calculation
-    const addedDate = new Date(item.dateAdded);
-    const now = new Date(); // User said always use today's date to calculate
-    // Assume input dates are valid ISO strings
+        items.forEach(item => {
+            // Time Ago Calculation
+            const addedDate = new Date(item.dateAdded);
+            const now = new Date(); // User said always use today's date to calculate
+            // Assume input dates are valid ISO strings
 
-    const diffMs = now - addedDate;
-    const diffMins = Math.floor(diffMs / 60000);
-    const diffHrs = Math.floor(diffMins / 60);
-    const diffDays = Math.floor(diffHrs / 24);
+            const diffMs = now - addedDate;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHrs = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHrs / 24);
 
-    let timeAgo = '';
-    if (diffDays > 0) {
-        timeAgo = diffDays + 'd ago';
-    } else if (diffHrs > 0) {
-        timeAgo = diffHrs + 'h ago';
-    } else if (diffMins > 0) {
-        timeAgo = diffMins + 'm ago';
-    } else {
-        timeAgo = 'Just now';
-    }
+            let timeAgo = '';
+            if (diffDays > 0) {
+                timeAgo = diffDays + 'd ago';
+            } else if (diffHrs > 0) {
+                timeAgo = diffHrs + 'h ago';
+            } else if (diffMins > 0) {
+                timeAgo = diffMins + 'm ago';
+            } else {
+                timeAgo = 'Just now';
+            }
 
-    const html = `
+            const html = `
                 <div class="ja-item">
                     <div class="ja-header">
                         <img src="${item.userAvatar}" alt="${item.username}" class="ja-avatar">
@@ -1012,30 +998,30 @@ items.forEach(item => {
                     </div>
                 </div>
             `;
-    container.insertAdjacentHTML('beforeend', html);
-});
+            container.insertAdjacentHTML('beforeend', html);
+        });
     },
 
-renderNotifications: function (alerts, container) {
-    if (!container) return;
-    container.innerHTML = '';
+    renderNotifications: function (alerts, container) {
+        if (!container) return;
+        container.innerHTML = '';
 
-    alerts.forEach(alert => {
-        // Calculate discount percentage
-        const discount = Math.round(((alert.initialPrice - alert.currentPrice) / alert.initialPrice) * 100);
+        alerts.forEach(alert => {
+            // Calculate discount percentage
+            const discount = Math.round(((alert.initialPrice - alert.currentPrice) / alert.initialPrice) * 100);
 
-        // Format date from YYYY-MM-DD to DD.MM.YYYY (target reached)
-        const dateParts = alert.date.split('-');
-        const formattedDateReached = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+            // Format date from YYYY-MM-DD to DD.MM.YYYY (target reached)
+            const dateParts = alert.date.split('-');
+            const formattedDateReached = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
 
-        // Format set date
-        let formattedDateSet = formattedDateReached; // Fallback
-        if (alert.dateSet) {
-            const dateSetParts = alert.dateSet.split('-');
-            formattedDateSet = `${dateSetParts[2]}.${dateSetParts[1]}.${dateSetParts[0]}`;
-        }
+            // Format set date
+            let formattedDateSet = formattedDateReached; // Fallback
+            if (alert.dateSet) {
+                const dateSetParts = alert.dateSet.split('-');
+                formattedDateSet = `${dateSetParts[2]}.${dateSetParts[1]}.${dateSetParts[0]}`;
+            }
 
-        const item = `
+            const item = `
                 <div class="notification-item">
                     <div class="notification-icon">
                         <div class="notification-sent-date">
@@ -1058,32 +1044,32 @@ renderNotifications: function (alerts, container) {
                     </div>
                 </div>
             `;
-        container.insertAdjacentHTML('beforeend', item);
-    });
-},
+            container.insertAdjacentHTML('beforeend', item);
+        });
+    },
 
-fetchFaqs: async function () {
-    const faqList = document.getElementById('faq-list');
-    if (!faqList) return;
-    try {
-        const response = await fetch('json-files/faqs.json?v=' + new Date().getTime());
-        if (!response.ok) throw new Error("FAQs JSON not found");
-        const items = await response.json();
-        this.renderFaqs(items);
-    } catch (error) {
-        console.error("Error loading FAQs:", error);
-    }
-},
+    fetchFaqs: async function () {
+        const faqList = document.getElementById('faq-list');
+        if (!faqList) return;
+        try {
+            const response = await fetch('json-files/faqs.json?v=' + new Date().getTime());
+            if (!response.ok) throw new Error("FAQs JSON not found");
+            const items = await response.json();
+            this.renderFaqs(items);
+        } catch (error) {
+            console.error("Error loading FAQs:", error);
+        }
+    },
 
-renderFaqs: function (items) {
-    const list = document.getElementById('faq-list');
-    const viewAllBtn = document.getElementById('view-all-faq');
-    if (!list) return;
-    list.innerHTML = '';
+    renderFaqs: function (items) {
+        const list = document.getElementById('faq-list');
+        const viewAllBtn = document.getElementById('view-all-faq');
+        if (!list) return;
+        list.innerHTML = '';
 
-    items.forEach((faq, index) => {
-        const isHidden = index >= 3 ? 'hidden' : '';
-        const html = `
+        items.forEach((faq, index) => {
+            const isHidden = index >= 3 ? 'hidden' : '';
+            const html = `
                 <div class="faq-item ${isHidden}">
                     <button class="faq-question">
                         <span>${faq.question}</span>
@@ -1094,31 +1080,31 @@ renderFaqs: function (items) {
                     </div>
                 </div>
             `;
-        list.insertAdjacentHTML('beforeend', html);
-    });
+            list.insertAdjacentHTML('beforeend', html);
+        });
 
-    // Add Toggle logic
-    const faqs = list.querySelectorAll('.faq-item');
-    faqs.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            // Close others
-            faqs.forEach(other => {
-                if (other !== item) other.classList.remove('active');
+        // Add Toggle logic
+        const faqs = list.querySelectorAll('.faq-item');
+        faqs.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqs.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
             });
-            item.classList.toggle('active');
         });
-    });
 
-    // "View All" Logic
-    if (items.length > 3 && viewAllBtn) {
-        viewAllBtn.style.display = 'inline-flex';
-        viewAllBtn.addEventListener('click', () => {
-            list.querySelectorAll('.faq-item.hidden').forEach(el => el.classList.remove('hidden'));
-            viewAllBtn.style.display = 'none';
-        });
+        // "View All" Logic
+        if (items.length > 3 && viewAllBtn) {
+            viewAllBtn.style.display = 'inline-flex';
+            viewAllBtn.addEventListener('click', () => {
+                list.querySelectorAll('.faq-item.hidden').forEach(el => el.classList.remove('hidden'));
+                viewAllBtn.style.display = 'none';
+            });
+        }
     }
-}
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1166,60 +1152,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
-// --- Add Products Overlay Logic ---
-document.addEventListener('DOMContentLoaded', () => {
-    const addProdsOverlay = document.getElementById('add-products-overlay');
-    const closeAddProdsBtn = document.getElementById('close-add-products');
-    const saveProdsBtn = document.getElementById('save-products-btn');
-
-    // Open Buttons (Find multiple triggers)
-    // 1. Menu "Add products" links
-    const menuAddProds = document.querySelectorAll('a[href="#"]'); // Just general for now, but targeting specifc text content
-
-    // Refine selector for specific "Add products" buttons/links
-    const allLinks = document.querySelectorAll('a, button');
-    allLinks.forEach(link => {
-        if (link.textContent.trim().includes('Add products') && !link.classList.contains('logout-confirm-btn')) {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                openAddProducts();
-            });
-        }
-    });
-
-    function openAddProducts() {
-        if (addProdsOverlay) {
-            addProdsOverlay.classList.add('active'); // active handles display:flex via CSS
-        }
-    }
-
-    function closeAddProducts() {
-        if (addProdsOverlay) {
-            addProdsOverlay.classList.remove('active');
-            addProdsOverlay.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (closeAddProdsBtn) {
-        closeAddProdsBtn.addEventListener('click', closeAddProducts);
-    }
-
-    if (saveProdsBtn) {
-        saveProdsBtn.addEventListener('click', () => {
-            // Mock save action
-            closeAddProducts();
-            // Maybe show specific toast or alert?
-        });
-    }
-
-    // Close on click outside
-    if (addProdsOverlay) {
-        addProdsOverlay.addEventListener('click', (e) => {
-            if (e.target === addProdsOverlay) {
-                closeAddProducts();
-            }
-        });
-    }
 });
