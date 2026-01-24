@@ -472,8 +472,8 @@ body {
 
 .icon-favorite:hover {
     fill: transparent !important;
-    stroke: currentColor;
-    stroke-width: 2px;
+    stroke: var(--pink-highlight) !important;
+    stroke-width: 2px !important;
 }
 
 
