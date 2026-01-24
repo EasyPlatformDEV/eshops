@@ -3360,7 +3360,7 @@ a:hover {
 
 /* Alignment for Browse Filters Middle Column */
 .filters-section.middle-col-align {
-    margin-top: 40px;
+    margin-top: 10px;
     /* Push down to align with sidebars */
 }
 
