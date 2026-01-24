@@ -3402,6 +3402,11 @@ a:hover {
 /* --- Add Products Overlay (Extends logout.css structure) --- */
 /* The outer container uses .logout-modal from logout.css */
 
+/* Ensure z-index is super high to avoid being "under" anything */
+#add-products-overlay.logout-modal {
+    z-index: 9999 !important;
+}
+
 .add-products-content {
     /* Overrides specific to this modal */
     max-width: 450px;
@@ -3409,6 +3414,31 @@ a:hover {
     text-align: left;
     /* Reset text align from center */
     padding: 25px 30px;
+}
+
+/* Align Title and Close Button */
+.add-products-content .logout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    /* Space for close button */
+    min-height: 30px;
+    /* Ensure height matches close button area */
+}
+
+/* Override default title margins to align */
+.add-products-content .logout-title {
+    margin: 0 !important;
+    font-size: 1.2rem;
+    line-height: normal;
+}
+
+.add-products-content .logout-close {
+    top: 25px;
+    /* Align with new padding */
+    right: 30px;
 }
 
 .add-products-body {
@@ -3421,27 +3451,61 @@ a:hover {
 
 .add-products-body label {
     display: block;
-    font-weight: 500;
+    font-weight: 400;
+    /* Removed bold */
     margin-bottom: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* Reduced size */
     color: #333;
+}
+
+/* Info Icon + Small Text */
+.info-text-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.info-icon {
+    width: 14px;
+    height: 14px;
+    color: #999;
 }
 
 .add-products-body small {
     display: block;
     color: #999;
     font-size: 0.8rem;
-    margin-top: 6px;
+    margin: 0;
+    /* Reset margin since wrapper handles gap */
 }
 
-/* Styled Select */
+/* Styled Select with Arrow */
 .custom-select-wrapper {
     position: relative;
 }
 
+/* Add arrow via pseudo-element or background icon */
+.custom-select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%23666'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 .styled-select {
     width: 100%;
-    padding: 10px;
+    padding: 10px 30px 10px 12px;
+    /* Extra right padding for arrow */
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: white;
@@ -3449,6 +3513,7 @@ a:hover {
     color: var(--text-color);
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     cursor: pointer;
 }
 
@@ -3470,6 +3535,9 @@ a:hover {
     margin-top: 20px;
     border-top: 1px solid #eee;
     padding-top: 15px;
+    max-height: 300px;
+    /* Scrollable results */
+    overflow-y: auto;
 }
 
 .results-count {
@@ -3486,13 +3554,50 @@ a:hover {
     border-radius: 8px;
     margin-bottom: 10px;
     gap: 10px;
+    transition: background-color 0.2s;
 }
 
-.item-checkbox input {
-    width: 18px;
-    height: 18px;
+.add-product-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Custom Checkbox (Rounded 8px) */
+.item-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    /* 6px is better for 20px box, user asked for 8px but for small box 8px is almost circle. Let's try 6px visually or 8px if strict. */
+    border-radius: 8px;
+    /* As requested */
     cursor: pointer;
-    accent-color: var(--pink-highlight);
+    position: relative;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.custom-checkbox:checked {
+    background-color: var(--pink-highlight);
+    border-color: var(--pink-highlight);
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
 }
 
 .item-thumbnail {
@@ -3501,6 +3606,7 @@ a:hover {
     object-fit: contain;
     border: 1px solid #eee;
     border-radius: 4px;
+    background: #fff;
 }
 
 .item-details {
@@ -3523,6 +3629,7 @@ a:hover {
     color: var(--text-light);
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 .item-price {
