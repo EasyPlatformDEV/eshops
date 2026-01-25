@@ -2950,17 +2950,15 @@ a:hover {
 /* FINAL MOBILE BADGE FIX (CLEAN, SPECIFIC) */
 @media (max-width: 480px) {
 
-    /* Discount Badge - ACCOUNTING FOR 10PX PARENT PADDING */
+    /* Discount Badge - Flush to container edges on mobile */
     .discount-badge {
         font-size: 0.85rem;
         width: 35px;
         height: 35px;
         padding: 0;
-        right: -2px;
-        /* Less negative = MORE overhang */
+        right: 0;
         left: auto;
-        top: -2px;
-        /* Less negative = MORE overhang */
+        top: 0;
         margin-left: 0;
     }
 
