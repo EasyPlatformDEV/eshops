@@ -1398,7 +1398,8 @@
             let lowestPrice = Infinity;
             filtered.forEach((p) => {
                 try {
-                    const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                    // Remove commas and non-digit characters except dots
+                    const priceVal = parseFloat(p.price.replace(/,/g, '').replace(/[^\d.]/g, ''));
                     if (!isNaN(priceVal) && priceVal < lowestPrice) {
                         lowestPrice = priceVal;
                     }
@@ -1413,8 +1414,11 @@
                 // Check if this is the lowest price
                 let isLowestPrice = false;
                 try {
-                    const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                    const priceVal = parseFloat(p.price.replace(/,/g, '').replace(/[^\d.]/g, ''));
                     isLowestPrice = !isNaN(priceVal) && priceVal === lowestPrice;
+                    if (isLowestPrice) {
+                        console.log('Product with lowest price:', p.title, priceVal);
+                    }
                 } catch (e) { }
 
                 html += `
