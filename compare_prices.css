@@ -348,13 +348,11 @@
     flex-shrink: 0;
 }
 
-.item-title {
+.product-title {
     font-size: 0.9rem;
     font-weight: 400;
     color: #333;
     margin-bottom: 0;
-    flex: 1;
-    align-self: flex-start;
 }
 
 .item-meta {

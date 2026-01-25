@@ -149,7 +149,7 @@
                         <div class="item-content">
                             <div class="item-top">
                                 <img src="${p.image}" class="item-thumbnail" alt="${p.title}" onerror="this.src='https://via.placeholder.com/40x50'">
-                                <div class="item-title">${p.title}</div>
+                                <div class="product-title">${p.title}</div>
                             </div>
                             <div class="item-meta">
                                 <span class="item-price">${this.formatPrice(p.price)}</span>
@@ -1433,7 +1433,7 @@
                         <div class="item-content">
                             <div class="item-top">
                                 <img src="${p.image}" class="item-thumbnail" alt="${p.title || 'Product'}">
-                                <div class="item-title">${p.title || 'Untitled Product'}</div>
+                                <div class="product-title">${p.title || 'Untitled Product'}</div>
                             </div>
                             <div class="item-meta">
                                 <span class="item-price">${app.formatPrice(p.price)}</span>
