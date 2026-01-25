@@ -473,14 +473,12 @@ body {
 
 .icon-favorite {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
     cursor: pointer;
     transition: all 0.2s ease;
     z-index: 10;
-    /* Bring to front on desktop */
     fill: var(--pink-highlight) !important;
-    /* Pink color */
 }
 
 .icon-favorite:hover path {
@@ -2966,18 +2964,15 @@ a:hover {
         margin-left: 0;
     }
 
-    /* Favorites Icon - High Specificity - Flush to container edges on desktop */
+    /* Favorites Icon - Absolute positioning at top-left corner */
     body .product-card .product-image-container .product-card-favorite,
     body .product-card .product-image-container .icon-favorite {
         position: absolute !important;
         top: 0 !important;
-        /* Flush to top edge */
         left: 0 !important;
-        /* Flush to left edge */
-        z-index: 10;
+        margin: 0 !important;
         background: transparent;
         padding: 0;
-        margin: 0;
     }
 }
 
