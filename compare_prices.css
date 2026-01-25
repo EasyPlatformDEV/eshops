@@ -449,20 +449,25 @@
 /* Mobile layout adjustments */
 @media (max-width: 480px) {
     .item-meta {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: flex-start;
-        gap: 6px;
+        gap: 10px;
+    }
+
+    .item-price {
+        flex-shrink: 0;
     }
 
     .item-shop-wrapper {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        text-align: right;
     }
 
     .item-shop {
-        flex: 1;
-        text-align: left;
+        text-align: right;
     }
 }

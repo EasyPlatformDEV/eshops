@@ -1405,6 +1405,8 @@
                 } catch (e) { }
             });
 
+            console.log('Compare prices - Lowest price:', lowestPrice, 'from', filtered.length, 'products');
+
             filtered.forEach((p) => {
                 const isCurrentProduct = String(p.id) === String(currentProductId);
 
