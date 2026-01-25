@@ -46,6 +46,7 @@
         "price": 1299.00,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wITd4PnUHx-Bvf0JwRZUteluPgEokruI-A&s",
         "link": "https://www.technopolis.bg",
+		"gtin": "123456789",
         "dateAdded": "2026-01-17T11:45:00",
         "username": "MobileFan",
         "userAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mobile",
@@ -325,7 +326,21 @@
         "userAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=MovieNight",
         "shop_category": "Electronics"
     },
-    {
+    {	
+        "id": 104,
+        "title": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "shop": "technomarket.bg",
+        "price": 1150.00,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wITd4PnUHx-Bvf0JwRZUteluPgEokruI-A&s",
+        "link": "https://www.technomarket.bg",
+		"gtin": "123456789",
+        "dateAdded": "2026-01-17T11:45:00",
+        "username": "MobileFan",
+        "userAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mobile",
+        "shop_category": "Electronics"
+    },
+	{
         "id": 125,
         "title": "Philips Air Fryer",
         "brand": "Philips",

@@ -7,7 +7,7 @@
     "old_price": "1199.00 €",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIcFbX-CC1ugTZaxsSyZdHY8LkIHiQXJp_2g&s",
     "link": "https://www.technopolis.bg",
-    "shop_name": "Technopolis.bg",
+    "shop_name": "technopolis.bg",
     "hasAlert": false
   },
   {
@@ -16,9 +16,10 @@
     "title": "Samsung Galaxy S24 Ultra, 256GB, Titanium Gray",
     "price": "1249.50 €",
     "image": "https://cdn.mydreamshop.io/resized/private/pcshop/products/images/9e110b8cb36c5105c8e1d5cfe3b7525a6c500222/C/173755485148026790fba3753f0509.png",
-    "link": "https://samsung.com",
-    "shop_name": "Samsung Shop",
+    "link": "https://technomarket.bg",
+	"gtin": "123456789",
+    "shop_name": "technomarket.bg",
     "hasAlert": true,
-    "alert_price": "1100.00 €"
+    "alert_price": "1150.00 €"
   }
 ]
