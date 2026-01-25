@@ -1416,10 +1416,10 @@
                 try {
                     const priceVal = parseFloat(p.price.replace(/,/g, '').replace(/[^\d.]/g, ''));
                     isLowestPrice = !isNaN(priceVal) && priceVal === lowestPrice;
-                    if (isLowestPrice) {
-                        console.log('Product with lowest price:', p.title, priceVal);
-                    }
-                } catch (e) { }
+                    console.log('Product:', p.title, '| Price string:', p.price, '| Parsed:', priceVal, '| Lowest:', lowestPrice, '| Is lowest?', isLowestPrice);
+                } catch (e) {
+                    console.error('Error parsing price for', p.title, e);
+                }
 
                 html += `
                     <div class="add-product-item" data-product-id="${p.id}">
