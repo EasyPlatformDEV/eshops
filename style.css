@@ -2271,7 +2271,8 @@ a:hover {
 
 /* Mobile Login Button (Specific Style) */
 .mobile-login-btn {
-    background-color: #ffffff;
+    background-color: #f8e1ea;
+    /* Light pink background */
     border: 1px solid var(--pink-highlight);
     border-radius: 8px;
     width: 34px;

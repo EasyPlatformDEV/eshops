@@ -31,10 +31,10 @@
 }
 
 .category-filter-btn.active {
-    background-color: var(--pink-highlight);
-    color: white;
+    background-color: #f8e1ea;
+    color: var(--pink-highlight);
     border-color: var(--pink-highlight);
-    box-shadow: 0 2px 5px rgba(182, 3, 120, 0.3);
+    box-shadow: 0 2px 5px rgba(182, 3, 120, 0.15);
 }
 
 .category-filter-btn svg {
