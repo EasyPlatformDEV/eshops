@@ -1395,7 +1395,7 @@
             filtered.forEach((p) => {
                 const isCurrentProduct = String(p.id) === String(currentProductId);
                 html += `
-                    <label class="add-product-item" data-product-id="${p.id}">
+                    <div class="add-product-item" data-product-id="${p.id}">
                         <div class="item-checkbox">
                             <input type="checkbox" class="custom-checkbox" ${isCurrentProduct ? 'checked' : ''}>
                         </div>
@@ -1407,23 +1407,29 @@
                                 <span class="item-gtin">${p.shop || 'Unknown shop'}</span>
                             </div>
                         </div>
-                    </label>
+                    </div>
                 `;
             });
 
             resultsList.innerHTML = html;
 
-            // Add checkbox listeners
+            // Add click listeners - click anywhere on item to toggle checkbox
             const items = resultsList.querySelectorAll('.add-product-item');
             items.forEach(item => {
+                // Click on item (but not checkbox itself)
                 item.addEventListener('click', (e) => {
                     if (e.target.classList.contains('custom-checkbox')) return;
                     const checkbox = item.querySelector('.custom-checkbox');
-                    checkbox.checked = !checkbox.checked;
-                    updateSaveButton();
+                    if (checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
                 });
+            });
 
-                const checkbox = item.querySelector('.custom-checkbox');
+            // Listen to checkbox changes
+            const checkboxes = resultsList.querySelectorAll('.custom-checkbox');
+            checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updateSaveButton);
             });
 
