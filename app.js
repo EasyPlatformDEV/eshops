@@ -1398,8 +1398,9 @@
             let lowestPrice = Infinity;
             filtered.forEach((p) => {
                 try {
-                    // Remove commas and non-digit characters except dots
-                    const priceVal = parseFloat(p.price.replace(/,/g, '').replace(/[^\d.]/g, ''));
+                    // Convert to string first in case price is a number
+                    const priceStr = String(p.price || '');
+                    const priceVal = parseFloat(priceStr.replace(/,/g, '').replace(/[^\d.]/g, ''));
                     if (!isNaN(priceVal) && priceVal < lowestPrice) {
                         lowestPrice = priceVal;
                     }
@@ -1414,9 +1415,10 @@
                 // Check if this is the lowest price
                 let isLowestPrice = false;
                 try {
-                    const priceVal = parseFloat(p.price.replace(/,/g, '').replace(/[^\d.]/g, ''));
+                    const priceStr = String(p.price || '');
+                    const priceVal = parseFloat(priceStr.replace(/,/g, '').replace(/[^\d.]/g, ''));
                     isLowestPrice = !isNaN(priceVal) && priceVal === lowestPrice;
-                    console.log('Product:', p.title, '| Price string:', p.price, '| Parsed:', priceVal, '| Lowest:', lowestPrice, '| Is lowest?', isLowestPrice);
+                    console.log('Product:', p.title, '| Price string:', priceStr, '| Parsed:', priceVal, '| Lowest:', lowestPrice, '| Is lowest?', isLowestPrice);
                 } catch (e) {
                     console.error('Error parsing price for', p.title, e);
                 }
