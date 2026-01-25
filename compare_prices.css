@@ -325,7 +325,7 @@
     transform: rotate(45deg);
 }
 
-.item-content {
+.modal-content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -333,7 +333,7 @@
     gap: 8px;
 }
 
-.item-top {
+.modal-top {
     display: flex;
     align-items: flex-start;
     gap: 5px;
@@ -446,7 +446,7 @@
 
 /* Mobile fixes */
 @media (max-width: 768px) {
-    .item-top {
+    .modal-top {
         align-items: flex-start;
     }
 
@@ -454,7 +454,7 @@
         align-self: flex-start;
     }
 
-    .item-content {
+    .modal-content {
         justify-content: flex-start;
     }
 }

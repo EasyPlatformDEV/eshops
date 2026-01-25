@@ -146,8 +146,8 @@
                         <div class="item-checkbox">
                             <input type="checkbox" class="custom-checkbox">
                         </div>
-                        <div class="item-content">
-                            <div class="item-top">
+                        <div class="modal-content">
+                            <div class="modal-top">
                                 <img src="${p.image}" class="item-thumbnail" alt="${p.title}" onerror="this.src='https://via.placeholder.com/40x50'">
                                 <div class="product-title">${p.title}</div>
                             </div>
@@ -1430,8 +1430,8 @@
                         <div class="item-checkbox">
                             <input type="checkbox" class="custom-checkbox" ${isCurrentProduct ? 'checked' : ''}>
                         </div>
-                        <div class="item-content">
-                            <div class="item-top">
+                        <div class="modal-content">
+                            <div class="modal-top">
                                 <img src="${p.image}" class="item-thumbnail" alt="${p.title || 'Product'}">
                                 <div class="product-title">${p.title || 'Untitled Product'}</div>
                             </div>
