@@ -863,7 +863,7 @@
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
                                 Price history
                             </li>
-                            ${p.id !== 104 ? `<li class="compare-prices-link" data-gtin="${p.gtin || ''}" data-product-id="${p.id}">
+                            ${p.id !== 1 ? `<li class="compare-prices-link" data-gtin="${p.gtin || ''}" data-product-id="${p.id}">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>
                                 Compare prices (4)
                             </li>` : ''}
