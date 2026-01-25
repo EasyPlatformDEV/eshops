@@ -151,7 +151,9 @@
                             <div class="item-title">${p.title}</div>
                             <div class="item-meta">
                                 <span class="item-price">${this.formatPrice(p.price)}</span>
-                                <span class="item-gtin">${p.shop}</span>
+                                <div class="item-shop-wrapper">
+                                    <span class="item-shop">${p.shop}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1392,8 +1394,27 @@
 
             let html = `<div class="results-count">${filtered.length} product${filtered.length > 1 ? 's' : ''} with GTIN ${currentGtin}:</div>`;
 
+            // Find lowest price
+            let lowestPrice = Infinity;
+            filtered.forEach((p) => {
+                try {
+                    const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                    if (!isNaN(priceVal) && priceVal < lowestPrice) {
+                        lowestPrice = priceVal;
+                    }
+                } catch (e) { }
+            });
+
             filtered.forEach((p) => {
                 const isCurrentProduct = String(p.id) === String(currentProductId);
+
+                // Check if this is the lowest price
+                let isLowestPrice = false;
+                try {
+                    const priceVal = parseFloat(p.price.replace(/[^\d.]/g, ''));
+                    isLowestPrice = !isNaN(priceVal) && priceVal === lowestPrice;
+                } catch (e) { }
+
                 html += `
                     <div class="add-product-item" data-product-id="${p.id}">
                         <div class="item-checkbox">
@@ -1404,7 +1425,10 @@
                             <div class="item-title">${p.title || 'Untitled Product'}</div>
                             <div class="item-meta">
                                 <span class="item-price">${app.formatPrice(p.price)}</span>
-                                <span class="item-gtin">${p.shop || 'Unknown shop'}</span>
+                                <div class="item-shop-wrapper">
+                                    <span class="item-shop">${p.shop || 'Unknown shop'}</span>
+                                    ${isLowestPrice ? '<span class="lowest-price-badge">Lowest price</span>' : ''}
+                                </div>
                             </div>
                         </div>
                     </div>

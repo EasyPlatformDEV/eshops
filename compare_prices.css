@@ -369,6 +369,28 @@
     color: #333;
 }
 
+/* Shop name wrapper for badge */
+.item-shop-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.item-shop {
+    color: #777;
+}
+
+/* Lowest price badge - styled like login-required */
+.lowest-price-badge {
+    font-size: 0.65rem;
+    color: var(--pink-highlight, #b60378);
+    background-color: #f8e1ea;
+    padding: 4px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
 /* Footer Action Button */
 .logout-footer {
     margin-top: 20px;
@@ -422,4 +444,25 @@
     width: 18px;
     height: 18px;
     flex-shrink: 0;
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 480px) {
+    .item-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .item-shop-wrapper {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .item-shop {
+        flex: 1;
+        text-align: left;
+    }
 }
