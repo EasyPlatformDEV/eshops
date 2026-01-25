@@ -443,18 +443,3 @@
     height: 18px;
     flex-shrink: 0;
 }
-
-/* Mobile fixes */
-@media (max-width: 768px) {
-    .modal-top {
-        align-items: flex-start;
-    }
-
-    .product-title {
-        align-self: flex-start;
-    }
-
-    .modal-content {
-        justify-content: flex-start;
-    }
-}
