@@ -358,9 +358,10 @@
 
 .item-meta {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 6px;
+    gap: 10px;
     font-size: 0.8rem;
     color: #777;
 }
@@ -368,6 +369,7 @@
 .item-price {
     font-weight: 600;
     color: #333;
+    flex-shrink: 0;
 }
 
 /* Shop name wrapper for badge */
@@ -380,6 +382,7 @@
 
 .item-shop {
     color: #777;
+    text-align: right;
 }
 
 /* Lowest price badge - styled like login-required */
@@ -409,12 +412,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* Centered for full width */
     gap: 8px;
     transition: transform 0.2s, background 0.2s;
     text-decoration: none;
     width: 100%;
-    /* Full width as requested */
 }
 
 .logout-btn-action:hover {
@@ -424,7 +425,6 @@
     text-decoration: none;
 }
 
-/* Disabled state - light pink */
 .logout-btn-action:disabled,
 .logout-btn-action.disabled {
     background-color: #f8e1ea;
@@ -440,35 +440,8 @@
     opacity: 0.7;
 }
 
-/* Icon in button */
 .logout-btn-action svg {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-}
-
-/* Mobile layout adjustments */
-@media (max-width: 480px) {
-    .item-meta {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .item-price {
-        flex-shrink: 0;
-    }
-
-    .item-shop-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 4px;
-        text-align: right;
-    }
-
-    .item-shop {
-        text-align: right;
-    }
 }
