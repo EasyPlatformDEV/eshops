@@ -473,12 +473,14 @@ body {
 
 .icon-favorite {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    right: 0;
     cursor: pointer;
     transition: all 0.2s ease;
     z-index: 10;
     /* Bring to front on desktop */
+    fill: var(--pink-highlight) !important;
+    /* Pink color */
 }
 
 .icon-favorite:hover path {
@@ -2964,18 +2966,21 @@ a:hover {
         margin-left: 0;
     }
 
-    /* Favorites Icon - High Specificity - ACCOUNTING FOR 10PX PARENT PADDING */
+    /* Favorites Icon - High Specificity - Flush to edges */
     body .product-card .product-image-container .product-card-favorite,
     body .product-card .product-image-container .icon-favorite {
         position: absolute !important;
-        top: -5px !important;
-        /* 10px padding - 5px = 5px from edge - FORCED */
-        left: -5px !important;
-        /* 10px padding - 5px = 5px from edge - FORCED */
+        top: 0 !important;
+        /* Flush to top edge */
+        right: 0 !important;
+        /* Flush to right edge */
+        left: auto !important;
         z-index: 10;
         background: transparent;
         padding: 0;
         margin: 0;
+        fill: var(--pink-highlight) !important;
+        /* Ensure pink color */
     }
 }
 
