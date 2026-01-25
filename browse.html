@@ -7,6 +7,7 @@
     <title>eShops SPA PWA</title>
     <link rel="stylesheet" href="style.css?v=19000">
     <link rel="stylesheet" href="product_card_icons.css?v=1">
+    <link rel="stylesheet" href="compare_prices.css?v=1">
     <link rel="stylesheet" href="just_added_sidebar.css?v=1">
     <link rel="stylesheet" href="add_products.css?v=47">
     <link rel="manifest" href="json-files/manifest.json">
@@ -492,6 +493,43 @@
     <script src="app.js?v=19000"></script>
     </script>
     </script>
+
+    <!-- Compare Prices Modal -->
+    <div id="compare-prices-overlay">
+        <div class="compare-prices-content">
+            <div class="logout-header">
+                <h2 class="logout-title">Compare prices</h2>
+                <div class="logout-close" id="compare-prices-close">✕</div>
+            </div>
+            <div class="compare-prices-body">
+                <div class="form-group search-group">
+                    <div class="input-with-clear">
+                        <input type="text" id="compare-prices-search" placeholder="GTIN auto-populated..." readonly>
+                    </div>
+                    <div class="info-text-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <small>Showing all products with matching GTIN</small>
+                    </div>
+                </div>
+                <div class="results-list" id="compare-prices-results">
+                    <div class="results-count">Select a product to compare prices...</div>
+                </div>
+            </div>
+            <div class="logout-footer">
+                <button class="logout-btn-action" id="save-compare-btn" disabled>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Save products
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

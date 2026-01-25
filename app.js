@@ -13,6 +13,7 @@
         this.initCelebritiesMobileEvents(); // star watch mobile overlay
         this.bindLogoutEvents(); // Add logout listener
         this.bindAddProductsEvents(); // Add products overlay listener
+        this.bindComparePricesEvents(); // Compare prices modal listener
     },
 
     bindLogoutEvents: function () {
@@ -858,7 +859,7 @@
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" fill="currentColor"/></svg>
                                 Price history
                             </li>
-                            <li>
+                            <li class="compare-prices-link" data-gtin="${p.gtin || ''}" data-product-id="${p.id}">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>
                                 Compare prices (4)
                             </li>
@@ -902,6 +903,11 @@
             `;
             container.insertAdjacentHTML('beforeend', card);
         });
+
+        // Rebind compare prices links after products are rendered
+        if (this.rebindComparePricesLinks) {
+            this.rebindComparePricesLinks();
+        }
 
         const totalCounter = document.getElementById('total-products');
         if (totalCounter) totalCounter.innerText = products.length;
@@ -1317,6 +1323,173 @@
                 viewAllBtn.style.display = 'none';
             });
         }
+    },
+
+    bindComparePricesEvents: function () {
+        const overlay = document.getElementById('compare-prices-overlay');
+        if (!overlay) return;
+
+        const modal = overlay.querySelector('.compare-prices-content');
+        const closeBtn = document.getElementById('compare-prices-close');
+        const searchInput = document.getElementById('compare-prices-search');
+        const resultsList = document.getElementById('compare-prices-results');
+        const saveBtn = document.getElementById('save-compare-btn');
+
+        let currentGtin = '';
+        let currentProductId = '';
+        let justAddedProducts = [];
+
+        // Helper to open modal
+        const openModal = async (gtin, productId) => {
+            currentGtin = gtin;
+            currentProductId = productId;
+
+            if (!currentGtin) {
+                resultsList.innerHTML = '<div class="results-count">Product GTIN not available</div>';
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+
+            // Load just_added products if not loaded
+            if (justAddedProducts.length === 0) {
+                try {
+                    const response = await fetch('json-files/just_added.json?v=' + new Date().getTime());
+                    justAddedProducts = await response.json();
+                } catch (e) {
+                    console.error('Failed to load just_added.json:', e);
+                    justAddedProducts = [];
+                }
+            }
+
+            // Auto-populate search field
+            searchInput.value = currentGtin;
+
+            // Filter and render
+            renderResults();
+
+            // Show modal
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        // Render results
+        function renderResults() {
+            const filtered = justAddedProducts.filter(p => p.gtin && p.gtin === currentGtin);
+
+            if (filtered.length === 0) {
+                resultsList.innerHTML = `<div class="results-count">No products found with GTIN ${currentGtin}</div>`;
+                saveBtn.disabled = true;
+                return;
+            }
+
+            // Sort: current product first
+            filtered.sort((a, b) => {
+                if (String(a.id) === String(currentProductId)) return -1;
+                if (String(b.id) === String(currentProductId)) return 1;
+                return 0;
+            });
+
+            let html = `<div class="results-count">${filtered.length} product${filtered.length > 1 ? 's' : ''} with GTIN ${currentGtin}:</div>`;
+
+            filtered.forEach((p) => {
+                const isCurrentProduct = String(p.id) === String(currentProductId);
+                html += `
+                    <label class="add-product-item" data-product-id="${p.id}">
+                        <div class="item-checkbox">
+                            <input type="checkbox" class="custom-checkbox" ${isCurrentProduct ? 'checked' : ''}>
+                        </div>
+                        <img src="${p.image}" class="item-thumbnail" alt="${p.title || 'Product'}">
+                        <div class="item-details">
+                            <div class="item-title">${p.title || 'Untitled Product'}</div>
+                            <div class="item-meta">
+                                <span class="item-price">${app.formatPrice(p.price)}</span>
+                                <span class="item-gtin">${p.shop || 'Unknown shop'}</span>
+                            </div>
+                        </div>
+                    </label>
+                `;
+            });
+
+            resultsList.innerHTML = html;
+
+            // Add checkbox listeners
+            const items = resultsList.querySelectorAll('.add-product-item');
+            items.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('custom-checkbox')) return;
+                    const checkbox = item.querySelector('.custom-checkbox');
+                    checkbox.checked = !checkbox.checked;
+                    updateSaveButton();
+                });
+
+                const checkbox = item.querySelector('.custom-checkbox');
+                checkbox.addEventListener('change', updateSaveButton);
+            });
+
+            updateSaveButton();
+        }
+
+        // Update save button state
+        function updateSaveButton() {
+            const checked = resultsList.querySelectorAll('.custom-checkbox:checked');
+            saveBtn.disabled = checked.length === 0;
+        }
+
+        // Close modal
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            resultsList.innerHTML = '<div class="results-count">Select a product to compare prices...</div>';
+            searchInput.value = '';
+        }
+
+        // Close button click
+        closeBtn?.addEventListener('click', closeModal);
+
+        // Click outside modal
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+
+        // Save button click
+        saveBtn?.addEventListener('click', () => {
+            const checkedItems = resultsList.querySelectorAll('.custom-checkbox:checked');
+            const selectedIds = [...checkedItems].map(cb => {
+                return cb.closest('.add-product-item').dataset.productId;
+            });
+
+            console.log('Compare prices - selected products:', selectedIds);
+            closeModal();
+        });
+
+        // Bind compare prices links
+        const bindLinks = () => {
+            const compareLinks = document.querySelectorAll('.compare-prices-link');
+            compareLinks.forEach(link => {
+                // Remove existing listener if any
+                link.replaceWith(link.cloneNode(true));
+            });
+
+            // Re-select after cloning
+            document.querySelectorAll('.compare-prices-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const gtin = link.dataset.gtin;
+                    const productId = link.dataset.productId;
+                    if (gtin) {
+                        openModal(gtin, productId);
+                    }
+                });
+            });
+        };
+
+        // Initial bind
+        bindLinks();
+
+        // Expose functions for external calls
+        this.openComparePricesModal = openModal;
+        this.rebindComparePricesLinks = bindLinks;
     }
 };
 
