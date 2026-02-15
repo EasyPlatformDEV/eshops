@@ -124,6 +124,8 @@
         .benefits-splide {
             margin: 20px 0;
             padding: 20px 0;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .benefits-splide .splide__track {
@@ -132,6 +134,10 @@
 
         .benefits-splide .splide__list {
             align-items: stretch;
+        }
+
+        .benefits-splide .splide__arrows {
+            display: flex;
         }
 
         .benefit-card {
@@ -662,24 +668,24 @@
         document.addEventListener('DOMContentLoaded', function () {
             var benefitsCarousel = new Splide('#benefits-carousel', {
                 type: 'slide',
-                perPage: 3,
+                perPage: 2,
                 perMove: 1,
                 gap: '15px',
-                padding: { right: '50px' }, // Show peek of next slide
+                padding: { right: '40px' }, // Show peek of next slide
                 pagination: false,
                 arrows: true,
                 breakpoints: {
                     900: {
                         perPage: 2,
-                        padding: { right: '40px' },
-                    },
-                    600: {
-                        perPage: 1.5,
                         padding: { right: '30px' },
                     },
-                    480: {
-                        perPage: 1.2,
+                    600: {
+                        perPage: 1.3,
                         padding: { right: '20px' },
+                    },
+                    480: {
+                        perPage: 1.1,
+                        padding: { right: '15px' },
                     }
                 }
             });
