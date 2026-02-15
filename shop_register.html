@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="auth.css">
     <link rel="stylesheet" href="faq.css?v=1">
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -109,11 +111,65 @@
             background-color: #fdf2f8;
             border-radius: 8px;
             padding: 20px;
-            margin: 30px 0 20px 0;
+            margin: 15px 0 20px 0;
         }
 
         .cta-box .shop-section-title {
             margin: 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Benefits Carousel - Splide */
+        .benefits-splide {
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+
+        .benefits-splide .splide__track {
+            overflow: visible;
+        }
+
+        .benefits-splide .splide__list {
+            align-items: stretch;
+        }
+
+        .benefit-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fdf2f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pink-highlight);
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #333;
         }
 
         .form-group-with-hint {
@@ -205,7 +261,7 @@
         }
 
         .faq-section-right .faq-item .faq-question.desktop-faq-question {
-            font-weight: 600;
+            font-weight: 500;
             color: #000;
             padding: 0 0 8px 0;
             cursor: default;
@@ -316,13 +372,44 @@
                     създадем нова услуга, която да улеснява процеса на онлайн пазаруването. В eShops ще предложим на
                     потребителите тези решения:</p>
 
-                <ul>
-                    <li>съхраняване на любими продукти от е-магазини</li>
-                    <li>проследяване на историята на цените за 1 година назад</li>
-                    <li>известяване при промяна в цената</li>
-                    <li>следване на известни личности и техните любими продукти</li>
-                    <li>споделяне и участие в една активна шопинг общност.</li>
-                </ul>
+                <div class="splide benefits-splide" id="benefits-carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">✓</div>
+                                    <div class="benefit-text">Съхраняване на любими продукти от е-магазини</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">✓</div>
+                                    <div class="benefit-text">Проследяване на историята на цените за 1 година назад
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">✓</div>
+                                    <div class="benefit-text">Известяване при промяна в цената</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">✓</div>
+                                    <div class="benefit-text">Следване на известни личности и техните любими продукти
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">✓</div>
+                                    <div class="benefit-text">Споделяне и участие в една активна шопинг общност</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
                 <p><strong>Ползите за всеки е-магазин от участието му в eshops.bg:</strong></p>
                 <ul>
@@ -565,6 +652,38 @@
                     icon.classList.toggle('active');
                 });
             });
+        });
+    </script>
+
+    <!-- Splide JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        // Initialize Benefits Carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            var benefitsCarousel = new Splide('#benefits-carousel', {
+                type: 'slide',
+                perPage: 3,
+                perMove: 1,
+                gap: '15px',
+                padding: { right: '50px' }, // Show peek of next slide
+                pagination: false,
+                arrows: true,
+                breakpoints: {
+                    900: {
+                        perPage: 2,
+                        padding: { right: '40px' },
+                    },
+                    600: {
+                        perPage: 1.5,
+                        padding: { right: '30px' },
+                    },
+                    480: {
+                        perPage: 1.2,
+                        padding: { right: '20px' },
+                    }
+                }
+            });
+            benefitsCarousel.mount();
         });
     </script>
 </body>
