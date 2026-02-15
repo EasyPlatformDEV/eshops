@@ -12,23 +12,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for shop registration page */
-        .shop-register-container {
+        /* Two-column layout for desktop */
+        .shop-auth-container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 900px;
+            max-width: 1070px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 40px;
-            margin: 0 auto;
+            display: flex;
+            overflow: hidden;
+            padding: 0;
             min-height: calc(100vh - 30px);
+        }
+
+        .shop-left {
+            flex: 1;
+            padding: 25px 40px 50px 40px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .shop-right {
+            flex: 1;
+            background-color: #fff;
+            padding: 25px 40px 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto;
         }
 
         .shop-header-nav {
             display: flex;
             align-items: center;
             border-bottom: 1px solid #eee;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             position: relative;
             height: 50px;
             justify-content: center;
@@ -36,7 +56,7 @@
         }
 
         .shop-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #000;
             margin: 0 0 20px 0;
@@ -58,15 +78,17 @@
 
         .shop-content ul li {
             margin-bottom: 10px;
-            padding-left: 30px;
+            padding-left: 25px;
             position: relative;
         }
 
         .shop-content ul li::before {
-            content: "✔️";
+            content: "✓";
             position: absolute;
             left: 0;
             top: 0;
+            font-weight: bold;
+            color: #333;
         }
 
         .shop-section-title {
@@ -87,16 +109,21 @@
             position: relative;
         }
 
+        .label-with-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 5px;
+        }
+
         .hint-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
             color: #999;
             transition: color 0.2s;
+            flex-shrink: 0;
+            position: relative;
         }
 
         .hint-icon:hover {
@@ -106,7 +133,7 @@
         .hint-tooltip {
             display: none;
             position: absolute;
-            right: 0;
+            left: 0;
             top: calc(100% + 5px);
             background: #333;
             color: white;
@@ -123,7 +150,7 @@
             content: '';
             position: absolute;
             top: -6px;
-            right: 20px;
+            left: 20px;
             width: 0;
             height: 0;
             border-left: 6px solid transparent;
@@ -136,17 +163,81 @@
             display: block;
         }
 
-        .faq-section {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #eee;
+        /* FAQ in right column - desktop */
+        .faq-section-right {
+            display: none;
+        }
+
+        .faq-section-right h3 {
+            font-size: 1.1rem;
+            color: var(--pink-highlight);
+            font-weight: 600;
+            margin: 0 0 20px 0;
+        }
+
+        .faq-section-right .faq-item {
+            margin-bottom: 20px;
+            border-bottom: none;
+        }
+
+        .faq-section-right .faq-question {
+            font-weight: 600;
+            color: #333;
+            padding: 0 0 8px 0;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .faq-section-right .faq-answer {
+            max-height: none;
+            padding: 0;
+            color: #666;
+        }
+
+        .faq-section-right .faq-icon {
+            display: none;
+        }
+
+        /* Mobile FAQ section */
+        .faq-section-mobile {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (min-width: 901px) {
+            .faq-section-right {
+                display: block;
+            }
+
+            .faq-section-mobile {
+                display: none;
+            }
+
+            .shop-right {
+                border-left: 1px solid #eee;
+            }
         }
 
         @media (max-width: 900px) {
-            .shop-register-container {
+            .shop-auth-container {
+                flex-direction: column;
                 max-width: 100%;
                 width: 92%;
+                margin: 0 auto;
+            }
+
+            .shop-left {
+                width: 100%;
                 padding: 30px 20px;
+            }
+
+            .shop-right {
+                display: none;
+            }
+
+            .shop-title {
+                font-size: 1.3rem;
             }
         }
 
@@ -156,16 +247,19 @@
                 padding-top: 0;
             }
 
-            .shop-register-container {
+            .shop-auth-container {
                 width: 100%;
                 box-shadow: none;
                 border-radius: 0;
-                padding: 30px 20px;
                 min-height: auto;
             }
 
+            .shop-left {
+                padding: 30px 20px;
+            }
+
             .shop-title {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
             }
 
             .hint-tooltip {
@@ -177,120 +271,144 @@
 </head>
 
 <body>
-    <div class="shop-register-container">
-        <div class="shop-header-nav">
-            <a href="javascript:history.back()" class="back-arrow" aria-label="Go back">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-            </a>
-            <div class="header-logo-container">
-                <a href="index.html">
-                    <img src="assets/logo.png" alt="eShops Logo" class="auth-logo-header">
-                </a>
-            </div>
-        </div>
-
-        <h1 class="shop-title">Вашият е-магазин в eshops.bg</h1>
-
-        <div class="shop-content">
-            <p>eShops.bg е новият проект на рекламната платформа EasyAds, създаден в подкрепа на локалните е-магазини и
-                техните клиенти. След 20 години в рекламата, решихме да използваме нашия опит и да създадем нова услуга,
-                която да улеснява процеса на онлайн пазаруването. В eShops ще предложим на потребителите тези решения:
-            </p>
-
-            <ul>
-                <li>съхраняване на любими продукти от е-магазини</li>
-                <li>проследяване на историята на цените за 1 година назад</li>
-                <li>известяване при промяна в цената</li>
-                <li>следване на известни личности и техните любими продукти</li>
-                <li>споделяне и участие в една активна шопинг общност.</li>
-            </ul>
-
-            <p><strong>Ползите за всеки е-магазин от участието му в eshops.bg:</strong></p>
-            <ul>
-                <li>улеснение за неговите настоящи и потенциални клиенти</li>
-                <li>таргетиран трафик от активни онлайн купувачи</li>
-                <li>ценен бранд ефект от известните личности, които ще участват в проекта.</li>
-            </ul>
-
-            <p><strong>Какво е необходимо, за да се включи вашият магазин в eshops.bg:</strong></p>
-            <ul>
-                <li>Безплатен профил в платформата EasyAds.bg</li>
-                <li>Въвеждане на адрес на продуктов фийд (каталог), който да се обхожда, за да се постигне актуалност на
-                    данните за вашите продукти.</li>
-            </ul>
-        </div>
-
-        <div class="shop-section-title">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path
-                    d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
-            </svg>
-            Включете твоя е-магазин още сега и дайте възможност на над 4 млн. потребители да добавят и следят вашите
-            продукти!
-        </div>
-
-        <p style="margin-bottom: 20px; font-size: 0.95rem; color: #666;">Изпратете запитване и ние ще се свържем с вас
-            на посочените данни за контакт.</p>
-
-        <form class="auth-form" action="#" method="POST">
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--pink-highlight);">Заявка
-                за включване</h3>
-
-            <div class="form-group">
-                <label for="shop-url" class="form-label">URL адрес на е-магазина *</label>
-                <input type="url" id="shop-url" class="form-input" placeholder="https://example.com" required>
-            </div>
-
-            <div class="form-group form-group-with-hint">
-                <label for="daily-orders" class="form-label">Среден брой поръчки на ден</label>
-                <input type="number" id="daily-orders" class="form-input" placeholder="напр. 50"
-                    style="padding-right: 40px;">
-                <svg class="hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <div class="hint-tooltip">
-                    Това поле не е задължително, но препоръчваме да го попълните, защото проектът е насочен към
-                    е-магазини с добра познаваемост.
+    <div class="shop-auth-container">
+        <!-- Left Column -->
+        <div class="shop-left">
+            <div class="shop-header-nav">
+                <div class="header-logo-container">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="eShops Logo" class="auth-logo-header">
+                    </a>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="contact-person" class="form-label">Лице за контакт *</label>
-                <input type="text" id="contact-person" class="form-input" placeholder="Име и фамилия" required>
+            <h1 class="shop-title">Вашият е-магазин в eshops.bg</h1>
+
+            <div class="shop-content">
+                <p>eShops.bg е новият проект на рекламната платформа EasyAds, създаден в подкрепа на локалните
+                    е-магазини и техните клиенти. След 20 години в рекламата, решихме да използваме нашия опит и да
+                    създадем нова услуга, която да улеснява процеса на онлайн пазаруването. В eShops ще предложим на
+                    потребителите тези решения:</p>
+
+                <ul>
+                    <li>съхраняване на любими продукти от е-магазини</li>
+                    <li>проследяване на историята на цените за 1 година назад</li>
+                    <li>известяване при промяна в цената</li>
+                    <li>следване на известни личности и техните любими продукти</li>
+                    <li>споделяне и участие в една активна шопинг общност.</li>
+                </ul>
+
+                <p><strong>Ползите за всеки е-магазин от участието му в eshops.bg:</strong></p>
+                <ul>
+                    <li>улеснение за неговите настоящи и потенциални клиенти</li>
+                    <li>таргетиран трафик от активни онлайн купувачи</li>
+                    <li>ценен бранд ефект от известните личности, които ще участват в проекта.</li>
+                </ul>
+
+                <p><strong>Какво е необходимо, за да се включи вашият магазин в eshops.bg:</strong></p>
+                <ul>
+                    <li>Безплатен профил в платформата EasyAds.bg</li>
+                    <li>Въвеждане на адрес на продуктов фийд (каталог), който да се обхожда, за да се постигне
+                        актуалност на данните за вашите продукти.</li>
+                </ul>
             </div>
 
-            <div class="form-group">
-                <label for="contact-phone" class="form-label">Телефон за контакт *</label>
-                <input type="tel" id="contact-phone" class="form-input" placeholder="+359 ..." required>
+            <div class="shop-section-title">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+                </svg>
+                Включете твоя е-магазин още сега и дайте възможност на над 4 млн. потребители да добавят и следят
+                вашите продукти!
             </div>
 
-            <div class="form-group">
-                <label for="contact-email" class="form-label">Имейл за контакт *</label>
-                <input type="email" id="contact-email" class="form-input" placeholder="email@example.com" required>
+            <form class="auth-form" action="#" method="POST">
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--pink-highlight);">
+                    Заявка за включване</h3>
+
+                <div class="form-group">
+                    <label for="shop-url" class="form-label">URL адрес на е-магазина *</label>
+                    <input type="url" id="shop-url" class="form-input" placeholder="https://example.com" required>
+                </div>
+
+                <div class="form-group form-group-with-hint">
+                    <div class="label-with-hint">
+                        <label for="daily-orders" class="form-label" style="margin-bottom: 0;">Среден брой поръчки на
+                            ден</label>
+                        <svg class="hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <div class="hint-tooltip">
+                            Това поле не е задължително, но препоръчваме да го попълните, защото проектът е насочен към
+                            е-магазини с добра познаваемост.
+                        </div>
+                    </div>
+                    <input type="number" id="daily-orders" class="form-input" placeholder="напр. 50">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-person" class="form-label">Лице за контакт *</label>
+                    <input type="text" id="contact-person" class="form-input" placeholder="Име и фамилия" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone" class="form-label">Телефон за контакт *</label>
+                    <input type="tel" id="contact-phone" class="form-input" placeholder="+359 ..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email" class="form-label">Имейл за контакт *</label>
+                    <input type="email" id="contact-email" class="form-input" placeholder="email@example.com" required>
+                </div>
+
+                <button type="submit" class="submit-btn" style="background-color: var(--pink-highlight);">Искам да
+                    заявя участие</button>
+
+                <div class="legal-text" style="margin-top: 15px;">
+                    Изпратете запитване и ние ще се свържем с вас на посочените данни за контакт.
+                </div>
+            </form>
+
+            <!-- Mobile FAQ Section -->
+            <section class="faq-section-mobile">
+                <h3 class="faq-title">Въпроси и отговори</h3>
+                <div class="faq-list" id="faq-list-mobile">
+                    <!-- First 3 FAQ items will be populated by JavaScript -->
+                </div>
+                <button id="view-all-faq" class="view-all-faq" style="display: inline-flex;">
+                    <div class="circle-arrow">
+                        <svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    Виж всички
+                </button>
+            </section>
+
+            <div class="faq-section-mobile"
+                style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 0.95rem;">
+                Имате още въпроси? Свържете се с нас на телефон: <a href="tel:+359887460840"
+                    style="color: var(--pink-highlight); font-weight: 500;">+359 887460840</a>
             </div>
+        </div>
 
-            <button type="submit" class="submit-btn" style="background-color: var(--pink-highlight);">Искам да заявя
-                участие</button>
-        </form>
+        <!-- Right Column (Desktop Only) - FAQ -->
+        <div class="shop-right">
+            <section class="faq-section-right">
+                <h3>Въпроси и отговори</h3>
+                <div class="faq-list" id="faq-list-desktop">
+                    <!-- All FAQ items will be populated by JavaScript -->
+                </div>
+            </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h3 class="faq-title">FAQ</h3>
-            <div class="faq-list" id="faq-list">
-                <!-- FAQ items will be populated by JavaScript -->
+            <div
+                style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 0.95rem;">
+                Имате още въпроси? Свържете се с нас на телефон: <a href="tel:+359887460840"
+                    style="color: var(--pink-highlight); font-weight: 500;">+359 887460840</a>
             </div>
-        </section>
-
-        <div
-            style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 0.95rem;">
-            Имате още въпроси? Свържете се с нас на телефон: <a href="tel:+359887460840"
-                style="color: var(--pink-highlight); font-weight: 500;">+359 887460840</a>
         </div>
     </div>
 
@@ -335,46 +453,82 @@
             }
         ];
 
-        // Populate FAQ
         document.addEventListener('DOMContentLoaded', () => {
-            const faqList = document.getElementById('faq-list');
+            // Populate Desktop FAQ (all items, expanded)
+            const faqListDesktop = document.getElementById('faq-list-desktop');
+            if (faqListDesktop) {
+                faqData.forEach((faq, index) => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item active';
 
-            faqData.forEach((faq, index) => {
-                const faqItem = document.createElement('div');
-                faqItem.className = 'faq-item';
+                    faqItem.innerHTML = `
+                        <button class="faq-question" aria-expanded="true">
+                            ${faq.question}
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            ${faq.answer}
+                        </div>
+                    `;
 
-                faqItem.innerHTML = `
-                    <button class="faq-question" aria-expanded="false">
-                        ${faq.question}
-                        <span class="faq-icon"></span>
-                    </button>
-                    <div class="faq-answer">
-                        ${faq.answer}
-                    </div>
-                `;
-
-                faqList.appendChild(faqItem);
-            });
-
-            // FAQ Toggle Logic
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const faqItem = button.parentElement;
-                    const isActive = faqItem.classList.contains('active');
-
-                    // Close all other items
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
-                        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    });
-
-                    // Toggle current item
-                    if (!isActive) {
-                        faqItem.classList.add('active');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
+                    faqListDesktop.appendChild(faqItem);
                 });
-            });
+            }
+
+            // Populate Mobile FAQ (first 3 items, collapsed)
+            const faqListMobile = document.getElementById('faq-list-mobile');
+            if (faqListMobile) {
+                faqData.forEach((faq, index) => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item';
+                    if (index >= 3) {
+                        faqItem.classList.add('hidden');
+                    }
+
+                    faqItem.innerHTML = `
+                        <button class="faq-question" aria-expanded="false">
+                            ${faq.question}
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            ${faq.answer}
+                        </div>
+                    `;
+
+                    faqListMobile.appendChild(faqItem);
+                });
+
+                // FAQ Toggle Logic for mobile
+                document.querySelectorAll('#faq-list-mobile .faq-question').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const faqItem = button.parentElement;
+                        const isActive = faqItem.classList.contains('active');
+
+                        // Close all other items
+                        document.querySelectorAll('#faq-list-mobile .faq-item').forEach(item => {
+                            item.classList.remove('active');
+                            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        });
+
+                        // Toggle current item
+                        if (!isActive) {
+                            faqItem.classList.add('active');
+                            button.setAttribute('aria-expanded', 'true');
+                        }
+                    });
+                });
+
+                // View All button
+                const viewAllBtn = document.getElementById('view-all-faq');
+                if (viewAllBtn) {
+                    viewAllBtn.addEventListener('click', () => {
+                        document.querySelectorAll('#faq-list-mobile .faq-item').forEach(item => {
+                            item.classList.remove('hidden');
+                        });
+                        viewAllBtn.style.display = 'none';
+                    });
+                }
+            }
 
             // Hint icon toggle
             document.querySelectorAll('.hint-icon').forEach(icon => {
