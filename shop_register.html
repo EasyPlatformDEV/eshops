@@ -121,15 +121,13 @@
         }
 
         .cta-box img {
-            filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(5447%) hue-rotate(322deg) brightness(91%) contrast(102%);
+            color: var(--pink-highlight);
         }
 
         /* Benefits Carousel - Splide */
         .benefits-splide {
             margin: 20px 0;
             padding: 20px 0;
-            max-width: 100%;
-            overflow: hidden;
         }
 
         .benefits-splide .splide__track {
@@ -138,16 +136,6 @@
 
         .benefits-splide .splide__list {
             align-items: stretch;
-        }
-
-        .benefits-splide .splide__arrows {
-            display: flex;
-        }
-
-        /* Remove checkmark from Splide list items */
-        .benefits-splide .splide__list li::before {
-            content: none;
-            display: none;
         }
 
         .benefit-card {
@@ -445,8 +433,7 @@
             <div class="cta-box">
                 <div class="shop-section-title">
                     <img src="assets/membership.svg" alt="Membership" width="24" height="24">
-                    Включете твоя е-магазин още сега и дайте възможност на над <strong>4 млн. потребители</strong> да
-                    добавят и следят
+                    Включете твоя е-магазин още сега и дайте възможност на над 4 млн. потребители да добавят и следят
                     вашите продукти!
                 </div>
             </div>
@@ -677,26 +664,18 @@
     <script>
         // Initialize Benefits Carousel
         document.addEventListener('DOMContentLoaded', function () {
-            var benefitsCarousel = new Splide('#benefits-carousel', {
-                type: 'slide',
-                perPage: 1,
-                perMove: 1,
-                gap: '12px',
-                padding: { right: '60px' }, // Show peek of next slide
+            new Splide('#benefits-carousel', {
+                type: 'loop',
+                fixedWidth: '160px',
+                gap: '10px',
+                drag: 'free',
                 pagination: false,
                 arrows: true,
                 breakpoints: {
-                    768: {
-                        perPage: 1,
-                        padding: { right: '50px' },
-                    },
-                    480: {
-                        perPage: 1,
-                        padding: { right: '40px' },
-                    }
+                    600: { gap: '10px' },
+                    400: { gap: '10px' }
                 }
-            });
-            benefitsCarousel.mount();
+            }).mount();
         });
     </script>
 </body>
