@@ -120,8 +120,8 @@
             font-weight: 500;
         }
 
-        .cta-box img {
-            filter: invert(18%) sepia(98%) saturate(5447%) hue-rotate(322deg) brightness(91%) contrast(102%);
+        .cta-box svg {
+            flex-shrink: 0;
         }
 
         /* Benefits Carousel - Splide */
@@ -133,7 +133,7 @@
         }
 
         .benefits-splide .splide__track {
-            overflow: visible;
+            overflow: hidden;
         }
 
         .benefits-splide .splide__list {
@@ -440,7 +440,10 @@
 
             <div class="cta-box">
                 <div class="shop-section-title">
-                    <img src="assets/membership.svg" alt="Membership" width="24" height="24">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#b60378">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg>
                     Включете твоя е-магазин още сега и дайте възможност на над 4 млн. потребители да добавят и следят
                     вашите продукти!
                 </div>
@@ -674,14 +677,14 @@
         document.addEventListener('DOMContentLoaded', function () {
             new Splide('#benefits-carousel', {
                 type: 'loop',
-                fixedWidth: '160px',
+                fixedWidth: '140px',
                 gap: '10px',
                 drag: 'free',
                 pagination: false,
                 arrows: true,
                 breakpoints: {
-                    600: { gap: '10px' },
-                    400: { gap: '10px' }
+                    600: { fixedWidth: '130px', gap: '8px' },
+                    400: { fixedWidth: '120px', gap: '8px' }
                 }
             }).mount();
         });
