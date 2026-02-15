@@ -64,7 +64,7 @@
         }
 
         .shop-content {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
             color: #333;
             margin-bottom: 30px;
@@ -88,11 +88,11 @@
             left: 0;
             top: 0;
             font-weight: bold;
-            color: #333;
+            color: var(--pink-highlight);
         }
 
         .shop-section-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--pink-highlight);
             margin: 30px 0 15px 0;
@@ -116,18 +116,17 @@
             margin-bottom: 5px;
         }
 
-        .hint-icon {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-            color: #999;
-            transition: color 0.2s;
+        .info-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--pink-highlight, #b60378);
             flex-shrink: 0;
+            cursor: pointer;
             position: relative;
         }
 
-        .hint-icon:hover {
-            color: var(--pink-highlight);
+        .info-icon:hover {
+            opacity: 0.8;
         }
 
         .hint-tooltip {
@@ -168,9 +167,16 @@
             display: none;
         }
 
+        .faq-section-right .cta-image {
+            width: 300px;
+            max-width: 100%;
+            margin: 0 0 30px 0;
+            display: block;
+        }
+
         .faq-section-right h3 {
-            font-size: 1.1rem;
-            color: var(--pink-highlight);
+            font-size: 1.5rem;
+            color: #000;
             font-weight: 600;
             margin: 0 0 20px 0;
         }
@@ -182,16 +188,18 @@
 
         .faq-section-right .faq-question {
             font-weight: 600;
-            color: #333;
+            color: #000;
             padding: 0 0 8px 0;
             cursor: default;
             pointer-events: none;
+            font-size: 0.9rem;
         }
 
         .faq-section-right .faq-answer {
             max-height: none;
             padding: 0;
-            color: #666;
+            color: var(--pink-highlight);
+            font-size: 0.85rem;
         }
 
         .faq-section-right .faq-icon {
@@ -335,7 +343,7 @@
                     <div class="label-with-hint">
                         <label for="daily-orders" class="form-label" style="margin-bottom: 0;">Среден брой поръчки на
                             ден</label>
-                        <svg class="hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="12" y1="16" x2="12" y2="12"></line>
                             <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -398,6 +406,7 @@
         <!-- Right Column (Desktop Only) - FAQ -->
         <div class="shop-right">
             <section class="faq-section-right">
+                <img src="assets/cta_4.svg" alt="eShops" class="cta-image">
                 <h3>Въпроси и отговори</h3>
                 <div class="faq-list" id="faq-list-desktop">
                     <!-- All FAQ items will be populated by JavaScript -->
@@ -530,8 +539,8 @@
                 }
             }
 
-            // Hint icon toggle
-            document.querySelectorAll('.hint-icon').forEach(icon => {
+            // Info icon toggle
+            document.querySelectorAll('.info-icon').forEach(icon => {
                 icon.addEventListener('click', (e) => {
                     e.preventDefault();
                     icon.classList.toggle('active');
